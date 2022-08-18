@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/ui_donate"
+    android:visibility="gone"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/launcher_view_light_gray"
+        android:text="@string/donate_ui_text"
+        android:textSize="@dimen/text_size_middle"
+        android:textColor="@color/colorPureBlack"
+        android:clickable="true"
+        android:focusable="true"
+        android:id="@+id/donate"/>
+
+</LinearLayout>

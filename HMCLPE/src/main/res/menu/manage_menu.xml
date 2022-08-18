@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/manage_test_game"
+        android:title="@string/manage_menu_test_game"
+        android:icon="@drawable/ic_baseline_launch_black"/>
+
+    <item
+        android:id="@+id/manage_rename"
+        android:title="@string/manage_menu_rename"
+        android:icon="@drawable/ic_baseline_create_black"/>
+
+    <item
+        android:id="@+id/manage_copy"
+        android:title="@string/manage_menu_copy"
+        android:icon="@drawable/ic_outline_copy_black"/>
+
+    <item
+        android:id="@+id/manage_delete_version"
+        android:title="@string/manage_menu_delete"
+        android:icon="@drawable/ic_outline_delete_black"/>
+
+    <item
+        android:id="@+id/manage_export_package"
+        android:title="@string/manage_menu_export"
+        android:icon="@drawable/ic_outline_export_black"/>
+
+    <item
+        android:id="@+id/manage_update_assets"
+        android:title="@string/manage_menu_update" />
+
+    <item
+        android:id="@+id/manage_delete_libs"
+        android:title="@string/manage_menu_delete_libs" />
+
+    <item
+        android:id="@+id/manage_clear_logs"
+        android:title="@string/manage_menu_delete_logs" />
+
+</menu>

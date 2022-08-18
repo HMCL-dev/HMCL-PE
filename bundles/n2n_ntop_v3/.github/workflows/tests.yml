@@ -1,0 +1,558 @@
+---
+name: Testing
+
+# yamllint disable-line rule:truthy
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoketest:
+    name: Smoke test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run minimal test set
+        run: |
+          ./autogen.sh
+          ./configure
+          make test
+
+  lint:
+    name: Code syntax
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Make the makefiles
+        run: |
+          ./autogen.sh
+          ./configure
+
+      - name: Install essential
+        run: |
+          make build-dep
+
+      - name: Run the lint tools
+        run: |
+          make lint
+
+  test_linux:
+    needs: smoketest
+    name: Test Linux
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os:
+          - ubuntu-20.04
+          - ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install essential
+        run: |
+          sudo apt-get update
+          sudo apt-get install build-essential
+
+      - name: generate a makefile and use it to install more packages
+        run: |
+          ./autogen.sh
+          ./configure
+          make build-dep
+        shell: bash
+
+      - name: Run the real configure step
+        run: |
+          export CFLAGS="-fprofile-arcs -ftest-coverage"
+          export LDFLAGS="--coverage"
+          ./configure --with-zstd
+        shell: bash
+
+      - name: Run embedded tests
+        run: make test
+        shell: bash
+
+      - if: ${{ always() }}
+        name: Move test outputs to an arch specific location
+        shell: bash
+        run: |
+          mkdir -p tests/${{ matrix.os }}
+          mv tests/*.out tests/${{ matrix.os }}
+
+      - if: ${{ always() }}
+        name: Upload tests output
+        uses: actions/upload-artifact@v2
+        with:
+          name: tests-out
+          path: tests
+
+      - name: Generate coverage reports
+        run: |
+          make gcov
+          make cover COVERAGEDIR=coverage/${{ matrix.os }}
+        shell: bash
+
+      - name: Upload gcovr report artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: coverage
+
+      - name: Upload data to codecov
+        uses: codecov/codecov-action@v2
+
+  test_macos:
+    needs: smoketest
+    name: Test MacOS
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os:
+          - macos-10.15
+          - macos-11
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install packages
+        run: |
+          brew install automake
+
+      - name: generate a makefile and use it to install more packages
+        run: |
+          ./autogen.sh
+          ./configure
+          make build-dep
+        shell: bash
+
+      - name: Run the real configure step
+        run: |
+          export CFLAGS="-fprofile-arcs -ftest-coverage"
+          export LDFLAGS="--coverage"
+          ./configure --with-zstd
+        shell: bash
+
+      - name: Run embedded tests
+        run: make test
+        shell: bash
+
+      - if: ${{ always() }}
+        name: Move test outputs to an arch specific location
+        shell: bash
+        run: |
+          mkdir -p tests/${{ matrix.os }}
+          mv tests/*.out tests/${{ matrix.os }}
+
+      - if: ${{ always() }}
+        name: Upload tests output
+        uses: actions/upload-artifact@v2
+        with:
+          name: tests-out
+          path: tests
+
+      - name: Generate coverage reports
+        run: |
+          make gcov
+          # This was working fine for tens of jobs, up until
+          # 2021-10-19T18:53+0100 and it still works fine when run from my
+          # personal github actions. The next run at 2021-10-19T19:08+0100
+          # didnt work.
+          # Assume that they changed something on the runner - I cannot debug
+          # it as I do not have a Mac.
+          #
+          # make cover COVERAGEDIR=coverage/${{ matrix.os }}
+        shell: bash
+
+      # - name: Upload gcovr report artifact
+      #  uses: actions/upload-artifact@v2
+      #  with:
+      #    name: coverage
+      #    path: coverage
+
+      - name: Upload data to codecov
+        uses: codecov/codecov-action@v2
+
+  test_windows:
+    needs: smoketest
+    name: Test Windows
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os:
+          - windows-2016
+          - windows-2019
+          - windows-2022
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: generate a makefile and use it to install more packages
+        run: |
+          # This is a pretty big hammer, but gets the windows compile moving
+          ./scripts/hack_fakeautoconf.sh
+          make build-dep
+        shell: bash
+
+      - name: Run a configure step
+        run: |
+          export CFLAGS="-fprofile-arcs -ftest-coverage"
+          export LDFLAGS="--coverage"
+          ./scripts/hack_fakeautoconf.sh
+        shell: bash
+
+      - name: Run embedded tests
+        run: make test
+        shell: bash
+
+      - if: ${{ always() }}
+        name: Move test outputs to an arch specific location
+        shell: bash
+        run: |
+          mkdir -p tests/${{ matrix.os }}
+          mv tests/*.out tests/${{ matrix.os }}
+
+      - if: ${{ always() }}
+        name: Upload tests output
+        uses: actions/upload-artifact@v2
+        with:
+          name: tests-out
+          path: tests
+
+      - name: Generate coverage data
+        run: |
+          make gcov
+        shell: bash
+
+      - name: Upload data to codecov
+        uses: codecov/codecov-action@v2
+
+  package_dpkg:
+    name: Package for Debian/Ubuntu
+    needs:
+      - test_linux
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        arch:
+          - amd64
+          - arm64
+          - armhf
+          - i386
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Fix Checkout
+        run: |
+          git fetch --force --tags
+
+      - name: Install packages needed for build
+        run: |
+          sudo apt-get update
+          sudo apt-get install debhelper build-essential \
+            crossbuild-essential-${{ matrix.arch }}
+
+      - name: Configure
+        # The HOST_TRIPLET line is not easily foldable
+        # yamllint disable rule:line-length
+        run: |
+          # This will warn about CC, but we cannot set CC until we run it :-S
+          HOST_TRIPLET=$(dpkg-architecture -a${{ matrix.arch }} -q DEB_HOST_GNU_TYPE)
+          export CC=$HOST_TRIPLET-gcc
+          export AR=$HOST_TRIPLET-ar
+          ./autogen.sh
+          ./configure --host $HOST_TRIPLET
+          cd packages/debian/
+          ./configure EXTN=${{ matrix.arch }}
+        # yamllint enable rule:line-length
+
+      - name: Build
+        run: |
+          cd packages/debian/
+          make
+
+      - name: Upload dpkg
+        uses: actions/upload-artifact@v2
+        with:
+          name: packages-dpkg
+          path: packages/debian/*.deb
+
+  package_rpm:
+    name: Package for Redhat/RPM
+    needs:
+      - test_linux
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Fix Checkout
+        run: |
+          git fetch --force --tags
+
+      - name: Install packages needed for build
+        run: |
+          sudo apt-get install rpm
+
+      - name: Configure
+        run: |
+          ./autogen.sh
+          ./configure
+          cd packages/rpm/
+          ./configure
+
+      - name: Build
+        run: |
+          make
+          HOME=$(pwd)/../
+          cd packages/rpm/
+          make
+          cd ../../
+          mv ../rpmbuild ./
+
+      - name: Upload rpm
+        uses: actions/upload-artifact@v2
+        with:
+          name: packages-rpm
+          path: rpmbuild/RPMS/x86_64/*.rpm
+
+  binaries_windows:
+    name: Binaries for Windows (x86_64-pc-mingw64)
+    needs:
+      - test_windows
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Fix Checkout
+        run: |
+          git fetch --force --tags
+
+      - name: Configure and Build
+        shell: bash
+        run: |
+          ./scripts/hack_fakeautoconf.sh
+          make
+
+      - name: Create binary dir
+        shell: bash
+        run: |
+          make install DESTDIR=binaries/x86_64-pc-mingw64
+
+      - name: Upload binary artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: binaries
+          path: binaries
+
+  binaries_macos:
+    name: Binaries for MacOS
+    needs:
+      - test_macos
+    runs-on: macos-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        arch:
+          - x86_64-apple-macos
+          - arm64-apple-macos
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Fix Checkout
+        run: |
+          git fetch --force --tags
+
+      - name: Install packages needed for build
+        run: |
+          brew install automake
+
+      - name: Configure and Build
+        shell: bash
+        run: |
+          # this is a hack! it assumes the default SDK is the 'right' one
+          export SDKROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+          ./autogen.sh
+          export CC=clang
+          export CFLAGS="-target ${{ matrix.arch }}"
+          export LDFLAGS="-target ${{ matrix.arch }}"
+          ./configure --host=${{ matrix.arch }}
+          make
+
+      - if: ${{ failure() }}
+        name: Upload config.log output
+        uses: actions/upload-artifact@v2
+        with:
+          name: config-log-${{ matrix.arch }}
+          path: config.log
+
+      - name: Create binary dir
+        shell: bash
+        run: |
+          make install DESTDIR=binaries/${{ matrix.arch }}
+
+      - name: Upload binary artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: binaries
+          path: binaries
+
+  binaries_macos_universal:
+    name: Binaries for MacOS (universal arch)
+    needs:
+      - test_macos
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Fix Checkout
+        run: |
+          git fetch --force --tags
+
+      - name: Install packages needed for build
+        run: |
+          brew install automake
+
+      - name: Configure and Build
+        shell: bash
+        run: |
+          # this is a hack! it assumes the default SDK is the 'right' one
+          export SDKROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+          ./autogen.sh
+          export CC=clang
+          export CFLAGS="-arch x86_64 -arch arm64"
+          export LDFLAGS="-arch x86_64 -arch arm64"
+          ./configure
+          make
+
+      - name: Create binary dir
+        shell: bash
+        run: |
+          make install DESTDIR=binaries/universal-apple-darwin
+
+      - name: Upload binary artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: binaries
+          path: binaries
+
+  binaries_linux_crosscompile:
+    name: Binaries for linux
+    needs:
+      - test_linux
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        arch:
+          - arm-linux-gnueabi
+
+          # I assume these architectures produce working code, but this has
+          # not been directly confirmed.
+          # They are compiled dynamically against normal libc, so will not
+          # work on openwrt.
+          - aarch64-linux-gnu
+          - mips-linux-gnu
+          - mipsel-linux-gnu
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Fix Checkout
+        run: |
+          git fetch --force --tags
+
+      - name: Install cross compiler
+        run: |
+          sudo apt-get update
+          sudo apt-get install \
+            binutils-${{ matrix.arch }} \
+            gcc-${{ matrix.arch }}
+
+      - name: Configure and Build
+        shell: bash
+        run: |
+          ./autogen.sh
+          export CC=${{ matrix.arch }}-gcc
+          export AR=${{ matrix.arch }}-ar
+          ./configure --host ${{ matrix.arch }}
+          make
+
+      - name: Create binary dir
+        shell: bash
+        run: |
+          make install DESTDIR=binaries/${{ matrix.arch }}
+
+      - name: Upload binary artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: binaries
+          path: binaries
+
+  # Given the clearly documented use of annotated tags to signal releases,
+  # it seems strange that there is no simple way to trigger actions if the
+  # tag is annotated.  So we need to jump through some extra hoops.
+  #
+  # Looking at https://github.com/actions/checkout/issues/290 seems to show
+  # that github just doesnt care about how git expects annotated tags to be
+  # used.
+  #
+  # This workflow has added a `git fetch --force --tags` to every job that
+  # needs to have working tags
+
+  upload_release:
+    name: Upload Release Assets
+    if: startsWith(github.ref, 'refs/tags/')
+    needs:
+      - package_dpkg
+      - package_rpm
+      - binaries_windows
+      - binaries_macos
+      - binaries_macos_universal
+      - binaries_linux_crosscompile
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Fix Checkout
+        run: |
+          git fetch --force --tags
+
+      - name: Get Tag Type
+        id: get_tagtype
+        run: |
+          TYPE=$(git cat-file -t $GITHUB_REF)
+          echo "::set-output name=TAGTYPE::$TYPE"
+          echo ==========
+          echo REF=$GITHUB_REF
+          echo TAGTYPE=$TYPE
+
+      - name: Fetch all Artifacts
+        if: steps.get_tagtype.outputs.TAGTYPE == 'tag'
+        uses: actions/download-artifact@v2
+        with:
+          path: artifacts
+
+      - name: Upload Assets to Release
+        if: steps.get_tagtype.outputs.TAGTYPE == 'tag'
+        uses: softprops/action-gh-release@v1
+        with:
+          prerelease: true
+          files: |
+            artifacts/packages-dpkg/*.deb
+            artifacts/packages-rpm/*.rpm

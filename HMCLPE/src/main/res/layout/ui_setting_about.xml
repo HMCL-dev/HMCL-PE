@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/ui_about"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ui_about_about"
+                android:textSize="@dimen/text_size_middle"
+                android:textColor="@color/colorPureBlack"/>
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/launcher_view_light_gray">
+
+                <LinearLayout
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_craft_table"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_hmclpe_main"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorPureBlack" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_hmclpe_sub"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/ic_baseline_jump_black"
+                        android:id="@+id/hmclpe_link"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_tungs"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_tungsten_main"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorPureBlack" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_tungsten_sub"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/ic_baseline_jump_black"
+                        android:id="@+id/tungs_link"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_mio"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_shirosakimio_main"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorPureBlack" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_shirosakimio_sub"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/ic_baseline_jump_black"
+                        android:id="@+id/mio_link"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ui_about_thank"
+                android:textSize="@dimen/text_size_middle"
+                android:textColor="@color/colorPureBlack"/>
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/launcher_view_light_gray">
+
+                <LinearLayout
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_cosine"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_cosine_main"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorPureBlack" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_cosine_sub"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/ic_baseline_jump_black"
+                        android:id="@+id/cosine_link"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_saltfish"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_tsaltedfishking_main"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorPureBlack" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_tsaltedfishking_sub"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/ic_baseline_jump_black"
+                        android:id="@+id/saltfish_link"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_craft_table"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_hmcl_main"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorPureBlack" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_hmcl_sub"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/ic_baseline_jump_black"
+                        android:id="@+id/hmcl_link"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_bangbang93"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_bangbang93_main"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorPureBlack" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_bangbang93_sub"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/ic_baseline_jump_black"
+                        android:id="@+id/bangbang93_link"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_chest"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_mcbbs_main"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorPureBlack" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_mcbbs_sub"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/ic_baseline_jump_black"
+                        android:id="@+id/mcbbs_link"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_mcmod"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_mcmod_main"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorPureBlack" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_mcmod_sub"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/ic_baseline_jump_black"
+                        android:id="@+id/mcmod_link"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_github"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_github_main"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorPureBlack" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/ui_about_github_sub"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

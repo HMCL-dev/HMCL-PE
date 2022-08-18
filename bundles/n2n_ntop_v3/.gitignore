@@ -1,0 +1,52 @@
+*.o
+*.a
+*.gz
+configure
+configure.ac
+config.*
+/Makefile
+tools/Makefile
+autom4te.cache
+edge
+example_edge_embed_quick_edge_init
+example_edge_embed
+example_sn_embed
+supernode
+tools/n2n-benchmark
+tools/n2n-decode
+tools/n2n-keygen
+build
+.idea
+cmake-build-default
+packages/debian/debian/changelog
+packages/debian/debian/control
+packages/debian/debian/files
+packages/debian/debian/rules
+packages/etc/systemd/system/edge-ntopng@.service
+packages/etc/systemd/system/edge.service
+packages/etc/systemd/system/edge@.service
+packages/etc/systemd/system/supernode.service
+*dSYM*
+
+cmake-build-*/
+
+# Binaries built to run tests
+tools/tests-compress
+tools/tests-elliptic
+tools/tests-hashing
+tools/tests-transform
+tools/tests-wire
+
+# Files generated while running tests
+tests/*.out
+
+# Files generated while running coverage reports
+*.gcno
+*.gcda
+*.gcov
+coverage/
+
+# Files generated while running linting
+*.indent
+*.unc-backup.md5~
+*.unc-backup~

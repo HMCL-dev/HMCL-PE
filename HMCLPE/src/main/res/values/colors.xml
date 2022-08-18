@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5C6BC0</color>
+    <color name="colorSecondary">#283593</color>
+    <color name="colorThird">#43A047</color>
+    <color name="colorForth">#E67E22</color>
+    <color name="colorFifth">#9C27B0</color>
+    <color name="colorSixth">#B71C1C</color>
+    <color name="colorPrimaryDark">#CB5C6BC0</color>
+    <color name="colorAccent">#5C6BC0</color>
+
+    <color name="colorTransparent">#00FFFFFF</color>
+    <color name="colorPureWhite">#FFFFFF</color>
+    <color name="colorPureBlack">#000000</color>
+    <color name="colorLightWhite">#99FFFFFF</color>
+    <color name="colorShallowWhite">#40FFFFFF</color>
+    <color name="colorDarkGray">#40000000</color>
+    <color name="colorGray">#1A000000</color>
+    <color name="colorLightGray">#0D000000</color>
+    <color name="colorWhiteGray">#E3E3E3</color>
+    <color name="colorLightBlue">#655C6BC0</color>
+    <color name="colorGreen">#3DFF2C</color>
+    <color name="colorYellow">#F0FF00</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="colorLinkBlue">#03A9F4</color>
+    <color name="colorLinkBlueDark">#005D8F</color>
+    <color name="colorTextBlue">#D5F1FF</color>
+    <color name="colorStartRockerBlue">#1A00C4FF</color>
+    <color name="colorEndRockerBlue">#3300C4FF</color>
+    <color name="colorBrown">#835300</color>
+
+    <color name="launcher_ui_background">#9AFFFFFF</color>
+    <color name="launcher_ui_background_light">#4DFFFFFF</color>
+    <color name="colorPressed">#BDBDBD</color>
+</resources>

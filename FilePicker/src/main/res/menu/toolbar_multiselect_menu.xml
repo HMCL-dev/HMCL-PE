@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_properties"
+        android:title="@string/properties"
+        android:icon="@drawable/ic_info_outline_black_24dp"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_share"
+        android:title="@string/share"
+        android:icon="@drawable/ic_share_black_24dp"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_rename"
+        android:title="@string/rename"
+        android:icon="@drawable/ic_create_black_24dp"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_selectall"
+        android:title="@string/selectall"
+        android:icon="@drawable/ic_format_line_spacing_black_24dp"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_unselectall"
+        android:title="@string/unselectall"
+        android:icon="@drawable/ic_low_priority_black_24dp"
+        app:showAsAction="ifRoom" />
+
+</menu>

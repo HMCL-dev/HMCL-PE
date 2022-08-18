@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/launcher_setting_button"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            android:id="@+id/item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/check_current_pattern"/>
+
+            <ImageView
+                android:layout_marginStart="6dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_baseline_keyboard_black"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/pattern_name"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:textColor="@color/colorPureBlack"
+                android:textSize="@dimen/text_size_middle"/>
+
+            <ImageButton
+                android:layout_marginStart="10dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:id="@+id/edit_pattern"
+                android:background="@drawable/ic_baseline_create_black"/>
+
+            <ImageButton
+                android:layout_marginStart="10dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:id="@+id/share_pattern"
+                android:background="@drawable/ic_baseline_share_black"/>
+
+            <ImageButton
+                android:layout_marginStart="10dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:id="@+id/delete_pattern"
+                android:background="@drawable/ic_baseline_delete_black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:id="@+id/pattern_info_layout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/item_control_pattern_author"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:id="@+id/author_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/item_control_pattern_version"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:id="@+id/version_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_control_pattern_describe"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:id="@+id/describe_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

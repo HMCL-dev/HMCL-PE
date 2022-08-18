@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/ui_install_fabric_api_list"
+    android:visibility="gone"
+    android:background="@color/launcher_ui_background"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/download_fabric_api_hint_layout"
+        android:padding="10dp"
+        android:background="@drawable/launcher_view_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_outline_about_black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:text="@string/download_minecraft_ui_hint"
+                android:textSize="@dimen/text_size_middle"
+                android:textColor="@color/colorLinkBlueDark"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/download_minecraft_ui_hint_text"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorLinkBlueDark"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
+        <ListView
+            android:background="@drawable/launcher_view_white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fabric_api_version_list" />
+
+        <ProgressBar
+            android:tag="tint_accent_color"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:id="@+id/loading_fabric_api_list_progress"/>
+
+        <TextView
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/colorLinkBlue"
+            android:textSize="22sp"
+            android:text="@string/no_available_version"
+            android:id="@+id/back_to_install_ui_fabric_api"/>
+
+        <TextView
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/colorLinkBlue"
+            android:textSize="22sp"
+            android:text="@string/download_list_load_fail"
+            android:id="@+id/refresh_fabric_api_list"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

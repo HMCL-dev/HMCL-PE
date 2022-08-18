@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/colorPureBlack"
+        android:text="@string/dialog_add_fast_text_title"/>
+
+    <EditText
+        android:layout_width="400dp"
+        android:layout_height="40dp"
+        android:textSize="@dimen/text_size_middle"
+        android:textColor="@color/colorPureBlack"
+        android:layout_marginTop="15dp"
+        android:singleLine="true"
+        android:id="@+id/edit_fast_text"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/dialog_add_fast_text_positive"
+            android:textSize="15sp"
+            android:textColor="@color/colorLinkBlue"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/add_fast_text"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/dialog_add_fast_text_negative"
+            android:textSize="15sp"
+            android:textColor="@color/colorPureBlack"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/exit"/>
+
+    </LinearLayout>
+
+</LinearLayout>

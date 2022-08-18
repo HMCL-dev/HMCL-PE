@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/item"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/launcher_button_light_gray">
+
+        <TextView
+            android:singleLine="true"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/colorPureBlack"
+            android:id="@+id/game_version"/>
+
+        <ImageView
+            android:layout_marginStart="15dp"
+            android:id="@+id/show_game_version"
+            android:layout_gravity="center"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/ic_baseline_keyboard_arrow_down_black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/mod_list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mod_list"/>
+
+    </LinearLayout>
+
+</LinearLayout>

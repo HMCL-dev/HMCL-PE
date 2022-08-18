@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="customizable" format="boolean"/>
+    <declare-styleable name="ContentListView">
+        <attr name="maxHeight" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="MaxHeightRecycler">
+        <attr name="maxRecyclerHeight" format="integer" />
+    </declare-styleable>
+</resources>

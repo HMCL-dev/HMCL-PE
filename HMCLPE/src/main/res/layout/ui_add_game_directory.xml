@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/ui_add_game_directory"
+    android:visibility="gone"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/launcher_view_white">
+
+        <LinearLayout
+            android:padding="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:singleLine="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/add_game_dir_ui_name"
+                android:textColor="@color/colorPureBlack"
+                android:textSize="@dimen/text_size_middle"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:textSize="@dimen/text_size_middle"
+                android:layout_width="300dp"
+                android:layout_height="38dp"
+                android:background="@color/colorLightGray"
+                android:paddingStart="9dp"
+                android:paddingEnd="9dp"
+                android:id="@+id/edit_content_name"
+                android:layout_gravity="center"
+                android:singleLine="true"/>
+
+        </LinearLayout>
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/colorPureBlack"/>
+
+        <LinearLayout
+            android:paddingTop="14dp"
+            android:paddingBottom="14sp"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:singleLine="true"
+                    android:text="@string/add_game_dir_ui_path"
+                    android:textColor="@color/colorPureBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/text_size_middle"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:id="@+id/content_path"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/text_size_small"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:layout_marginEnd="10dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_baseline_create_black"
+                android:id="@+id/edit_content_path"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:singleLine="true"
+        android:textAllCaps="false"
+        android:tag="tint_accent_color"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/launcher_button_blue"
+        android:textColor="@color/colorPureWhite"
+        android:textSize="@dimen/text_size_middle"
+        android:text="@string/add_game_dir_ui_save"
+        android:id="@+id/save_contents"/>
+
+</LinearLayout>

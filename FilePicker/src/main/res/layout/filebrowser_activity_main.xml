@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FileBrowser">
+
+    <include
+        android:id="@+id/filebrowser_tool_bar"
+        layout="@layout/filebrowser_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/address"
+        android:orientation="vertical"
+        android:layout_below="@+id/filebrowser_tool_bar">
+
+        <com.beardedhen.androidbootstrap.BootstrapWell
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            app:bootstrapSize="sm">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/currentPath"/>
+
+        </com.beardedhen.androidbootstrap.BootstrapWell>
+
+        <com.roughike.bottombar.BottomBar
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:bb_tabXmlResource="@xml/path_change_menu"
+            android:id="@+id/currPath_Nav"
+            app:bb_showShadow="false"/>
+
+    </LinearLayout>
+    <com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView
+        app:fastScrollAutoHide="true"
+        app:fastScrollAutoHideDelay="1500"
+        android:id="@+id/recycler_view"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/address"
+        android:layout_above="@+id/bottom_navigation"/>
+
+    <!--<android.support.design.widget.BottomNavigationView-->
+        <!--android:id="@+id/bottom_navigation"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="start"-->
+        <!--design:menu="@menu/bottom_nav_items"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="@android:color/white"-->
+        <!--app:itemIconTint="@drawable/nav_selector"-->
+        <!--app:itemTextColor="@drawable/nav_selector"/>-->
+    <com.roughike.bottombar.BottomBar
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        app:bb_tabXmlResource="@xml/bottom_nav_items"
+        android:id="@+id/bottom_navigation"/>
+
+</RelativeLayout>

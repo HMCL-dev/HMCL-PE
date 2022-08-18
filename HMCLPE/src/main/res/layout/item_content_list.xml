@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:clickable="true"
+    android:paddingStart="15dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingEnd="5dp"
+    android:id="@+id/switch_content"
+    android:background="@drawable/launcher_button_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_outline_folder_open_black"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:singleLine="true"
+            android:textColor="@color/colorPureBlack"
+            android:id="@+id/content_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textSize="@dimen/text_size_middle"/>
+
+        <TextView
+            android:singleLine="true"
+            android:id="@+id/content_path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textSize="@dimen/text_size_small"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:background="@drawable/ic_baseline_close_black"
+        android:id="@+id/delete_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"/>
+
+</LinearLayout>

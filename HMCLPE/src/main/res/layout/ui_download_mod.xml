@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ui_download_mod"
+    android:visibility="gone"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="@drawable/launcher_view_light_gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_marginEnd="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_gravity="center"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:text="@string/download_mod_ui_game"/>
+
+                    <RelativeLayout
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:background="@drawable/launcher_view_white">
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/download_mod_arg_game"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_gravity="center"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:text="@string/download_mod_ui_name"/>
+
+                    <EditText
+                        android:singleLine="true"
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:paddingStart="9dp"
+                        android:paddingEnd="9dp"
+                        android:textSize="@dimen/text_size_middle"
+                        android:hint="@string/download_mod_ui_name_hint"
+                        android:id="@+id/download_mod_arg_name"
+                        android:background="@drawable/launcher_view_white"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_gravity="center"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:text="@string/download_mod_ui_type"/>
+
+                    <RelativeLayout
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:background="@drawable/launcher_view_white">
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/download_mod_arg_type"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_gravity="center"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:text="@string/download_mod_ui_source"/>
+
+                    <RelativeLayout
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:background="@drawable/launcher_view_white">
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/download_mod_arg_source"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_gravity="center"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:text="@string/download_mod_ui_version"/>
+
+                    <RelativeLayout
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:background="@drawable/launcher_view_white">
+
+                        <Spinner
+                            android:stateListAnimator="@null"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/download_mod_arg_version"/>
+
+                        <EditText
+                            android:singleLine="true"
+                            android:background="@drawable/launcher_view_white"
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/text_size_middle"
+                            android:paddingStart="9dp"
+                            android:paddingEnd="9dp"
+                            android:id="@+id/edit_download_mod_arg_version"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_gravity="center"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:text="@string/download_mod_ui_sort"/>
+
+                    <RelativeLayout
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:background="@drawable/launcher_view_white">
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/download_mod_arg_sort"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:minWidth="0dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:tag="tint_accent_color"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/launcher_button_blue"
+                android:text="@string/download_mod_ui_search"
+                android:textColor="@color/colorPureWhite"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:id="@+id/search_mod"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:divider="@color/colorTransparent"
+            android:dividerHeight="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/download_mod_list"/>
+
+        <ProgressBar
+            android:tag="tint_accent_color"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:id="@+id/loading_download_mod_list_progress"/>
+
+        <TextView
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/colorLinkBlue"
+            android:textSize="22sp"
+            android:text="@string/download_list_load_fail"
+            android:id="@+id/refresh_mod_list"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

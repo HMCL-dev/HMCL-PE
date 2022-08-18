@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/ui_install_package"
+    android:background="@color/launcher_ui_background"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/select_package_layout"
+            android:layout_centerInParent="true"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:singleLine="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_middle"
+                android:textColor="@color/colorPureBlack"
+                android:text="@string/install_package_ui_sub_title"/>
+
+            <LinearLayout
+                android:padding="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/install_package_local"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/launcher_button_white_blue"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:text="@string/install_package_ui_local"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_middle"
+                        android:text="@string/install_package_ui_local_sub"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_arrow_forward_black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/install_package_online"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/launcher_button_white_blue"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:text="@string/install_package_ui_online"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_middle"
+                        android:text="@string/install_package_ui_online_sub"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_arrow_forward_black"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:background="@drawable/launcher_view_white"
+            android:id="@+id/install_package_layout"
+            android:layout_centerInParent="true"
+            android:layout_width="420dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/install_package_ui_thi_title"
+                    android:textSize="12dp"
+                    android:textColor="@color/colorPureBlack"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/package_path"
+                    android:textSize="12dp"
+                    android:textColor="@color/colorPureBlack"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/colorDarkGray"/>
+
+            <LinearLayout
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/install_package_ui_name"
+                    android:textSize="12dp"
+                    android:textColor="@color/colorPureBlack"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"/>
+
+                <EditText
+                    android:singleLine="true"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:background="@color/colorLightGray"
+                    android:layout_width="180dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/edit_package_name"
+                    android:textSize="12dp"
+                    android:textColor="@color/colorPureBlack"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/colorDarkGray"/>
+
+            <LinearLayout
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/install_package_ui_package_name"
+                    android:textSize="12dp"
+                    android:textColor="@color/colorPureBlack"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/package_name"
+                    android:textSize="12dp"
+                    android:textColor="@color/colorPureBlack"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/colorDarkGray"/>
+
+            <LinearLayout
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/install_package_ui_version"
+                    android:textSize="12dp"
+                    android:textColor="@color/colorPureBlack"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/package_version"
+                    android:textSize="12dp"
+                    android:textColor="@color/colorPureBlack"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/colorDarkGray"/>
+
+            <LinearLayout
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/install_package_ui_author"
+                    android:textSize="12dp"
+                    android:textColor="@color/colorPureBlack"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/package_author"
+                    android:textSize="12dp"
+                    android:textColor="@color/colorPureBlack"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/colorDarkGray"/>
+
+            <LinearLayout
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:textAllCaps="false"
+                    android:singleLine="true"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:id="@+id/show_package_description"
+                    android:textColor="@color/colorAccent"
+                    android:background="@drawable/launcher_setting_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/install_package_ui_description"
+                    android:textSize="@dimen/text_size_middle"
+                    android:layout_gravity="center"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:textAllCaps="false"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:tag="tint_accent_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/launcher_button_blue"
+                    android:text="@string/install_package_ui_install"
+                    android:textColor="@color/colorPureWhite"
+                    android:textSize="@dimen/text_size_middle"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:id="@+id/install_package"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/loading_package_info_progress"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

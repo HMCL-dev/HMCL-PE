@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ui_mod_manager"
+    android:visibility="gone"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/local_mod_list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/launcher_view_white">
+
+        <LinearLayout
+            android:id="@+id/mod_manager_main_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/launcher_button_white_blue"
+                android:id="@+id/refresh_local_mod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_refresh_black"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:text="@string/mod_manager_ui_refresh"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/launcher_button_white_blue"
+                android:id="@+id/add_new_mod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_add_black"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:text="@string/mod_manager_ui_add"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/launcher_button_white_blue"
+                android:id="@+id/open_mod_folder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_folder_black"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:text="@string/mod_manager_ui_open_folder"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/launcher_button_white_blue"
+                android:id="@+id/check_mod_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_update_black"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:text="@string/mod_manager_ui_check_update"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/launcher_button_white_blue"
+                android:id="@+id/download_new_mod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_outline_download_black"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:text="@string/mod_manager_ui_download"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/mod_manager_sub_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/launcher_button_white_blue"
+                android:id="@+id/delete_local_mod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_delete_black"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:text="@string/mod_manager_ui_delete"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/launcher_button_white_blue"
+                android:id="@+id/enable_local_mod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_done_black"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:text="@string/mod_manager_ui_enable"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/launcher_button_white_blue"
+                android:id="@+id/disable_local_mod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_close_black"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:text="@string/mod_manager_ui_disable"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/launcher_button_white_blue"
+                android:id="@+id/select_all_local_mod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_select_all_black"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:text="@string/mod_manager_ui_select_all"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/launcher_button_white_blue"
+                android:id="@+id/cancel_manage_local_mod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_cancel_black"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:text="@string/mod_manager_ui_negative"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGray"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/load_mod_progress"/>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/local_mod_list"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

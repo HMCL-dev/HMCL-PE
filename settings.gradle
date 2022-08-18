@@ -1,0 +1,16 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+        maven { url 'https://www.jitpack.io' }
+    }
+}
+rootProject.name = "Hello Minecraft Launcher Pocket Edition"
+include ':HMCLPE'
+include ':FilePicker'
+include ':Boat'
+include ':PojavLauncher'
+include ':ZipTools'
+include ':Hin2n'

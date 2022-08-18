@@ -1,0 +1,1615 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/colorPureWhite"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dialog_add_view_button_basic_setting"
+                    android:textColor="@color/colorPureBlack"
+                    android:textSize="9sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_text"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <EditText
+                        android:layout_width="400dp"
+                        android:layout_height="32dp"
+                        android:background="@color/colorLightGray"
+                        android:layout_gravity="center"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:textSize="@dimen/text_size_middle"
+                        android:id="@+id/edit_button_text"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_show"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/button_show_type"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_size_type"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/button_size_type"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_position_type"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/button_position_type"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/width_object_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_width_type_percent_object"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/width_object"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/height_object_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_height_type_percent_object"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/height_object"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_width"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/ic_baseline_horizontal_black"
+                            android:id="@+id/reduce_button_width"/>
+
+                        <SeekBar
+                            android:id="@+id/button_width_seekbar"
+                            android:max="100"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:layout_gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+
+                        <ImageButton
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/ic_baseline_add_black"
+                            android:id="@+id/add_button_width"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="end"
+                        android:id="@+id/width_text"
+                        android:textColor="@color/colorPureBlack"
+                        android:textSize="@dimen/text_size_middle"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_height"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/ic_baseline_horizontal_black"
+                            android:id="@+id/reduce_button_height"/>
+
+                        <SeekBar
+                            android:id="@+id/button_height_seekbar"
+                            android:max="100"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:layout_gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+
+                        <ImageButton
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/ic_baseline_add_black"
+                            android:id="@+id/add_button_height"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="end"
+                        android:id="@+id/height_text"
+                        android:textColor="@color/colorPureBlack"
+                        android:textSize="@dimen/text_size_middle"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_x"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/ic_baseline_horizontal_black"
+                            android:id="@+id/reduce_button_x"/>
+
+                        <SeekBar
+                            android:id="@+id/button_x_seekbar"
+                            android:max="100"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:layout_gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+
+                        <ImageButton
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/ic_baseline_add_black"
+                            android:id="@+id/add_button_x"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="end"
+                        android:id="@+id/button_x_text"
+                        android:textColor="@color/colorPureBlack"
+                        android:textSize="@dimen/text_size_middle"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_y"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/ic_baseline_horizontal_black"
+                            android:id="@+id/reduce_button_y"/>
+
+                        <SeekBar
+                            android:id="@+id/button_y_seekbar"
+                            android:max="100"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:layout_gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+
+                        <ImageButton
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/ic_baseline_add_black"
+                            android:id="@+id/add_button_y"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="end"
+                        android:id="@+id/button_y_text"
+                        android:textColor="@color/colorPureBlack"
+                        android:textSize="@dimen/text_size_middle"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dialog_add_view_button_function_setting"
+                    android:textColor="@color/colorPureBlack"
+                    android:textSize="9sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_function_type"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/function_type"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_function_extra_perspective"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/function_extra_perspective"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_function_extra_keep"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/function_extra_keep"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_function_extra_auto_click"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/function_extra_auto_click"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_function_open_menu"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/function_open_menu"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_function_movable"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/function_movable"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_function_touch_mode"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/function_touch_mode"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_function_sensor"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/function_sensor"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_function_left_touch"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/function_left_touch"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_function_open_input"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/function_open_input"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_function_child_visibility"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:singleLine="true"
+                        android:textAllCaps="false"
+                        android:layout_width="45dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/function_child_visibility"
+                        android:background="@drawable/launcher_setting_button"
+                        android:text="@string/dialog_add_view_button_function_child_visibility_button"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/text_size_middle"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_function_output_keychar"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <EditText
+                        android:layout_width="400dp"
+                        android:layout_height="32dp"
+                        android:background="@color/colorLightGray"
+                        android:layout_gravity="center"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:textSize="@dimen/text_size_middle"
+                        android:id="@+id/function_output_keychar"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_function_output_keycode"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:singleLine="true"
+                        android:textAllCaps="false"
+                        android:layout_width="45dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/function_output_keycode"
+                        android:background="@drawable/launcher_setting_button"
+                        android:text="@string/dialog_add_view_button_function_output_keycode_button"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/text_size_middle"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dialog_add_view_button_exterior_setting"
+                    android:textColor="@color/colorPureBlack"
+                    android:textSize="9sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_exterior_use_exist"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/exterior_use_exist_button"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_marginStart="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/switch_exterior_use_exist_button"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_view_button_exterior_add_style"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:singleLine="true"
+                        android:textAllCaps="false"
+                        android:layout_width="45dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/exterior_add_button_style"
+                        android:background="@drawable/launcher_setting_button"
+                        android:text="@string/dialog_add_view_button_exterior_add_style_button"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/text_size_middle"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/button_style_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dialog_add_view_button_exterior_setting_text_size"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_gravity="center"/>
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_baseline_horizontal_black"
+                                android:id="@+id/reduce_text_size"/>
+
+                            <SeekBar
+                                android:id="@+id/exterior_text_size_seekbar"
+                                android:max="100"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_gravity="center"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+
+                            <ImageButton
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_baseline_add_black"
+                                android:id="@+id/add_text_size"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="end"
+                            android:id="@+id/text_size_text"
+                            android:textColor="@color/colorPureBlack"
+                            android:textSize="@dimen/text_size_middle"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dialog_add_view_button_exterior_setting_corner_radius"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_gravity="center"/>
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_baseline_horizontal_black"
+                                android:id="@+id/reduce_corner_radius"/>
+
+                            <SeekBar
+                                android:id="@+id/exterior_corner_radius_seekbar"
+                                android:max="100"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_gravity="center"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+
+                            <ImageButton
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_baseline_add_black"
+                                android:id="@+id/add_corner_radius"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="end"
+                            android:id="@+id/corner_radius_text"
+                            android:textColor="@color/colorPureBlack"
+                            android:textSize="@dimen/text_size_middle"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dialog_add_view_button_exterior_setting_stroke_width"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_gravity="center"/>
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_baseline_horizontal_black"
+                                android:id="@+id/reduce_stroke_width"/>
+
+                            <SeekBar
+                                android:id="@+id/exterior_stroke_width_seekbar"
+                                android:max="100"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_gravity="center"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+
+                            <ImageButton
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_baseline_add_black"
+                                android:id="@+id/add_stroke_width"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="end"
+                            android:id="@+id/stroke_width_text"
+                            android:textColor="@color/colorPureBlack"
+                            android:textSize="@dimen/text_size_middle"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dialog_add_view_button_exterior_setting_text_size_pressed"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_gravity="center"/>
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_baseline_horizontal_black"
+                                android:id="@+id/reduce_text_size_pressed"/>
+
+                            <SeekBar
+                                android:id="@+id/exterior_text_size_seekbar_pressed"
+                                android:max="100"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_gravity="center"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+
+                            <ImageButton
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_baseline_add_black"
+                                android:id="@+id/add_text_size_pressed"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="end"
+                            android:id="@+id/text_size_pressed_text"
+                            android:textColor="@color/colorPureBlack"
+                            android:textSize="@dimen/text_size_middle"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dialog_add_view_button_exterior_setting_corner_radius_pressed"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_gravity="center"/>
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_baseline_horizontal_black"
+                                android:id="@+id/reduce_corner_radius_pressed"/>
+
+                            <SeekBar
+                                android:id="@+id/exterior_corner_radius_seekbar_pressed"
+                                android:max="100"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_gravity="center"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+
+                            <ImageButton
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_baseline_add_black"
+                                android:id="@+id/add_corner_radius_pressed"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="end"
+                            android:id="@+id/corner_radius_pressed_text"
+                            android:textColor="@color/colorPureBlack"
+                            android:textSize="@dimen/text_size_middle"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dialog_add_view_button_exterior_setting_stroke_width_pressed"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_gravity="center"/>
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_baseline_horizontal_black"
+                                android:id="@+id/reduce_stroke_width_pressed"/>
+
+                            <SeekBar
+                                android:id="@+id/exterior_stroke_width_seekbar_pressed"
+                                android:max="100"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_gravity="center"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+
+                            <ImageButton
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_baseline_add_black"
+                                android:id="@+id/add_stroke_width_pressed"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="end"
+                            android:id="@+id/stroke_width_pressed_text"
+                            android:textColor="@color/colorPureBlack"
+                            android:textSize="@dimen/text_size_middle"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dialog_add_view_button_exterior_setting_text_color"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_gravity="center"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_gravity="center"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/text_color_preview"/>
+
+                        <TextView
+                            android:layout_marginStart="30dp"
+                            android:layout_width="80dp"
+                            android:singleLine="true"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_height="30dp"
+                            android:background="@color/colorLightGray"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:id="@+id/text_color_text"/>
+
+                        <Button
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:layout_marginStart="30dp"
+                            android:layout_width="45dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:id="@+id/exterior_text_color"
+                            android:background="@drawable/launcher_setting_button"
+                            android:text="@string/dialog_add_view_exterior_setting_choose_color"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/text_size_middle"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dialog_add_view_button_exterior_setting_stroke_color"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_gravity="center"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_gravity="center"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/stroke_color_preview"/>
+
+                        <TextView
+                            android:layout_marginStart="30dp"
+                            android:layout_width="80dp"
+                            android:singleLine="true"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_height="30dp"
+                            android:background="@color/colorLightGray"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:id="@+id/stroke_color_text"/>
+
+                        <Button
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:layout_marginStart="30dp"
+                            android:layout_width="45dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:id="@+id/exterior_stroke_color"
+                            android:background="@drawable/launcher_setting_button"
+                            android:text="@string/dialog_add_view_exterior_setting_choose_color"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/text_size_middle"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dialog_add_view_button_exterior_setting_fill_color"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_gravity="center"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_gravity="center"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/fill_color_preview"/>
+
+                        <TextView
+                            android:layout_marginStart="30dp"
+                            android:layout_width="80dp"
+                            android:singleLine="true"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_height="30dp"
+                            android:background="@color/colorLightGray"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:id="@+id/fill_color_text"/>
+
+                        <Button
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:layout_marginStart="30dp"
+                            android:layout_width="45dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:id="@+id/exterior_fill_color"
+                            android:background="@drawable/launcher_setting_button"
+                            android:text="@string/dialog_add_view_exterior_setting_choose_color"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/text_size_middle"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dialog_add_view_button_exterior_setting_text_color_pressed"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_gravity="center"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_gravity="center"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/text_color_pressed_preview"/>
+
+                        <TextView
+                            android:layout_marginStart="30dp"
+                            android:layout_width="80dp"
+                            android:singleLine="true"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_height="30dp"
+                            android:background="@color/colorLightGray"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:id="@+id/text_color_pressed_text"/>
+
+                        <Button
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:layout_marginStart="30dp"
+                            android:layout_width="45dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:id="@+id/exterior_text_color_pressed"
+                            android:background="@drawable/launcher_setting_button"
+                            android:text="@string/dialog_add_view_exterior_setting_choose_color"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/text_size_middle"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dialog_add_view_button_exterior_setting_stroke_color_pressed"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_gravity="center"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_gravity="center"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/stroke_color_pressed_preview"/>
+
+                        <TextView
+                            android:layout_marginStart="30dp"
+                            android:layout_width="80dp"
+                            android:singleLine="true"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_height="30dp"
+                            android:background="@color/colorLightGray"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:id="@+id/stroke_color_pressed_text"/>
+
+                        <Button
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:layout_marginStart="30dp"
+                            android:layout_width="45dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:id="@+id/exterior_stroke_color_pressed"
+                            android:background="@drawable/launcher_setting_button"
+                            android:text="@string/dialog_add_view_exterior_setting_choose_color"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/text_size_middle"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dialog_add_view_button_exterior_setting_fill_color_pressed"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_gravity="center"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_gravity="center"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/fill_color_pressed_preview"/>
+
+                        <TextView
+                            android:layout_marginStart="30dp"
+                            android:layout_width="80dp"
+                            android:singleLine="true"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_height="30dp"
+                            android:background="@color/colorLightGray"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:id="@+id/fill_color_pressed_text"/>
+
+                        <Button
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:layout_marginStart="30dp"
+                            android:layout_width="45dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:id="@+id/exterior_fill_color_pressed"
+                            android:background="@drawable/launcher_setting_button"
+                            android:text="@string/dialog_add_view_exterior_setting_choose_color"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/text_size_middle"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:background="@color/colorPureWhite"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:minWidth="0dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/dialog_edit_view_copy"
+            android:textSize="15sp"
+            android:textColor="@color/colorLinkBlue"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/copy_button"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/dialog_edit_view_positive"
+            android:textSize="15sp"
+            android:textColor="@color/colorLinkBlue"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/apply_button_change"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/dialog_add_view_negative"
+            android:textSize="15sp"
+            android:textColor="@color/colorPureBlack"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/exit"/>
+
+    </LinearLayout>
+
+</LinearLayout>

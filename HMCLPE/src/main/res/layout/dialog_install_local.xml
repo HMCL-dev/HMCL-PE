@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:layout_width="500dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_install_local_title"
+        android:textColor="@color/colorPureBlack"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_middle"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:id="@+id/download_task_list"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorPureBlack"
+            android:textSize="@dimen/text_size_middle"
+            android:id="@+id/download_speed_text"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="50dp"
+            android:layout_height="32dp"
+            android:gravity="center"
+            android:text="@string/dialog_install_game_exit"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/cancel_install_local"/>
+
+    </LinearLayout>
+
+</LinearLayout>

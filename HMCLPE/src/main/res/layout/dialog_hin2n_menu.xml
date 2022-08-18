@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="@drawable/game_input_dialog"
+    android:padding="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:background="@drawable/launcher_button_transparent_blue"
+        android:clickable="true"
+        android:id="@+id/create">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_outline_add_black"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:text="@string/dialog_hin2n_menu_create"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginStart="5dp"
+        android:padding="10dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:background="@drawable/launcher_button_transparent_blue"
+        android:clickable="true"
+        android:id="@+id/join">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_outline_join_black"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:text="@string/dialog_hin2n_menu_join"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginStart="5dp"
+        android:padding="10dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:background="@drawable/launcher_button_transparent_blue"
+        android:clickable="true"
+        android:id="@+id/info">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_outline_about_black"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:text="@string/dialog_hin2n_menu_info"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginStart="5dp"
+        android:padding="10dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:background="@drawable/launcher_button_transparent_blue"
+        android:clickable="true"
+        android:id="@+id/help">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_outline_help_outline_black"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:text="@string/dialog_hin2n_menu_help"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>

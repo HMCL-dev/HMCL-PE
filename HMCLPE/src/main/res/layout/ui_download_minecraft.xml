@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ui_download_minecraft"
+    android:visibility="gone"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/download_minecraft_hint_layout"
+        android:padding="10dp"
+        android:background="@drawable/launcher_view_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_outline_about_black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:text="@string/download_minecraft_ui_hint"
+                android:textSize="@dimen/text_size_middle"
+                android:textColor="@color/colorLinkBlueDark"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/download_minecraft_ui_hint_text"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorLinkBlueDark"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/game_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/launcher_view_white">
+
+            <LinearLayout
+                android:paddingStart="15dp"
+                android:paddingEnd="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:singleLine="true"
+                    android:tag="tint_accent_color"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/download_minecraft_ui_release"
+                    android:id="@+id/checkbox_release"/>
+
+                <CheckBox
+                    android:singleLine="true"
+                    android:tag="tint_accent_color"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/download_minecraft_ui_snapshot"
+                    android:id="@+id/checkbox_snapshot"/>
+
+                <CheckBox
+                    android:singleLine="true"
+                    android:tag="tint_accent_color"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/download_minecraft_ui_old"
+                    android:id="@+id/checkbox_old"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:id="@+id/refresh_game_list"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/launcher_button_white_blue"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_baseline_refresh_black"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/download_minecraft_ui_refresh"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGray"/>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/download_minecraft_version_list"/>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:tag="tint_accent_color"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:id="@+id/loading_minecraft_list_progress"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

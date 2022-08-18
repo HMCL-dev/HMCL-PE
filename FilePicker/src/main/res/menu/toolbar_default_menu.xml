@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search"
+        android:title="@string/search"
+        android:icon="@drawable/ic_search_black_24dp"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_showfoldersizes"
+        android:title="@string/showfoldersize"
+        android:icon="@drawable/ic_new_releases_black_24dp"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_newfolder"
+        android:title="@string/new_folder"
+        android:icon="@drawable/ic_create_new_folder_black_24dp"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_paste"
+        android:title="@string/paste"
+        android:icon="@drawable/ic_content_paste_black_24dp"
+        app:showAsAction="always"/>
+
+</menu>

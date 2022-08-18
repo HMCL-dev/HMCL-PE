@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:layout_width="400dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_rename_version_title"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/colorPureBlack"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="@dimen/text_size_middle"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:id="@+id/rename_version"
+        android:background="@color/colorLightGray"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/dialog_rename_version_confirm"
+            android:textSize="15sp"
+            android:textColor="@color/colorLinkBlue"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/rename"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/dialog_rename_version_cancel"
+            android:textSize="15sp"
+            android:textColor="@color/colorPureBlack"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/cancel"/>
+
+    </LinearLayout>
+
+</LinearLayout>

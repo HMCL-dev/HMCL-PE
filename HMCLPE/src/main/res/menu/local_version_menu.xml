@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/local_version_menu_test_game"
+        android:title="@string/menu_local_version_test_game"
+        android:icon="@drawable/ic_baseline_launch_black"/>
+
+    <item
+        android:visible="false"
+        android:id="@+id/local_version_menu_generate_launch_script"
+        android:title="@string/menu_local_version_generate_launch_script"
+        android:icon="@drawable/ic_outline_script_black"/>
+
+    <item
+        android:id="@+id/local_version_menu_game_manage"
+        android:title="@string/menu_local_version_game_manage"
+        android:icon="@drawable/ic_outline_settings_black"/>
+
+    <item
+        android:id="@+id/local_version_menu_rename"
+        android:title="@string/menu_local_version_rename"
+        android:icon="@drawable/ic_outline_create_black"/>
+
+    <item
+        android:id="@+id/local_version_menu_copy"
+        android:title="@string/menu_local_version_copy"
+        android:icon="@drawable/ic_outline_copy_black"/>
+
+    <item
+        android:id="@+id/local_version_menu_delete"
+        android:title="@string/menu_local_version_delete"
+        android:icon="@drawable/ic_outline_delete_black"/>
+
+    <item
+        android:id="@+id/local_version_menu_export_pack"
+        android:title="@string/menu_local_version_export_pack"
+        android:icon="@drawable/ic_outline_export_black"/>
+
+    <item
+        android:id="@+id/local_version_menu_game_folder"
+        android:title="@string/menu_local_version_game_folder"
+        android:icon="@drawable/ic_outline_folder_open_black"/>
+
+</menu>

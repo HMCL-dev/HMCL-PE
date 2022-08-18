@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:layout_width="500dp"
+    android:layout_height="280dp">
+
+    <TextView
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_create_control_pattern_title"
+        android:textColor="@color/colorPureBlack"
+        android:textSize="@dimen/text_size_big"/>
+
+    <ScrollView
+        android:layout_marginTop="15dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/dialog_create_control_pattern_name"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <EditText
+                    android:textSize="@dimen/text_size_middle"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:background="@color/colorLightGray"
+                    android:singleLine="true"
+                    android:layout_width="320dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/edit_pattern_name" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/dialog_create_control_pattern_author"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <EditText
+                    android:textSize="@dimen/text_size_middle"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:background="@color/colorLightGray"
+                    android:singleLine="true"
+                    android:layout_width="320dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/edit_pattern_author" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/dialog_create_control_pattern_version"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <EditText
+                    android:textSize="@dimen/text_size_middle"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:background="@color/colorLightGray"
+                    android:singleLine="true"
+                    android:layout_width="320dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/edit_pattern_version" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/dialog_create_control_pattern_describe"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <EditText
+                    android:textSize="@dimen/text_size_middle"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:background="@color/colorLightGray"
+                    android:singleLine="true"
+                    android:layout_width="320dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/edit_pattern_describe" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/dialog_create_control_pattern_positive"
+            android:textSize="15sp"
+            android:textColor="@color/colorLinkBlue"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/create_pattern"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/dialog_create_control_pattern_negative"
+            android:textSize="15sp"
+            android:textColor="@color/colorPureBlack"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/exit"/>
+
+    </LinearLayout>
+
+</LinearLayout>

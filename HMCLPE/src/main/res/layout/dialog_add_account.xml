@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="25dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="10dp"
+    android:layout_width="500dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPureBlack"
+        android:textSize="@dimen/text_size_big"
+        android:text="@string/dialog_add_account_title"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_account_tab">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/dialog_add_account_type_offline"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/dialog_add_account_type_microsoft"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/dialog_add_account_type_external"/>
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/offline_layout">
+
+                <LinearLayout
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/dialog_add_offline_account_name"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <EditText
+                        android:textSize="@dimen/text_size_middle"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:background="@color/colorLightGray"
+                        android:singleLine="true"
+                        android:layout_width="390dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/edit_user_name" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_marginStart="7dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_baseline_jump_black"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColorLink="@color/colorLinkBlue"
+                        android:id="@+id/purchase_link"
+                        android:text="@string/dialog_add_offline_account_purchase"
+                        android:layout_marginStart="7dp"
+                        android:textSize="@dimen/text_size_middle"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/show_advance_setting"
+                    android:layout_marginTop="20dp"
+                    android:padding="5dp"
+                    android:background="@drawable/launcher_button_parent"
+                    android:clickable="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_marginStart="5dp"
+                        android:text="@string/dialog_add_offline_account_advance"
+                        android:textColor="@color/colorPureBlack"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+
+                    <ImageView
+                        android:id="@+id/spin_view"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/ic_baseline_arrow_drop_down_black"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/edit_uuid_layout"
+                    android:visibility="gone"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/dialog_add_offline_account_uuid"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <EditText
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:hint="fc5bc365-aedf-30a8-8b89-04e462e29bde"
+                        android:textSize="@dimen/text_size_middle"
+                        android:background="@color/colorLightGray"
+                        android:singleLine="true"
+                        android:layout_width="390dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/edit_uuid" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/hint_layout"
+                    android:visibility="gone"
+                    android:padding="10dp"
+                    android:background="@drawable/launcher_view_yellow"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_outline_alert_black"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/dialog_add_offline_account_hint"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorBrown"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_offline_account_hint_text"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorBrown"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/microsoft_layout">
+
+                <LinearLayout
+                    android:padding="10dp"
+                    android:background="@drawable/launcher_view_blue"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_outline_about_black"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/dialog_add_microsoft_account_hint"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorLinkBlueDark"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_add_microsoft_account_hint_text"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorLinkBlueDark"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_marginStart="7dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_baseline_jump_black"/>
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColorLink="@color/colorLinkBlue"
+                        android:id="@+id/setting_link"
+                        android:text="@string/dialog_add_microsoft_account_setting"
+                        android:layout_marginStart="7dp"
+                        android:textSize="@dimen/text_size_middle"/>
+
+                    <ImageView
+                        android:layout_marginStart="7dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_baseline_jump_black"/>
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColorLink="@color/colorLinkBlue"
+                        android:id="@+id/help_link"
+                        android:text="@string/dialog_add_microsoft_account_help"
+                        android:layout_marginStart="7dp"
+                        android:textSize="@dimen/text_size_middle"/>
+
+                    <ImageView
+                        android:layout_marginStart="7dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_baseline_jump_black"/>
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColorLink="@color/colorLinkBlue"
+                        android:id="@+id/m_purchase_link"
+                        android:text="@string/dialog_add_microsoft_account_purchase"
+                        android:layout_marginStart="7dp"
+                        android:textSize="@dimen/text_size_middle"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/external_layout">
+
+                <LinearLayout
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/dialog_add_authlib_injector_account_server"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_width="360dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorLightGray"/>
+
+                            <Spinner
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/edit_server" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:clickable="true"
+                            android:id="@+id/sign_up"
+                            android:text="@string/dialog_add_authlib_injector_account_sign_up"
+                            android:textSize="12sp"
+                            android:textColor="@color/colorLinkBlue"/>
+
+                        <ImageButton
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/ic_baseline_add_black"
+                            android:id="@+id/add_server"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/dialog_add_authlib_injector_account_email"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <EditText
+                        android:textSize="@dimen/text_size_middle"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:background="@color/colorLightGray"
+                        android:singleLine="true"
+                        android:layout_width="360dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/edit_email" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/dialog_add_authlib_injector_account_password"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <EditText
+                        android:textSize="@dimen/text_size_middle"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:inputType="textPassword"
+                        android:background="@color/colorLightGray"
+                        android:singleLine="true"
+                        android:layout_width="360dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/edit_password" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="40dp">
+
+            <ProgressBar
+                android:visibility="gone"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                android:id="@+id/login_progress"/>
+
+            <Button
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/dialog_add_account_login"
+                android:textSize="15sp"
+                android:textColor="@color/colorLinkBlue"
+                android:background="@drawable/launcher_button_parent"
+                android:id="@+id/login"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/dialog_add_account_cancel"
+            android:textSize="15sp"
+            android:textColor="@color/colorPureBlack"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/cancel_login"/>
+
+    </LinearLayout>
+
+</LinearLayout>

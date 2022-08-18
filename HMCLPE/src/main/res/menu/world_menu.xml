@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/manage_assets"
+        android:title="@string/world_menu_manage"
+        android:icon="@drawable/ic_outline_settings_black"/>
+
+    <item
+        android:id="@+id/export_world"
+        android:title="@string/world_menu_export"
+        android:icon="@drawable/ic_outline_export_black"/>
+
+    <item
+        android:id="@+id/open_dir"
+        android:title="@string/world_menu_open_dir"
+        android:icon="@drawable/ic_outline_folder_open_black"/>
+
+</menu>

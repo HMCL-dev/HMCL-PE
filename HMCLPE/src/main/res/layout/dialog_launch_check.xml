@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="15dp"
+    android:orientation="vertical"
+    android:layout_width="500dp"
+    android:layout_height="265dp">
+
+    <TextView
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_middle"
+        android:textColor="@color/colorPureBlack"
+        android:textStyle="bold"
+        android:text="@string/launch_check_dialog_title"/>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginStart="5dp"
+            android:layout_width="12dp"
+            android:layout_height="12sp"
+            android:background="@drawable/ic_baseline_arrow_forward_black"
+            android:layout_gravity="center"
+            android:id="@+id/check_java_state"/>
+
+        <TextView
+            android:singleLine="true"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:text="@string/launch_check_dialog_java"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginStart="5dp"
+            android:layout_width="12dp"
+            android:layout_height="12sp"
+            android:background="@drawable/ic_baseline_arrow_forward_black"
+            android:layout_gravity="center"
+            android:id="@+id/check_lib_state"/>
+
+        <TextView
+            android:singleLine="true"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:text="@string/launch_check_dialog_lib"/>
+
+    </LinearLayout>
+
+    <com.tungsten.hmclpe.launcher.view.list.MaxHeightRecyclerView
+        android:id="@+id/download_task_list"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="12dp"
+        app:maxRecyclerHeight="42" />
+
+    <LinearLayout
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginStart="5dp"
+            android:layout_width="12dp"
+            android:layout_height="12sp"
+            android:background="@drawable/ic_baseline_arrow_forward_black"
+            android:layout_gravity="center"
+            android:id="@+id/check_account_state"/>
+
+        <TextView
+            android:singleLine="true"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:text="@string/launch_check_dialog_login"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginStart="5dp"
+            android:layout_width="12dp"
+            android:layout_height="12sp"
+            android:background="@drawable/ic_baseline_arrow_forward_black"
+            android:layout_gravity="center"
+            android:id="@+id/check_launch_state"/>
+
+        <TextView
+            android:singleLine="true"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:text="@string/launch_check_dialog_launch"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorPureBlack"
+            android:textSize="@dimen/text_size_middle"
+            android:id="@+id/download_speed_text"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="50dp"
+            android:layout_height="32dp"
+            android:gravity="center"
+            android:text="@string/dialog_install_game_exit"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/cancel_launch_game"/>
+
+    </LinearLayout>
+
+</LinearLayout>

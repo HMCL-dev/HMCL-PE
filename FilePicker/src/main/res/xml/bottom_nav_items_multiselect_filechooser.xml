@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/menu_none" />
+    <tab
+        id="@+id/menu_none1" />
+    <tab
+        id="@+id/menu_none2" />
+    <tab
+        id="@+id/menu_chooseitems"
+        title="@string/chooseitems"
+        icon="@drawable/ic_done_black_24dp" />
+</tabs>

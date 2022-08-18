@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.tungsten.hmclpe">
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.VIBRATE"/>
+    <uses-permission
+        android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission
+        android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS"
+        tools:ignore="HighSamplingRate" />
+    <uses-permission
+        android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <application
+        android:name=".launcher.HMCLPEApplication"
+        android:allowBackup="true"
+        android:requestLegacyExternalStorage="true"
+        android:preserveLegacyExternalStorage="true"
+        android:icon="@drawable/ic_craft_table"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_craft_table"
+        android:largeHeap="true"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:extractNativeLibs="true"
+        android:supportsRtl="true"
+        android:hasFragileUserData="true"
+        android:allowNativeHeapPointerTagging="false"
+        android:isGame="true"
+        android:theme="@style/Theme.HelloMinecraftLauncherPocketEdition"
+        tools:targetApi="32">
+        <activity
+            android:name=".launcher.SplashActivity"
+            android:screenOrientation="sensorLandscape"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:exported="true"
+            android:name=".control.ImportControlActivity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.HelloMinecraftLauncherPocketEdition">
+            <intent-filter
+                android:scheme="content"
+                android:label="@string/import_control_label"
+                tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/*"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".launcher.MainActivity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.HelloMinecraftLauncherPocketEdition"/>
+        <activity
+            android:name=".auth.microsoft.MicrosoftLoginActivity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.HelloMinecraftLauncherPocketEdition"/>
+        <activity
+            android:name=".control.ControlPatternActivity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.HelloMinecraftLauncherPocketEdition"/>
+        <activity
+            android:name=".launcher.launch.ExitActivity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.HelloMinecraftLauncherPocketEdition"/>
+        <activity
+            android:launchMode="standard"
+            android:multiprocess="true"
+            android:name=".launcher.launch.boat.BoatMinecraftActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|uiMode|screenSize|navigation"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.HelloMinecraftLauncherPocketEdition"/>
+        <activity
+            android:launchMode="standard"
+            android:multiprocess="true"
+            android:name=".launcher.launch.pojav.PojavMinecraftActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|keyboard|navigation"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.HelloMinecraftLauncherPocketEdition"/>
+        <service
+            android:name=".launcher.launch.boat.VirGLService"
+            android:process=":virGLProcess"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".launcher.download.ApiService"
+            android:process=":apiService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".multiplayer.Hin2nService"
+            android:exported="true"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

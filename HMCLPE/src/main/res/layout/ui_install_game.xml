@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/ui_install_game"
+    android:visibility="gone"
+    android:padding="20dp"
+    android:background="@color/launcher_ui_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/launcher_view_white">
+
+        <LinearLayout
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:singleLine="true"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/install_game_ui_name"
+                android:textSize="@dimen/text_size_middle"
+                android:textColor="@color/colorPureBlack"/>
+
+            <EditText
+                android:layout_gravity="center"
+                android:layout_width="320dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:background="@color/colorLightGray"
+                android:textSize="@dimen/text_size_middle"
+                android:id="@+id/edit_game_name"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/colorGray"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:background="@drawable/launcher_button_parent"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:src="@drawable/ic_grass"
+                        android:layout_gravity="center"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:scaleType="centerInside" />
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_gravity="center"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/install_game_ui_minecraft"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:id="@+id/minecraft_version_text"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/install_game_ui_none"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_baseline_close_black" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorGray"/>
+
+                <LinearLayout
+                    android:background="@drawable/launcher_button_parent"
+                    android:id="@+id/select_forge_version"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:src="@drawable/ic_forge"
+                        android:layout_gravity="center"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:scaleType="centerInside" />
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_gravity="center"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/install_game_ui_forge"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:id="@+id/forge_version_text"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/install_game_ui_none"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <ImageButton
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:background="@drawable/ic_baseline_close_black"
+                        android:id="@+id/call_off_install_forge"/>
+
+                    <ImageView
+                        android:id="@+id/select_forge"
+                        android:layout_marginStart="12dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_baseline_arrow_forward_black" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorGray"/>
+
+                <LinearLayout
+                    android:background="@drawable/launcher_button_parent"
+                    android:id="@+id/select_liteloader_version"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:src="@drawable/ic_chicken"
+                        android:layout_gravity="center"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:scaleType="centerInside" />
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_gravity="center"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/install_game_ui_liteloader"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:id="@+id/liteloader_version_text"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/install_game_ui_none"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <ImageButton
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:background="@drawable/ic_baseline_close_black"
+                        android:id="@+id/call_off_install_liteloader"/>
+
+                    <ImageView
+                        android:id="@+id/select_lite_loader"
+                        android:layout_marginStart="12dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_baseline_arrow_forward_black" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorGray"/>
+
+                <LinearLayout
+                    android:background="@drawable/launcher_button_parent"
+                    android:id="@+id/select_optifine_version"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:src="@drawable/ic_command"
+                        android:layout_gravity="center"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:scaleType="centerInside" />
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_gravity="center"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/install_game_ui_optifine"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:id="@+id/optifine_version_text"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/install_game_ui_none"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <ImageButton
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:background="@drawable/ic_baseline_close_black"
+                        android:id="@+id/call_off_install_optifine"/>
+
+                    <ImageView
+                        android:id="@+id/select_optifine"
+                        android:layout_marginStart="12dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_baseline_arrow_forward_black" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorGray"/>
+
+                <LinearLayout
+                    android:background="@drawable/launcher_button_parent"
+                    android:id="@+id/select_fabric_version"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:src="@drawable/ic_fabric"
+                        android:layout_gravity="center"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:scaleType="centerInside" />
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_gravity="center"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/install_game_ui_fabric"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:id="@+id/fabric_version_text"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/install_game_ui_none"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <ImageButton
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:background="@drawable/ic_baseline_close_black"
+                        android:id="@+id/call_off_install_fabric"/>
+
+                    <ImageView
+                        android:id="@+id/select_fabric"
+                        android:layout_marginStart="12dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_baseline_arrow_forward_black" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorGray"/>
+
+                <LinearLayout
+                    android:background="@drawable/launcher_button_parent"
+                    android:id="@+id/select_fabric_api_version"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:src="@drawable/ic_fabric"
+                        android:layout_gravity="center"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:scaleType="centerInside" />
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_gravity="center"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/install_game_ui_fabric_api"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:id="@+id/fabric_api_version_text"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/install_game_ui_none"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <ImageButton
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:background="@drawable/ic_baseline_close_black"
+                        android:id="@+id/call_off_install_fabric_api"/>
+
+                    <ImageView
+                        android:id="@+id/select_fabric_api"
+                        android:layout_marginStart="12dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_baseline_arrow_forward_black" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <Button
+        android:singleLine="true"
+        android:textAllCaps="false"
+        android:tag="tint_accent_color"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/launcher_button_blue"
+        android:textColor="@color/colorPureWhite"
+        android:textSize="@dimen/text_size_middle"
+        android:text="@string/install_game_ui_install"
+        android:id="@+id/install_game"/>
+
+</LinearLayout>

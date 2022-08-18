@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ui_setting_exterior"
+    android:visibility="gone"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:singleLine="true"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exterior_setting_ui_theme_title"
+                android:textSize="@dimen/text_size_middle"
+                android:textColor="@color/colorPureBlack"/>
+            
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/launcher_view_light_gray">
+
+                <LinearLayout
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/exterior_setting_ui_theme"
+                        android:textColor="@color/colorPureBlack"
+                        android:textSize="@dimen/text_size_middle"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <LinearLayout
+                        android:id="@+id/select_theme"
+                        android:padding="6dp"
+                        android:layout_width="120dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="@drawable/launcher_button_gray"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_marginStart="6dp"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:id="@+id/theme_color_view"/>
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="16dp"
+                            android:id="@+id/theme_color_text"
+                            android:textColor="@color/colorPureBlack"
+                            android:textSize="@dimen/text_size_small"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/exterior_setting_ui_bar_trans"
+                        android:textColor="@color/colorPureBlack"
+                        android:textSize="@dimen/text_size_middle"
+                        android:layout_gravity="center"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:tag="tint_accent_color"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switch_trans_bar"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/fullscreen_layout">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/colorDarkGray"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/exterior_setting_ui_full_screen"
+                            android:textColor="@color/colorPureBlack"
+                            android:textSize="@dimen/text_size_middle"
+                            android:layout_gravity="center"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:tag="tint_accent_color"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/switch_full_screen"
+                            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exterior_setting_ui_bg_title"
+                android:textSize="@dimen/text_size_middle"
+                android:textColor="@color/colorPureBlack"/>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/launcher_view_light_gray">
+
+                <RadioButton
+                    android:singleLine="true"
+                    android:tag="tint_accent_color"
+                    android:layout_margin="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/exterior_setting_ui_bg_default"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:id="@+id/select_bg_default"/>
+
+                <RadioButton
+                    android:singleLine="true"
+                    android:tag="tint_accent_color"
+                    android:layout_margin="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/exterior_setting_ui_bg_classic"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:id="@+id/select_bg_classic"/>
+
+                <LinearLayout
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:singleLine="true"
+                        android:tag="tint_accent_color"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/exterior_setting_ui_bg_custom"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:id="@+id/select_bg_custom"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <EditText
+                        android:singleLine="true"
+                        android:layout_gravity="center"
+                        android:layout_width="140dp"
+                        android:layout_height="32dp"
+                        android:id="@+id/edit_bg_path"
+                        android:background="@color/colorLightGray"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:textSize="@dimen/text_size_middle"/>
+
+                    <ImageButton
+                        android:layout_marginStart="15dp"
+                        android:layout_gravity="center"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:background="@drawable/ic_baseline_folder_black"
+                        android:id="@+id/select_bg_path"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:singleLine="true"
+                        android:tag="tint_accent_color"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/exterior_setting_ui_bg_online"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:id="@+id/select_bg_online"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <EditText
+                        android:singleLine="true"
+                        android:layout_gravity="center"
+                        android:layout_width="140dp"
+                        android:layout_height="32dp"
+                        android:id="@+id/edit_bg_url"
+                        android:background="@color/colorLightGray"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:textSize="@dimen/text_size_middle"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

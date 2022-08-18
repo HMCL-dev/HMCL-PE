@@ -1,0 +1,39 @@
+<resources>
+    <string name="service_title">Hin2n service is running…</string>
+
+    <string name="title_add_setting">New setting</string>
+    <string name="title_update_setting">Update setting</string>
+    <string name="title_setting_list">Settings list</string>
+    
+    <string name="dialog_add_succeed">Add succeed!</string>
+    <string name="dialog_save_succeed">Save succeed!</string>
+    <string name="dialog_update_succeed">Update succeed!</string>
+    <string name="dialog_update_request">Update this setting, and reconnect to n2n network?</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_reconnect">Reconnect n2n network with new setting?</string>
+    <string name="dialog_delete">Are you sure to delete this setting?</string>
+
+    <string name="toast_connect_failed">Failed to connect to the N2N network</string>
+    <string name="toast_disconnect_and_retry">Disconnected with supernode and try to reconnect to N2N network later</string>
+
+    <string name="notify_disconnect">Disconnected with supernode</string>
+    <string name="notify_reconnected">Reconnect to supernode successfully</string>
+
+    <string name="notification_channel_id_default">default</string>
+    <string name="notification_channel_name_default">default</string>
+
+    <string-array name="vpn_session_name">
+        <item>n2n_v1</item>
+        <item>n2n_v2</item>
+        <item>n2n_v2s</item>
+        <item>n2n_v3</item>
+    </string-array>
+
+    <string name="trace_level_error">ERROR</string>
+    <string name="trace_level_warn">WARNING</string>
+    <string name="trace_level_normal">NORMAL</string>
+    <string name="trace_level_info">INFO</string>
+    <string name="trace_level_debug">DEBUG</string>
+
+</resources>

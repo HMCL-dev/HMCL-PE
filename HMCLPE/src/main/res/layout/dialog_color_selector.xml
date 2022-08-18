@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/dialog_color_selector_title"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/colorPureBlack"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/recommend_color_bar"
+            android:layout_width="33dp"
+            android:layout_height="230dp"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_marginTop="1dp"
+                android:background="@color/colorPrimary"
+                android:id="@+id/recommend_color_pri"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"/>
+
+            <Button
+                android:background="@color/colorSecondary"
+                android:id="@+id/recommend_color_sec"
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"/>
+
+            <Button
+                android:background="@color/colorThird"
+                android:id="@+id/recommend_color_thi"
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"/>
+
+            <Button
+                android:background="@color/colorForth"
+                android:id="@+id/recommend_color_for"
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"/>
+
+            <Button
+                android:background="@color/colorFifth"
+                android:id="@+id/recommend_color_fif"
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"/>
+
+            <Button
+                android:background="@color/colorSixth"
+                android:id="@+id/recommend_color_six"
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"/>
+
+        </LinearLayout>
+
+        <com.jaredrummler.android.colorpicker.ColorPickerView
+            android:id="@+id/color_picker"
+            android:layout_marginStart="10dp"
+            android:layout_width="245dp"
+            android:layout_height="230dp"
+            app:cpv_alphaChannelVisible="true"/>
+
+        <LinearLayout
+            android:layout_marginStart="10dp"
+            android:layout_width="120dp"
+            android:layout_height="230dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+
+                <View
+                    android:id="@+id/init_color"
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="@string/dialog_color_selector_arrow"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:gravity="center"/>
+
+                <View
+                    android:id="@+id/dest_color"
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/color_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:id="@+id/color_picker_positive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_color_selector_positive"
+                android:textSize="@dimen/text_size_middle"
+                android:textColor="@color/colorPureBlack"/>
+
+            <Button
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:id="@+id/color_picker_negative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_color_selector_negative"
+                android:textSize="@dimen/text_size_middle"
+                android:textColor="@color/colorPureBlack"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

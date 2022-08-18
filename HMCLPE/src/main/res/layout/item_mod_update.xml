@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:id="@+id/check_update"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorDarkGray" />
+
+        <TextView
+            android:singleLine="true"
+            android:id="@+id/file"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorDarkGray" />
+
+        <TextView
+            android:singleLine="true"
+            android:id="@+id/current"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorDarkGray" />
+
+        <TextView
+            android:singleLine="true"
+            android:id="@+id/target"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorDarkGray" />
+
+        <TextView
+            android:singleLine="true"
+            android:id="@+id/source"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>

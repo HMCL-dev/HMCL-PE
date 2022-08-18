@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="10dp"
+    android:layout_width="400dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_install_world_name_title"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/colorPureBlack"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:textSize="@dimen/text_size_middle"
+        android:textStyle="bold"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:id="@+id/world_name"
+        android:background="@color/colorLightGray"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="40dp">
+
+            <ProgressBar
+                android:visibility="gone"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                android:id="@+id/progress"/>
+
+            <Button
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:id="@+id/install"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@drawable/launcher_button_parent"
+                android:gravity="center"
+                android:text="@string/dialog_install_world_name_positive"
+                android:textColor="@color/colorLinkBlue"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/dialog_install_world_name_negative"
+            android:textSize="15sp"
+            android:textColor="@color/colorPureBlack"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/cancel"/>
+
+    </LinearLayout>
+
+</LinearLayout>

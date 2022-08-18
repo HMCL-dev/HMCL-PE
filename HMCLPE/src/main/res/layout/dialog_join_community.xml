@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    android:paddingBottom="10dp"
+    android:layout_width="500dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/colorPureBlack"
+        android:text="@string/dialog_join_community_title"/>
+
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/launcher_view_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_outline_about_black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:text="@string/dialog_join_community_alert"
+                android:textSize="@dimen/text_size_middle"
+                android:textColor="@color/colorLinkBlueDark"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_join_community_alert_text"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorLinkBlueDark"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:singleLine="true"
+            android:text="@string/dialog_join_community_code"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:layout_marginStart="20dp"
+            android:id="@+id/invite_code"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="40dp">
+
+            <ProgressBar
+                android:visibility="gone"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                android:id="@+id/progress"/>
+
+            <Button
+                android:id="@+id/join"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@drawable/launcher_button_parent"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/dialog_join_community_positive"
+                android:textAllCaps="false"
+                android:textColor="@color/colorLinkBlue"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/dialog_join_community_negative"
+            android:textSize="15sp"
+            android:textColor="@color/colorPureBlack"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/exit"/>
+
+    </LinearLayout>
+
+</LinearLayout>

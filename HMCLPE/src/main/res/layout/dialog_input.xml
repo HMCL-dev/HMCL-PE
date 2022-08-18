@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/game_input_dialog"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_input_title"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/colorPureBlack"/>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ListView
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:divider="@color/colorTransparent"
+            android:dividerHeight="0dp"
+            android:id="@+id/fast_text_list"/>
+
+        <LinearLayout
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:id="@+id/add_fast_text"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@drawable/launcher_setting_button"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_size_middle"
+                android:text="@string/dialog_input_add_text"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="36dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:singleLine="true"
+                    android:id="@+id/edit_input_text"/>
+
+                <Button
+                    android:layout_marginStart="4dp"
+                    android:layout_width="36dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/launcher_setting_button"
+                    android:text="×"
+                    android:textSize="@dimen/text_size_big"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/clear_input_text"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:singleLine="true"
+                    android:textAllCaps="false"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/launcher_setting_button"
+                    android:text="@string/dialog_input_send"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/send_text"/>
+
+                <Button
+                    android:singleLine="true"
+                    android:textAllCaps="false"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/launcher_setting_button"
+                    android:text="@string/dialog_input_negative"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/exit"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

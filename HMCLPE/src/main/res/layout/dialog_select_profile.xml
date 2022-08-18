@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:singleLine="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="11sp"
+        android:textColor="@color/colorPureBlack"
+        android:text="@string/dialog_select_profile_title"/>
+
+    <View
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/colorDarkGray"/>
+
+    <ListView
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:divider="@color/colorTransparent"
+        android:dividerHeight="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/profile_list"/>
+    
+    <Button
+        android:singleLine="true"
+        android:textAllCaps="false"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/launcher_button_item"
+        android:text="@string/dialog_select_profile_cancel"
+        android:textColor="@color/colorPureBlack"
+        android:textSize="12sp"
+        android:id="@+id/exit"/>
+
+</LinearLayout>

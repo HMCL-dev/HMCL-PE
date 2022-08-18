@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/ui_mod_update"
+    android:background="@color/launcher_ui_background"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:orientation="horizontal"
+        android:background="@color/colorWhiteGray">
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorDarkGray"
+            android:layout_marginStart="50dp"/>
+
+        <TextView
+            android:singleLine="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/mod_update_ui_file"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorDarkGray" />
+
+        <TextView
+            android:singleLine="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/mod_update_ui_current"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorDarkGray" />
+
+        <TextView
+            android:singleLine="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/mod_update_ui_target"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorDarkGray" />
+
+        <TextView
+            android:singleLine="true"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="@string/mod_update_ui_source"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+    </LinearLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorPureWhite">
+
+        <ListView
+            android:id="@+id/update_mod_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/colorTransparent"
+            android:dividerHeight="0dp"/>
+        
+        <TextView
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mod_update_ui_no_update"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:layout_centerInParent="true"
+            android:id="@+id/no_mod_to_update"/>
+        
+    </RelativeLayout>
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:tag="tint_accent_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/launcher_button_blue"
+            android:text="@string/mod_update_ui_update"
+            android:textColor="@color/colorPureWhite"
+            android:textSize="@dimen/text_size_middle"
+            android:gravity="center"
+            android:id="@+id/update_mods"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:tag="tint_accent_color"
+            android:layout_marginStart="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/launcher_button_blue"
+            android:text="@string/mod_update_ui_cancel"
+            android:textColor="@color/colorPureWhite"
+            android:textSize="@dimen/text_size_middle"
+            android:gravity="center"
+            android:id="@+id/cancel_update_mods"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+#
+#        The configuration file is similar to the command line, with one option per line. An equal
+#        sign '=' should be used between key and value. Example: -p=7777
+#        This file contains a basic configuration example, please refer to the help (-h) for the full
+#        list of available options.
+#
+#       -p
+#        Sets the UDP listening port. 
+#
+-p=7777
+#
+#        -c
+#        Optionally specifies the allowed communities as listed in community.list file.
+#
+# -c=community.list

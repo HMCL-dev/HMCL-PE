@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="30dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="15dp"
+    android:layout_width="500dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPureBlack"
+        android:textSize="@dimen/text_size_big"
+        android:text="@string/dialog_add_verify_server_nide_title"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/add_verify_server_pri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:id="@+id/edit_verify_server"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="@color/colorLightGray"
+                android:singleLine="true"
+                android:textSize="@dimen/text_size_middle"
+                android:hint="@string/dialog_add_verify_server_nide_hint"/>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:singleLine="true"
+                    android:textAllCaps="false"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="@string/dialog_add_verify_server_nide_cancel"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorPureBlack"
+                    android:background="@drawable/launcher_button_parent"
+                    android:id="@+id/cancel"/>
+
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="40dp">
+
+                    <ProgressBar
+                        android:visibility="gone"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_centerInParent="true"
+                        android:id="@+id/verify_progress"/>
+
+                    <Button
+                        android:singleLine="true"
+                        android:textAllCaps="false"
+                        android:id="@+id/next"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/launcher_button_parent"
+                        android:gravity="center"
+                        android:text="@string/dialog_add_verify_server_nide_next"
+                        android:textColor="@color/colorLinkBlue"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/add_verify_server_sec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dialog_add_verify_server_nide_url"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:id="@+id/server_url"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dialog_add_verify_server_nide_name"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:id="@+id/server_name"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:singleLine="true"
+                    android:textAllCaps="false"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="@string/dialog_add_verify_server_nide_back"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorPureBlack"
+                    android:background="@drawable/launcher_button_parent"
+                    android:id="@+id/back"/>
+
+                <Button
+                    android:singleLine="true"
+                    android:textAllCaps="false"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="@string/dialog_add_verify_server_nide_cancel"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorPureBlack"
+                    android:background="@drawable/launcher_button_parent"
+                    android:id="@+id/cancel_sec"/>
+
+                <Button
+                    android:singleLine="true"
+                    android:textAllCaps="false"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="@string/dialog_add_verify_server_nide_positive"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorLinkBlue"
+                    android:background="@drawable/launcher_button_parent"
+                    android:id="@+id/add_verify_server"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

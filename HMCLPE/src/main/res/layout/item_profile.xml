@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="@drawable/launcher_button_item"
+    android:focusable="true"
+    android:clickable="true"
+    android:id="@+id/item"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_gravity="center"
+        android:layout_width="30dp"
+        android:layout_height="30dp">
+
+        <ImageView
+            android:layout_width="26.6666dp"
+            android:layout_height="26.6666dp"
+            android:id="@+id/skin_face"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/skin_hat"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_gravity="center"
+        android:textSize="@dimen/text_size_middle"
+        android:textColor="@color/colorPureBlack"
+        android:id="@+id/name"/>
+
+</LinearLayout>

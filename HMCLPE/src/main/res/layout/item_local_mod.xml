@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:id="@+id/item"
+    android:background="@drawable/launcher_button_white_blue"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CheckBox
+        android:tag="tint_accent_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/check_enable"/>
+
+    <LinearLayout
+        android:layout_marginStart="15dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_gravity="center"
+                android:singleLine="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mod_name"
+                android:textColor="@color/colorPureBlack"
+                android:textSize="@dimen/text_size_middle"/>
+
+            <TextView
+                android:layout_marginStart="10dp"
+                android:tag="text_primary_color"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:textColor="@color/colorAccent"
+                android:singleLine="true"
+                android:id="@+id/mod_category"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mod_info"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_marginStart="15dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/ic_baseline_restore_black"
+        android:layout_gravity="center"
+        android:id="@+id/restore"/>
+
+    <ImageButton
+        android:layout_marginStart="15dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/ic_outline_folder_open_black"
+        android:layout_gravity="center"
+        android:id="@+id/open_folder"/>
+
+    <ImageButton
+        android:layout_marginStart="15dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/ic_outline_about_black"
+        android:layout_gravity="center"
+        android:id="@+id/show_mod_info"/>
+
+</LinearLayout>

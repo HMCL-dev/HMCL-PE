@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:background="@drawable/launcher_view_white"
+    android:id="@+id/dialog_offline_skin"
+    android:visibility="gone"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_weight="0.8"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_offline_skin_title"
+            android:textSize="@dimen/text_size_big"
+            android:textColor="@color/colorPureBlack"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/skin_parent_view"
+            android:orientation="vertical">
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            tools:ignore="NestedWeights">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/check_skin_default"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/dialog_offline_skin_default"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/check_skin_steve"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/dialog_offline_skin_steve"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/check_skin_alex"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/dialog_offline_skin_alex"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/check_skin_local"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/dialog_offline_skin_local"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/check_skin_little"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/dialog_offline_skin_little_skin"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/check_skin_blessing"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/dialog_offline_skin_blessing_skin"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/local_skin_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_weight="1"
+                            android:layout_marginStart="5dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/dialog_offline_skin_local_skin"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                        <EditText
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:singleLine="true"
+                            android:background="@color/colorLightGray"
+                            android:layout_width="180dp"
+                            android:layout_height="32dp"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:id="@+id/edit_skin_path"
+                            android:layout_gravity="center" />
+
+                        <ImageButton
+                            android:layout_marginEnd="15dp"
+                            android:layout_width="16dp"
+                            android:layout_height="16sp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_baseline_folder_black"
+                            android:layout_marginStart="10dp"
+                            android:id="@+id/select_skin"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_weight="1"
+                            android:layout_marginStart="5dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/dialog_offline_skin_local_cape"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                        <EditText
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:singleLine="true"
+                            android:background="@color/colorLightGray"
+                            android:layout_width="180dp"
+                            android:layout_height="32dp"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:id="@+id/edit_cape_path"
+                            android:layout_gravity="center" />
+
+                        <ImageButton
+                            android:layout_marginEnd="15dp"
+                            android:layout_width="16dp"
+                            android:layout_height="16sp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_baseline_folder_black"
+                            android:layout_marginStart="10dp"
+                            android:id="@+id/select_cape"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    android:id="@+id/little_skin_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:padding="10dp"
+                        android:background="@drawable/launcher_view_blue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/ic_outline_about_black"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:text="@string/dialog_offline_skin_alert"
+                                android:textSize="@dimen/text_size_middle"
+                                android:textColor="@color/colorLinkBlueDark"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dialog_offline_skin_alert_text"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorLinkBlueDark"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/blessing_skin_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_marginStart="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/dialog_offline_skin_blessing_server"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                        <EditText
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:singleLine="true"
+                            android:background="@color/colorLightGray"
+                            android:layout_width="0dp"
+                            android:layout_height="32dp"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:id="@+id/edit_blessing_server"
+                            android:hint="@string/dialog_offline_skin_blessing_hint"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/ic_baseline_jump_black"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:singleLine="true"
+                android:id="@+id/little_skin_url"
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/colorLinkBlue"
+                android:text="@string/dialog_offline_skin_url"
+                android:textSize="@dimen/text_size_middle" />
+
+            <Button
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:layout_marginStart="12dp"
+                android:layout_width="60dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/dialog_offline_skin_confirm"
+                android:textSize="@dimen/text_size_middle"
+                android:textColor="@color/colorLinkBlue"
+                android:background="@drawable/launcher_button_parent"
+                android:id="@+id/edit_skin_positive"/>
+
+            <Button
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:layout_width="60dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/dialog_offline_skin_cancel"
+                android:textSize="@dimen/text_size_middle"
+                android:textColor="@color/colorPureBlack"
+                android:background="@drawable/launcher_button_parent"
+                android:id="@+id/cancel_edit_skin"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

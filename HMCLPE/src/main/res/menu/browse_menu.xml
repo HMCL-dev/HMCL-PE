@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/browse_game_dir"
+        android:title="@string/browse_menu_game_dir"
+        android:icon="@drawable/ic_baseline_game_pad_black"/>
+
+    <item
+        android:id="@+id/browse_mod_dir"
+        android:title="@string/browse_menu_mod_dir"
+        android:icon="@drawable/ic_outline_extension_black"/>
+
+    <item
+        android:id="@+id/browse_setting_dir"
+        android:title="@string/browse_menu_setting_dir"
+        android:icon="@drawable/ic_outline_settings_black_24"/>
+
+    <item
+        android:id="@+id/browse_resource_dir"
+        android:title="@string/browse_menu_resource_dir"
+        android:icon="@drawable/ic_outline_texture_black"/>
+
+    <item
+        android:id="@+id/browse_screenshots_dir"
+        android:title="@string/browse_menu_screenshots_dir"
+        android:icon="@drawable/ic_baseline_screenshot_black"/>
+
+    <item
+        android:id="@+id/browse_save_dir"
+        android:title="@string/browse_menu_saves_dir"
+        android:icon="@drawable/ic_baseline_earth_black"/>
+
+</menu>

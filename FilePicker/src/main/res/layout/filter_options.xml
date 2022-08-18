@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@android:style/Theme.Dialog"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/filter_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:padding="20dp">
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_alignParentRight="true"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="@string/ok"
+            app:bootstrapSize="md"
+            android:layout_margin="10dp"
+            android:id="@+id/okbutton"
+            app:roundedCorners="true"
+            app:bootstrapBrand="success"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

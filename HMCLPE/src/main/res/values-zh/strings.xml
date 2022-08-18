@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialog_unknown_error_title">警告</string>
+    <string name="dialog_unknown_error_msg">启动器遇到无法处理的错误，请联系开发者解决。</string>
+    <string name="dialog_unknown_error_positive">确定</string>
+
+    <string name="dialog_verify_title">开发版测试权限验证</string>
+    <string name="dialog_verify_msg">您的设备码为：\n%s\n请填写与此设备码匹配的授权验证码。</string>
+    <string name="dialog_verify_code">授权验证码</string>
+    <string name="dialog_verify_donate">获取权限</string>
+    <string name="dialog_verify_copy">复制设备码</string>
+    <string name="dialog_verify_copy_success">复制成功</string>
+    <string name="dialog_verify_verify">验证</string>
+    <string name="dialog_verify_verify_success">验证成功</string>
+    <string name="dialog_verify_verify_fail">验证失败</string>
+    <string name="dialog_verify_cancel">取消</string>
+
+    <string name="dialog_obtain_permission_title">提示</string>
+    <string name="dialog_obtain_permission_msg">你需要在爱发电赞助 10 元以获取开发版测试权限，赞助后你将收到内测群群号，请在爱发电私信我你的 QQ 号和设备码。</string>
+    <string name="dialog_obtain_permission_positive">前往</string>
+    <string name="dialog_obtain_permission_negative">取消</string>
+
+    <string name="import_control_label">导入控制布局方案</string>
+
+    <string name="storage_permissions_remind">请授予启动器读写权限，否则可能无法正常运行</string>
+
+    <string name="loading_title">欢迎使用</string>
+    <string name="loading_hint">加载中…</string>
+    <string name="loading_hint_setting">正在检查配置文件…</string>
+    <string name="loading_hint_plugin">正在检查启动器补丁…</string>
+    <string name="loading_hint_control">正在检查启动器控制布局…</string>
+    <string name="loading_hint_lib">正在检查游戏本地库…</string>
+    <string name="loading_hint_java_8">正在检查 Java 8…</string>
+    <string name="loading_hint_select">选择 Java 17 安装方式</string>
+    <string name="loading_hint_download">下载安装</string>
+    <string name="loading_hint_local">本地安装</string>
+    <string name="loading_hint_java_17">正在检查 Java 17…</string>
+    <string name="loading_hint_java_17_select">请选择…</string>
+    <string name="loading_hint_java_17_check">正在检查文件…</string>
+    <string name="loading_hint_java_17_error">请选择官方提供的 Java 17 文件，如果你没有此文件，请加入官方群获取</string>
+    <string name="loading_hint_java_17_get">正在获取 Java 17 链接…</string>
+    <string name="loading_hint_java_17_install">正在下载 Java 17…</string>
+    <string name="loading_hint_java_17_download_failed">下载失败，请重试</string>
+    <string name="loading_hint_java_17_unzip">正在解压 Java 17…</string>
+    <string name="loading_hint_ready">准备就绪，即将进入启动器…</string>
+    <string name="loading_hint_failed">核心资源安装/更新失败，请检查网络并重启应用，如果无效，请联系开发者</string>
+
+    <string name="launcher_scroll_text_account">账户</string>
+    <string name="launcher_scroll_account_name">没有游戏账户</string>
+    <string name="launcher_scroll_account_state">点击此处添加账户</string>
+    <string name="launcher_scroll_text_game">游戏</string>
+    <string name="launcher_scroll_game_manager">没有游戏版本</string>
+    <string name="launcher_scroll_game_none">进入下载页安装游戏</string>
+    <string name="launcher_scroll_version_list">版本列表</string>
+    <string name="launcher_scroll_download">下载</string>
+    <string name="launcher_scroll_text_universal">通用</string>
+    <string name="launcher_scroll_multi_player">多人联机</string>
+    <string name="launcher_scroll_setting">设置</string>
+    <string name="launcher_button_launch">启动游戏</string>
+    <string name="launcher_button_current_version">没有游戏版本</string>
+
+    <string name="launch_check_dialog_title">启动游戏</string>
+    <string name="launch_check_dialog_java">检测 Java 版本</string>
+    <string name="launch_check_dialog_lib">处理游戏依赖</string>
+    <string name="launch_check_dialog_login">登录</string>
+    <string name="launch_check_dialog_launch">等待游戏启动</string>
+    <string name="launch_check_dialog_cancel">取消</string>
+    <string name="launch_check_dialog_exception_error_java">错误的 Java 版本</string>
+    <string name="launch_check_dialog_exception_assets_failed">资源文件下载失败，请检查网络并重新安装该版本</string>
+    <string name="launch_check_dialog_exception_lib_failed">当前版本缺少必要文件，请检查网络并重新安装该版本</string>
+    <string name="launch_check_dialog_exception_no_account">请先添加一个用户</string>
+    <string name="launch_check_dialog_exception_no_game">没有可启动的游戏，你可以点击左侧边栏内的下载按钮安装游戏</string>
+
+    <string name="launch_failed_dialog_title">启动失败</string>
+    <string name="launch_failed_dialog_positive">确定</string>
+
+    <string name="account_ui_title">账户列表</string>
+    <string name="account_scroll_add_account">添加账户</string>
+    <string name="account_offline_login">离线模式</string>
+    <string name="account_mojang_login">Mojang 账号</string>
+    <string name="account_microsoft_login">微软账户</string>
+    <string name="account_external_login">添加认证服务器</string>
+    <string name="account_external_login_hint">外置登录</string>
+
+    <string name="account_refresh_exception_network">刷新失败，请检查网络</string>
+
+    <string name="account_server_type">选择认证服务器类型</string>
+    <string name="account_auth_lib_injector">皮肤站 (authlib-injector)</string>
+    <string name="account_nide_8_auth">统一通行证 (nide8auth)</string>
+
+    <string name="dialog_add_account_title">添加账户</string>
+    <string name="dialog_add_account_type_offline">离线模式</string>
+    <string name="dialog_add_account_type_microsoft">微软账户</string>
+    <string name="dialog_add_account_type_external">外置登录</string>
+    <string name="dialog_add_account_login">登录</string>
+    <string name="dialog_add_account_cancel">取消</string>
+
+    <string name="dialog_add_offline_account_title">添加离线模式账户</string>
+    <string name="dialog_add_offline_account_name">用户名</string>
+    <string name="dialog_add_offline_account_purchase"><a href='https://www.minecraft.net/zh-hans/store/minecraft-java-edition'>购买 Minecraft</a></string>
+    <string name="dialog_add_offline_account_advance">高级设置</string>
+    <string name="dialog_add_offline_account_hint">警告</string>
+    <string name="dialog_add_offline_account_hint_text">UUID 是 Minecraft 对玩家角色的唯一标识符，每个启动器生成 UUID 的方式可能不同。通过修改 UUID 选项至原启动器所生成的 UUID，你可以保证在切换启动器后，游戏还能将你的游戏角色识别为给定 UUID 所对应的角色，从而保留原来角色的背包物品。\\n\\nUUID 选项为高级选项，除非你知道你在做什么，否则你不需要调整该选项。</string>
+    <string name="dialog_add_offline_account_login">登录</string>
+    <string name="dialog_add_offline_account_cancel">取消</string>
+    <string name="dialog_add_offline_account_empty_warn">用户名不得为空</string>
+    <string name="dialog_add_offline_account_exist_warn">当前用户已存在，无法重复添加</string>
+
+    <string name="dialog_add_mojang_account_title">添加 Mojang 账户</string>
+    <string name="dialog_add_mojang_account_email">用户名</string>
+    <string name="dialog_add_mojang_account_password">密码</string>
+    <string name="dialog_add_mojang_account_purchase"><a href='https://www.minecraft.net/zh-hans/store/minecraft-java-edition'>购买 Minecraft</a></string>
+    <string name="dialog_add_mojang_account_help"><a href='https://help.minecraft.net/hc/en-us/articles/360050865492-JAVA-Account-Migration-FAQ'>迁移至微软账户</a></string>
+    <string name="dialog_add_mojang_account_migrate"><a href='https://www.minecraft.net/zh-hans/login?return_url=/zh-hans/profile'>迁移至微软账户</a></string>
+    <string name="dialog_add_mojang_account_login">登录</string>
+    <string name="dialog_add_mojang_account_cancel">取消</string>
+    <string name="dialog_add_mojang_account_empty_warn">用户名或密码不得为空</string>
+    <string name="dialog_add_mojang_account_exist_warn">当前用户已存在，无法重复添加</string>
+    <string name="dialog_add_mojang_account_failed">登录失败，无效的用户名或密码</string>
+
+    <string name="dialog_add_microsoft_account_title">添加微软账户</string>
+    <string name="dialog_add_microsoft_account_hint">提示</string>
+    <string name="dialog_add_microsoft_account_hint_text">您需要点击登录按钮，并在新打开的浏览器窗口中完成登录。</string>
+    <string name="dialog_add_microsoft_account_purchase"><a href='https://www.minecraft.net/zh-hans/store/minecraft-java-edition'>购买 Minecraft</a></string>
+    <string name="dialog_add_microsoft_account_help"><a href='https://support.microsoft.com/zh-cn/account-billing/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%94%B9-microsoft-%E5%B8%90%E6%88%B7%E4%B8%8A%E7%9A%84%E5%87%BA%E7%94%9F%E6%97%A5%E6%9C%9F-837badbc-999e-54d2-2617-d19206b9540a'>如何修改账户出生日期</a></string>
+    <string name="dialog_add_microsoft_account_setting"><a href='https://account.live.com/editprof.aspx'>账户设置页</a></string>
+    <string name="dialog_add_microsoft_account_login">登录</string>
+    <string name="dialog_add_microsoft_account_cancel">取消</string>
+
+    <string name="dialog_add_authlib_injector_account_title">添加外置登录账户</string>
+    <string name="dialog_add_authlib_injector_account_server">认证服务器</string>
+    <string name="dialog_add_authlib_injector_account_email">用户名</string>
+    <string name="dialog_add_authlib_injector_account_password">密码</string>
+    <string name="dialog_add_authlib_injector_account_sign_up">注册</string>
+    <string name="dialog_add_authlib_injector_account_login">登录</string>
+    <string name="dialog_add_authlib_injector_account_cancel">取消</string>
+    <string name="dialog_add_authlib_injector_account_server_warn">尚未添加或选择认证服务器</string>
+    <string name="dialog_add_authlib_injector_account_empty_warn">用户名或密码不得为空</string>
+    <string name="dialog_add_authlib_injector_account_exist_warn">当前用户已存在，无法重复添加</string>
+    <string name="dialog_add_authlib_injector_account_failed">登录失败，无效的用户名或密码</string>
+    <string name="dialog_add_authlib_injector_account_none">该帐号没有角色</string>
+
+    <string name="dialog_upload_skin_failed">皮肤上传失败</string>
+    <string name="dialog_upload_skin_invalid_skin">无法识别的皮肤文件</string>
+
+    <string name="dialog_relogin_title">请输入您的密码</string>
+    <string name="dialog_relogin_hint">密码</string>
+    <string name="dialog_relogin_positive">确定</string>
+    <string name="dialog_relogin_negative">取消</string>
+
+    <string name="dialog_add_verify_server_nide_title">添加认证服务器（统一通行证）</string>
+    <string name="dialog_add_verify_server_nide_hint">32 位服务器 ID</string>
+    <string name="dialog_add_verify_server_nide_cancel">取消</string>
+    <string name="dialog_add_verify_server_nide_next">下一步 ></string>
+    <string name="dialog_add_verify_server_nide_empty">服务器 ID 不合法</string>
+    <string name="dialog_add_verify_server_nide_invalid">无法连接认证服务器，可能是网络故障或 ID 输入错误</string>
+    <string name="dialog_add_verify_server_nide_url">服务器地址</string>
+    <string name="dialog_add_verify_server_nide_name">服务器名称</string>
+    <string name="dialog_add_verify_server_nide_positive">完成</string>
+    <string name="dialog_add_verify_server_nide_back">&#60; 上一步</string>
+
+    <string name="dialog_add_verify_server_title">添加认证服务器</string>
+    <string name="dialog_add_verify_server_hint">服务器地址</string>
+    <string name="dialog_add_verify_server_cancel">取消</string>
+    <string name="dialog_add_verify_server_next">下一步 ></string>
+    <string name="dialog_add_verify_server_empty">服务器地址不得为空</string>
+    <string name="dialog_add_verify_server_invalid">无法连接认证服务器，可能是网络故障或 URL 输入错误</string>
+    <string name="dialog_add_verify_server_url">服务器地址</string>
+    <string name="dialog_add_verify_server_name">服务器名称</string>
+    <string name="dialog_add_verify_server_positive">完成</string>
+    <string name="dialog_add_verify_server_back">&#60; 上一步</string>
+
+    <string name="dialog_offline_skin_title">皮肤</string>
+    <string name="dialog_offline_skin_default">默认</string>
+    <string name="dialog_offline_skin_steve">Steve</string>
+    <string name="dialog_offline_skin_alex">Alex</string>
+    <string name="dialog_offline_skin_local">本地皮肤图片文件</string>
+    <string name="dialog_offline_skin_little_skin">LittleSkin</string>
+    <string name="dialog_offline_skin_blessing_skin">Blessing Skin 服务器</string>
+    <string name="dialog_offline_skin_local_skin">皮肤</string>
+    <string name="dialog_offline_skin_local_cape">披风</string>
+    <string name="dialog_offline_skin_alert">提示</string>
+    <string name="dialog_offline_skin_alert_text">你需要在皮肤站中创建并使用和该离线账户角色同名角色，此时离线账户皮肤将为皮肤站上角色所设定的皮肤。</string>
+    <string name="dialog_offline_skin_blessing_server">服务器地址</string>
+    <string name="dialog_offline_skin_blessing_hint">CustomSkinAPI 地址</string>
+    <string name="dialog_offline_skin_url">LittleSkin 皮肤站</string>
+    <string name="dialog_offline_skin_confirm">确定</string>
+    <string name="dialog_offline_skin_cancel">取消</string>
+
+    <string name="dialog_select_profile_title">选择一个角色</string>
+    <string name="dialog_select_profile_cancel">取消</string>
+
+    <string name="item_account_type_offline">离线模式</string>
+    <string name="item_account_type_mojang">Mojang 账户</string>
+    <string name="item_account_type_microsoft">微软登录</string>
+    <string name="item_account_type_auth_lib">外置登录 (authlib-injector)</string>
+    <string name="item_account_type_nide_8_auth">外置登录 (nide8auth)</string>
+    <string name="item_account_login_server">认证服务器:</string>
+
+    <string name="game_manager_ui_title">游戏管理</string>
+    <string name="game_manager_ui_game_setting">游戏设置</string>
+    <string name="game_manager_ui_mod_manage">模组管理</string>
+    <string name="game_manager_ui_auto_install">自动安装</string>
+    <string name="game_manager_ui_world">世界/数据包</string>
+    <string name="game_manager_ui_test_game">测试游戏</string>
+    <string name="game_manager_ui_browse">浏览</string>
+    <string name="game_manager_ui_manage">管理</string>
+
+    <string name="mod_manager_ui_refresh">刷新</string>
+    <string name="mod_manager_ui_add">添加模组</string>
+    <string name="mod_manager_ui_open_folder">MOD文件夹</string>
+    <string name="mod_manager_ui_check_update">检查模组更新</string>
+    <string name="mod_manager_ui_download">下载</string>
+    <string name="mod_manager_ui_delete">删除</string>
+    <string name="mod_manager_ui_enable">启用</string>
+    <string name="mod_manager_ui_disable">禁用</string>
+    <string name="mod_manager_ui_select_all">全选</string>
+    <string name="mod_manager_ui_negative">取消</string>
+    <string name="mod_manager_ui_info">%n，版本：%v，作者：%a</string>
+    <string name="mod_manager_ui_unknown_info">未知</string>
+    <string name="mod_manager_ui_official_page">官方页面</string>
+    <string name="mod_manager_ui_mcbbs_page">MCBBS</string>
+    <string name="mod_manager_ui_mcmod_page">MC 百科页面</string>
+    <string name="mod_manager_ui_mcmod_search">MC 百科搜索</string>
+    <string name="mod_manager_ui_dismiss">确定</string>
+
+    <string name="dialog_delete_mod_title">删除</string>
+    <string name="dialog_delete_mod_msg">您确定要删除吗？此操作无法撤销！</string>
+    <string name="dialog_delete_mod_positive">是</string>
+    <string name="dialog_delete_mod_negative">否</string>
+
+    <string name="dialog_check_mod_update_title">正在检查更新</string>
+    <string name="dialog_check_mod_update_task">检查模组更新 - %c/%t</string>
+    <string name="dialog_check_mod_update_negative">取消</string>
+
+    <string name="mod_update_ui_title">检查模组更新</string>
+    <string name="mod_update_ui_file">文件</string>
+    <string name="mod_update_ui_current">当前版本</string>
+    <string name="mod_update_ui_target">目标版本</string>
+    <string name="mod_update_ui_source">来源</string>
+    <string name="mod_update_ui_no_update">表中无内容</string>
+    <string name="mod_update_ui_update">更新</string>
+    <string name="mod_update_ui_cancel">取消</string>
+
+    <string name="world_manager_ui_show_all">显示全部</string>
+    <string name="world_manager_ui_refresh">刷新</string>
+    <string name="world_manager_ui_add">添加世界</string>
+    <string name="world_manager_ui_download">存档下载</string>
+    <string name="world_manager_ui_info">%f。 上一次游戏时间：%t。 游戏版本：%v。</string>
+    <string name="world_manager_ui_unknown_game_version">未知</string>
+
+    <string name="export_world_ui_title">导出世界</string>
+    <string name="export_world_ui_sub_title">导出此世界</string>
+    <string name="export_world_ui_save_to">保存到</string>
+    <string name="export_world_ui_world_name">世界名称</string>
+    <string name="export_world_ui_game_version">游戏版本</string>
+    <string name="export_world_ui_export">导出</string>
+
+    <string name="manage_datapack_ui_title">世界 %w - 数据包</string>
+    <string name="manage_datapack_ui_refresh">刷新</string>
+    <string name="manage_datapack_ui_add">添加数据包</string>
+    <string name="manage_datapack_ui_delete">删除</string>
+    <string name="manage_datapack_ui_enable">启用</string>
+    <string name="manage_datapack_ui_disable">禁用</string>
+
+    <string name="dialog_export_world_text">正在导出世界…</string>
+
+    <string name="dialog_export_world_title">提示</string>
+    <string name="dialog_export_world_msg">已完成</string>
+    <string name="dialog_export_world_positive">确定</string>
+
+    <string name="dialog_manage_packmc_title">提示</string>
+    <string name="dialog_manage_packmc_msg">仅 Minecraft 1.13 及之后的版本支持数据包！</string>
+    <string name="dialog_manage_packmc_positive">确定</string>
+
+    <string name="dialog_import_world">正在解析存档…</string>
+    <string name="dialog_install_world_name_title">输入世界名称</string>
+    <string name="dialog_install_world_name_positive">确定</string>
+    <string name="dialog_install_world_name_negative">取消</string>
+
+    <string name="world_menu_manage">管理数据包</string>
+    <string name="world_menu_export">导出此世界</string>
+    <string name="world_menu_open_dir">打开文件夹</string>
+
+    <string name="browse_menu_game_dir">游戏文件夹</string>
+    <string name="browse_menu_mod_dir">MOD文件夹</string>
+    <string name="browse_menu_setting_dir">配置文件夹</string>
+    <string name="browse_menu_resource_dir">资源包文件夹</string>
+    <string name="browse_menu_screenshots_dir">截图文件夹</string>
+    <string name="browse_menu_saves_dir">存档文件夹</string>
+
+    <string name="manage_menu_test_game">测试游戏</string>
+    <string name="manage_menu_rename">重命名该版本</string>
+    <string name="manage_menu_copy">复制游戏实例</string>
+    <string name="manage_menu_delete">删除该版本</string>
+    <string name="manage_menu_export">导出整合包</string>
+    <string name="manage_menu_update">更新游戏资源文件</string>
+    <string name="manage_menu_delete_libs">删除所有库文件</string>
+    <string name="manage_menu_delete_logs">清理游戏目录</string>
+
+    <string name="version_setting_ui_icon">游戏图标</string>
+    <string name="version_setting_ui_check">启用游戏特定设置（不影响其他游戏版本）</string>
+    <string name="version_setting_ui_global">编辑全局版本设置</string>
+
+    <string name="version_install_ui_local">从本地文件安装/升级</string>
+
+    <string name="version_list_ui_title">版本列表</string>
+    <string name="version_list_ui_add_dir">添加游戏目录</string>
+    <string name="version_list_ui_download_new_version">安装新游戏版本</string>
+    <string name="version_list_ui_install_package">安装整合包</string>
+    <string name="version_list_ui_refresh">刷新</string>
+    <string name="version_list_ui_global_setting">全局游戏设置</string>
+    <string name="version_list_ui_none">没有已安装的游戏，你可以切换其他游戏目录，或者点击此处进入游戏下载页面</string>
+
+    <string name="menu_local_version_test_game">测试游戏</string>
+    <string name="menu_local_version_generate_launch_script">生成启动脚本</string>
+    <string name="menu_local_version_game_manage">游戏管理</string>
+    <string name="menu_local_version_rename">重命名该版本</string>
+    <string name="menu_local_version_copy">复制游戏实例</string>
+    <string name="menu_local_version_delete">删除该版本</string>
+    <string name="menu_local_version_export_pack">导出整合包</string>
+    <string name="menu_local_version_game_folder">游戏文件夹</string>
+
+    <string name="dialog_rename_version_title">请输入要改成的名字</string>
+    <string name="dialog_rename_version_confirm">确定</string>
+    <string name="dialog_rename_version_cancel">取消</string>
+    <string name="dialog_rename_version_alert">名字不合法</string>
+
+    <string name="dialog_copy_version_title">请输入新游戏实例名称</string>
+    <string name="dialog_copy_version_alert">提示</string>
+    <string name="dialog_copy_version_alert_text">将锁定复制产生的新游戏实例：强制版本隔离、游戏设置独立。</string>
+    <string name="dialog_copy_version_exist">此版本已经存在，请换一个名字</string>
+    <string name="dialog_copy_version_copy_world">复制存档</string>
+    <string name="dialog_copy_version_positive">确定</string>
+    <string name="dialog_copy_version_negative">取消</string>
+
+    <string name="dialog_delete_version_title">警告</string>
+    <string name="dialog_delete_version_msg">真的要删除版本 %s 吗？你将无法找回被删除的文件！</string>
+    <string name="dialog_delete_version_isolate_msg">由于该游戏使用了版本隔离，所以删除该版本将导致该游戏的存档等数据一同被删除，真的要删除版本 %s 吗？</string>
+    <string name="dialog_delete_version_positive">删除</string>
+    <string name="dialog_delete_version_negative">取消</string>
+
+    <string name="default_game_file_directory_list_pri">公有目录</string>
+    <string name="default_game_file_directory_list_sec">私有目录</string>
+
+    <string name="add_game_dir_ui_title">添加游戏目录</string>
+    <string name="add_game_dir_ui_name">名称</string>
+    <string name="add_game_dir_ui_path">游戏路径</string>
+    <string name="add_game_dir_ui_save">保存</string>
+    <string name="add_game_dir_ui_alert">该名称已存在</string>
+
+    <string name="download_ui_title">下载</string>
+    <string name="download_ui_new_game">新游戏</string>
+    <string name="download_ui_content">游戏内容</string>
+    <string name="download_ui_game">游戏</string>
+    <string name="download_ui_mod">模组</string>
+    <string name="download_ui_package">整合包</string>
+    <string name="download_ui_resource_pack">资源包</string>
+    <string name="download_ui_world">世界</string>
+
+    <string name="download_minecraft_ui_hint">提示</string>
+    <string name="download_minecraft_ui_hint_text">国内下载源由 BMCLAPI和我的世界中文论坛（MCBBS）提供高速下载服务。BMCLAPI 是公益服务，请赞助 BMCLAPI 以获得稳定高速的下载服务，点击此处查阅详细信息。</string>
+    <string name="download_minecraft_ui_release">正式版</string>
+    <string name="download_minecraft_ui_snapshot">测试版</string>
+    <string name="download_minecraft_ui_old">远古版</string>
+    <string name="download_minecraft_ui_refresh">刷新</string>
+
+    <string name="time_pattern">yyyy 年 MM 月 dd 日 HH:mm:ss</string>
+
+    <string name="install_package_ui_title">安装整合包 - 导入整合包</string>
+    <string name="install_package_ui_sub_title">安装整合包</string>
+    <string name="install_package_ui_local">导入本地整合包文件</string>
+    <string name="install_package_ui_local_sub">点击选择本地文件</string>
+    <string name="install_package_ui_online">从互联网下载整合包</string>
+    <string name="install_package_ui_online_sub">需要提供整合包的下载链接</string>
+    <string name="install_package_ui_thi_title">将会安装整合包</string>
+    <string name="install_package_ui_name">名称</string>
+    <string name="install_package_ui_package_name">整合包名称</string>
+    <string name="install_package_ui_version">版本</string>
+    <string name="install_package_ui_author">作者</string>
+    <string name="install_package_ui_description">整合包描述</string>
+    <string name="install_package_ui_install">安装</string>
+
+    <string name="dialog_package_description_title">整合包描述</string>
+    <string name="dialog_package_description_positive">确定</string>
+
+    <string name="dialog_package_manual_warn_title">安装整合包</string>
+    <string name="dialog_package_manual_warn_msg">您大概需要直接解压该整合包，并使用其自带的启动器即可开始游戏，而不需要导入整合包！该整合包不是由启动器导出的整合包，而是人工打包 .minecraft 文件夹而来的，这类整合包通常附带游戏启动器。HMCL-PE 可以尝试导入该整合包，但不保证可用性，是否继续？</string>
+    <string name="dialog_package_manual_warn_positive">是</string>
+    <string name="dialog_package_manual_warn_negative">否</string>
+
+    <string name="dialog_package_not_support_title">错误</string>
+    <string name="dialog_package_not_support_msg">无法识别该整合包，目前仅支持导入 Curse、 Modrinth、 MultiMC、 HMCL 整合包。</string>
+    <string name="dialog_package_not_support_exit">确定</string>
+
+    <string name="export_package_type_ui_title">导出整合包向导 - 选择整合包导出类型</string>
+    <string name="export_package_type_ui_sub_title">请选择整合包类型（若无法决定，请选择我的世界中文论坛整合包标准）</string>
+    <string name="export_package_type_ui_mcbbs">我的世界中文论坛整合包标准</string>
+    <string name="export_package_type_ui_mcbbs_sub">可以被 HMCL/HMCL-PE 和 MultiMC 导入</string>
+    <string name="export_package_type_ui_multimc_sub">可以被 HMCL/HMCL-PE 和 MultiMC 导入</string>
+    <string name="export_package_type_ui_server">服务器自动更新整合包</string>
+    <string name="export_package_type_ui_server_sub">允许服务器管理员远程更新游戏客户端</string>
+
+    <string name="export_package_info_ui_title">导出整合包向导 - 设置整合包的主要信息</string>
+    <string name="export_package_info_ui_alert">提示</string>
+
+    <string name="export_package_file_ui_title">导出整合包向导 - 选中你想加到整合包中的文件或文件夹</string>
+
+    <string name="install_game_ui_title">安装新游戏版本 - 安装新游戏版本</string>
+    <string name="install_game_ui_name">名称</string>
+    <string name="install_game_ui_none">不安装</string>
+    <string name="install_game_ui_forge_not_compatible">与 Forge 不兼容</string>
+    <string name="install_game_ui_fabric_not_compatible">与 Fabric 不兼容</string>
+    <string name="install_game_ui_optifine_not_compatible">与 OptiFine 不兼容</string>
+    <string name="install_game_ui_install">安装</string>
+    <string name="install_game_ui_exist">此版本已经存在，请换一个名字</string>
+
+    <string name="forge_list_ui_title">安装新游戏版本 - 选择 Forge 版本</string>
+    <string name="fabric_list_ui_title">安装新游戏版本 - 选择 Fabric 版本</string>
+    <string name="lite_loader_list_ui_title">安装新游戏版本 - 选择 LiteLoader 版本</string>
+    <string name="optifine_list_ui_title">安装新游戏版本 - 选择 OptiFine 版本</string>
+    <string name="fabric_api_list_ui_title">安装新游戏版本 - 选择 Fabric API 版本</string>
+    <string name="fabric_api_list_ui_warn">警告</string>
+    <string name="fabric_api_list_ui_positive">确定</string>
+    <string name="fabric_api_list_ui_warn_text">警告: Fabric API 是一个 Mod，将会被安装到新游戏的 Mod 文件夹，请你在安装游戏后不要修改当前游戏的版本隔离/游戏运行路径设置，如果你在之后修改了相关设置，Fabric API 需要被重新安装</string>
+    <string name="no_available_version">没有可供安装的版本，点击此处返回</string>
+
+    <string name="dialog_install_assets_title">更新游戏资源文件</string>
+    <string name="dialog_install_assets_check">检查资源文件完整性</string>
+
+    <string name="dialog_install_local_title">从本地文件安装/升级</string>
+    <string name="dialog_install_local_recognize">正在识别安装软件</string>
+
+    <string name="dialog_install_update_title">更换版本</string>
+    <string name="dialog_install_update_state">安装 %s %v</string>
+
+    <string name="dialog_change_version_title">更换版本</string>
+    <string name="dialog_change_version_msg">你确定要将 %s 从 %v1 更换成 %v2 吗？</string>
+    <string name="dialog_change_version_positive">是</string>
+    <string name="dialog_change_version_negative">否</string>
+
+    <string name="dialog_install_game_title">安装新游戏版本</string>
+    <string name="dialog_install_game_install_game">安装 Minecraft</string>
+    <string name="dialog_install_game_install_game_libs">安装游戏依赖</string>
+    <string name="dialog_install_game_install_game_assets">下载游戏资源</string>
+    <string name="dialog_install_game_download_forge">下载 forge-installer</string>
+    <string name="dialog_install_game_install_forge">安装 Forge</string>
+    <string name="dialog_install_game_install_forge_build">构建 Forge</string>
+    <string name="dialog_install_game_install_lite_loader">安装 LiteLoader</string>
+    <string name="dialog_install_game_download_optifine">下载 optifine-installer</string>
+    <string name="dialog_install_game_install_optifine">安装 Optifine</string>
+    <string name="dialog_install_game_install_fabric">安装 Fabric</string>
+    <string name="dialog_install_game_install_fabric_api">安装 Fabric API</string>
+    <string name="dialog_install_game_exit">取消</string>
+
+    <string name="dialog_install_success_title">提示</string>
+    <string name="dialog_install_success_text">安装成功</string>
+    <string name="dialog_install_success_positive">确定</string>
+
+    <string name="dialog_install_fail_title">安装失败</string>
+    <string name="dialog_install_fail_positive">确定</string>
+
+    <string name="dialog_incorrect_version_title">安装失败</string>
+    <string name="dialog_incorrect_version_msg">该软件需要的游戏版本为 %s1，但实际的游戏版本为 %s2。</string>
+    <string name="dialog_incorrect_version_positive">确定</string>
+
+    <string name="dialog_incorrect_installer_title">安装失败</string>
+    <string name="dialog_incorrect_installer_msg">无法识别要安装的软件。如果你要安装 Mod，你需要在模组管理页面安装模组。</string>
+    <string name="dialog_incorrect_installer_positive">确定</string>
+
+    <string name="dialog_incorrect_fabric_title">安装失败</string>
+    <string name="dialog_incorrect_fabric_msg">当前软件与 Fabric 不兼容，请先卸载 Fabric。</string>
+    <string name="dialog_incorrect_fabric_positive">确定</string>
+
+    <string name="download_mod_ui_game">游戏</string>
+    <string name="download_mod_ui_source">下载源</string>
+    <string name="download_mod_ui_name">名称</string>
+    <string name="download_mod_ui_name_hint">支持中英文搜索</string>
+    <string name="download_mod_ui_version">游戏版本</string>
+    <string name="download_mod_ui_type">类别</string>
+    <string name="download_mod_ui_sort">排序</string>
+    <string name="download_mod_ui_search">搜索</string>
+
+    <string name="download_package_ui_source">下载源</string>
+    <string name="download_package_ui_name">名称</string>
+    <string name="download_package_ui_version">游戏版本</string>
+    <string name="download_package_ui_type">类别</string>
+    <string name="download_package_ui_sort">排序</string>
+    <string name="download_package_ui_name_hint">支持中英文搜索</string>
+    <string name="download_package_ui_install">安装整合包</string>
+    <string name="download_package_ui_search">搜索</string>
+
+    <string name="download_resource_pack_ui_game">游戏</string>
+    <string name="download_resource_pack_ui_name">名称</string>
+    <string name="download_resource_pack_ui_version">游戏版本</string>
+    <string name="download_resource_pack_ui_type">类别</string>
+    <string name="download_resource_pack_ui_sort">排序</string>
+    <string name="download_resource_pack_ui_name_hint">仅支持英文搜索</string>
+    <string name="download_resource_pack_ui_search">搜索</string>
+
+    <string name="download_world_ui_name">名称</string>
+    <string name="download_world_ui_version">游戏版本</string>
+    <string name="download_world_ui_type">类别</string>
+    <string name="download_world_ui_sort">排序</string>
+    <string name="download_world_ui_name_hint">仅支持英文搜索</string>
+    <string name="download_world_ui_search">搜索</string>
+
+    <string name="download_list_load_fail">加载版本列表失败，点击此处重试</string>
+
+    <string name="download_mod_sort_date">创建日期</string>
+    <string name="download_mod_sort_heat">热度</string>
+    <string name="download_mod_sort_recent">最近更新</string>
+    <string name="download_mod_sort_name">名称</string>
+    <string name="download_mod_sort_author">作者</string>
+    <string name="download_mod_sort_downloads">下载量</string>
+    <string name="download_mod_sort_category">类别</string>
+    <string name="download_mod_sort_game_version">游戏版本</string>
+
+    <string name="curse_category_0">全部</string>
+
+    <string name="curse_category_4474">科幻</string>
+    <string name="curse_category_4481">轻量整合包</string>
+    <string name="curse_category_4483">战斗 PVP</string>
+    <string name="curse_category_4477">小游戏</string>
+    <string name="curse_category_4478">任务</string>
+    <string name="curse_category_4484">多人</string>
+    <string name="curse_category_4476">探索</string>
+    <string name="curse_category_4736">空岛</string>
+    <string name="curse_category_4475">冒险 RPG</string>
+    <string name="curse_category_4487">FTB 整合包</string>
+    <string name="curse_category_4480">有特定地图</string>
+    <string name="curse_category_4479">高难度</string>
+    <string name="curse_category_4482">大型整合包</string>
+    <string name="curse_category_4472">科技</string>
+    <string name="curse_category_4473">魔法</string>
+    <string name="curse_category_5128">香草+</string>
+
+    <string name="curse_category_5299">教育</string>
+    <string name="curse_category_5232">额外行星</string>
+    <string name="curse_category_5129">原版增强</string>
+    <string name="curse_category_5189">实用与QOL</string>
+    <string name="curse_category_5190">QoL</string>
+    <string name="curse_category_5191">实用与QoL</string>
+    <string name="curse_category_5192">梦幻菜单</string>
+    <string name="curse_category_423">信息展示</string>
+    <string name="curse_category_426">模组扩展</string>
+    <string name="curse_category_434">装备武器</string>
+    <string name="curse_category_409">自然生成</string>
+    <string name="curse_category_4485">血魔法</string>
+    <string name="curse_category_420">存储</string>
+    <string name="curse_category_429">工业 (Industrialcraft)</string>
+    <string name="curse_category_419">魔法</string>
+    <string name="curse_category_412">科技</string>
+    <string name="curse_category_4557">红石</string>
+    <string name="curse_category_428">匠魂</string>
+    <string name="curse_category_414">交通运输</string>
+    <string name="curse_category_4486">幸运方块 (Lucky Blocks)</string>
+    <string name="curse_category_432">建筑 (Buildcraft)</string>
+    <string name="curse_category_418">基因</string>
+    <string name="curse_category_4671">Twitch</string>
+    <string name="curse_category_408">矿物资源</string>
+    <string name="curse_category_4773">CraftTweaker</string>
+    <string name="curse_category_430">神秘 (Thaumcraft)</string>
+    <string name="curse_category_422">冒险 RPG</string>
+    <string name="curse_category_413">机器处理</string>
+    <string name="curse_category_417">能源</string>
+    <string name="curse_category_415">物流运输</string>
+    <string name="curse_category_433">林业 (Forestry)</string>
+    <string name="curse_category_425">其他</string>
+    <string name="curse_category_4545">应用能源 2 (Applied Energistics 2)</string>
+    <string name="curse_category_416">农业</string>
+    <string name="curse_category_421">支持库</string>
+    <string name="curse_category_4780">Fabric</string>
+    <string name="curse_category_424">装饰</string>
+    <string name="curse_category_406">世界生成</string>
+    <string name="curse_category_435">服务器</string>
+    <string name="curse_category_411">生物</string>
+    <string name="curse_category_407">生物群系</string>
+    <string name="curse_category_427">热力膨胀 (Thermal Expansion)</string>
+    <string name="curse_category_410">维度</string>
+    <string name="curse_category_436">食物</string>
+    <string name="curse_category_4558">红石</string>
+    <string name="curse_category_4843">自动化</string>
+    <string name="curse_category_4906">MCreator</string>
+
+    <string name="curse_category_5244">字体包</string>
+    <string name="curse_category_5193">数据包</string>
+    <string name="curse_category_399">蒸汽朋克</string>
+    <string name="curse_category_396">128x</string>
+    <string name="curse_category_398">512x 及更高</string>
+    <string name="curse_category_397">256x</string>
+    <string name="curse_category_405">其他</string>
+    <string name="curse_category_395">64x</string>
+    <string name="curse_category_400">仿真</string>
+    <string name="curse_category_393">16x</string>
+    <string name="curse_category_403">传统</string>
+    <string name="curse_category_394">32x</string>
+    <string name="curse_category_404">动态效果</string>
+    <string name="curse_category_4465">模组支持</string>
+    <string name="curse_category_402">中世纪风格</string>
+    <string name="curse_category_401">现代风格</string>
+
+    <string name="curse_category_4464">模组</string>
+    <string name="curse_category_250">游戏挑战</string>
+    <string name="curse_category_249">创造模式</string>
+    <string name="curse_category_251">跑酷</string>
+    <string name="curse_category_253">生存模式</string>
+    <string name="curse_category_248">冒险模式</string>
+    <string name="curse_category_252">解谜类</string>
+
+    <string name="modrinth_category_all">全部</string>
+
+    <string name="modrinth_category_adventure">冒险</string>
+    <string name="modrinth_category_challenging">高难度</string>
+    <string name="modrinth_category_combat">战斗</string>
+    <string name="modrinth_category_cursed">Cursed</string>
+    <string name="modrinth_category_decoration">装饰</string>
+    <string name="modrinth_category_equipment">装备</string>
+    <string name="modrinth_category_fabric">Fabric</string>
+    <string name="modrinth_category_food">食物</string>
+    <string name="modrinth_category_forge">Forge</string>
+    <string name="modrinth_category_kitchen_sink">大杂烩</string>
+    <string name="modrinth_category_library">支持库</string>
+    <string name="modrinth_category_lightweight">轻量</string>
+    <string name="modrinth_category_magic">魔法</string>
+    <string name="modrinth_category_misc">其他</string>
+    <string name="modrinth_category_modloader">Modloader</string>
+    <string name="modrinth_category_multiplayer">多人</string>
+    <string name="modrinth_category_optimization">优化</string>
+    <string name="modrinth_category_quests">任务</string>
+    <string name="modrinth_category_quilt">Quilt</string>
+    <string name="modrinth_category_rift">Rift</string>
+    <string name="modrinth_category_storage">存储</string>
+    <string name="modrinth_category_technology">科技</string>
+    <string name="modrinth_category_utility">实用</string>
+    <string name="modrinth_category_worldgen">世界生成</string>
+
+    <string name="download_resource_mcmod">MC 百科</string>
+    <string name="download_resource_mod_dependency">前置 Mod</string>
+    <string name="download_resource_load_fail">加载版本列表失败，点击此处重试。</string>
+    <string name="download_resource_beta">测试版</string>
+    <string name="download_resource_release">正式版</string>
+
+    <string name="dialog_download_resource_name_title">名称</string>
+    <string name="dialog_download_resource_name_positive">确定</string>
+    <string name="dialog_download_resource_name_negative">取消</string>
+
+    <string name="dialog_download_title">正在下载</string>
+    <string name="dialog_update_mod_title">更新</string>
+    <string name="dialog_download_negative">取消</string>
+    <string name="dialog_download_success">安装成功</string>
+
+    <string name="multi_player_ui_title">多人联机</string>
+    <string name="multi_player_ui_launch">启动游戏</string>
+    <string name="multi_player_ui_community">房间</string>
+    <string name="multi_player_ui_create">创建房间</string>
+    <string name="multi_player_ui_join">加入房间</string>
+    <string name="multi_player_ui_help">帮助</string>
+    <string name="multi_player_ui_feedback">反馈</string>
+
+    <string name="setting_ui_title">设置</string>
+    <string name="setting_ui_public_game_setting">全局游戏设置</string>
+    <string name="setting_ui_launcher">启动器</string>
+    <string name="setting_ui_universal">通用</string>
+    <string name="setting_ui_exterior">外观</string>
+    <string name="setting_ui_download">下载</string>
+    <string name="setting_ui_help">帮助</string>
+    <string name="setting_ui_feedback">反馈</string>
+    <string name="setting_ui_donate">赞助</string>
+    <string name="setting_ui_about">关于</string>
+
+    <string name="game_setting_ui_game_dir_alert">提示</string>
+    <string name="game_setting_ui_game_dir_alert_text">在“运行路径（版本隔离）”选项中开启“各版本独立”使当前版本独立存放设置、存档、模组等数据，使用模组时建议开启此选项以避免不同版本模组冲突。修改此选项后请自行移动存档等文件！</string>
+    <string name="game_setting_ui_skin_alert">提示</string>
+    <string name="game_setting_ui_skin_alert_text">现已支持离线账户更换皮肤，你可以到账户页面更改离线账户的皮肤和披风（多人游戏下其他玩家无法看到你的皮肤）</string>
+    <string name="game_setting_ui_alert">警告</string>
+    <string name="game_setting_ui_alert_text">当前游戏版本 %s 启用了游戏特定设置，因此本页面选项不对该游戏生效。点击链接前往该游戏版本的游戏特定设置页</string>
+    <string name="game_setting_ui_alert_jump">编辑游戏特点设置</string>
+    <string name="game_setting_ui_java_path">Java 路径</string>
+    <string name="game_setting_ui_java_path_auto">自动选择合适的 Java</string>
+    <string name="game_setting_ui_java_path_8">1.8.0 (64位)</string>
+    <string name="game_setting_ui_java_path_17">17 (64位)</string>
+    <string name="game_setting_ui_version_isolation">版本隔离（建议使用模组时开启“各版本隔离”，改后需移动存档模组等相关游戏文件）</string>
+    <string name="game_setting_ui_version_isolation_default">默认 (.minecraft/)</string>
+    <string name="game_setting_ui_version_isolation_isolate">各版本独立 (.minecraft/versions/&#60;版本名>/, 除 assets、libraries)</string>
+    <string name="game_setting_ui_version_isolation_custom">自定义</string>
+    <string name="game_setting_ui_game_ram">游戏内存</string>
+    <string name="game_setting_ui_auto_ram">自动分配</string>
+    <string name="game_setting_ui_min_ram">最低分配</string>
+    <string name="game_setting_ui_used_ram">已使用 %s GB</string>
+    <string name="game_setting_ui_min_distribution">最低分配 %s GB</string>
+    <string name="game_setting_ui_actual_distribution">实际分配 %s GB</string>
+    <string name="game_setting_ui_resolution">游戏窗口分辨率</string>
+    <string name="game_setting_ui_log">查看日志</string>
+    <string name="game_setting_ui_server">服务器地址</string>
+    <string name="game_setting_ui_server_hint">默认，启动游戏后可以直接进入对应服务器</string>
+    <string name="game_setting_ui_advance_setting">高级设置</string>
+    <string name="game_setting_ui_debug_setting">调试选项</string>
+    <string name="game_setting_ui_debug_setting_alert">警告</string>
+    <string name="game_setting_ui_debug_setting_alert_text">调试选项仅提供给专业玩家使用。调试选项可能会导致游戏无法启动。除非你知道你在做什么，否则请你不要修改这些选项。</string>
+    <string name="game_setting_ui_check_game">不检查游戏完整性</string>
+    <string name="game_setting_ui_check_java">不检查 JVM 与游戏的兼容性</string>
+    <string name="game_setting_ui_check_forge">不检查 Forge 动画禁用情况</string>
+    <string name="game_setting_ui_jvm_setting">Java 虚拟机设置</string>
+    <string name="game_setting_ui_jvm_setting_arg">Java 虚拟机参数</string>
+    <string name="game_setting_ui_jvm_setting_arg_hint">填写此处可以覆盖默认设置</string>
+    <string name="game_setting_ui_control_setting">控制选项</string>
+    <string name="game_setting_ui_touch_injector">仿基岩版触控</string>
+    <string name="game_setting_ui_control_layout">触控布局方案</string>
+    <string name="game_setting_ui_control_layout_manage">管理</string>
+    <string name="game_setting_ui_launch_setting">启动选项</string>
+    <string name="game_setting_ui_game_launcher">游戏启动方式</string>
+    <string name="game_setting_ui_game_launcher_hint">推荐使用 Boat 启动器。</string>
+    <string name="game_setting_ui_boat_renderer">Boat 渲染方式</string>
+    <string name="game_setting_ui_pojav_renderer">PojavLauncher 渲染方式</string>
+
+    <string name="universal_setting_ui_declare">Hello Minecraft! Launcher Pocket Edition 是一个免费、自由、开放源代码的 Minecraft 启动器。您的赞助将帮助 Hello Minecraft! Launcher Pocket Edition 获得更好的发展，还可以获得 HMCL-PE 的开发进展。</string>
+    <string name="universal_setting_ui_update">启动器更新</string>
+    <string name="universal_setting_ui_update_state_latest">当前版本为最新版本</string>
+    <string name="universal_setting_ui_update_state_checking">正在检测…</string>
+    <string name="universal_setting_ui_update_state_update">检测到新版本</string>
+    <string name="universal_setting_ui_update_rec">推荐版本</string>
+    <string name="universal_setting_ui_update_beta">测试版</string>
+    <string name="universal_setting_ui_beta_describe">开发版包含更多的功能以及错误修复，但也可能会包含其他的问题。</string>
+    <string name="universal_setting_ui_cache">文件下载缓存目录</string>
+    <string name="universal_setting_ui_clear_cache">清理</string>
+    <string name="universal_setting_ui_cache_default">默认</string>
+    <string name="universal_setting_ui_cache_custom">自定义</string>
+    <string name="universal_setting_ui_lang">语言</string>
+    <string name="universal_setting_ui_lang_sys">跟随系统语言</string>
+    <string name="universal_setting_ui_log">调试</string>
+    <string name="universal_setting_ui_export_log">导出启动器日志</string>
+
+    <string name="dialog_update_title">检测到启动器有更新</string>
+    <string name="dialog_update_beta">测试版</string>
+    <string name="dialog_update_release">正式版</string>
+    <string name="dialog_update_version_name">版本：</string>
+    <string name="dialog_update_date">日期：</string>
+    <string name="dialog_update_type">类型：</string>
+    <string name="dialog_update_log">更新内容：</string>
+    <string name="dialog_update_update">更新</string>
+    <string name="dialog_update_ignore">忽略</string>
+
+    <string name="exterior_setting_ui_theme_title">外观</string>
+    <string name="exterior_setting_ui_theme">主题</string>
+    <string name="exterior_setting_ui_bar_trans">标题栏透明</string>
+    <string name="exterior_setting_ui_full_screen">忽略刘海屏</string>
+    <string name="exterior_setting_ui_bg_title">背景地址</string>
+    <string name="exterior_setting_ui_bg_default">默认</string>
+    <string name="exterior_setting_ui_bg_classic">经典</string>
+    <string name="exterior_setting_ui_bg_custom">自定义</string>
+    <string name="exterior_setting_ui_bg_online">网络</string>
+
+    <string name="dialog_color_selector_title">选择颜色</string>
+    <string name="dialog_color_selector_positive">确认</string>
+    <string name="dialog_color_selector_negative">取消</string>
+
+    <string name="download_setting_ui_source">版本列表源</string>
+    <string name="download_setting_ui_auto_select">自动选择下载源</string>
+    <string name="download_setting_ui_select">下载源</string>
+    <string name="download_setting_ui_auto_balance">选择加载速度快的下载源（平衡，但可能不是最新）</string>
+    <string name="download_setting_ui_auto_official">尽量使用官方源（最新，但可能加载慢）</string>
+    <string name="download_setting_ui_auto_mirror">尽量使用镜像源（加载快，但可能不是最新）</string>
+    <string name="download_setting_ui_source_official">官方（Optifine 自动安装使用 BMCLAPI 下载源）</string>
+    <string name="download_setting_ui_source_mcbbs">我的世界中文论坛（MCBBS，https://www.mcbbs.net/）</string>
+    <string name="download_setting_ui_download">下载</string>
+    <string name="download_setting_ui_auto_download">自动选择并发数</string>
+    <string name="download_setting_ui_download_num">并发数</string>
+    <string name="download_setting_ui_download_alert">提示</string>
+    <string name="download_setting_ui_download_alert_text">并发数过大可能导致系统卡顿。你的下载速度会受到宽带运营商、服务器等方面的影响，调大下载并发数不一定能大幅提升总下载速度。</string>
+
+    <string name="feedback_ui_join_qq">加入官方 QQ 群(不推荐)</string>
+    <string name="feedback_ui_github_issues">前往 Github 反馈</string>
+
+    <string name="donate_ui_text">Hello Minecraft! Launcher Pocket Edition 是一个免费、自由、开放源代码的 Minecraft 启动器。您的赞助将帮助 Hello Minecraft! Launcher Pocket Edition 获得更好的发展，还可以获得 HMCL-PE 的开发进展。点击此处查阅更多详细信息。</string>
+
+    <string name="dialog_manage_controller_title">管理触控布局方案</string>
+    <string name="dialog_manage_controller_import">从本地导入布局方案</string>
+    <string name="dialog_manage_controller_create">创建新的布局方案</string>
+    <string name="dialog_manage_controller_exit">完成</string>
+
+    <string name="export_control_pattern_title">导出布局方案</string>
+    <string name="dialog_manage_controller_export_dialog">正在导出本地布局方案…</string>
+    <string name="dialog_manage_controller_import_dialog">正在导入触控布局方案…</string>
+    <string name="dialog_manage_controller_import_exist">您导入的布局方案已存在！</string>
+    <string name="dialog_manage_controller_import_error">导入失败，请检查文件是否为HMCL-PE布局文件</string>
+    <string name="dialog_manage_controller_import_warn">当前版本启动器不支持您导入的布局方案，如果强行导入，可能会造成崩溃，是否继续？</string>
+
+    <string name="dialog_create_control_pattern_title">创建新的布局方案</string>
+    <string name="dialog_create_control_pattern_title_sec">编辑布局方案信息</string>
+    <string name="dialog_create_control_pattern_name">布局方案名称（必填）</string>
+    <string name="dialog_create_control_pattern_author">作者（选填）</string>
+    <string name="dialog_create_control_pattern_version">版本（选填）</string>
+    <string name="dialog_create_control_pattern_describe">描述（选填）</string>
+    <string name="dialog_create_control_pattern_warn">布局方案名称不合法！</string>
+    <string name="dialog_create_control_pattern_warn_exist">布局方案名称重复</string>
+    <string name="dialog_create_control_pattern_positive">创建</string>
+    <string name="dialog_create_control_pattern_positive_sec">保存</string>
+    <string name="dialog_create_control_pattern_negative">取消</string>
+
+    <string name="dialog_manage_child_title">管理子布局</string>
+    <string name="dialog_manage_child_create">创建新的子布局</string>
+    <string name="dialog_manage_child_exit">完成</string>
+
+    <string name="dialog_create_child_title">创建新的子布局</string>
+    <string name="dialog_create_child_title_sec">编辑子布局信息</string>
+    <string name="dialog_create_child_name">子布局名称</string>
+    <string name="dialog_create_child_visibility">初始可视性</string>
+    <string name="dialog_create_child_visibility_visible">显示</string>
+    <string name="dialog_create_child_visibility_invisible">隐藏</string>
+    <string name="dialog_create_child_positive">创建</string>
+    <string name="dialog_create_child_positive_sec">保存</string>
+    <string name="dialog_create_child_negative">取消</string>
+    <string name="dialog_create_child_warn">子布局名称不得为空</string>
+    <string name="dialog_create_child_warn_info">不合法的字符！</string>
+    <string name="dialog_create_child_warn_exist">子布局名称重复</string>
+
+    <string name="dialog_delete_control_pattern_title">提示</string>
+    <string name="dialog_delete_control_pattern_content">确定要永久删除此布局方案吗？</string>
+    <string name="dialog_delete_control_pattern_positive">确认</string>
+    <string name="dialog_delete_control_pattern_negative">取消</string>
+
+    <string name="dialog_delete_child_title">提示</string>
+    <string name="dialog_delete_child_content">确定要永久删除该子布局吗？</string>
+    <string name="dialog_delete_child_positive">确认</string>
+    <string name="dialog_delete_child_negative">取消</string>
+
+    <string name="item_control_pattern_author">作者：</string>
+    <string name="item_control_pattern_version">版本：</string>
+    <string name="item_control_pattern_describe">描述：</string>
+
+    <string name="dialog_add_view_type_button">按键</string>
+    <string name="dialog_add_view_type_rocker">方向控制盘</string>
+    <string name="dialog_add_view_show">显示选项</string>
+    <string name="dialog_add_view_always">总显示</string>
+    <string name="dialog_add_view_only_in_game">仅游戏内显示</string>
+    <string name="dialog_add_view_only_out_game">仅游戏外显示</string>
+    <string name="dialog_add_view_size_type">控件大小度量方式</string>
+    <string name="dialog_add_view_size_type_absolute">绝对尺寸</string>
+    <string name="dialog_add_view_size_type_percent">百分比尺寸</string>
+    <string name="dialog_add_view_width">宽度</string>
+    <string name="dialog_add_view_height">高度</string>
+    <string name="dialog_add_view_size">边长</string>
+    <string name="dialog_add_view_width_type_percent_object">宽度参考对象</string>
+    <string name="dialog_add_view_height_type_percent_object">高度参考对象</string>
+    <string name="dialog_add_view_size_type_percent_object">边长参考对象</string>
+    <string name="dialog_add_view_size_type_percent_object_width">屏幕宽度</string>
+    <string name="dialog_add_view_size_type_percent_object_height">屏幕高度</string>
+    <string name="dialog_add_view_position_type">控件坐标类型</string>
+    <string name="dialog_add_view_position_type_absolute">绝对坐标</string>
+    <string name="dialog_add_view_position_type_percent">百分比坐标</string>
+    <string name="dialog_add_view_x">x 坐标</string>
+    <string name="dialog_add_view_y">y 坐标</string>
+    <string name="dialog_add_view_button_basic_setting">基本设置</string>
+    <string name="dialog_add_view_button_text">文本</string>
+    <string name="dialog_add_view_button_function_setting">功能设置</string>
+    <string name="dialog_add_view_button_function_type">功能触发方式</string>
+    <string name="dialog_add_view_button_function_type_click">按压</string>
+    <string name="dialog_add_view_button_function_type_double_click">双击</string>
+    <string name="dialog_add_view_button_function_extra_perspective">视角跟随</string>
+    <string name="dialog_add_view_button_function_extra_keep">自动保持</string>
+    <string name="dialog_add_view_button_function_extra_auto_click">自动连点</string>
+    <string name="dialog_add_view_button_function_open_menu">呼出控制面板</string>
+    <string name="dialog_add_view_button_function_movable">可拖动</string>
+    <string name="dialog_add_view_button_function_touch_mode">切换触控模式</string>
+    <string name="dialog_add_view_button_function_sensor">开/关陀螺仪</string>
+    <string name="dialog_add_view_button_function_left_touch">启用/禁用左半屏触控</string>
+    <string name="dialog_add_view_button_function_open_input">呼出文本输入框</string>
+    <string name="dialog_add_view_button_function_child_visibility">控制子布局显示/隐藏</string>
+    <string name="dialog_add_view_button_function_child_visibility_button">设置</string>
+    <string name="dialog_add_view_button_function_output_keychar">输出文本</string>
+    <string name="dialog_add_view_button_function_output_keycode">输出键值</string>
+    <string name="dialog_add_view_button_function_output_keycode_button">选择</string>
+    <string name="dialog_add_view_rocker_function_shift">双击中心位置潜行</string>
+    <string name="dialog_add_view_rocker_function_follow">跟随设置</string>
+    <string name="dialog_add_view_rocker_function_follow_none">不跟随</string>
+    <string name="dialog_add_view_rocker_function_follow_part">中心部分跟随</string>
+    <string name="dialog_add_view_rocker_function_follow_all">完全跟随</string>
+    <string name="dialog_add_view_button_exterior_setting">外观设置</string>
+    <string name="dialog_add_view_button_exterior_use_exist">使用保存的样式</string>
+    <string name="dialog_add_view_button_exterior_add_style">管理本地按键样式</string>
+    <string name="dialog_add_view_button_exterior_add_style_button">管理</string>
+    <string name="dialog_add_view_button_exterior_setting_text_size">字体大小</string>
+    <string name="dialog_add_view_button_exterior_setting_text_color">文本颜色</string>
+    <string name="dialog_add_view_button_exterior_setting_corner_radius">圆角半径</string>
+    <string name="dialog_add_view_button_exterior_setting_stroke_width">边框宽度</string>
+    <string name="dialog_add_view_button_exterior_setting_stroke_color">边框颜色</string>
+    <string name="dialog_add_view_button_exterior_setting_fill_color">填充色</string>
+    <string name="dialog_add_view_button_exterior_setting_text_size_pressed">字体大小（按压）</string>
+    <string name="dialog_add_view_button_exterior_setting_text_color_pressed">文本颜色（按压）</string>
+    <string name="dialog_add_view_button_exterior_setting_corner_radius_pressed">圆角半径（按压）</string>
+    <string name="dialog_add_view_button_exterior_setting_stroke_width_pressed">边框宽度（按压）</string>
+    <string name="dialog_add_view_button_exterior_setting_stroke_color_pressed">边框颜色（按压）</string>
+    <string name="dialog_add_view_button_exterior_setting_fill_color_pressed">填充色（按压）</string>
+    <string name="dialog_add_view_rocker_exterior_add_style">管理本地方向控制盘样式</string>
+    <string name="dialog_add_view_rocker_exterior_setting_pointer_color">指示器颜色</string>
+    <string name="dialog_add_view_rocker_exterior_setting_fill_color">填充色</string>
+    <string name="dialog_add_view_rocker_exterior_setting_corner_radius">圆角半径</string>
+    <string name="dialog_add_view_rocker_exterior_setting_stroke_width">边框宽度</string>
+    <string name="dialog_add_view_rocker_exterior_setting_stroke_color">边框颜色</string>
+    <string name="dialog_add_view_rocker_exterior_setting_pointer_color_pressed">指示器颜色（按压）</string>
+    <string name="dialog_add_view_rocker_exterior_setting_fill_color_pressed">填充色（按压）</string>
+    <string name="dialog_add_view_rocker_exterior_setting_corner_radius_pressed">圆角半径（按压）</string>
+    <string name="dialog_add_view_rocker_exterior_setting_stroke_width_pressed">边框宽度（按压）</string>
+    <string name="dialog_add_view_rocker_exterior_setting_stroke_color_pressed">边框颜色（按压）</string>
+    <string name="dialog_add_view_exterior_setting_choose_color">选择</string>
+    <string name="dialog_edit_view_copy">复制此控件</string>
+    <string name="dialog_edit_view_positive">完成</string>
+    <string name="dialog_add_view_positive">添加</string>
+    <string name="dialog_add_view_negative">取消</string>
+
+    <string name="dialog_manage_button_style_title">管理按键样式</string>
+    <string name="dialog_manage_button_style_create">创建新的样式</string>
+    <string name="dialog_manage_button_style_positive">完成</string>
+
+    <string name="dialog_manage_rocker_style_title">管理方向控制盘样式</string>
+    <string name="dialog_manage_rocker_style_create">创建新的样式</string>
+    <string name="dialog_manage_rocker_style_positive">完成</string>
+
+    <string name="dialog_create_button_style_title">创建新的按键样式</string>
+    <string name="dialog_create_button_style_name">名称</string>
+    <string name="dialog_create_button_style_name_empty">样式名称不得为空</string>
+    <string name="dialog_create_button_style_name_exist">名称已存在</string>
+    <string name="dialog_create_button_style_positive">创建</string>
+    <string name="dialog_create_button_style_negative">取消</string>
+
+    <string name="dialog_create_rocker_style_title">创建新的方向控制盘样式</string>
+    <string name="dialog_create_rocker_style_name">名称</string>
+    <string name="dialog_create_rocker_style_name_empty">样式名称不得为空</string>
+    <string name="dialog_create_rocker_style_name_exist">名称已存在</string>
+    <string name="dialog_create_rocker_style_positive">创建</string>
+    <string name="dialog_create_rocker_style_negative">取消</string>
+
+    <string name="dialog_child_visibility_title">控制子布局显示/隐藏</string>
+    <string name="dialog_child_visibility_positive">完成</string>
+
+    <string name="dialog_select_keycode_keyboard">键盘</string>
+    <string name="dialog_select_keycode_mouse">鼠标</string>
+    <string name="dialog_select_keycode_positive">完成</string>
+
+    <string name="dialog_delete_button_title">提示</string>
+    <string name="dialog_delete_button_content">确定要删除该按键吗？</string>
+    <string name="dialog_delete_button_positive">删除</string>
+    <string name="dialog_delete_button_negative">取消</string>
+
+    <string name="dialog_delete_rocker_title">提示</string>
+    <string name="dialog_delete_rocker_content">确定要删除该方向控制盘吗？</string>
+    <string name="dialog_delete_rocker_positive">删除</string>
+    <string name="dialog_delete_rocker_negative">取消</string>
+
+    <string name="dialog_input_title">文本输入</string>
+    <string name="dialog_input_add_text">添加快捷文本</string>
+    <string name="dialog_input_send">发送</string>
+    <string name="dialog_input_negative">取消</string>
+
+    <string name="dialog_add_fast_text_title">添加快捷文本</string>
+    <string name="dialog_add_fast_text_empty">快捷文本不得为空</string>
+    <string name="dialog_add_fast_text_exist">当前快捷文本已存在</string>
+    <string name="dialog_add_fast_text_positive">添加</string>
+    <string name="dialog_add_fast_text_negative">取消</string>
+
+    <string name="dialog_hin2n_menu_create">创建房间</string>
+    <string name="dialog_hin2n_menu_join">加入房间</string>
+    <string name="dialog_hin2n_menu_info">房间信息</string>
+    <string name="dialog_hin2n_menu_help">帮助</string>
+    <string name="dialog_hin2n_menu_in">您已经创建/加入了房间</string>
+    <string name="dialog_hin2n_menu_out">您尚未创建/加入房间</string>
+
+    <string name="dialog_create_community_title">创建房间</string>
+    <string name="dialog_create_community_alert">提示</string>
+    <string name="dialog_create_community_alert_text">创建联机房间前，你需要先在正在运行的游戏内的游戏菜单中选择 对局域网开放 选项，然后在下方确认端口号为游戏内提示的端口号（通常是 5 位数字）</string>
+    <string name="dialog_create_community_name">房间名称</string>
+    <string name="dialog_create_community_port">端口号</string>
+    <string name="dialog_create_community_getting">检测中…</string>
+    <string name="dialog_create_community_positive">确定</string>
+    <string name="dialog_create_community_negative">取消</string>
+
+    <string name="dialog_join_community_title">加入房间</string>
+    <string name="dialog_join_community_alert">提示</string>
+    <string name="dialog_join_community_alert_text">你需要向已经创建好房间的玩家索要邀请码以便加入多人联机房间</string>
+    <string name="dialog_join_community_code">邀请码</string>
+    <string name="dialog_join_community_code_empty">邀请码不得为空</string>
+    <string name="dialog_join_community_positive">确定</string>
+    <string name="dialog_join_community_negative">取消</string>
+
+    <string name="dialog_community_title">联机房间信息</string>
+    <string name="dialog_community_invite_code">邀请码：</string>
+    <string name="dialog_community_ip">服务器地址：</string>
+    <string name="dialog_community_copy_success">复制成功</string>
+    <string name="dialog_community_exit">关闭/退出房间</string>
+    <string name="dialog_community_positive">确定</string>
+
+    <string name="dialog_hin2n_help_title">帮助</string>
+    <string name="dialog_hin2n_help_text">主机玩家（房主）： 你需要在先启动游戏，并进入一个存档作为联机世界，然后在游戏内菜单中选择 对局域网开放 选项，记住你的端口号，接下来打开 HMCL-PE 控制面板，打开联机模块菜单，点击创建房间，确认显示的端口号与游戏提示的一致，然后确认并开房，房间开启后，你将可以点击房间信息以查看你的邀请码和服务器地址，你需要将它们发送给你的联机伙伴。注意，请不要将 邀请码，ip，端口 告诉任何陌生人。  成员玩家： 你需要向主机玩家（房主）索要邀请码和 服务器地址，然后打开 HMCL-PE 控制面板，打开联机模块菜单，点击加入房间，输入你的邀请码，点击确定即可，接下来启动游戏，在游戏的多人游戏板块中添加服务器，服务器名称任意，服务器地址填写房主提供的服务器地址，即可加入服务器。</string>
+    <string name="dialog_hin2n_help_positive">确定</string>
+
+    <string name="dialog_force_exit_title">提示</string>
+    <string name="dialog_force_exit_message">是否要强制退出？</string>
+    <string name="dialog_force_exit_positive">确认</string>
+    <string name="dialog_force_exit_negative">取消</string>
+
+    <string name="drawer_game_menu_title">HMCL-PE 控制面板</string>
+    <string name="drawer_game_menu_type">控制面板呼出方式</string>
+    <string name="drawer_game_menu_type_float">悬浮窗</string>
+    <string name="drawer_game_menu_type_bar">侧边栏</string>
+    <string name="drawer_game_menu_type_gesture">侧滑手势</string>
+    <string name="drawer_game_menu_float_movable">不锁定悬浮窗</string>
+    <string name="drawer_game_menu_function">功能</string>
+    <string name="drawer_game_menu_function_hin2n_menu">联机模块菜单</string>
+    <string name="drawer_game_menu_function_hin2n_menu_open">打开</string>
+    <string name="drawer_game_menu_function_advance_input">高级输入</string>
+    <string name="drawer_game_menu_control">控制选项</string>
+    <string name="drawer_game_menu_control_sensor">陀螺仪</string>
+    <string name="drawer_game_menu_control_sensor_open_alert">已开启陀螺仪</string>
+    <string name="drawer_game_menu_control_sensor_close_alert">已关闭陀螺仪</string>
+    <string name="drawer_game_menu_control_sensor_sensitivity">陀螺仪灵敏度</string>
+    <string name="drawer_game_menu_control_half_screen">取消左半屏触控</string>
+    <string name="drawer_game_menu_control_half_screen_enable">已取消左半屏触控</string>
+    <string name="drawer_game_menu_control_half_screen_disable">已启用左半屏触控</string>
+    <string name="drawer_game_menu_control_touch_mode">触控模式</string>
+    <string name="drawer_game_menu_control_touch_mode_create">建造模式</string>
+    <string name="drawer_game_menu_control_touch_mode_attack">战斗模式</string>
+    <string name="drawer_game_menu_control_touch_mode_create_alert">已切换至建造模式</string>
+    <string name="drawer_game_menu_control_touch_mode_attack_alert">已切换至战斗模式</string>
+    <string name="drawer_game_menu_control_mouse_mode">鼠标控制方式</string>
+    <string name="drawer_game_menu_control_mouse_mode_click">点击</string>
+    <string name="drawer_game_menu_control_mouse_mode_slide">滑动</string>
+    <string name="drawer_game_menu_control_mouse_speed">鼠标速度</string>
+    <string name="drawer_game_menu_control_mouse_size">鼠标大小</string>
+    <string name="drawer_game_menu_ui">UI选项</string>
+    <string name="drawer_game_menu_ui_hide">隐藏全部UI（仍可使用）</string>
+    <string name="drawer_game_menu_extra">其他选项</string>
+    <string name="drawer_game_menu_force_exit">强制退出</string>
+    <string name="drawer_game_menu_force_exit_button">退出</string>
+
+    <string name="drawer_custom_menu_title">控制布局选项</string>
+    <string name="drawer_custom_menu_current">当前方案</string>
+    <string name="drawer_custom_menu_current_pattern">当前布局方案</string>
+    <string name="drawer_custom_menu_mode">编辑模式</string>
+    <string name="drawer_custom_menu_outline">显示控件边界</string>
+    <string name="drawer_custom_menu_pattern_setting">方案设置</string>
+    <string name="drawer_custom_menu_info">基本信息</string>
+    <string name="drawer_custom_menu_edit_info">编辑</string>
+    <string name="drawer_custom_menu_child_layout">子布局</string>
+    <string name="drawer_custom_menu_child_manager">管理</string>
+    <string name="drawer_custom_menu_child_setting">子布局</string>
+    <string name="drawer_custom_menu_current_child">当前子布局</string>
+    <string name="drawer_custom_menu_view">添加控件</string>
+    <string name="drawer_custom_menu_add_view">添加</string>
+    <string name="drawer_custom_menu_warn">你需要先创建或选择一个子布局</string>
+
+    <string name="ui_about_about">关于</string>
+    <string name="ui_about_thank">鸣谢</string>
+    <string name="ui_about_cosine_sub">提供大量技术支持</string>
+    <string name="ui_about_tsaltedfishking_sub">提供 HMCL-PE 官网模板</string>
+    <string name="ui_about_hmcl_main">HMCL 开发团队及所有贡献者</string>
+    <string name="ui_about_hmcl_sub">本项目大量借鉴 HMCL</string>
+    <string name="ui_about_bangbang93_sub">提供 BMCLAPI 下载源，请赞助支持 BMCLAPI！</string>
+    <string name="ui_about_mcbbs_main">MCBBS 我的世界中文论坛</string>
+    <string name="ui_about_mcbbs_sub">提供 MCBBS 下载源</string>
+    <string name="ui_about_mcmod_main">MC 百科</string>
+    <string name="ui_about_mcmod_sub">提供 Mod 中文名映射表与 Mod 百科</string>
+    <string name="ui_about_github_main">所有通过 Issues、赞助等方式参与本项目的贡献者</string>
+    <string name="ui_about_github_sub">感谢各位的建议、bug 反馈及赞助</string>
+    <string name="dialog_create_community_error">无法检测游戏端口号，你需启动游戏并在游戏内打开 对局域网开放 选项方能启动联机！</string>
+    <string name="feedback_ui_join_discord">加入官方 Discord</string>
+    <string name="feedback_ui_join_qq_channel">加入官方 QQ 频道</string>
+</resources>

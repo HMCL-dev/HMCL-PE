@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/menu_none" />
+    <tab
+        id="@+id/menu_select"
+        title="@string/select"
+        icon="@drawable/ic_check_black_24dp"/>
+</tabs>

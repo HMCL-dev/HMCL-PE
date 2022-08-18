@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:visibility="invisible"
+    android:id="@+id/ui_version_list"
+    android:background="@color/launcher_ui_background"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/content_list_parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <com.tungsten.hmclpe.launcher.view.list.ContentListView
+                android:divider="@color/colorTransparent"
+                android:dividerHeight="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/game_file_directory_list"/>
+
+            <LinearLayout
+                android:padding="10dp"
+                android:background="@drawable/launcher_button_parent"
+                android:focusable="true"
+                android:clickable="true"
+                android:id="@+id/start_add_game_directory_ui"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="center"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_outline_add_black"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/version_list_ui_add_dir"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorPureBlack"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="10dp"
+            android:background="@drawable/launcher_button_parent"
+            android:focusable="true"
+            android:clickable="true"
+            android:id="@+id/start_ui_download_minecraft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_marginStart="5dp"
+                android:layout_gravity="center"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_outline_add_black"/>
+
+            <TextView
+                android:singleLine="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/version_list_ui_download_new_version"
+                android:textSize="14sp"
+                android:textColor="@color/colorPureBlack"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="10dp"
+            android:background="@drawable/launcher_button_parent"
+            android:focusable="true"
+            android:clickable="true"
+            android:id="@+id/start_install_package_ui"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginStart="5dp"
+                android:layout_gravity="center"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_baseline_pack_black"/>
+
+            <TextView
+                android:singleLine="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/version_list_ui_install_package"
+                android:textSize="14sp"
+                android:textColor="@color/colorPureBlack"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="10dp"
+            android:background="@drawable/launcher_button_parent"
+            android:focusable="true"
+            android:clickable="true"
+            android:id="@+id/refresh_local_version_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_marginStart="5dp"
+                android:layout_gravity="center"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_baseline_refresh_black"/>
+
+            <TextView
+                android:singleLine="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/version_list_ui_refresh"
+                android:textSize="14sp"
+                android:textColor="@color/colorPureBlack"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:background="@drawable/launcher_button_parent"
+            android:focusable="true"
+            android:clickable="true"
+            android:id="@+id/start_ui_global_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_marginStart="5dp"
+                android:layout_gravity="center"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_outline_settings_black"/>
+
+            <TextView
+                android:singleLine="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/version_list_ui_global_setting"
+                android:textSize="14sp"
+                android:textColor="@color/colorPureBlack"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/loading_local_version_progress"/>
+
+        <TextView
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/colorLinkBlue"
+            android:textSize="23sp"
+            android:text="@string/version_list_ui_none"
+            android:id="@+id/start_download_mc_ui"/>
+
+        <ListView
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/launcher_view_light_gray"
+            android:id="@+id/local_version_list"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

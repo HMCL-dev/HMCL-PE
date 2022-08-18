@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="cut">Cut</string>
+    <string name="refresh">Refresh</string>
+    <string name="paste">Paste</string>
+    <string name="copy">Copy</string>
+    <string name="filter">Filter</string>
+    <string name="sort">Sort</string>
+    <string name="more">More</string>
+    <string name="delete">Delete</string>
+    <string name="rename">Rename</string>
+    <string name="share">Share</string>
+    <string name="new_folder">New Folder</string>
+    <string name="root">Root</string>
+    <string name="back">Back</string>
+    <string name="show_hidden_folders">Show Hidden Folders</string>
+    <string name="properties">Properties</string>
+    <string name="cancel">Cancel</string>
+    <string name="selectall">Select All</string>
+    <string name="showfoldersize">Show Folder Size</string>
+    <string name="showhiddenfolder">Show Hidden Folders</string>
+    <string name="chooseitems">Choose Items</string>
+    <string name="search">Search</string>
+    <string name="searchfiles">Search Files</string>
+    <string name="ok">Ok</string>
+    <string name="filter_only">Filter Only</string>
+    <string name="sort_by">Sort By</string>
+    <string name="file_info">%1$s Last Modified: %2$s</string>
+    <string name="read_only"> (Read only)</string>
+    <!-- Folder creation-->
+    <string name="folder_creation_error">An error occurred while creating a new folder</string>
+    <string name="permission_error">No Write Permission Granted</string>
+    <!-- File deletion-->
+    <string name="delete_dialog_title">Delete files</string>
+    <string name="delete_dialog_message">Are you sure you want to delete %d items?</string>
+    <string name="delete_progress">Deleting Please Wait&#8230;</string>
+    <string name="delete_error">An error occurred while deleting</string>
+    <string name="no_items_selected">No Items selected</string>
+    <!-- Paste files-->
+    <string name="wait">Please Wait&#8230;</string>
+    <string name="copying">Copying %s</string>
+    <string name="moving">Moving %s</string>
+    <string name="pasting_error">An error occurred while pasting</string>
+    <!--Rename-->
+    <string name="rename_dialog_title">Rename</string>
+    <string name="rename_error">An error occurred while renaming</string>
+    <!-- getProperties-->
+    <string name="properties_title">Properties</string>
+    <string name="directory">Directory</string>
+    <string name="file">File</string>
+    <string name="file_type">"Type: %s   "</string>
+    <string name="file_size">"Size: %s   "</string>
+    <string name="file_modified">"Last Modified %s   "</string>
+    <string name="file_path">Path %s</string>
+    <string name="file_type_multiple">Multiple Files \n\n</string>
+    <string name="file_type_plain">Type:</string>
+    <string name="property_error">Could Not Compute Properties</string>
+    <!-- sharing -->
+    <string name="sharing_no_app">No app found to handle sharing</string>
+    <string name="selected_items">Selected %d items</string>
+    <string name="selection_error_single">Please select only 1 item</string>
+
+    <string name="permission_request_error">No Permissions Requested</string>
+    <string name="error_common">Error</string>
+    <string name="error_no_permissions">Some permissions not granted!. App may not work properly!. Please grant the required permissions!</string>
+    <string name="no_operation_error">No operation selected</string>
+    <string name="no_files_paste">No files selected to paste</string>
+    <string name="no_app_to_handle">No app found to handle this type of file.</string>
+    <string name="select_multiple">Select Multiple Files</string>
+    <string name="external_storage_error">Cannot Locate External Store</string>
+    <string name="unselectall">Unselect All</string>
+    <string name="file_image">File Image</string>
+    <string name="select">Select</string>
+    <string name="invalid_selections">Invalid selections</string>
+
+</resources>

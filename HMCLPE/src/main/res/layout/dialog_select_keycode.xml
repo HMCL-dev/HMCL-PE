@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:hmclpe="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:background="@color/colorPureWhite"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:singleLine="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/colorPureBlack"
+                android:text="@string/dialog_select_keycode_keyboard" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/colorDarkGray"/>
+
+            <include
+                android:layout_marginTop="15dp"
+                android:layout_height="168dp"
+                android:layout_width="600dp"
+                layout="@layout/view_group_keyboard"/>
+
+            <TextView
+                android:singleLine="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/colorPureBlack"
+                android:text="@string/dialog_select_keycode_mouse"
+                android:layout_marginTop="15dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/colorDarkGray"/>
+
+            <LinearLayout
+                android:id="@+id/mouse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+
+                <com.tungsten.hmclpe.control.view.KeyCodeView
+                    android:background="@drawable/launcher_button_normal"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:text="Left"
+                    android:textSize="8sp"
+                    android:textColor="@color/colorPureBlack"
+                    tools:ignore="SmallSp"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    hmclpe:keyCode="0"/>
+
+                <com.tungsten.hmclpe.control.view.KeyCodeView
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/launcher_button_normal"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:text="Right"
+                    android:textSize="8sp"
+                    android:textColor="@color/colorPureBlack"
+                    tools:ignore="SmallSp"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    hmclpe:keyCode="1"/>
+
+                <com.tungsten.hmclpe.control.view.KeyCodeView
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/launcher_button_normal"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:text="Mid"
+                    android:textSize="8sp"
+                    android:textColor="@color/colorPureBlack"
+                    tools:ignore="SmallSp"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    hmclpe:keyCode="2"/>
+
+                <com.tungsten.hmclpe.control.view.KeyCodeView
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/launcher_button_normal"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:text="↑"
+                    android:textSize="8sp"
+                    android:textColor="@color/colorPureBlack"
+                    tools:ignore="SmallSp"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    hmclpe:keyCode="3"/>
+
+                <com.tungsten.hmclpe.control.view.KeyCodeView
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/launcher_button_normal"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:text="↓"
+                    android:textSize="8sp"
+                    android:textColor="@color/colorPureBlack"
+                    tools:ignore="SmallSp"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    hmclpe:keyCode="4"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/dialog_select_keycode_positive"
+            android:textSize="15sp"
+            android:textColor="@color/colorLinkBlue"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/exit"/>
+
+    </LinearLayout>
+
+</LinearLayout>

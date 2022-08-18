@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="@drawable/launcher_button_light_gray"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:tag="tint_accent_color"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/select_account"/>
+
+        <RelativeLayout
+            android:layout_gravity="center"
+            android:layout_width="30dp"
+            android:layout_height="30dp">
+
+            <ImageView
+                android:layout_width="26.6666dp"
+                android:layout_height="26.6666dp"
+                android:id="@+id/skin_face"
+                android:layout_centerInParent="true" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/skin_hat"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_marginStart="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+            <TextView
+                android:singleLine="true"
+                android:textColor="@color/colorPureBlack"
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_middle"/>
+
+            <TextView
+                android:singleLine="true"
+                android:textColor="@color/colorPureBlack"
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_middle"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/refresh_layout"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp">
+
+            <ProgressBar
+                android:visibility="gone"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/refresh_account_progress"/>
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_baseline_refresh_black"
+                android:id="@+id/refresh"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/upload_layout"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp">
+
+            <ProgressBar
+                android:visibility="gone"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/upload_skin_progress"/>
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_baseline_hanger_black"
+                android:id="@+id/skin"/>
+
+        </RelativeLayout>
+
+        <ImageButton
+            android:layout_marginStart="10dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_baseline_delete_black"
+            android:layout_gravity="center"
+            android:id="@+id/delete"/>
+
+    </LinearLayout>
+
+</LinearLayout>

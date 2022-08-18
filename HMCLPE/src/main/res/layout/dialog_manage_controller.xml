@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:padding="20dp"
+    android:layout_width="500dp"
+    android:layout_height="280dp">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_manage_controller_title"
+            android:textColor="@color/colorPureBlack"
+            android:textSize="@dimen/text_size_big"/>
+
+        <ListView
+            android:divider="@color/colorTransparent"
+            android:dividerHeight="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/control_pattern_list"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginStart="15dp"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:tag="text_primary_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/dialog_manage_controller_import"
+            android:background="@drawable/launcher_setting_button"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_middle"
+            android:id="@+id/import_pattern"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:tag="text_primary_color"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/dialog_manage_controller_create"
+            android:background="@drawable/launcher_setting_button"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_middle"
+            android:id="@+id/new_pattern"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:tag="text_primary_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/dialog_manage_controller_exit"
+            android:background="@drawable/launcher_setting_button"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_middle"
+            android:id="@+id/exit"/>
+
+    </LinearLayout>
+
+</LinearLayout>

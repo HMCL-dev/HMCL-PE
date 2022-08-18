@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/menu_none" />
+    <tab
+        id="@+id/menu_delete"
+        title="@string/delete"
+        icon="@drawable/ic_remove_circle_outline_black_24dp"/>
+    <tab
+        id="@+id/menu_cut"
+        title="@string/cut"
+        icon="@drawable/ic_content_cut_black_24dp" />
+    <tab
+        id="@+id/menu_copy"
+        title="@string/copy"
+        icon="@drawable/ic_content_copy_black_24dp"/>
+</tabs>

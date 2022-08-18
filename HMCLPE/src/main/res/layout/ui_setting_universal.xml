@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ui_setting_universal"
+    android:visibility="invisible"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/launcher_view_light_gray">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/universal_setting_ui_declare"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:id="@+id/show_update_setting"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/launcher_button_light_gray">
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:weightSum="2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:text="@string/universal_setting_ui_update" />
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/universal_setting_ui_update_state_latest"
+                            android:textSize="@dimen/text_size_middle"
+                            android:id="@+id/update_state_text" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/show_update"
+                        android:layout_gravity="center"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/ic_baseline_keyboard_arrow_down_black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/update_setting"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:singleLine="true"
+                        android:tag="tint_accent_color"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/universal_setting_ui_update_rec"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:id="@+id/update_to_rec"/>
+
+                    <RadioButton
+                        android:singleLine="true"
+                        android:tag="tint_accent_color"
+                        android:layout_marginStart="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/universal_setting_ui_update_beta"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:id="@+id/update_to_beta"/>
+
+                    <TextView
+                        android:layout_marginTop="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPureBlack"
+                        android:textSize="@dimen/text_size_middle"
+                        android:text="@string/universal_setting_ui_beta_describe"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:id="@+id/show_cache_setting"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/launcher_button_light_gray">
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:weightSum="2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:text="@string/universal_setting_ui_cache" />
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/text_size_middle"
+                            android:id="@+id/cache_content_text" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:minWidth="0dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true"
+                        android:textAllCaps="false"
+                        android:tag="text_primary_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/universal_setting_ui_clear_cache"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorAccent"
+                        android:id="@+id/clear_cache"
+                        android:background="@drawable/launcher_setting_button"/>
+
+                    <ImageView
+                        android:id="@+id/show_cache"
+                        android:layout_marginStart="15dp"
+                        android:layout_gravity="center"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/ic_baseline_keyboard_arrow_down_black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cache_setting"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="25dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:singleLine="true"
+                        android:tag="tint_accent_color"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/universal_setting_ui_cache_default"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:id="@+id/check_default_cache_path"/>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:singleLine="true"
+                            android:tag="tint_accent_color"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="12dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/universal_setting_ui_cache_custom"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:id="@+id/check_custom_cache_path"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <EditText
+                            android:singleLine="true"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_gravity="center"
+                            android:layout_width="200dp"
+                            android:layout_height="32dp"
+                            android:background="@color/colorLightGray"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:id="@+id/edit_cache_path"
+                            android:enabled="false"/>
+
+                        <ImageButton
+                            android:id="@+id/select_cache_path"
+                            android:layout_marginEnd="5dp"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_baseline_folder_black"
+                            android:layout_marginStart="15dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/universal_setting_ui_lang"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:id="@+id/language_spinner"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="200dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/colorDarkGray"/>
+
+                <LinearLayout
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/universal_setting_ui_log"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_gravity="center"/>
+
+                    <Button
+                        android:minWidth="0dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true"
+                        android:textAllCaps="false"
+                        android:tag="text_primary_color"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:id="@+id/export_log"
+                        android:background="@drawable/launcher_setting_button"
+                        android:text="@string/universal_setting_ui_export_log"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorAccent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

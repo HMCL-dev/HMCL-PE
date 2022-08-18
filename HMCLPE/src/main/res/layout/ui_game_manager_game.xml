@@ -1,0 +1,1311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ui_version_setting"
+    android:visibility="invisible"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/launcher_view_blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_outline_about_black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/game_setting_ui_game_dir_alert"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorLinkBlueDark"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/game_setting_ui_game_dir_alert_text"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorLinkBlueDark"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:background="@drawable/launcher_view_light_gray">
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/version_setting_ui_icon"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_grass"
+                    android:id="@+id/version_icon_view"/>
+
+                <ImageButton
+                    android:layout_marginStart="15dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:background="@drawable/ic_baseline_create_black"
+                    android:layout_gravity="center"
+                    android:id="@+id/edit_version_icon"/>
+
+                <ImageButton
+                    android:layout_marginStart="15dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:background="@drawable/ic_baseline_close_black"
+                    android:layout_gravity="center"
+                    android:id="@+id/reset_version_icon"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <CheckBox
+                    android:singleLine="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/version_setting_ui_check"
+                    android:textSize="@dimen/text_size_middle"
+                    android:textColor="@color/colorPureBlack"
+                    android:textStyle="bold"
+                    android:id="@+id/check_isolated_setting"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:minWidth="0dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:singleLine="true"
+                    android:textAllCaps="false"
+                    android:tag="tint_accent_color"
+                    android:background="@drawable/launcher_button_blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="@string/version_setting_ui_global"
+                    android:textColor="@color/colorPureWhite"
+                    android:textSize="14sp"
+                    android:id="@+id/start_global_game_setting_from_private"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/isolate_game_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_marginTop="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/launcher_view_light_gray">
+
+                    <LinearLayout
+                        android:id="@+id/show_java_selector_isolate"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/launcher_button_light_gray">
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:weightSum="2"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_middle"
+                                android:textColor="@color/colorPureBlack"
+                                android:text="@string/game_setting_ui_java_path" />
+
+                            <TextView
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_middle"
+                                android:id="@+id/java_path_text_isolate" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/show_java_isolate"
+                            android:layout_gravity="center"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/ic_baseline_keyboard_arrow_down_black" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/java_setting_isolate"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_marginTop="3dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:singleLine="true"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/game_setting_ui_java_path_auto"
+                                android:textSize="@dimen/text_size_middle"
+                                android:textColor="@color/colorPureBlack"
+                                android:id="@+id/check_java_path_auto_isolate"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:singleLine="true"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/game_setting_ui_java_path_8"
+                                android:textSize="@dimen/text_size_middle"
+                                android:textColor="@color/colorPureBlack"
+                                android:id="@+id/check_java_path_8_isolate"/>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="20dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:singleLine="true"
+                                android:textSize="@dimen/text_size_small"
+                                android:id="@+id/java_8_path_isolate"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:singleLine="true"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/game_setting_ui_java_path_17"
+                                android:textSize="@dimen/text_size_middle"
+                                android:textColor="@color/colorPureBlack"
+                                android:id="@+id/check_java_path_17_isolate"/>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="20dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:singleLine="true"
+                                android:textSize="@dimen/text_size_small"
+                                android:id="@+id/java_17_path_isolate"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/colorDarkGray"/>
+
+                    <LinearLayout
+                        android:id="@+id/show_game_directory_selector_isolate"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/launcher_button_light_gray">
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:weightSum="2"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_middle"
+                                android:textColor="@color/colorPureBlack"
+                                android:text="@string/game_setting_ui_version_isolation" />
+
+                            <TextView
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_middle"
+                                android:id="@+id/game_directory_text_isolate" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/show_game_dir_isolate"
+                            android:layout_gravity="center"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/ic_baseline_keyboard_arrow_down_black" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/game_dir_setting_isolate"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="25dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_marginTop="3dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:singleLine="true"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/game_setting_ui_version_isolation_default"
+                                android:textSize="@dimen/text_size_middle"
+                                android:textColor="@color/colorPureBlack"
+                                android:id="@+id/check_default_game_dir_isolate"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:singleLine="true"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/game_setting_ui_version_isolation_isolate"
+                                android:textSize="@dimen/text_size_middle"
+                                android:textColor="@color/colorPureBlack"
+                                android:id="@+id/check_isolate_game_dir_isolate"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:singleLine="true"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="12dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/universal_setting_ui_cache_custom"
+                                android:textSize="@dimen/text_size_middle"
+                                android:textColor="@color/colorPureBlack"
+                                android:id="@+id/check_custom_game_dir_isolate"/>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"/>
+
+                            <EditText
+                                android:singleLine="true"
+                                android:textSize="@dimen/text_size_middle"
+                                android:textColor="@color/colorPureBlack"
+                                android:layout_gravity="center"
+                                android:layout_width="200dp"
+                                android:layout_height="32dp"
+                                android:background="@color/colorLightGray"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="8dp"
+                                android:id="@+id/edit_game_dir_path_isolate"
+                                android:enabled="false"/>
+
+                            <ImageButton
+                                android:id="@+id/select_game_dir_path_isolate"
+                                android:layout_marginEnd="5dp"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/ic_baseline_folder_black"
+                                android:layout_marginStart="15dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/colorDarkGray"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_setting_ui_game_ram"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorPureBlack"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginStart="15dp"/>
+
+                    <CheckBox
+                        android:singleLine="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="15dp"
+                        android:id="@+id/check_auto_ram_isolate"
+                        android:text="@string/game_setting_ui_auto_ram"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPureBlack"/>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_min_ram"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                        <SeekBar
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/ram_seek_bar_isolate"/>
+
+                        <EditText
+                            android:layout_gravity="center"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_width="64dp"
+                            android:layout_height="32dp"
+                            android:background="@color/colorLightGray"
+                            android:singleLine="true"
+                            android:textSize="@dimen/text_size_middle"
+                            android:id="@+id/edit_ram_isolate"/>
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_ram"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginTop="12dp"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:id="@+id/ram_progress_bar_isolate"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/used_ram_text_isolate"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/actual_ram_text_isolate"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/colorDarkGray"
+                        android:layout_marginTop="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_resolution"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                        <SeekBar
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:layout_gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/edit_scale_factor_isolate"/>
+
+                        <EditText
+                            android:layout_gravity="center"
+                            android:layout_width="64dp"
+                            android:layout_height="32dp"
+                            android:background="@color/colorLightGray"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:singleLine="true"
+                            android:textSize="@dimen/text_size_middle"
+                            android:id="@+id/edit_scale_factor_text_isolate"/>
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="%"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/colorGray"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_log"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:id="@+id/switch_log_isolate"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/colorDarkGray"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_server"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                        <EditText
+                            android:singleLine="true"
+                            android:layout_weight="1"
+                            android:layout_marginStart="20dp"
+                            android:layout_width="0dp"
+                            android:layout_height="32dp"
+                            android:textSize="@dimen/text_size_middle"
+                            android:hint="@string/game_setting_ui_server_hint"
+                            android:background="@color/colorLightGray"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:id="@+id/edit_mc_server_isolate"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginTop="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/game_setting_ui_advance_setting"
+                    android:textColor="@color/colorPureBlack"
+                    android:textSize="@dimen/text_size_middle"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginTop="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/game_setting_ui_control_setting"
+                    android:textColor="@color/colorPureBlack"
+                    android:textSize="@dimen/text_size_middle"/>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/launcher_view_light_gray"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/launcher_button_light_gray">
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:weightSum="2"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_middle"
+                                android:textColor="@color/colorPureBlack"
+                                android:text="@string/game_setting_ui_control_layout" />
+
+                            <TextView
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_middle"
+                                android:id="@+id/control_layout_isolate" />
+
+                        </LinearLayout>
+
+                        <Button
+                            android:minWidth="0dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/game_setting_ui_control_layout_manage"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorAccent"
+                            android:id="@+id/manage_control_layout_isolate"
+                            android:background="@drawable/launcher_setting_button"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/colorDarkGray"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_touch_injector"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:tag="tint_accent_color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:id="@+id/switch_touch_injector_isolate"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/game_setting_ui_launch_setting"
+                    android:textColor="@color/colorPureBlack"
+                    android:textSize="@dimen/text_size_middle"/>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/launcher_view_light_gray"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/show_game_launcher_selector_isolate"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/launcher_button_light_gray">
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:weightSum="2"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_middle"
+                                android:textColor="@color/colorPureBlack"
+                                android:text="@string/game_setting_ui_game_launcher" />
+
+                            <TextView
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/game_setting_ui_game_launcher_pojav"
+                                android:textSize="@dimen/text_size_middle"
+                                android:id="@+id/current_launcher_isolate" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/show_game_launcher_isolate"
+                            android:layout_gravity="center"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/ic_baseline_keyboard_arrow_down_black" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/game_launcher_selector_isolate"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:singleLine="true"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_game_launcher_boat"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:id="@+id/launch_by_boat_isolate"/>
+
+                        <RadioButton
+                            android:singleLine="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_game_launcher_pojav"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:id="@+id/launch_by_pojav_isolate"/>
+
+                        <TextView
+                            android:layout_marginTop="15dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPureBlack"
+                            android:textSize="@dimen/text_size_middle"
+                            android:text="@string/game_setting_ui_game_launcher_hint"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/colorDarkGray"/>
+
+                    <LinearLayout
+                        android:id="@+id/show_boat_render_selector_isolate"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/launcher_button_light_gray">
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:weightSum="2"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_middle"
+                                android:textColor="@color/colorPureBlack"
+                                android:text="@string/game_setting_ui_boat_renderer" />
+
+                            <TextView
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_middle"
+                                android:id="@+id/current_boat_renderer_isolate" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/show_boat_renderer_isolate"
+                            android:layout_gravity="center"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/ic_baseline_keyboard_arrow_down_black" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/boat_render_selector_isolate"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:singleLine="true"
+                            android:tag="tint_accent_color"
+                            android:layout_marginStart="12dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_boat_renderer_gl4es_114"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:id="@+id/boat_renderer_gl4es_114_isolate"/>
+
+                        <RadioButton
+                            android:singleLine="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_boat_renderer_virgl"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:id="@+id/boat_renderer_virgl_isolate"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/colorDarkGray"/>
+
+                    <LinearLayout
+                        android:id="@+id/show_pojav_render_selector_isolate"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/launcher_button_light_gray">
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:weightSum="2"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_middle"
+                                android:textColor="@color/colorPureBlack"
+                                android:text="@string/game_setting_ui_pojav_renderer" />
+
+                            <TextView
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/game_setting_ui_pojav_renderer_gl4es_114"
+                                android:textSize="@dimen/text_size_middle"
+                                android:id="@+id/current_pojav_renderer_isolate" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/show_pojav_renderer_isolate"
+                            android:layout_gravity="center"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/ic_baseline_keyboard_arrow_down_black" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/pojav_render_selector_isolate"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:singleLine="true"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_pojav_renderer_gl4es_114"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:id="@+id/pojav_renderer_gl4es_114_isolate"/>
+
+                        <RadioButton
+                            android:singleLine="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_pojav_renderer_virgl"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"
+                            android:id="@+id/pojav_renderer_virgl_isolate"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/game_setting_ui_jvm_setting"
+                    android:textColor="@color/colorPureBlack"
+                    android:textSize="@dimen/text_size_middle"/>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/launcher_view_light_gray"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_jvm_setting_arg"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                        <EditText
+                            android:singleLine="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="32dp"
+                            android:textSize="@dimen/text_size_middle"
+                            android:hint="@string/game_setting_ui_jvm_setting_arg_hint"
+                            android:background="@color/colorLightGray"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:id="@+id/edit_jvm_arg_isolate"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:singleLine="true"
+                    android:layout_marginTop="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/game_setting_ui_debug_setting"
+                    android:textColor="@color/colorPureBlack"
+                    android:textSize="@dimen/text_size_middle"/>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:background="@drawable/launcher_view_yellow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_outline_alert_black"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/game_setting_ui_debug_setting_alert"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorBrown"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_setting_ui_debug_setting_alert_text"
+                        android:textSize="@dimen/text_size_middle"
+                        android:textColor="@color/colorBrown"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/launcher_view_light_gray"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_check_game"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:id="@+id/switch_check_mc_isolate"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/colorDarkGray"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_check_forge"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:id="@+id/switch_check_forge_isolate"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/colorDarkGray"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_setting_ui_check_java"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/colorPureBlack"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:id="@+id/switch_check_runtime_isolate"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/menu_none" />
+    <tab
+        id="@+id/menu_back"
+        title="@string/back"
+        icon="@drawable/ic_keyboard_backspace_black_24dp"/>
+    <!--<tab-->
+    <!--id="@+id/menu_root"-->
+    <!--title="@string/root"-->
+    <!--icon="@drawable/ic_security_black_24dp"/>-->
+    <tab
+        id="@+id/menu_internal_storage"
+        title="@string/internal_storage"
+        icon="@drawable/ic_storage_black_24dp" />
+    <tab
+        id="@+id/menu_external_storage"
+        title="@string/external_storage"
+        icon="@drawable/ic_sd_storage_black_24dp"
+        />
+</tabs>

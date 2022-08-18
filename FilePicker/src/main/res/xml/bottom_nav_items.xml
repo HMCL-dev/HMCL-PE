@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/menu_none" />
+    <tab
+        id="@+id/menu_filter"
+        title="@string/filter"
+        icon="@drawable/ic_tune_black_24dp"/>
+    <tab
+        id="@+id/menu_sort"
+        title="@string/sort"
+        icon="@drawable/ic_swap_vert_black_24dp"/>
+    <tab
+        id="@+id/menu_refresh"
+        title="@string/refresh"
+        icon="@drawable/ic_loop_black_24dp" />
+</tabs>

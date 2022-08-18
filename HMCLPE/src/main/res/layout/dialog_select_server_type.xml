@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/account_server_type"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/colorPureBlack"/>
+
+    <LinearLayout
+        android:padding="10dp"
+        android:background="@drawable/launcher_button_parent"
+        android:layout_marginTop="10dp"
+        android:id="@+id/server_type_authlib"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:singleLine="true"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:text="@string/account_auth_lib_injector"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_arrow_forward_black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="10dp"
+        android:background="@drawable/launcher_button_parent"
+        android:layout_marginTop="10dp"
+        android:id="@+id/server_type_nide"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:singleLine="true"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorPureBlack"
+            android:text="@string/account_nide_8_auth"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_arrow_forward_black"/>
+
+    </LinearLayout>
+
+</LinearLayout>

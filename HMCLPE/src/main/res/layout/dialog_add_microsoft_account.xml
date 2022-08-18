@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="30dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="15dp"
+    android:layout_width="500dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPureBlack"
+        android:textSize="@dimen/text_size_big"
+        android:text="@string/dialog_add_microsoft_account_title"/>
+
+    <LinearLayout
+        android:padding="10dp"
+        android:background="@drawable/launcher_view_blue"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_outline_about_black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:text="@string/dialog_add_microsoft_account_hint"
+                android:textSize="@dimen/text_size_middle"
+                android:textColor="@color/colorLinkBlueDark"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_add_microsoft_account_hint_text"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/colorLinkBlueDark"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginStart="7dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_jump_black"/>
+
+        <TextView
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColorLink="@color/colorLinkBlue"
+            android:id="@+id/setting_link"
+            android:text="@string/dialog_add_microsoft_account_setting"
+            android:layout_marginStart="7dp"
+            android:textSize="@dimen/text_size_middle"/>
+
+        <ImageView
+            android:layout_marginStart="7dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_jump_black"/>
+
+        <TextView
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColorLink="@color/colorLinkBlue"
+            android:id="@+id/help_link"
+            android:text="@string/dialog_add_microsoft_account_help"
+            android:layout_marginStart="7dp"
+            android:textSize="@dimen/text_size_middle"/>
+
+        <ImageView
+            android:layout_marginStart="7dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_jump_black"/>
+
+        <TextView
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColorLink="@color/colorLinkBlue"
+            android:id="@+id/purchase_link"
+            android:text="@string/dialog_add_microsoft_account_purchase"
+            android:layout_marginStart="7dp"
+            android:textSize="@dimen/text_size_middle"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="40dp">
+
+            <ProgressBar
+                android:visibility="gone"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                android:id="@+id/login_progress"/>
+
+            <Button
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/dialog_add_microsoft_account_login"
+                android:textSize="15sp"
+                android:textColor="@color/colorLinkBlue"
+                android:background="@drawable/launcher_button_parent"
+                android:id="@+id/login_microsoft"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/dialog_add_microsoft_account_cancel"
+            android:textSize="15sp"
+            android:textColor="@color/colorPureBlack"
+            android:background="@drawable/launcher_button_parent"
+            android:id="@+id/cancel_login_microsoft"/>
+
+    </LinearLayout>
+
+</LinearLayout>

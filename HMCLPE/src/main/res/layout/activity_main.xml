@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:animateLayoutChanges="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/launcher_layout"
+        android:background="@drawable/ic_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorAccent"
+            android:id="@+id/app_bar"
+            app:titleTextColor="@color/colorPureWhite">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/app_bar_title"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_craft_table"/>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_middle"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
+                        android:text="@string/app_bar_title"
+                        android:textColor="@color/colorPureWhite"/>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:visibility="gone"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/back_to_last_ui"
+                    android:background="@drawable/ic_baseline_arrow_white"/>
+
+                <ImageButton
+                    android:visibility="gone"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/close_current_ui"
+                    android:background="@drawable/ic_baseline_close_white"/>
+
+                <ImageButton
+                    android:visibility="gone"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/back_to_home"
+                    android:background="@drawable/ic_baseline_home_white"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_middle"
+                    android:layout_marginStart="10dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/text_current_ui"
+                    android:textColor="@color/colorPureWhite"/>
+                
+                <View
+                    android:background="@color/colorTransparent"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <ImageButton
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/back_to_desktop"
+                    android:background="@drawable/ic_baseline_horizontal_white"/>
+
+                <ImageButton
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/close_app"
+                    android:background="@drawable/ic_baseline_close_white"/>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:id="@+id/main_ui_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                layout="@layout/ui_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_account"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_game_manager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_version_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_download"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_multiplayer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_setting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_mod_update"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_manage_datapack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_export_world"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_add_game_directory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_install_package"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_export_package_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_export_package_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_export_package_file"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_install_game"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_install_forge_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_install_fabric_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_install_fabric_api_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_install_lite_loader_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_install_optifine_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/fake_dialog_background"
+        android:stateListAnimator="@null"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#73252525"/>
+
+    <include
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        layout="@layout/dialog_offline_skin"
+        android:layout_centerHorizontal="true"
+        android:layout_width="600dp"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
