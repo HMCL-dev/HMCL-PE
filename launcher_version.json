@@ -1,0 +1,16 @@
+{
+  "latestRelease": {
+    "versionCode": 10,
+    "versionName": "1.0.0",
+    "date": "2022.8.18",
+    "url": [""],
+    "updateLog": "Initial Version."
+  },
+  "latestPrerelease": {
+    "versionCode": 5,
+    "versionName": "1.0.0",
+    "date": "2022.4.11",
+    "url": [""],
+    "updateLog": ""
+  }
+}
