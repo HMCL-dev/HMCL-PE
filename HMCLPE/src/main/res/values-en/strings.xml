@@ -25,17 +25,7 @@
     <string name="loading_hint_control">Checking launcher control pattern…</string>
     <string name="loading_hint_lib">Checking local game libs…</string>
     <string name="loading_hint_java_8">Checking Java 8…</string>
-    <string name="loading_hint_select">Choose Java 17 installation methods</string>
-    <string name="loading_hint_download">Download</string>
-    <string name="loading_hint_local">Local</string>
     <string name="loading_hint_java_17">Checking Java 17…</string>
-    <string name="loading_hint_java_17_select">Please choose…</string>
-    <string name="loading_hint_java_17_check">Checking file…</string>
-    <string name="loading_hint_java_17_error">Please select Official Java 17 file, if you don\'t have this file, download it on github.</string>
-    <string name="loading_hint_java_17_get">Getting Java 17 link…</string>
-    <string name="loading_hint_java_17_install">Downloading Java 17…</string>
-    <string name="loading_hint_java_17_download_failed">Download failed, please try again</string>
-    <string name="loading_hint_java_17_unzip">Decompressing Java 17…</string>
     <string name="loading_hint_ready">Ready, about to enter the launcher…</string>
     <string name="loading_hint_failed">Core file install/update failed, please check your network, if invalid, please contact the developer</string>
     <string name="launcher_scroll_text_account">ACCOUNTS</string>
@@ -675,7 +665,6 @@
     <string name="download_setting_ui_download_num">Threads</string>
     <string name="download_setting_ui_download_alert">Information</string>
     <string name="download_setting_ui_download_alert_text">Too many threads may cause your system to freeze, and your download speed may be affected by your ISP and download servers. It is not always the case that more threads increase your download speed.</string>
-    <string name="feedback_ui_join_qq">Join QQ Group</string>
     <string name="feedback_ui_github_issues">Go to Github</string>
     <string name="donate_ui_text">Hello Minecraft! Launcher Pocket Edition is an Android Minecraft launcher which allows users to manage multiple Minecraft instances easily. You can donate to us on Afdian to support our file hosting and project development. Click here for more information.</string>
     <string name="dialog_manage_controller_title">Manage Touch Layout Pattern</string>
@@ -941,5 +930,4 @@
     <string name="dialog_hin2n_help_text">Host player: You need to start the game first, enter a archive as the online world, and then dishes in the game Select the opening option for the LAN, remember your port number, and then open the HMCL-PE Control panel, open the online module menu, click to create the room, confirm the displayed port number and tour The scene prompts consistent, and then confirm the room and open the room. After the room is opened, you will be able to click on the room information To view your invitation code and IP+port, you need to send them to your online partner. Note Mean, please do not tell the invitation code, ip, port telling any stranger.\n\nMember player: You need to ask the host player to ask for the invitation code and IP+port, and then open the HMCL-PE Control panel, turn on the online module menu, click to join the room, enter your invitation code, click Just determine, start the game next, add a server to the multiplayer game sector of the game, and serve The name of the service device is arbitrarily, and the server address is filled in the IP+port provided by the homeowner, and the server can be added.</string>
     <string name="drawer_custom_menu_warn">You need to create or select a sublayout first</string>
     <string name="feedback_ui_join_discord">Join Discord</string>
-    <string name="feedback_ui_join_qq_channel">Join QQ Channel</string>
 </resources>

@@ -25,20 +25,10 @@
     <string name="loading_hint_control">正在檢查啟動器控制佈局…</string>
     <string name="loading_hint_lib">正在檢查遊戲本地庫…</string>
     <string name="loading_hint_java_8">正在檢查 Java 8…</string>
-    <string name="loading_hint_select">選擇 Java 17 安裝方式</string>
-    <string name="loading_hint_download">下載安裝</string>
-    <string name="loading_hint_local">本地安裝</string>
     <string name="loading_hint_java_17">正在檢查 Java 17…</string>
     <string name="dialog_add_verify_server_name">服務器名稱</string>
     <string name="dialog_add_verify_server_nide_name">服務器名稱</string>
     <string name="dialog_verify_msg">您的設備碼為：\n%s\n請填寫與此設備碼匹配的授權驗證碼。</string>
-    <string name="loading_hint_java_17_select">請選擇…</string>
-    <string name="loading_hint_java_17_check">正在檢查文件…</string>
-    <string name="loading_hint_java_17_error">請選擇官方提供的 Java 17 文件，如果你沒有此文件，請加入官方群獲取</string>
-    <string name="loading_hint_java_17_get">正在獲取 Java 17 鏈接…</string>
-    <string name="loading_hint_java_17_install">正在下載 Java 17…</string>
-    <string name="loading_hint_java_17_download_failed">下載失敗，請重試</string>
-    <string name="loading_hint_java_17_unzip">正在解壓 Java 17…</string>
     <string name="loading_hint_ready">準備就緒，即將進入啟動器…</string>
     <string name="loading_hint_failed">核心資源安裝/更新失敗，請檢查網絡並重啟應用，如果無效，請聯繫開發者</string>
     <string name="launcher_scroll_text_account">賬戶</string>
@@ -675,7 +665,6 @@
     <string name="download_setting_ui_download_num">並發數</string>
     <string name="download_setting_ui_download_alert">提示</string>
     <string name="download_setting_ui_download_alert_text">並發數過大可能導致系統卡頓。你的下載速度會受到寬帶運營商、服務器等方面的影響，調大下載並發數不一定能大幅提升總下載速度。</string>
-    <string name="feedback_ui_join_qq">加入官方 QQ 群(不推薦)</string>
     <string name="feedback_ui_github_issues">前往 Github 反饋</string>
     <string name="donate_ui_text">Hello Minecraft! Launcher Pocket Edition 是一個免費、自由、開放源代碼的 Minecraft 啟動器。您的讚助將幫助 Hello Minecraft! Launcher Pocket Edition 獲得更好的發展，還可以獲得 HMCL-PE 的開發進展。點擊此處查閱更多詳細信息。</string>
     <string name="dialog_manage_controller_title">管理觸控佈局方案</string>
@@ -941,6 +930,5 @@
     <string name="ui_about_github_main">所有通過 Issues、讚助等方式參與本項目的貢獻者</string>
     <string name="ui_about_github_sub">感謝各位的建議、bug 反饋及讚助</string>
     <string name="feedback_ui_join_discord">加入官方 Discord</string>
-    <string name="feedback_ui_join_qq_channel">加入官方 QQ 頻道</string>
 
 </resources>

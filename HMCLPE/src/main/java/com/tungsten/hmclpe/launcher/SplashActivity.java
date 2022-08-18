@@ -17,7 +17,6 @@ import android.os.Environment;
 import android.provider.Settings;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,15 +28,12 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.tungsten.filepicker.Constants;
-import com.tungsten.filepicker.FileChooser;
 import com.tungsten.hmclpe.R;
 import com.tungsten.hmclpe.launcher.setting.InitializeSetting;
 import com.tungsten.hmclpe.launcher.setting.InstallLauncherFile;
 import com.tungsten.hmclpe.launcher.setting.launcher.LauncherSetting;
 import com.tungsten.hmclpe.manifest.AppManifest;
 import com.tungsten.hmclpe.utils.LocaleUtils;
-import com.tungsten.hmclpe.utils.file.UriUtils;
 import com.tungsten.hmclpe.utils.io.FileUtils;
 
 import org.json.JSONObject;
@@ -45,11 +41,8 @@ import org.json.JSONObject;
 import java.io.File;
 
 @SuppressLint("CustomSplashScreen")
-public class SplashActivity extends AppCompatActivity implements View.OnClickListener {
+public class SplashActivity extends AppCompatActivity {
 
-    public TextView selectText;
-    public Button download;
-    public Button local;
     public ProgressBar loadingProgress;
     public TextView loadingText;
     public TextView loadingProgressText;
@@ -66,9 +59,6 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        selectText = findViewById(R.id.select_install_type);
-        download = findViewById(R.id.install_by_download);
-        local = findViewById(R.id.install_by_local);
         loadingProgress = findViewById(R.id.loading_progress_bar);
         loadingText = findViewById(R.id.loading_text);
         loadingProgressText = findViewById(R.id.loading_progress_text);
@@ -77,9 +67,6 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
         titleTextSecond = findViewById(R.id.title_text_second);
         titleTextThird = findViewById(R.id.title_text_third);
         background = findViewById(R.id.background);
-
-        download.setOnClickListener(this);
-        local.setOnClickListener(this);
 
         initTheme();
         requestPermission();
@@ -219,37 +206,6 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
                         .create()
                         .show();
             }
-        }
-        if (requestCode == 999) {
-            if (resultCode == RESULT_OK && data != null) {
-                Uri uri = data.getData();
-                String path = UriUtils.getRealPathFromUri_AboveApi19(this,uri);
-                selectText.setVisibility(View.GONE);
-                download.setVisibility(View.GONE);
-                local.setVisibility(View.GONE);
-                new Thread(() -> {
-                    InstallLauncherFile.checkJava17File(this,path);
-                }).start();
-            }
-        }
-    }
-
-    @Override
-    public void onClick(View view) {
-        if (view == download) {
-            selectText.setVisibility(View.GONE);
-            download.setVisibility(View.GONE);
-            local.setVisibility(View.GONE);
-            new Thread(() -> {
-                InstallLauncherFile.getJRE17Url(this);
-            }).start();
-        }
-        if (view == local) {
-            Intent intent = new Intent(this, FileChooser.class);
-            intent.putExtra(Constants.SELECTION_MODE, Constants.SELECTION_MODES.SINGLE_SELECTION.ordinal());
-            intent.putExtra(Constants.ALLOWED_FILE_EXTENSIONS, "zip");
-            intent.putExtra(Constants.INITIAL_DIRECTORY, Environment.getExternalStorageDirectory().getAbsolutePath());
-            startActivityForResult(intent, 999);
         }
     }
 

@@ -667,7 +667,6 @@
     <string name="fabric_api_list_ui_warn_text">Cảnh báo: Fabric API là một bản mod và sẽ được cài đặt vào thư mục mod của phiên bản trò chơi. Vui lòng không thay đổi thư mục làm việc của trò chơi, nếu không API Vải sẽ không hoạt động. Nếu bạn muốn thay đổi các cài đặt này, bạn nên cài đặt lại nó.</string>
     <string name="fabric_list_ui_title">Thêm một phiên bản mới - Chọn phiên bản vải của bạn</string>
     <string name="feedback_ui_github_issues">Đi tới Github</string>
-    <string name="feedback_ui_join_qq">Tham gia nhóm QQ</string>
     <string name="forge_list_ui_title">Thêm phiên bản mới - Chọn phiên bản rèn của bạn</string>
     <string name="game_manager_ui_auto_install">Modloaders / OptiFine</string>
     <string name="game_manager_ui_browse">Khám phá</string>
@@ -781,22 +780,12 @@
     <string name="lite_loader_list_ui_title">Thêm phiên bản mới - Chọn phiên bản LiteLoader của bạn</string>
     <string name="loading_hint">Loading…</string>
     <string name="loading_hint_control">Đang kiểm tra mẫu điều khiển trình khởi chạy…</string>
-    <string name="loading_hint_download">Tải xuống</string>
     <string name="loading_hint_failed">Cài đặt / cập nhật tệp lõi không thành công, vui lòng kiểm tra mạng của bạn, nếu không hợp lệ, vui lòng liên hệ với nhà phát triển</string>
     <string name="loading_hint_java_17">Kiểm tra Java 17…</string>
-    <string name="loading_hint_java_17_check">Đang kiểm tra tệp…</string>
-    <string name="loading_hint_java_17_download_failed">Tải xuống không thành công, vui lòng thử lại</string>
-    <string name="loading_hint_java_17_error">Vui lòng chọn tệp Official Java 17, nếu bạn không có tệp này, hãy tải xuống trên github.</string>
-    <string name="loading_hint_java_17_get">Đang nhận liên kết Java 17…</string>
-    <string name="loading_hint_java_17_install">Đang tải xuống Java 17…</string>
-    <string name="loading_hint_java_17_select">Xin vui lòng chọn…</string>
-    <string name="loading_hint_java_17_unzip">Đang giải nén Java 17…</string>
     <string name="loading_hint_java_8">Kiểm tra Java 8…</string>
     <string name="loading_hint_lib">Đang kiểm tra lib trò chơi cục bộ…</string>
-    <string name="loading_hint_local">Địa phương</string>
     <string name="loading_hint_plugin">Đang kiểm tra plugin trình khởi chạy…</string>
     <string name="loading_hint_ready">Sẵn sàng, sắp vào trình khởi chạy…</string>
-    <string name="loading_hint_select">Chọn phương pháp cài đặt Java 17</string>
     <string name="loading_hint_setting">Đang kiểm tra tệp cấu hình…</string>
     <string name="loading_title">Chào mừng</string>
     <string name="manage_datapack_ui_add">Cài đặt gói dữ liệu</string>
@@ -942,6 +931,5 @@
     <string name="world_menu_manage">Quản lý Datapacks</string>
     <string name="world_menu_open_dir">Tiết lộ trong Explorer</string>
     <string name="feedback_ui_join_discord">Tham gia Discord</string>
-    <string name="feedback_ui_join_qq_channel">Tham gia kênh QQ</string>
 
 </resources>

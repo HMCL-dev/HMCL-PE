@@ -47,68 +47,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:padding="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/launcher_view_light_gray">
-
-                <TextView
-                    android:singleLine="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/feedback_ui_join_qq_channel"
-                    android:textSize="@dimen/text_size_middle"
-                    android:textColor="@color/colorPureBlack"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"/>
-
-                <ImageButton
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:id="@+id/join_qq_channel"
-                    android:background="@drawable/ic_baseline_jump_black"
-                    android:layout_gravity="center"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:padding="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/launcher_view_light_gray">
-
-                <TextView
-                    android:singleLine="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/feedback_ui_join_qq"
-                    android:textSize="@dimen/text_size_middle"
-                    android:textColor="@color/colorPureBlack"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"/>
-
-                <ImageButton
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:id="@+id/join_qq_group"
-                    android:background="@drawable/ic_baseline_jump_black"
-                    android:layout_gravity="center"/>
-
-            </LinearLayout>
-
-            <LinearLayout
                 android:padding="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"

@@ -31,17 +31,7 @@
     <string name="loading_hint_control">正在检查启动器控制布局…</string>
     <string name="loading_hint_lib">正在检查游戏本地库…</string>
     <string name="loading_hint_java_8">正在检查 Java 8…</string>
-    <string name="loading_hint_select">选择 Java 17 安装方式</string>
-    <string name="loading_hint_download">下载安装</string>
-    <string name="loading_hint_local">本地安装</string>
     <string name="loading_hint_java_17">正在检查 Java 17…</string>
-    <string name="loading_hint_java_17_select">请选择…</string>
-    <string name="loading_hint_java_17_check">正在检查文件…</string>
-    <string name="loading_hint_java_17_error">请选择官方提供的 Java 17 文件，如果你没有此文件，请加入官方群获取</string>
-    <string name="loading_hint_java_17_get">正在获取 Java 17 链接…</string>
-    <string name="loading_hint_java_17_install">正在下载 Java 17…</string>
-    <string name="loading_hint_java_17_download_failed">下载失败，请重试</string>
-    <string name="loading_hint_java_17_unzip">正在解压 Java 17…</string>
     <string name="loading_hint_ready">准备就绪，即将进入启动器…</string>
     <string name="loading_hint_failed">核心资源安装/更新失败，请检查网络并重启应用，如果无效，请联系开发者</string>
 
@@ -769,7 +759,6 @@
     <string name="download_setting_ui_download_alert">提示</string>
     <string name="download_setting_ui_download_alert_text">并发数过大可能导致系统卡顿。你的下载速度会受到宽带运营商、服务器等方面的影响，调大下载并发数不一定能大幅提升总下载速度。</string>
 
-    <string name="feedback_ui_join_qq">加入官方 QQ 群(不推荐)</string>
     <string name="feedback_ui_github_issues">前往 Github 反馈</string>
 
     <string name="donate_ui_text">Hello Minecraft! Launcher Pocket Edition 是一个免费、自由、开放源代码的 Minecraft 启动器。您的赞助将帮助 Hello Minecraft! Launcher Pocket Edition 获得更好的发展，还可以获得 HMCL-PE 的开发进展。点击此处查阅更多详细信息。</string>
@@ -1064,5 +1053,4 @@
     <string name="ui_about_github_sub">感谢各位的建议、bug 反馈及赞助</string>
     <string name="dialog_create_community_error">无法检测游戏端口号，你需启动游戏并在游戏内打开 对局域网开放 选项方能启动联机！</string>
     <string name="feedback_ui_join_discord">加入官方 Discord</string>
-    <string name="feedback_ui_join_qq_channel">加入官方 QQ 频道</string>
 </resources>
