@@ -32,4 +32,3 @@ jobs:
       with:
         name: app-release
         path: HMCLPE/build/outputs/apk/debug/*
-        retention-days: 1
