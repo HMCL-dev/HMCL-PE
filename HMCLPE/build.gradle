@@ -13,9 +13,6 @@ android {
         versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        ndk {
-            abiFilters 'arm64-v8a'
-        }
     }
 
     buildTypes {
@@ -52,7 +49,7 @@ dependencies {
     implementation project(path: ':Hin2n')
     implementation project(path: ':Boat')
     implementation project(path: ':PojavLauncher')
-    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
     implementation 'com.github.naman14:app-theme-engine:0.5.2@aar'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'com.squareup.okhttp3:okhttp:4.9.3'

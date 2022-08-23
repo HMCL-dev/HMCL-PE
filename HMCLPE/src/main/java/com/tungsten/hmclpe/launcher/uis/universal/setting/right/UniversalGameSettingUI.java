@@ -20,6 +20,7 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.SwitchCompat;
 
@@ -32,6 +33,7 @@ import com.tungsten.hmclpe.launcher.VerifyInterface;
 import com.tungsten.hmclpe.launcher.dialogs.control.ControllerManagerDialog;
 import com.tungsten.hmclpe.manifest.AppManifest;
 import com.tungsten.hmclpe.launcher.uis.tools.BaseUI;
+import com.tungsten.hmclpe.utils.Architecture;
 import com.tungsten.hmclpe.utils.animation.CustomAnimationUtils;
 import com.tungsten.hmclpe.utils.animation.HiddenAnimationUtils;
 import com.tungsten.hmclpe.utils.file.UriUtils;
@@ -644,11 +646,22 @@ public class UniversalGameSettingUI extends BaseUI implements View.OnClickListen
             activity.startActivityForResult(intent, PICK_GAME_DIR_REQUEST);
         }
         if (v == launchByBoat){
-            launchByPojav.setChecked(false);
-            activity.privateGameSetting.boatLauncherSetting.enable = true;
-            activity.privateGameSetting.pojavLauncherSetting.enable = false;
-            GsonUtils.savePrivateGameSetting(activity.privateGameSetting, AppManifest.SETTING_DIR + "/private_game_setting.json");
-            currentLauncher.setText(context.getText(R.string.game_setting_ui_game_launcher_boat));
+            if (Architecture.getDeviceArchitecture() == Architecture.ARCH_ARM64) {
+                launchByPojav.setChecked(false);
+                activity.privateGameSetting.boatLauncherSetting.enable = true;
+                activity.privateGameSetting.pojavLauncherSetting.enable = false;
+                GsonUtils.savePrivateGameSetting(activity.privateGameSetting, AppManifest.SETTING_DIR + "/private_game_setting.json");
+                currentLauncher.setText(context.getText(R.string.game_setting_ui_game_launcher_boat));
+            }
+            else {
+                Toast.makeText(context, "Not available for now!", Toast.LENGTH_SHORT).show();
+                launchByBoat.setChecked(false);
+                launchByPojav.setChecked(true);
+                activity.privateGameSetting.boatLauncherSetting.enable = false;
+                activity.privateGameSetting.pojavLauncherSetting.enable = true;
+                GsonUtils.savePrivateGameSetting(activity.privateGameSetting, AppManifest.SETTING_DIR + "/private_game_setting.json");
+                currentLauncher.setText(context.getText(R.string.game_setting_ui_game_launcher_pojav));
+            }
         }
         if (v == launchByPojav){
             launchByBoat.setChecked(false);

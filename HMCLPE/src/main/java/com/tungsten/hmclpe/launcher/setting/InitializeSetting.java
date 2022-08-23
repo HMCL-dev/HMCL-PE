@@ -19,6 +19,7 @@ import com.tungsten.hmclpe.launcher.setting.game.child.RamSetting;
 import com.tungsten.hmclpe.launcher.setting.launcher.LauncherSetting;
 import com.tungsten.hmclpe.launcher.setting.launcher.child.BackgroundSetting;
 import com.tungsten.hmclpe.launcher.setting.launcher.child.SourceSetting;
+import com.tungsten.hmclpe.utils.Architecture;
 import com.tungsten.hmclpe.utils.file.AssetsUtils;
 import com.tungsten.hmclpe.utils.gson.GsonUtils;
 import com.tungsten.hmclpe.utils.platform.MemoryUtils;
@@ -115,7 +116,7 @@ public class InitializeSetting {
         }
         else {
             int ram = MemoryUtils.findBestRAMAllocation(context);
-            privateGameSetting = new PrivateGameSetting(false,false,false,false,false,false,false,new JavaSetting(true,AppManifest.JAVA_DIR + "/default"),"","","",new GameDirSetting(0,AppManifest.DEFAULT_GAME_DIR),new BoatLauncherSetting(true,"GL4ES115","default"),new PojavLauncherSetting(false,"opengles2","default"),new RamSetting(ram,ram,true),"Default",1.0F);
+            privateGameSetting = new PrivateGameSetting(false,false,false,false,false,false,false,new JavaSetting(true,AppManifest.JAVA_DIR + "/default"),"","","",new GameDirSetting(0,AppManifest.DEFAULT_GAME_DIR),new BoatLauncherSetting(Architecture.getDeviceArchitecture() == Architecture.ARCH_ARM64,"GL4ES115","default"),new PojavLauncherSetting(Architecture.getDeviceArchitecture() != Architecture.ARCH_ARM64,"opengles2","default"),new RamSetting(ram,ram,true),"Default",1.0F);
             GsonUtils.savePrivateGameSetting(privateGameSetting,AppManifest.SETTING_DIR + "/private_game_setting.json");
         }
         return privateGameSetting;

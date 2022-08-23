@@ -8,6 +8,7 @@ import com.tungsten.hmclpe.R;
 import com.tungsten.hmclpe.launcher.MainActivity;
 import com.tungsten.hmclpe.launcher.SplashActivity;
 import com.tungsten.hmclpe.manifest.AppManifest;
+import com.tungsten.hmclpe.utils.Architecture;
 import com.tungsten.hmclpe.utils.file.AssetsUtils;
 import com.tungsten.hmclpe.utils.file.FileStringUtils;
 import com.tungsten.hmclpe.utils.file.FileUtils;
@@ -101,6 +102,18 @@ public class InstallLauncherFile {
         if (!new File(AppManifest.JAVA_DIR + "/default").exists() || !new File(AppManifest.JAVA_DIR + "/default/version").exists() || Integer.parseInt(Objects.requireNonNull(FileStringUtils.getStringFromFile(AppManifest.JAVA_DIR + "/default/version"))) < Integer.parseInt(Objects.requireNonNull(AssetsUtils.readAssetsTxt(activity, "app_runtime/java/default/version")))) {
             FileUtils.deleteDirectory(AppManifest.JAVA_DIR + "/default");
             AssetsUtils.getInstance(activity).setProgressCallback(callback).copyOnMainThread("app_runtime/java/default",AppManifest.JAVA_DIR + "/default");
+            if (Architecture.getDeviceArchitecture() == Architecture.ARCH_ARM) {
+                AssetsUtils.getInstance(activity).setProgressCallback(callback).copyOnMainThread("app_runtime/java/8-arm",AppManifest.JAVA_DIR + "/default");
+            }
+            if (Architecture.getDeviceArchitecture() == Architecture.ARCH_ARM64) {
+                AssetsUtils.getInstance(activity).setProgressCallback(callback).copyOnMainThread("app_runtime/java/8-arm64",AppManifest.JAVA_DIR + "/default");
+            }
+            if (Architecture.getDeviceArchitecture() == Architecture.ARCH_X86) {
+                AssetsUtils.getInstance(activity).setProgressCallback(callback).copyOnMainThread("app_runtime/java/8-x86",AppManifest.JAVA_DIR + "/default");
+            }
+            if (Architecture.getDeviceArchitecture() == Architecture.ARCH_X86_64) {
+                AssetsUtils.getInstance(activity).setProgressCallback(callback).copyOnMainThread("app_runtime/java/8-x86_64",AppManifest.JAVA_DIR + "/default");
+            }
         }
     }
 
@@ -112,6 +125,18 @@ public class InstallLauncherFile {
         if (!new File(AppManifest.JAVA_DIR + "/JRE17").exists() || !new File(AppManifest.JAVA_DIR + "/JRE17/version").exists() || Integer.parseInt(Objects.requireNonNull(FileStringUtils.getStringFromFile(AppManifest.JAVA_DIR + "/JRE17/version"))) < Integer.parseInt(Objects.requireNonNull(AssetsUtils.readAssetsTxt(activity, "app_runtime/java/JRE17/version")))) {
             FileUtils.deleteDirectory(AppManifest.JAVA_DIR + "/JRE17");
             AssetsUtils.getInstance(activity).setProgressCallback(callback).copyOnMainThread("app_runtime/java/JRE17",AppManifest.JAVA_DIR + "/JRE17");
+            if (Architecture.getDeviceArchitecture() == Architecture.ARCH_ARM) {
+                AssetsUtils.getInstance(activity).setProgressCallback(callback).copyOnMainThread("app_runtime/java/17-arm",AppManifest.JAVA_DIR + "/JRE17");
+            }
+            if (Architecture.getDeviceArchitecture() == Architecture.ARCH_ARM64) {
+                AssetsUtils.getInstance(activity).setProgressCallback(callback).copyOnMainThread("app_runtime/java/17-arm64",AppManifest.JAVA_DIR + "/JRE17");
+            }
+            if (Architecture.getDeviceArchitecture() == Architecture.ARCH_X86) {
+                AssetsUtils.getInstance(activity).setProgressCallback(callback).copyOnMainThread("app_runtime/java/17-x86",AppManifest.JAVA_DIR + "/JRE17");
+            }
+            if (Architecture.getDeviceArchitecture() == Architecture.ARCH_X86_64) {
+                AssetsUtils.getInstance(activity).setProgressCallback(callback).copyOnMainThread("app_runtime/java/17-x86_64",AppManifest.JAVA_DIR + "/JRE17");
+            }
         }
     }
 
