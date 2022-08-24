@@ -132,7 +132,7 @@ public class ForgeInstallTask extends AsyncTask<ForgeVersion,Integer, Version> {
                         url,
                         activity.launcherSetting.gameFileDirectory + "/libraries/" + library.getPath(),
                         library.getDownload().getSha1());
-                if (StringUtils.isNotBlank(library.getDownload().getUrl())) {
+                if (library.hasDownloadURL()) {
                     list.add(bean);
                 }
             }
@@ -148,7 +148,7 @@ public class ForgeInstallTask extends AsyncTask<ForgeVersion,Integer, Version> {
                         url,
                         activity.launcherSetting.gameFileDirectory + "/libraries/" +library.getPath(),
                         library.getDownload().getSha1());
-                if (StringUtils.isNotBlank(library.getDownload().getUrl())) {
+                if (library.hasDownloadURL()) {
                     list.add(bean);
                 }
             }

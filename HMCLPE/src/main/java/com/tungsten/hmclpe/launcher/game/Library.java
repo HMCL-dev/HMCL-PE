@@ -1,9 +1,6 @@
 package com.tungsten.hmclpe.launcher.game;
 
-import android.os.Build;
-
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 
 import com.google.gson.*;
 import com.google.gson.annotations.SerializedName;
@@ -84,7 +81,6 @@ public class Library implements Comparable<Library>, Validation {
         return artifact.getVersion();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public String getClassifier() {
         if (artifact.getClassifier() == null)
             if (natives != null && natives.containsKey(OperatingSystem.CURRENT_OS))
@@ -99,17 +95,14 @@ public class Library implements Comparable<Library>, Validation {
         return extract == null ? ExtractRules.EMPTY : extract;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public boolean appliesToCurrentEnvironment() {
         return CompatibilityRule.appliesToCurrentEnvironment(rules);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public boolean isNative() {
         return natives != null && appliesToCurrentEnvironment();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     protected LibraryDownloadInfo getRawDownloadInfo() {
         if (downloads != null) {
             if (isNative())
@@ -121,7 +114,6 @@ public class Library implements Comparable<Library>, Validation {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public String getPath() {
         LibraryDownloadInfo temp = getRawDownloadInfo();
         if (temp != null && temp.getPath() != null)
@@ -130,7 +122,6 @@ public class Library implements Comparable<Library>, Validation {
             return artifact.setClassifier(getClassifier()).getPath();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public LibraryDownloadInfo getDownload() {
         LibraryDownloadInfo temp = getRawDownloadInfo();
         String path = getPath();
@@ -141,7 +132,6 @@ public class Library implements Comparable<Library>, Validation {
         );
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public boolean hasDownloadURL() {
         LibraryDownloadInfo temp = getRawDownloadInfo();
         if (temp != null) return temp.getUrl() != null;
@@ -183,7 +173,6 @@ public class Library implements Comparable<Library>, Validation {
         return new ToStringBuilder(this).append("name", getName()).toString();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public int compareTo(Library o) {
         if (getName().compareTo(o.getName()) == 0)
@@ -192,7 +181,6 @@ public class Library implements Comparable<Library>, Validation {
             return getName().compareTo(o.getName());
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof Library))
@@ -202,7 +190,6 @@ public class Library implements Comparable<Library>, Validation {
         return getName().equals(other.getName()) && (isNative() == other.isNative());
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public int hashCode() {
         return Objects.hash(getName(), isNative());

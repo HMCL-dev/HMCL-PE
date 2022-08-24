@@ -1,5 +1,9 @@
 package net.kdt.pojavlaunch.utils;
 
+import static net.kdt.pojavlaunch.utils.Architecture.ARCH_ARM;
+import static net.kdt.pojavlaunch.utils.Architecture.ARCH_ARM64;
+import static net.kdt.pojavlaunch.utils.Architecture.ARCH_X86;
+import static net.kdt.pojavlaunch.utils.Architecture.ARCH_X86_64;
 import static net.kdt.pojavlaunch.utils.Architecture.is64BitsDevice;
 
 import android.app.Activity;
@@ -53,8 +57,21 @@ public class JREUtils {
 
     public static void initJavaRuntime(String javaPath) {
         String path;
+        String arch = "";
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM) {
+            arch = "aarch32";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
+            arch = "aarch64";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_X86) {
+            arch = "i386";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_X86_64) {
+            arch = "amd64";
+        }
         if (javaPath.endsWith("default")){
-            path = javaPath + "/lib/aarch64";
+            path = javaPath + "/lib/" + arch;
         }
         else {
             path = javaPath + "/lib";
@@ -139,7 +156,21 @@ public class JREUtils {
 
     public static void relocateLibPath(final Context ctx , String javaPath) throws IOException {
 
-        String DIRNAME_HOME_JRE = "lib/aarch64";
+        String arch = "";
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM) {
+            arch = "aarch32";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
+            arch = "aarch64";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_X86) {
+            arch = "i386";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_X86_64) {
+            arch = "amd64";
+        }
+
+        String DIRNAME_HOME_JRE = "lib/" + arch;
 
         nativeLibDir = ctx.getApplicationInfo().nativeLibraryDir;
 
