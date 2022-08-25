@@ -47,7 +47,7 @@
         android:largeHeap="true"
         android:usesCleartextTraffic="true"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:extractNativeLibs="false"
+        android:extractNativeLibs="true"
         android:supportsRtl="true"
         android:hasFragileUserData="true"
         android:allowNativeHeapPointerTagging="false"
