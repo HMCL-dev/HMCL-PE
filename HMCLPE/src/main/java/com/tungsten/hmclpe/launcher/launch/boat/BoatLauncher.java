@@ -9,6 +9,8 @@ import com.tungsten.hmclpe.launcher.launch.TouchInjector;
 import com.tungsten.hmclpe.manifest.AppManifest;
 import com.tungsten.hmclpe.utils.string.StringUtils;
 
+import net.kdt.pojavlaunch.utils.Tools;
+
 import java.io.File;
 import java.util.Collections;
 import java.util.Vector;
@@ -26,12 +28,12 @@ public class BoatLauncher {
             String libraryPath;
             String classPath;
             String r = gameLaunchSetting.boatRenderer.equals("VirGL") ? "virgl" : "gl4es";
+            boolean isJava17 = javaPath.endsWith("JRE17");
             if (!highVersion){
                 libraryPath = javaPath + "/lib/aarch64/jli:" + javaPath + "/lib/aarch64:" + AppManifest.BOAT_LIB_DIR + ":" + AppManifest.BOAT_LIB_DIR + "/lwjgl-2:" + AppManifest.BOAT_LIB_DIR + "/renderer/" + r;
                 classPath = AppManifest.BOAT_LIB_DIR + "/lwjgl-2/lwjgl.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-2/lwjgl_util.jar:" + version.getClassPath(gameLaunchSetting.gameFileDirectory,false,false);
             }
             else {
-                boolean isJava17 = javaPath.endsWith("JRE17");
                 if (isJava17) {
                     libraryPath = javaPath + "/lib:" + AppManifest.BOAT_LIB_DIR + ":" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3:" + AppManifest.BOAT_LIB_DIR + "/renderer/" + r;
                 }
@@ -42,16 +44,7 @@ public class BoatLauncher {
             }
             Vector<String> args = new Vector<String>();
             args.add(javaPath + "/bin/java");
-            if(!javaPath.endsWith("JRE17")){
-                args.add("-Djava.awt.headless=false");
-                args.add("-Dcacio.managed.screensize="+width+"x"+height);
-                args.add("-Dcacio.font.fontmanager=sun.awt.X11FontManager");
-                args.add("-Dcacio.font.fontscaler=sun.font.FreetypeFontScaler");
-                args.add("-Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel");
-                args.add("-Dawt.toolkit=net.java.openjdk.cacio.ctc.CTCToolkit");
-                args.add("-Djava.awt.graphicsenv=net.java.openjdk.cacio.ctc.CTCGraphicsEnvironment");
-                args.add("-Xbootclasspath/p:"+AppManifest.CACIOCAVALLO_DIR+"/cacio-shared-1.10-SNAPSHOT.jar:"+AppManifest.CACIOCAVALLO_DIR+"/ResConfHack.jar:"+AppManifest.CACIOCAVALLO_DIR+"/cacio-androidnw-1.10-SNAPSHOT.jar");
-            }
+            Tools.getCacioJavaArgs(context, args, !isJava17, width, height);
             args.add("-cp");
             args.add(classPath);
             args.add("-Djava.library.path=" + libraryPath);

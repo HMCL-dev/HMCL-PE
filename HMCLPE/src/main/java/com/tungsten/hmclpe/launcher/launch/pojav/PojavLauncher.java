@@ -38,9 +38,7 @@ public class PojavLauncher {
             boolean isJava17 = javaPath.endsWith("JRE17");
             String classPath = getLWJGL3ClassPath() + ":" + version.getClassPath(gameLaunchSetting.gameFileDirectory,isHighVersion(gameLaunchSetting),isJava17);
             Vector<String> args = new Vector<String>();
-            if (JREUtils.jreReleaseList.get("JAVA_VERSION").equals("1.8.0")) {
-                Tools.getCacioJavaArgs(context,args, false);
-            }
+            Tools.getCacioJavaArgs(context, args, !isJava17, width, height);
             args.add("-Djava.home=" + javaPath);
             args.add("-Djava.io.tmpdir=" + AppManifest.DEFAULT_CACHE_DIR);
             args.add("-Duser.home=" + new File(gameLaunchSetting.gameFileDirectory).getParent());

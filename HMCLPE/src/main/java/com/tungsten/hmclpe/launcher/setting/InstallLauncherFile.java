@@ -1,8 +1,11 @@
 package com.tungsten.hmclpe.launcher.setting;
 
+import static org.apache.commons.io.FileUtils.listFiles;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.tungsten.hmclpe.R;
 import com.tungsten.hmclpe.launcher.MainActivity;
@@ -14,6 +17,8 @@ import com.tungsten.hmclpe.utils.file.FileStringUtils;
 import com.tungsten.hmclpe.utils.file.FileUtils;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.Collection;
 import java.util.Objects;
 
 public class InstallLauncherFile {
@@ -82,6 +87,7 @@ public class InstallLauncherFile {
             AssetsUtils.getInstance(activity).setProgressCallback(progressCallback).copyOnMainThread("app_runtime/boat",AppManifest.BOAT_LIB_DIR);
             AssetsUtils.getInstance(activity).setProgressCallback(progressCallback).copyOnMainThread("app_runtime/pojav",AppManifest.POJAV_LIB_DIR);
             AssetsUtils.getInstance(activity).setProgressCallback(progressCallback).copyOnMainThread("app_runtime/caciocavallo",AppManifest.CACIOCAVALLO_DIR);
+            AssetsUtils.getInstance(activity).setProgressCallback(progressCallback).copyOnMainThread("app_runtime/caciocavallo17",AppManifest.CACIOCAVALLO17_DIR);
             AssetsUtils.getInstance(activity).setProgressCallback(progressCallback).copyOnMainThread("app_runtime/version",AppManifest.DEFAULT_RUNTIME_DIR + "/version");
         }
         /*
@@ -114,6 +120,7 @@ public class InstallLauncherFile {
             if (Architecture.getDeviceArchitecture() == Architecture.ARCH_X86_64) {
                 AssetsUtils.getInstance(activity).setProgressCallback(callback).copyOnMainThread("app_runtime/java/8-x86_64",AppManifest.JAVA_DIR + "/default");
             }
+            unpack200(activity.getApplicationContext().getApplicationInfo().nativeLibraryDir, AppManifest.JAVA_DIR + "/default");
         }
     }
 
@@ -136,6 +143,30 @@ public class InstallLauncherFile {
             }
             if (Architecture.getDeviceArchitecture() == Architecture.ARCH_X86_64) {
                 AssetsUtils.getInstance(activity).setProgressCallback(callback).copyOnMainThread("app_runtime/java/17-x86_64",AppManifest.JAVA_DIR + "/JRE17");
+            }
+            unpack200(activity.getApplicationContext().getApplicationInfo().nativeLibraryDir, AppManifest.JAVA_DIR + "/JRE17");
+        }
+    }
+
+    /**
+     * Unpacks all .pack files into .jar
+     * @param nativeLibraryDir The native lib path, required to execute the unpack200 binary
+     * @param runtimePath The path to the runtime to walk into
+     */
+    private static void unpack200(String nativeLibraryDir, String runtimePath) {
+
+        File basePath = new File(runtimePath);
+        Collection<File> files = listFiles(basePath, new String[]{"pack"}, true);
+
+        File workdir = new File(nativeLibraryDir);
+
+        ProcessBuilder processBuilder = new ProcessBuilder().directory(workdir);
+        for(File jarFile : files){
+            try{
+                Process process = processBuilder.command("./libunpack200.so", "-r", jarFile.getAbsolutePath(), jarFile.getAbsolutePath().replace(".pack", "")).start();
+                process.waitFor();
+            }catch (InterruptedException | IOException e) {
+                Log.e("MULTIRT", "Failed to unpack the runtime !");
             }
         }
     }
