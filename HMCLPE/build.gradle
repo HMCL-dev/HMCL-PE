@@ -4,6 +4,15 @@ plugins {
 
 android {
     compileSdk 32
+   
+	    signingConfigs {
+        customDebug {
+            storeFile file("key-store.jks")
+            storePassword "666666"
+            keyAlias "HMCL-PE-Key"
+            keyPassword "666666"
+        }
+    }
 
     defaultConfig {
         applicationId "com.tungsten.hmclpe"
