@@ -4,13 +4,13 @@ plugins {
 
 android {
     compileSdk 32
-       
-   signingConfigs {
-        customRelease {
-            storeFile file("key-store.jks")
-            storePassword "666666"
-            keyAlias "HMCL-PE-Key"
-            keyPassword "666666"
+	
+	signingConfigs {
+        customDebug {
+            storeFile file("debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
         }
     }
 
