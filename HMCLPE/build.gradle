@@ -4,9 +4,9 @@ plugins {
 
 android {
     compileSdk 32
-   
-	    signingConfigs {
-        customDebug {
+       
+   signingConfigs {
+        customRelease {
             storeFile file("key-store.jks")
             storePassword "666666"
             keyAlias "HMCL-PE-Key"
