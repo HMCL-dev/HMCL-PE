@@ -5,8 +5,8 @@ plugins {
 android {
     compileSdk 32
 	
-	signingConfigs {
-        customDebug {
+    signingConfigs {
+        release {
             storeFile file("debug.keystore")
             storePassword "android"
             keyAlias "androiddebugkey"
