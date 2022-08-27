@@ -25,10 +25,10 @@ jobs:
     - name: Build debug.apk
       run: |
         chmod +x gradlew
-        ./gradlew assembleDebug
+        ./gradlew assembleRelease
         
     - name : upload apk
       uses: actions/upload-artifact@v3
       with:
         name: app-debug
-        path: HMCLPE/build/outputs/apk/debug/*
+        path: HMCLPE/build/outputs/apk/release/*
