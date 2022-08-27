@@ -13,7 +13,13 @@ android {
             keyPassword "android"
         }
     }
-
+    
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = false
+           }
+     }
+     
     defaultConfig {
         applicationId "com.tungsten.hmclpe"
         minSdk 26
