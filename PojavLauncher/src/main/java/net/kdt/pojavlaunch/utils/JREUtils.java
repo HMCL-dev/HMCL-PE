@@ -280,9 +280,9 @@ public class JREUtils {
             Os.setenv("JAVA_HOME" , javaPath, true);
             File serverFile = new File(javaPath + "/lib/server/libjvm.so");
             jvmLibraryPath = javaPath + "/lib/" + (serverFile.exists() ? "server" : "client");
-            Log.d("DynamicLoader","Base LD_LIBRARY_PATH: "+LD_LIBRARY_PATH);
-            Log.d("DynamicLoader","Internal LD_LIBRARY_PATH: "+jvmLibraryPath+":"+LD_LIBRARY_PATH);
-            setLdLibraryPath(jvmLibraryPath+":"+LD_LIBRARY_PATH);
+            Log.d("DynamicLoader","Base LD_LIBRARY_PATH: " + LD_LIBRARY_PATH);
+            Log.d("DynamicLoader","Internal LD_LIBRARY_PATH: " + jvmLibraryPath + ":" + LD_LIBRARY_PATH);
+            setLdLibraryPath(jvmLibraryPath + ":" + LD_LIBRARY_PATH);
             List<String> userArgs = new ArrayList<>();
             userArgs.addAll(args);
             initJavaRuntime(javaPath);

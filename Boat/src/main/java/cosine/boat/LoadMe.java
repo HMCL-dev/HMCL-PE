@@ -1,5 +1,10 @@
 package cosine.boat;
 
+import static cosine.boat.utils.Architecture.ARCH_ARM;
+import static cosine.boat.utils.Architecture.ARCH_ARM64;
+import static cosine.boat.utils.Architecture.ARCH_X86;
+import static cosine.boat.utils.Architecture.ARCH_X86_64;
+
 import android.content.Context;
 import android.os.Handler;
 
@@ -7,6 +12,7 @@ import java.io.File;
 import java.util.*;
 
 import cosine.boat.function.BoatLaunchCallback;
+import cosine.boat.utils.Architecture;
 import cosine.boat.utils.BoatUtils;
 
 public class LoadMe {
@@ -188,16 +194,30 @@ public class LoadMe {
             setenv("HOME", home);
             setenv("JAVA_HOME" , javaPath);
 
-            dlopen(javaPath + "/lib/aarch64/libfreetype.so");
-            dlopen(javaPath + "/lib/aarch64/jli/libjli.so");
-            dlopen(javaPath + "/lib/aarch64/server/libjvm.so");
-            dlopen(javaPath + "/lib/aarch64/libverify.so");
-            dlopen(javaPath + "/lib/aarch64/libjava.so");
-            dlopen(javaPath + "/lib/aarch64/libnet.so");
-            dlopen(javaPath + "/lib/aarch64/libnio.so");
-            dlopen(javaPath + "/lib/aarch64/libawt.so");
-            dlopen(javaPath + "/lib/aarch64/libawt_headless.so");
-            dlopen(javaPath + "/lib/aarch64/libfontmanager.so");
+            String arch = "";
+            if (Architecture.getDeviceArchitecture() == ARCH_ARM) {
+                arch = "aarch32";
+            }
+            if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
+                arch = "aarch64";
+            }
+            if (Architecture.getDeviceArchitecture() == ARCH_X86) {
+                arch = "i386";
+            }
+            if (Architecture.getDeviceArchitecture() == ARCH_X86_64) {
+                arch = "amd64";
+            }
+
+            dlopen(javaPath + "/lib/" + arch + "/libfreetype.so");
+            dlopen(javaPath + "/lib/" + arch + "/jli/libjli.so");
+            dlopen(javaPath + "/lib/" + arch + "/server/libjvm.so");
+            dlopen(javaPath + "/lib/" + arch + "/libverify.so");
+            dlopen(javaPath + "/lib/" + arch + "/libjava.so");
+            dlopen(javaPath + "/lib/" + arch + "/libnet.so");
+            dlopen(javaPath + "/lib/" + arch + "/libnio.so");
+            dlopen(javaPath + "/lib/" + arch + "/libawt.so");
+            dlopen(javaPath + "/lib/" + arch + "/libawt_headless.so");
+            dlopen(javaPath + "/lib/" + arch + "/libfontmanager.so");
 
             redirectStdio(home + "/boat_api_installer_log.txt");
             chdir(home);
