@@ -27,6 +27,14 @@ jobs:
         chmod +x gradlew
         ./gradlew assembleRelease
         
+    - name: Build Signed APK
+      uses: victorbnl/build-signed-apk@main
+      with:
+        keystore_file: debug.keystore
+        keystore_password: android
+        key_alias: androiddebugkey
+        key_password: android
+        
     - name : upload apk
       uses: actions/upload-artifact@v3
       with:
