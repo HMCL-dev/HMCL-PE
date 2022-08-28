@@ -272,10 +272,11 @@ public class JREUtils {
         return exitCode;
     }
 
-    public static int launchAPIInstaller(Activity activity,String javaPath, Vector<String> args, String home) {
+    public static int launchAPIInstaller(Context context,String javaPath, ArrayList<String> args, String home) {
         try {
-            redirectAndPrintJRELog(activity);
-            relocateLibPath(activity,javaPath);
+            args.remove(0);
+            redirectAndPrintJRELog(context);
+            relocateLibPath(context,javaPath);
             Os.setenv("HOME", home, true);
             Os.setenv("JAVA_HOME" , javaPath, true);
             File serverFile = new File(javaPath + "/lib/server/libjvm.so");
@@ -283,14 +284,13 @@ public class JREUtils {
             Log.d("DynamicLoader","Base LD_LIBRARY_PATH: " + LD_LIBRARY_PATH);
             Log.d("DynamicLoader","Internal LD_LIBRARY_PATH: " + jvmLibraryPath + ":" + LD_LIBRARY_PATH);
             setLdLibraryPath(jvmLibraryPath + ":" + LD_LIBRARY_PATH);
-            List<String> userArgs = new ArrayList<>();
-            userArgs.addAll(args);
+            List<String> userArgs = new ArrayList<>(args);
             initJavaRuntime(javaPath);
-            setupExitTrap(activity.getApplication());
+            setupExitTrap(context);
             chdir(home);
             userArgs.add(0,"java");
             final int exitCode = VMLauncher.launchJVM((String[]) userArgs.toArray(new String[0]));
-            Logger.getInstance(activity).appendToLog("Java Exit code: " + exitCode);
+            Logger.getInstance(context).appendToLog("Java Exit code: " + exitCode);
             return exitCode;
         } catch (ErrnoException | IOException e) {
             e.printStackTrace();
@@ -391,92 +391,6 @@ public class JREUtils {
         return libName;
     }
 
-    /**
-     * Remove the argument from the list, if it exists
-     * If the argument exists multiple times, they will all be removed.
-     * @param argList The argument list to purge
-     * @param argStart The argument to purge from the list.
-     */
-    private static void purgeArg(List<String> argList, String argStart) {
-        for(int i = 0; i < argList.size(); i++) {
-            final String arg = argList.get(i);
-            if(arg.startsWith(argStart)) {
-                argList.remove(i);
-            }
-        }
-    }
-    private static final int EGL_OPENGL_ES_BIT = 0x0001;
-    private static final int EGL_OPENGL_ES2_BIT = 0x0004;
-    private static final int EGL_OPENGL_ES3_BIT_KHR = 0x0040;
-    private static boolean hasExtension(String extensions, String name) {
-        int start = extensions.indexOf(name);
-        while (start >= 0) {
-            // check that we didn't find a prefix of a longer extension name
-            int end = start + name.length();
-            if (end == extensions.length() || extensions.charAt(end) == ' ') {
-                return true;
-            }
-            start = extensions.indexOf(name, end);
-        }
-        return false;
-    }
-    private static int getDetectedVersion() {
-        /*
-         * Get all the device configurations and check the EGL_RENDERABLE_TYPE attribute
-         * to determine the highest ES version supported by any config. The
-         * EGL_KHR_create_context extension is required to check for ES3 support; if the
-         * extension is not present this test will fail to detect ES3 support. This
-         * effectively makes the extension mandatory for ES3-capable devices.
-         */
-        EGL10 egl = (EGL10) EGLContext.getEGL();
-        EGLDisplay display = egl.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
-        int[] numConfigs = new int[1];
-        if (egl.eglInitialize(display, null)) {
-            try {
-                boolean checkES3 = hasExtension(egl.eglQueryString(display, EGL10.EGL_EXTENSIONS),
-                        "EGL_KHR_create_context");
-                if (egl.eglGetConfigs(display, null, 0, numConfigs)) {
-                    EGLConfig[] configs = new EGLConfig[numConfigs[0]];
-                    if (egl.eglGetConfigs(display, configs, numConfigs[0], numConfigs)) {
-                        int highestEsVersion = 0;
-                        int[] value = new int[1];
-                        for (int i = 0; i < numConfigs[0]; i++) {
-                            if (egl.eglGetConfigAttrib(display, configs[i],
-                                    EGL10.EGL_RENDERABLE_TYPE, value)) {
-                                if (checkES3 && ((value[0] & EGL_OPENGL_ES3_BIT_KHR) ==
-                                        EGL_OPENGL_ES3_BIT_KHR)) {
-                                    if (highestEsVersion < 3) highestEsVersion = 3;
-                                } else if ((value[0] & EGL_OPENGL_ES2_BIT) == EGL_OPENGL_ES2_BIT) {
-                                    if (highestEsVersion < 2) highestEsVersion = 2;
-                                } else if ((value[0] & EGL_OPENGL_ES_BIT) == EGL_OPENGL_ES_BIT) {
-                                    if (highestEsVersion < 1) highestEsVersion = 1;
-                                }
-                            } else {
-                                Log.w("glesDetect", "Getting config attribute with "
-                                        + "EGL10#eglGetConfigAttrib failed "
-                                        + "(" + i + "/" + numConfigs[0] + "): "
-                                        + egl.eglGetError());
-                            }
-                        }
-                        return highestEsVersion;
-                    } else {
-                        Log.e("glesDetect", "Getting configs with EGL10#eglGetConfigs failed: "
-                                + egl.eglGetError());
-                        return -1;
-                    }
-                } else {
-                    Log.e("glesDetect", "Getting number of configs with EGL10#eglGetConfigs failed: "
-                            + egl.eglGetError());
-                    return -2;
-                }
-            } finally {
-                egl.eglTerminate(display);
-            }
-        } else {
-            Log.e("glesDetect", "Couldn't initialize EGL.");
-            return -3;
-        }
-    }
     public static native int chdir(String path);
     public static native void logToLogger(final Logger logger);
     public static native boolean dlopen(String libPath);

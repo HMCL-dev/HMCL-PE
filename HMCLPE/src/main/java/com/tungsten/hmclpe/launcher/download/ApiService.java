@@ -7,14 +7,14 @@ import androidx.annotation.Nullable;
 
 import com.tungsten.hmclpe.manifest.AppManifest;
 
+import net.kdt.pojavlaunch.PojavApiService;
+
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
 
-import cosine.boat.BoatApiService;
-
-public class ApiService extends BoatApiService {
+public class ApiService extends PojavApiService {
 
     public static final int API_SERVICE_PORT = 6868;
 
