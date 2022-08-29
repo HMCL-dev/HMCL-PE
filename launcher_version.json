@@ -1,16 +1,16 @@
 {
   "latestRelease": {
-    "versionCode": 10,
+    "versionCode": 11,
     "versionName": "1.0.0",
-    "date": "2022.8.18",
-    "url": ["https://github.com/Tungstend/HMCL-PE/releases/download/22.8.18/HMCLPE-release.apk"],
-    "updateLog": "Initial Version."
+    "date": "2022.8.29",
+    "url": ["https://github.com/Tungstend/HMCL-PE/releases/download/22.8.29/HMCLPE-release.apk"],
+    "updateLog": "Multi-architecture test (pojav only).\nFix download failed during forge installation."
   },
   "latestPrerelease": {
-    "versionCode": 5,
+    "versionCode": 11,
     "versionName": "1.0.0",
-    "date": "2022.4.11",
-    "url": [""],
-    "updateLog": ""
+    "date": "2022.8.29",
+    "url": ["https://github.com/Tungstend/HMCL-PE/releases/download/22.8.29/HMCLPE-release.apk"],
+    "updateLog": "Multi-architecture test (pojav only).\nFix download failed during forge installation."
   }
 }
