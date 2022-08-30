@@ -55,27 +55,27 @@ public class SkinPreviewDialog implements View.OnClickListener {
     private LinearLayout dialog;
     private Button fakeBackground;
 
-    private Context context;
-    private MainActivity activity;
-    private Account account;
-    private OfflineSkinCallback callback;
+    private final Context context;
+    private final MainActivity activity;
+    private final Account account;
+    private final OfflineSkinCallback callback;
 
     private LinearLayout skinParentView;
 
     private Button positive;
     private Button negative;
 
-    private MinecraftSkinRenderer renderer;
+    private final MinecraftSkinRenderer renderer;
 
-    private Handler handler;
-    private Runnable startRunnable = new Runnable() {
+    private final Handler handler;
+    private final Runnable startRunnable = new Runnable() {
         @Override
         public void run() {
             renderer.mCharacter.SetRunning(true);
             handler.postDelayed(stopRunnable,2000);
         }
     };
-    private Runnable stopRunnable = new Runnable() {
+    private final Runnable stopRunnable = new Runnable() {
         @Override
         public void run() {
             renderer.mCharacter.SetRunning(false);

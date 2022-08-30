@@ -17,8 +17,8 @@ android {
     packagingOptions {
         jniLibs {
             useLegacyPackaging = true
-           }
-     }
+        }
+    }
      
     defaultConfig {
         applicationId "com.tungsten.hmclpe"

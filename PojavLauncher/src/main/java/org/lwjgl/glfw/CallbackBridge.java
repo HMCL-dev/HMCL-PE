@@ -1,47 +1,47 @@
 package org.lwjgl.glfw;
 
-import android.os.Handler;
-import android.os.Looper;
 import net.kdt.pojavlaunch.*;
 import net.kdt.pojavlaunch.keyboard.LWJGLGLFWKeycode;
 
+import android.view.Choreographer;
+
 public class CallbackBridge {
-    public static final int ANDROID_TYPE_GRAB_STATE = 0;
-    
-    public static final int CLIPBOARD_COPY = 2000;
-    public static final int CLIPBOARD_PASTE = 2001;
-    
+    public static Choreographer sChoreographer = Choreographer.getInstance();
+    private static boolean isGrabbing = false;
+    private static long lastGrabTime = System.currentTimeMillis();
+
     public static volatile int windowWidth, windowHeight;
     public static volatile int physicalWidth, physicalHeight;
     public static float mouseX, mouseY;
     public static StringBuilder DEBUG_STRING = new StringBuilder();
-
+    private static boolean threadAttached;
+    public volatile static boolean holdingAlt, holdingCapslock, holdingCtrl,
+            holdingNumlock, holdingShift;
 
     public static void putMouseEventWithCoords(int button, float x, float y) {
         putMouseEventWithCoords(button, true, x, y);
-        Handler handler = new Handler(Looper.getMainLooper());
-        handler.postDelayed(() -> putMouseEventWithCoords(button, false, x, y), 22);
+        sChoreographer.postFrameCallbackDelayed(l -> putMouseEventWithCoords(button, false, x, y), 33);
     }
-    
+
     public static void putMouseEventWithCoords(int button, boolean isDown, float x, float y /* , int dz, long nanos */) {
         sendCursorPos(x, y);
         sendMouseKeycode(button, CallbackBridge.getCurrentMods(), isDown);
     }
 
-    private static boolean threadAttached;
+
     public static boolean sendCursorPos(float x, float y) {
         if (!threadAttached) {
             nativeSetUseInputStackQueue(BaseMainActivity.isInputStackCall);
             threadAttached = CallbackBridge.nativeAttachThreadToOther(true, BaseMainActivity.isInputStackCall);
         }
-        
+
         DEBUG_STRING.append("CursorPos=").append(x).append(", ").append(y).append("\n");
         mouseX = x;
         mouseY = y;
         nativeSendCursorPos(mouseX, mouseY);
         return true;
     }
-    
+
     public static void sendPrepareGrabInitialPos() {
         DEBUG_STRING.append("Prepare set grab initial posititon: ignored");
         //sendMouseKeycode(-1, CallbackBridge.getCurrentMods(), false);
@@ -103,7 +103,7 @@ public class CallbackBridge {
         sendMouseKeycode(keycode, CallbackBridge.getCurrentMods(), true);
         sendMouseKeycode(keycode, CallbackBridge.getCurrentMods(), false);
     }
-    
+
     public static void sendScroll(double xoffset, double yoffset) {
         DEBUG_STRING.append("ScrollX=").append(xoffset).append(",ScrollY=").append(yoffset);
         nativeSendScroll(xoffset, yoffset);
@@ -114,51 +114,20 @@ public class CallbackBridge {
     }
 
     public static boolean isGrabbing() {
-        // return isGrabbing;
-        return nativeIsGrabbing();
+        // Avoid going through the JNI each time.
+        long currentTime = System.currentTimeMillis();
+        if (currentTime - lastGrabTime > 250){
+            isGrabbing = nativeIsGrabbing();
+            lastGrabTime = currentTime;
+        }
+        return isGrabbing;
     }
 
     // Called from JRE side
     public static String accessAndroidClipboard(int type, String copy) {
-        switch (type) {
-            case CLIPBOARD_COPY:
-                //BaseMainActivity.GLOBAL_CLIPBOARD.setPrimaryClip(ClipData.newPlainText("Copy", copy));
-                return null;
-                
-            case CLIPBOARD_PASTE:
-                /*
-                if (BaseMainActivity.GLOBAL_CLIPBOARD.hasPrimaryClip() && BaseMainActivity.GLOBAL_CLIPBOARD.getPrimaryClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
-                    return BaseMainActivity.GLOBAL_CLIPBOARD.getPrimaryClip().getItemAt(0).getText().toString();
-                } else {
-                    return "";
-                }
-
-                 */
-                
-            default: return null;
-        }
+        return "";
     }
-/*
-    private static String currData;
-    public static void sendData(int type, Object... dataArr) {
-        currData = "";
-        for (int i = 0; i < dataArr.length; i++) {
-            if (dataArr[i] instanceof Integer) {
-                currData += Integer.toString((int) dataArr[i]);
-            } else if (dataArr[i] instanceof String) {
-                currData += (String) dataArr[i];
-            } else {
-                currData += dataArr[i].toString();
-            }
-            currData += (i + 1 < dataArr.length ? ":" : "");
-        }
-        nativeSendData(true, type, currData);
-    }
-    private static native void nativeSendData(boolean isAndroid, int type, String data);
-*/
 
-    public volatile static boolean holdingAlt, holdingCapslock, holdingCtrl,
-        holdingNumlock, holdingShift;
     public static int getCurrentMods() {
         int currMods = 0;
         if (holdingAlt) {
@@ -175,30 +144,7 @@ public class CallbackBridge {
         return currMods;
     }
 
-    public static void setModifiers(int keyCode, boolean isDown){
-        switch (keyCode){
-            case LWJGLGLFWKeycode.GLFW_KEY_LEFT_SHIFT:
-                CallbackBridge.holdingShift = isDown;
-                return;
-
-            case LWJGLGLFWKeycode.GLFW_KEY_LEFT_CONTROL:
-                CallbackBridge.holdingCtrl = isDown;
-                return;
-
-            case LWJGLGLFWKeycode.GLFW_KEY_LEFT_ALT:
-                CallbackBridge.holdingAlt = isDown;
-                return;
-
-            case LWJGLGLFWKeycode.GLFW_KEY_CAPS_LOCK:
-                CallbackBridge.holdingCapslock = isDown;
-                return;
-
-            case LWJGLGLFWKeycode.GLFW_KEY_NUM_LOCK:
-                CallbackBridge.holdingNumlock = isDown;
-                return;
-        }
-    }
-
+    public static native void nativeSetUseInputStackQueue(boolean useInputStackQueue);
     public static native boolean nativeAttachThreadToOther(boolean isAndroid, boolean isUsePushPoll);
 
     private static native boolean nativeSendChar(char codepoint);
@@ -211,11 +157,9 @@ public class CallbackBridge {
     private static native void nativeSendScroll(double xoffset, double yoffset);
     private static native void nativeSendScreenSize(int width, int height);
     public static native void nativeSetWindowAttrib(int attrib, int value);
-    public static native void nativeSetUseInputStackQueue(boolean useInputStackQueue);
-    
+
     public static native boolean nativeIsGrabbing();
     static {
         System.loadLibrary("pojavexec");
     }
 }
-
