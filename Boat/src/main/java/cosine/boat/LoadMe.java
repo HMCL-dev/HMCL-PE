@@ -64,9 +64,9 @@ public class LoadMe {
 			else {
                 setenv("LIBGL_NAME","libgl4es_114.so");
                 setenv("LIBEGL_NAME","libEGL_wrapper.so");
-               // if (highVersion) {
-                //    setenv("LIBGL_GL", "32");
-              //  }
+                if (highVersion) {
+                    setenv("LIBGL_GL", "32");
+                }
             }
 
             // openjdk
