@@ -1,8 +1,13 @@
 package com.tungsten.hmclpe.launcher.setting;
 
+import static net.kdt.pojavlaunch.utils.Architecture.ARCH_ARM;
+import static net.kdt.pojavlaunch.utils.Architecture.ARCH_ARM64;
+import static net.kdt.pojavlaunch.utils.Architecture.ARCH_X86;
+import static net.kdt.pojavlaunch.utils.Architecture.ARCH_X86_64;
 import static org.apache.commons.io.FileUtils.listFiles;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,7 +21,11 @@ import com.tungsten.hmclpe.utils.file.AssetsUtils;
 import com.tungsten.hmclpe.utils.file.FileStringUtils;
 import com.tungsten.hmclpe.utils.file.FileUtils;
 
+import org.apache.commons.io.IOUtils;
+
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Objects;
@@ -121,6 +130,11 @@ public class InstallLauncherFile {
                 AssetsUtils.getInstance(activity).setProgressCallback(callback).copyOnMainThread("app_runtime/java/8-x86_64",AppManifest.JAVA_DIR + "/default");
             }
             unpack200(activity.getApplicationContext().getApplicationInfo().nativeLibraryDir, AppManifest.JAVA_DIR + "/default");
+            try {
+                postPrepare(activity, "default");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -145,6 +159,11 @@ public class InstallLauncherFile {
                 AssetsUtils.getInstance(activity).setProgressCallback(callback).copyOnMainThread("app_runtime/java/17-x86_64",AppManifest.JAVA_DIR + "/JRE17");
             }
             unpack200(activity.getApplicationContext().getApplicationInfo().nativeLibraryDir, AppManifest.JAVA_DIR + "/JRE17");
+            try {
+                postPrepare(activity, "default");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -169,6 +188,44 @@ public class InstallLauncherFile {
                 Log.e("MULTIRT", "Failed to unpack the runtime !");
             }
         }
+    }
+
+    public static void postPrepare(Context context, String name) throws IOException {
+        File dest = new File(AppManifest.JAVA_DIR,"/" + name);
+        if(!dest.exists()) return;
+        String libFolder = "lib";
+        String arch = "";
+        if (net.kdt.pojavlaunch.utils.Architecture.getDeviceArchitecture() == ARCH_ARM) {
+            arch = "aarch32";
+        }
+        if (net.kdt.pojavlaunch.utils.Architecture.getDeviceArchitecture() == ARCH_ARM64) {
+            arch = "aarch64";
+        }
+        if (net.kdt.pojavlaunch.utils.Architecture.getDeviceArchitecture() == ARCH_X86) {
+            arch = "i386";
+        }
+        if (net.kdt.pojavlaunch.utils.Architecture.getDeviceArchitecture() == ARCH_X86_64) {
+            arch = "amd64";
+        }
+        if(new File(dest,libFolder + "/" + arch).exists()) libFolder = libFolder + "/" + arch;
+        File ftIn = new File(dest, libFolder + "/libfreetype.so.6");
+        File ftOut = new File(dest, libFolder + "/libfreetype.so");
+        if (ftIn.exists() && (!ftOut.exists() || ftIn.length() != ftOut.length())) {
+            ftIn.renameTo(ftOut);
+        }
+
+        // Refresh libraries
+        copyDummyNativeLib(context,"libawt_xawt.so", dest, libFolder);
+    }
+
+    private static void copyDummyNativeLib(Context ctx, String name, File dest, String libFolder) throws IOException {
+        File fileLib = new File(dest, "/"+libFolder + "/" + name);
+        fileLib.delete();
+        FileInputStream is = new FileInputStream(new File(ctx.getApplicationInfo().nativeLibraryDir, name));
+        FileOutputStream os = new FileOutputStream(fileLib);
+        IOUtils.copy(is, os);
+        is.close();
+        os.close();
     }
 
     @SuppressLint("SetTextI18n")
