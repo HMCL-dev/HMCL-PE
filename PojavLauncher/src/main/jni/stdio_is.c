@@ -80,8 +80,8 @@ void custom_exit(int code) {
 JNIEXPORT void JNICALL Java_net_kdt_pojavlaunch_utils_JREUtils_setupExitTrap(JNIEnv *env, jclass clazz, jobject context) {
     exitTrap_ctx = (*env)->NewGlobalRef(env,context);
     (*env)->GetJavaVM(env,&exitTrap_jvm);
-    exitTrap_exitClass = (*env)->NewGlobalRef(env,(*env)->FindClass(env,"net/kdt/pojavlaunch/ExitActivity"));
-    exitTrap_staticMethod = (*env)->GetStaticMethodID(env,exitTrap_exitClass,"showExitMessage","(Landroid/content/Context;I)V");
+    exitTrap_exitClass = (*env)->NewGlobalRef(env,(*env)->FindClass(env,"net/kdt/pojavlaunch/BaseMainActivity"));
+    exitTrap_staticMethod = (*env)->GetStaticMethodID(env,exitTrap_exitClass,"onExit","(Landroid/content/Context;I)V");
     xhook_enable_debug(1);
     xhook_register(".*\\.so$","exit",custom_exit,&old_exit);
     xhook_refresh(1);
