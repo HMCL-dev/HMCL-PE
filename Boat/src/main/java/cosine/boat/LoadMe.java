@@ -22,6 +22,7 @@ public class LoadMe {
     public static native int chdir(String path);
     public static native void redirectStdio(String file);
     public static native void setenv(String name, String value);
+    public static native void setLdLibraryPath(String ldLibraryPath);
     public static native int dlopen(String name);
     public static native void patchLinker();
     public static native void setupExitTrap(Context context);

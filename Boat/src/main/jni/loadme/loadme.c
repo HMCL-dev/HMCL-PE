@@ -53,6 +53,28 @@ JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setenv(JNIEnv* env, jclass clazz,
     (*env)->ReleaseStringUTFChars(env, str2, value);
 }
 
+typedef void (*android_update_LD_LIBRARY_PATH_t)(const char*);
+
+JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setLdLibraryPath(JNIEnv *env, jclass clazz, jstring ld_library_path) {
+    // jclass exception_cls = (*env)->FindClass(env, "java/lang/UnsatisfiedLinkError");
+
+    android_update_LD_LIBRARY_PATH_t android_update_LD_LIBRARY_PATH;
+
+    void *libdl_handle = dlopen("libdl.so", RTLD_LAZY);
+    void *updateLdLibPath = dlsym(libdl_handle, "android_update_LD_LIBRARY_PATH");
+    if (updateLdLibPath == NULL) {
+        updateLdLibPath = dlsym(libdl_handle, "__loader_android_update_LD_LIBRARY_PATH");
+        if (updateLdLibPath == NULL) {
+            __android_log_print(ANDROID_LOG_ERROR, "Boat", "loading %s (error = %s)", "libdl.so", dlerror());
+        }
+    }
+
+    android_update_LD_LIBRARY_PATH = (android_update_LD_LIBRARY_PATH_t) updateLdLibPath;
+    const char* ldLibPathUtf = (*env)->GetStringUTFChars(env, ld_library_path, 0);
+    android_update_LD_LIBRARY_PATH(ldLibPathUtf);
+    (*env)->ReleaseStringUTFChars(env, ld_library_path, ldLibPathUtf);
+}
+
 JNIEXPORT jint JNICALL Java_cosine_boat_LoadMe_dlopen(JNIEnv* env, jclass clazz, jstring str1) {
     dlerror();
 

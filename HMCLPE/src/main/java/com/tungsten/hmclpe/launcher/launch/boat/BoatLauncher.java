@@ -20,6 +20,7 @@ import java.io.File;
 import java.util.Collections;
 import java.util.Vector;
 
+import cosine.boat.LoadMe;
 import cosine.boat.utils.Architecture;
 
 public class BoatLauncher {
@@ -68,6 +69,7 @@ public class BoatLauncher {
                 }
                 classPath = AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-jemalloc.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-tinyfd.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-opengl.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-openal.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-glfw.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-stb.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl.jar:" + version.getClassPath(gameLaunchSetting.gameFileDirectory,true,isJava17);
             }
+            LoadMe.setLdLibraryPath(libraryPath);
             Vector<String> args = new Vector<String>();
             args.add(javaPath + "/bin/java");
             Tools.getCacioJavaArgs(context, args, !isJava17, width, height);
