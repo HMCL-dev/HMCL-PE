@@ -580,8 +580,8 @@
     <string name="game_setting_ui_alert_jump">Edit Current Instance Settings</string>
     <string name="game_setting_ui_java_path">Java Path</string>
     <string name="game_setting_ui_java_path_auto">Automatically Select</string>
-    <string name="game_setting_ui_java_path_8">1.8.0 (64 bit)</string>
-    <string name="game_setting_ui_java_path_17">17 (64 bit)</string>
+    <string name="game_setting_ui_java_path_8">1.8.0</string>
+    <string name="game_setting_ui_java_path_17">17</string>
     <string name="game_setting_ui_version_isolation">Working Directory</string>
     <string name="game_setting_ui_version_isolation_default">Default (.minecraft/)</string>
     <string name="game_setting_ui_version_isolation_isolate">Isolated (.minecraft/versions/&#60;instance name>/, except for assets and libraries)</string>

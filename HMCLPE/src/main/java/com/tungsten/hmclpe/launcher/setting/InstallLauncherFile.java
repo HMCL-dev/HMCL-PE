@@ -174,6 +174,8 @@ public class InstallLauncherFile {
      */
     private static void unpack200(String nativeLibraryDir, String runtimePath) {
 
+        Log.i("unpack", "execute");
+
         File basePath = new File(runtimePath);
         Collection<File> files = listFiles(basePath, new String[]{"pack"}, true);
 

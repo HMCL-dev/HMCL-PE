@@ -34,7 +34,6 @@ public class PojavLauncher {
             LaunchVersion version = LaunchVersion.fromDirectory(new File(gameLaunchSetting.currentVersion));
             String javaPath = gameLaunchSetting.javaPath;
             JREUtils.relocateLibPath(context,javaPath);
-            String libraryPath = javaPath + "/lib/aarch64/jli:" + javaPath + "/lib/aarch64:" + AppManifest.POJAV_LIB_DIR + "/lwjgl3:" + JREUtils.LD_LIBRARY_PATH + ":" + AppManifest.POJAV_LIB_DIR + "/lwjgl3";;
             boolean isJava17 = javaPath.endsWith("JRE17");
             String classPath = getLWJGL3ClassPath() + ":" + version.getClassPath(gameLaunchSetting.gameFileDirectory,isHighVersion(gameLaunchSetting),isJava17);
             Vector<String> args = new Vector<String>();

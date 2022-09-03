@@ -646,22 +646,11 @@ public class UniversalGameSettingUI extends BaseUI implements View.OnClickListen
             activity.startActivityForResult(intent, PICK_GAME_DIR_REQUEST);
         }
         if (v == launchByBoat){
-            if (Architecture.getDeviceArchitecture() == Architecture.ARCH_ARM64) {
-                launchByPojav.setChecked(false);
-                activity.privateGameSetting.boatLauncherSetting.enable = true;
-                activity.privateGameSetting.pojavLauncherSetting.enable = false;
-                GsonUtils.savePrivateGameSetting(activity.privateGameSetting, AppManifest.SETTING_DIR + "/private_game_setting.json");
-                currentLauncher.setText(context.getText(R.string.game_setting_ui_game_launcher_boat));
-            }
-            else {
-                Toast.makeText(context, "Not available for now!", Toast.LENGTH_SHORT).show();
-                launchByBoat.setChecked(false);
-                launchByPojav.setChecked(true);
-                activity.privateGameSetting.boatLauncherSetting.enable = false;
-                activity.privateGameSetting.pojavLauncherSetting.enable = true;
-                GsonUtils.savePrivateGameSetting(activity.privateGameSetting, AppManifest.SETTING_DIR + "/private_game_setting.json");
-                currentLauncher.setText(context.getText(R.string.game_setting_ui_game_launcher_pojav));
-            }
+            launchByPojav.setChecked(false);
+            activity.privateGameSetting.boatLauncherSetting.enable = true;
+            activity.privateGameSetting.pojavLauncherSetting.enable = false;
+            GsonUtils.savePrivateGameSetting(activity.privateGameSetting, AppManifest.SETTING_DIR + "/private_game_setting.json");
+            currentLauncher.setText(context.getText(R.string.game_setting_ui_game_launcher_boat));
         }
         if (v == launchByPojav){
             launchByBoat.setChecked(false);

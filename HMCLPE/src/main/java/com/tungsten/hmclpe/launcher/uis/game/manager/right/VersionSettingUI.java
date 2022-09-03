@@ -750,22 +750,11 @@ public class VersionSettingUI extends BaseUI implements View.OnClickListener, Co
             activity.startActivityForResult(intent, PICK_GAME_DIR_REQUEST_ISOLATED);
         }
         if (v == launchByBoat && privateGameSetting != null){
-            if (Architecture.getDeviceArchitecture() == Architecture.ARCH_ARM64) {
-                launchByPojav.setChecked(false);
-                privateGameSetting.boatLauncherSetting.enable = true;
-                privateGameSetting.pojavLauncherSetting.enable = false;
-                GsonUtils.savePrivateGameSetting(privateGameSetting, activity.launcherSetting.gameFileDirectory + "/versions/" + versionName + "/hmclpe.cfg");
-                currentLauncher.setText(context.getText(R.string.game_setting_ui_game_launcher_boat));
-            }
-            else {
-                Toast.makeText(context, "Not available for now!", Toast.LENGTH_SHORT).show();
-                launchByBoat.setChecked(false);
-                launchByPojav.setChecked(true);
-                privateGameSetting.boatLauncherSetting.enable = false;
-                privateGameSetting.pojavLauncherSetting.enable = true;
-                GsonUtils.savePrivateGameSetting(privateGameSetting, activity.launcherSetting.gameFileDirectory + "/versions/" + versionName + "/hmclpe.cfg");
-                currentLauncher.setText(context.getText(R.string.game_setting_ui_game_launcher_pojav));
-            }
+            launchByPojav.setChecked(false);
+            privateGameSetting.boatLauncherSetting.enable = true;
+            privateGameSetting.pojavLauncherSetting.enable = false;
+            GsonUtils.savePrivateGameSetting(privateGameSetting, activity.launcherSetting.gameFileDirectory + "/versions/" + versionName + "/hmclpe.cfg");
+            currentLauncher.setText(context.getText(R.string.game_setting_ui_game_launcher_boat));
         }
         if (v == launchByPojav && privateGameSetting != null){
             launchByBoat.setChecked(false);

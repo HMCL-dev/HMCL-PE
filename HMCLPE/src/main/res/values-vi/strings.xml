@@ -698,8 +698,8 @@
     <string name="game_setting_ui_game_launcher_hint">Thuyền được khuyến khích.</string>
     <string name="game_setting_ui_game_ram">Ram trò chơi</string>
     <string name="game_setting_ui_java_path">Đường dẫn Java</string>
-    <string name="game_setting_ui_java_path_17">17 (64 bit)</string>
-    <string name="game_setting_ui_java_path_8">1.8.0 (64 bit)</string>
+    <string name="game_setting_ui_java_path_17">17</string>
+    <string name="game_setting_ui_java_path_8">1.8.0</string>
     <string name="game_setting_ui_java_path_auto">Tự động chọn</string>
     <string name="game_setting_ui_jvm_setting">Các tùy chọn Jvm</string>
     <string name="game_setting_ui_jvm_setting_arg">Đối số Jvm Arg</string>

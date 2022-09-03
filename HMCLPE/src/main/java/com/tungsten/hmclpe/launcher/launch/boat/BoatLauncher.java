@@ -1,5 +1,10 @@
 package com.tungsten.hmclpe.launcher.launch.boat;
 
+import static cosine.boat.utils.Architecture.ARCH_ARM;
+import static cosine.boat.utils.Architecture.ARCH_ARM64;
+import static cosine.boat.utils.Architecture.ARCH_X86;
+import static cosine.boat.utils.Architecture.ARCH_X86_64;
+
 import android.content.Context;
 
 import com.tungsten.hmclpe.launcher.launch.AccountPatch;
@@ -15,10 +20,30 @@ import java.io.File;
 import java.util.Collections;
 import java.util.Vector;
 
+import cosine.boat.utils.Architecture;
+
 public class BoatLauncher {
 
     public static Vector<String> getMcArgs(GameLaunchSetting gameLaunchSetting , Context context,int width,int height,String server){
         try {
+            String arch = "";
+            String march = "";
+            if (Architecture.getDeviceArchitecture() == ARCH_ARM) {
+                arch = "aarch32";
+                march = "arm";
+            }
+            if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
+                arch = "aarch64";
+                march = "arm64";
+            }
+            if (Architecture.getDeviceArchitecture() == ARCH_X86) {
+                arch = "i386";
+                march = "x86";
+            }
+            if (Architecture.getDeviceArchitecture() == ARCH_X86_64) {
+                arch = "amd64";
+                march = "x86_64";
+            }
             LaunchVersion version = LaunchVersion.fromDirectory(new File(gameLaunchSetting.currentVersion));
             String javaPath = gameLaunchSetting.javaPath;
             boolean highVersion = false;
@@ -28,17 +53,18 @@ public class BoatLauncher {
             String libraryPath;
             String classPath;
             String r = gameLaunchSetting.boatRenderer.equals("VirGL") ? "virgl" : "gl4es";
+            String rarch = r.equals("gl4es") ? "/" + march : "";
             boolean isJava17 = javaPath.endsWith("JRE17");
             if (!highVersion){
-                libraryPath = javaPath + "/lib/aarch64/jli:" + javaPath + "/lib/aarch64:" + AppManifest.BOAT_LIB_DIR + ":" + AppManifest.BOAT_LIB_DIR + "/lwjgl-2:" + AppManifest.BOAT_LIB_DIR + "/renderer/" + r;
+                libraryPath = javaPath + "/lib/" + arch + "/jli:" + javaPath + "/lib/" + arch + ":" + AppManifest.BOAT_LIB_DIR + "/libs/" + march + ":" + AppManifest.BOAT_LIB_DIR + "/lwjgl-2:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-2/" + march + ":" + AppManifest.BOAT_LIB_DIR + "/renderer/" + r + rarch;
                 classPath = AppManifest.BOAT_LIB_DIR + "/lwjgl-2/lwjgl.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-2/lwjgl_util.jar:" + version.getClassPath(gameLaunchSetting.gameFileDirectory,false,false);
             }
             else {
                 if (isJava17) {
-                    libraryPath = javaPath + "/lib:" + AppManifest.BOAT_LIB_DIR + ":" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3:" + AppManifest.BOAT_LIB_DIR + "/renderer/" + r;
+                    libraryPath = javaPath + "/lib:" + AppManifest.BOAT_LIB_DIR + "/libs/" + march + ":" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/" + march + ":" + AppManifest.BOAT_LIB_DIR + "/renderer/" + r + rarch;
                 }
                 else {
-                    libraryPath = javaPath + "/lib/jli:" + javaPath + "/lib:" + AppManifest.BOAT_LIB_DIR + ":" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3:" + AppManifest.BOAT_LIB_DIR + "/renderer/" + r;
+                    libraryPath = javaPath + "/lib/" + arch + "/jli:" + javaPath + "/lib/" + arch + ":" + AppManifest.BOAT_LIB_DIR + "/libs/" + march + ":" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/" + march + ":" + AppManifest.BOAT_LIB_DIR + "/renderer/" + r + rarch;
                 }
                 classPath = AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-jemalloc.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-tinyfd.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-opengl.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-openal.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-glfw.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-stb.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl.jar:" + version.getClassPath(gameLaunchSetting.gameFileDirectory,true,isJava17);
             }
@@ -48,16 +74,15 @@ public class BoatLauncher {
             args.add("-cp");
             args.add(classPath);
             args.add("-Djava.library.path=" + libraryPath);
+            //args.add("-Dorg.lwjgl.util.Debug=true");
+            //args.add("-Dorg.lwjgl.util.DebugFunctions=true");
+            //args.add("-Dorg.lwjgl.util.DebugLoader=true");
             args.add("-Dfml.earlyprogresswindow=false");
-            args.add("-Dorg.lwjgl.util.DebugLoader=true");
-            args.add("-Dorg.lwjgl.util.Debug=true");
-            args.add("-Dos.name=Linux");
-            args.add("-Dlwjgl.platform=Boat");
             if (gameLaunchSetting.boatRenderer.equals("VirGL")) {
                 args.add("-Dorg.lwjgl.opengl.libname=libGL.so.1");
             }
             else {
-                args.add("-Dorg.lwjgl.opengl.libname=libgl4es_114.so");
+                args.add("-Dorg.lwjgl.opengl.libname=libGL.so");
             }
             args.add("-Dlwjgl.platform=Boat");
             args.add("-Dos.name=Linux");

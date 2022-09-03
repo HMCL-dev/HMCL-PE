@@ -25,7 +25,8 @@ public class LoadMe {
     public static native int dlopen(String name);
     public static native void patchLinker();
     public static native void setupExitTrap(Context context);
-    public static native int dlexec(String[] args);
+    public static native void setupJLI();
+    public static native int jliLaunch(String[] args);
 
     static {
         System.loadLibrary("loadme");
@@ -33,13 +34,34 @@ public class LoadMe {
 
     public static int launchMinecraft(Handler handler,Context context, String javaPath, String home, boolean highVersion, Vector<String> args, String renderer, String gameDir, BoatLaunchCallback callback) {
 
+        String arch = "";
+        String march = "";
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM) {
+            arch = "aarch32";
+            march = "arm";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
+            arch = "aarch64";
+            march = "arm64";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_X86) {
+            arch = "i386";
+            march = "x86";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_X86_64) {
+            arch = "amd64";
+            march = "x86_64";
+        }
+
         handler.post(callback::onStart);
 
         BOAT_LIB_DIR = context.getDir("runtime",0).getAbsolutePath() + "/boat";
 
         boolean isJava17 = javaPath.endsWith("JRE17");
 
-		patchLinker();
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
+            patchLinker();
+        }
 
         try {
 
@@ -62,17 +84,15 @@ public class LoadMe {
                 setenv("MESA_GLSL_CACHE_DIR",context.getCacheDir().getAbsolutePath());
             }
 			else {
-                setenv("LIBGL_NAME","libgl4es_114.so");
+                setenv("LIBGL_NAME","libGL.so");
                 setenv("LIBEGL_NAME","libEGL_wrapper.so");
-                if (highVersion) {
+                if (isJava17) {
                     setenv("LIBGL_GL", "32");
                 }
             }
 
             // openjdk
             if (isJava17) {
-                dlopen(javaPath + "/lib/libpng16.so.16");
-                dlopen(javaPath + "/lib/libpng16.so");
                 dlopen(javaPath + "/lib/libfreetype.so");
                 dlopen(javaPath + "/lib/libjli.so");
                 dlopen(javaPath + "/lib/server/libjvm.so");
@@ -87,26 +107,24 @@ public class LoadMe {
                 dlopen(javaPath + "/lib/libinstrument.so");
             }
             else {
-                dlopen(javaPath + "/lib/aarch64/libpng16.so.16");
-                dlopen(javaPath + "/lib/aarch64/libpng16.so");
-                dlopen(javaPath + "/lib/aarch64/libfreetype.so");
-                dlopen(javaPath + "/lib/aarch64/jli/libjli.so");
-                dlopen(javaPath + "/lib/aarch64/server/libjvm.so");
-                dlopen(javaPath + "/lib/aarch64/libverify.so");
-                dlopen(javaPath + "/lib/aarch64/libjava.so");
-                dlopen(javaPath + "/lib/aarch64/libnet.so");
-                dlopen(javaPath + "/lib/aarch64/libnio.so");
-                dlopen(javaPath + "/lib/aarch64/libawt.so");
-                dlopen(javaPath + "/lib/aarch64/libawt_headless.so");
-                dlopen(javaPath + "/lib/aarch64/libfontmanager.so");
-                dlopen(javaPath + "/lib/aarch64/libtinyiconv.so");
-                dlopen(javaPath + "/lib/aarch64/libinstrument.so");
+                dlopen(javaPath + "/lib/" + arch + "/libfreetype.so");
+                dlopen(javaPath + "/lib/" + arch + "/jli/libjli.so");
+                dlopen(javaPath + "/lib/" + arch + "/server/libjvm.so");
+                dlopen(javaPath + "/lib/" + arch + "/libverify.so");
+                dlopen(javaPath + "/lib/" + arch + "/libjava.so");
+                dlopen(javaPath + "/lib/" + arch + "/libnet.so");
+                dlopen(javaPath + "/lib/" + arch + "/libnio.so");
+                dlopen(javaPath + "/lib/" + arch + "/libawt.so");
+                dlopen(javaPath + "/lib/" + arch + "/libawt_headless.so");
+                dlopen(javaPath + "/lib/" + arch + "/libfontmanager.so");
+                dlopen(javaPath + "/lib/" + arch + "/libtinyiconv.so");
+                dlopen(javaPath + "/lib/" + arch + "/libinstrument.so");
             }
-            dlopen(BOAT_LIB_DIR + "/libopenal.so.1");
+            dlopen(BOAT_LIB_DIR + "/libs/" + march + "/libopenal.so.1");
 
             if (!renderer.equals("VirGL")) {
-                dlopen(BOAT_LIB_DIR + "/renderer/gl4es/libgl4es_114.so");
-                dlopen(BOAT_LIB_DIR + "/renderer/gl4es/libEGL_wrapper.so");
+                dlopen(BOAT_LIB_DIR + "/renderer/gl4es/" + march + "/libGL.so");
+                dlopen(BOAT_LIB_DIR + "/renderer/gl4es/" + march + "/libEGL_wrapper.so");
             }
             else {
                 dlopen(BOAT_LIB_DIR + "/renderer/virgl/libexpat.so.1");
@@ -117,16 +135,17 @@ public class LoadMe {
             }
 
             if (!highVersion) {
-                dlopen(BOAT_LIB_DIR + "/lwjgl-2/liblwjgl.so");
+                dlopen(BOAT_LIB_DIR + "/lwjgl-2/" + march + "/liblwjgl.so");
             }
             else {
-                dlopen(BOAT_LIB_DIR + "/libglfw.so");
-                dlopen(BOAT_LIB_DIR + "/lwjgl-3/liblwjgl.so");
-                dlopen(BOAT_LIB_DIR + "/lwjgl-3/liblwjgl_stb.so");
-                dlopen(BOAT_LIB_DIR + "/lwjgl-3/liblwjgl_tinyfd.so");
-                dlopen(BOAT_LIB_DIR + "/lwjgl-3/liblwjgl_opengl.so");
+                dlopen(BOAT_LIB_DIR + "/libs/" + march + "/libglfw.so");
+                dlopen(BOAT_LIB_DIR + "/lwjgl-3/" + march + "/liblwjgl.so");
+                dlopen(BOAT_LIB_DIR + "/lwjgl-3/" + march + "/liblwjgl_stb.so");
+                dlopen(BOAT_LIB_DIR + "/lwjgl-3/" + march + "/liblwjgl_tinyfd.so");
+                dlopen(BOAT_LIB_DIR + "/lwjgl-3/" + march + "/liblwjgl_opengl.so");
             }
 
+            setupJLI();
             setupExitTrap(context);
 
             redirectStdio(home + "/boat_latest_log.txt");
@@ -142,7 +161,7 @@ public class LoadMe {
                 }
 			}
             BoatUtils.writeFile(new File(home+"/params.txt"),sb.toString());
-            int exitCode = dlexec(finalArgs);
+            int exitCode = jliLaunch(finalArgs);
             System.out.println("OpenJDK exited with code : " + exitCode);
         }
         catch (Exception e) {
@@ -157,9 +176,25 @@ public class LoadMe {
 
     public static int startVirGLService (Context context,String home,String tmpdir) {
 
+        String arch = "";
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM) {
+            arch = "aarch32";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
+            arch = "aarch64";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_X86) {
+            arch = "i386";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_X86_64) {
+            arch = "amd64";
+        }
+
         BOAT_LIB_DIR = context.getDir("runtime",0).getAbsolutePath() + "/boat";
 
-        patchLinker();
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
+            patchLinker();
+        }
 
         try {
             redirectStdio(home + "/boat_service_log.txt");
@@ -171,13 +206,14 @@ public class LoadMe {
             dlopen(BOAT_LIB_DIR + "/renderer/virgl/libepoxy.so.0");
             dlopen(BOAT_LIB_DIR + "/renderer/virgl/libvirglrenderer.so");
 
+            setupJLI();
             chdir(home);
             String[] finalArgs = new String[]{BOAT_LIB_DIR + "/renderer/virgl/libvirgl_test_server.so",
                     "--no-loop-or-fork",
                     "--use-gles",
                     "--socket-name",
                     context.getCacheDir().getAbsolutePath() + "/.virgl_test"};
-            System.out.println("Exited with code : " + dlexec(finalArgs));
+            System.out.println("Exited with code : " + jliLaunch(finalArgs));
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -188,25 +224,27 @@ public class LoadMe {
 
     public static int launchJVM (String javaPath, ArrayList<String> args, String home) {
 
-        patchLinker();
+        String arch = "";
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM) {
+            arch = "aarch32";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
+            arch = "aarch64";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_X86) {
+            arch = "i386";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_X86_64) {
+            arch = "amd64";
+        }
+
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
+            patchLinker();
+        }
 
         try {
             setenv("HOME", home);
             setenv("JAVA_HOME" , javaPath);
-
-            String arch = "";
-            if (Architecture.getDeviceArchitecture() == ARCH_ARM) {
-                arch = "aarch32";
-            }
-            if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
-                arch = "aarch64";
-            }
-            if (Architecture.getDeviceArchitecture() == ARCH_X86) {
-                arch = "i386";
-            }
-            if (Architecture.getDeviceArchitecture() == ARCH_X86_64) {
-                arch = "amd64";
-            }
 
             dlopen(javaPath + "/lib/" + arch + "/libfreetype.so");
             dlopen(javaPath + "/lib/" + arch + "/jli/libjli.so");
@@ -219,6 +257,8 @@ public class LoadMe {
             dlopen(javaPath + "/lib/" + arch + "/libawt_headless.so");
             dlopen(javaPath + "/lib/" + arch + "/libfontmanager.so");
 
+            setupJLI();
+
             redirectStdio(home + "/boat_api_installer_log.txt");
             chdir(home);
 
@@ -229,7 +269,7 @@ public class LoadMe {
                     System.out.println("JVM Args:" + finalArgs[i]);
                 }
             }
-            System.out.println("ApiInstaller exited with code : " + dlexec(finalArgs));
+            System.out.println("ApiInstaller exited with code : " + jliLaunch(finalArgs));
         }
         catch (Exception e) {
             e.printStackTrace();
