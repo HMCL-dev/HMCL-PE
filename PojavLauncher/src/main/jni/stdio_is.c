@@ -66,15 +66,12 @@ Java_net_kdt_pojavlaunch_utils_JREUtils_logToLogger(JNIEnv *env, jclass clazz, j
 }
 void (*old_exit)(int code);
 void custom_exit(int code) {
-    if(code != 0) {
-        JNIEnv *env;
-        (*exitTrap_jvm)->AttachCurrentThread(exitTrap_jvm, &env, NULL);
-        (*env)->CallStaticVoidMethod(env, exitTrap_exitClass, exitTrap_staticMethod, exitTrap_ctx,
-                                     code);
-        (*env)->DeleteGlobalRef(env, exitTrap_ctx);
-        (*env)->DeleteGlobalRef(env, exitTrap_exitClass);
-        (*exitTrap_jvm)->DetachCurrentThread(exitTrap_jvm);
-    }
+    JNIEnv *env;
+    (*exitTrap_jvm)->AttachCurrentThread(exitTrap_jvm, &env, NULL);
+    (*env)->CallStaticVoidMethod(env, exitTrap_exitClass, exitTrap_staticMethod, exitTrap_ctx,code);
+    (*env)->DeleteGlobalRef(env, exitTrap_ctx);
+    (*env)->DeleteGlobalRef(env, exitTrap_exitClass);
+    (*exitTrap_jvm)->DetachCurrentThread(exitTrap_jvm);
     old_exit(code);
 }
 JNIEXPORT void JNICALL Java_net_kdt_pojavlaunch_utils_JREUtils_setupExitTrap(JNIEnv *env, jclass clazz, jobject context) {
