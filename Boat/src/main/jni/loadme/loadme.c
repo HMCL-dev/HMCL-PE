@@ -24,6 +24,31 @@ void custom_exit(int code) {
     old_exit(code);
 }
 
+JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setupExitTrap(JNIEnv *env, jclass clazz, jobject context) {
+    exitTrap_ctx = (*env)->NewGlobalRef(env,context);
+    (*env)->GetJavaVM(env,&exitTrap_jvm);
+    exitTrap_exitClass = (*env)->NewGlobalRef(env,(*env)->FindClass(env,"cosine/boat/BoatActivity"));
+    exitTrap_staticMethod = (*env)->GetStaticMethodID(env,exitTrap_exitClass,"onExit","(Landroid/content/Context;I)V");
+    xhook_enable_debug(1);
+    xhook_register(".*\\.so$", "exit", custom_exit, (void **) &old_exit);
+    xhook_refresh(1);
+}
+
+void (*__loader_dlopen)(const char* __filename, int __flag, const void* caller_addr);
+void (*old_dlopen)(const char* __filename, int __flag);
+void new_dlopen(const char* __filename, int __flag) {
+    void* caller_addr = dlerror();
+    return __loader_dlopen(__filename, __flag, caller_addr);
+}
+
+JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_hookDlopen(JNIEnv *env, jclass clazz) {
+    void* handle;
+    handle = dlopen("libdl.so", RTLD_LAZY);
+    __loader_dlopen = (void (*)(const char*, int, const void*))dlsym(handle, "__loader_dlopen");
+    xhook_register(".*\\.so$", "dlopen", new_dlopen, (void **) &old_dlopen);
+    xhook_refresh(1);
+}
+
 JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_redirectStdio(JNIEnv* env, jclass clazz, jstring path) {
     char const* file = (*env)->GetStringUTFChars(env, path, 0);
 
@@ -53,28 +78,6 @@ JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setenv(JNIEnv* env, jclass clazz,
     (*env)->ReleaseStringUTFChars(env, str2, value);
 }
 
-typedef void (*android_update_LD_LIBRARY_PATH_t)(const char*);
-
-JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setLdLibraryPath(JNIEnv *env, jclass clazz, jstring ld_library_path) {
-    // jclass exception_cls = (*env)->FindClass(env, "java/lang/UnsatisfiedLinkError");
-
-    android_update_LD_LIBRARY_PATH_t android_update_LD_LIBRARY_PATH;
-
-    void *libdl_handle = dlopen("libdl.so", RTLD_LAZY);
-    void *updateLdLibPath = dlsym(libdl_handle, "android_update_LD_LIBRARY_PATH");
-    if (updateLdLibPath == NULL) {
-        updateLdLibPath = dlsym(libdl_handle, "__loader_android_update_LD_LIBRARY_PATH");
-        if (updateLdLibPath == NULL) {
-            __android_log_print(ANDROID_LOG_ERROR, "Boat", "loading %s (error = %s)", "libdl.so", dlerror());
-        }
-    }
-
-    android_update_LD_LIBRARY_PATH = (android_update_LD_LIBRARY_PATH_t) updateLdLibPath;
-    const char* ldLibPathUtf = (*env)->GetStringUTFChars(env, ld_library_path, 0);
-    android_update_LD_LIBRARY_PATH(ldLibPathUtf);
-    (*env)->ReleaseStringUTFChars(env, ld_library_path, ldLibPathUtf);
-}
-
 JNIEXPORT jint JNICALL Java_cosine_boat_LoadMe_dlopen(JNIEnv* env, jclass clazz, jstring str1) {
     dlerror();
 
@@ -92,16 +95,6 @@ JNIEXPORT jint JNICALL Java_cosine_boat_LoadMe_dlopen(JNIEnv* env, jclass clazz,
 
     (*env)->ReleaseStringUTFChars(env, str1, lib_name);
     return ret;
-}
-
-JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setupExitTrap(JNIEnv *env, jclass clazz, jobject context) {
-    exitTrap_ctx = (*env)->NewGlobalRef(env,context);
-    (*env)->GetJavaVM(env,&exitTrap_jvm);
-    exitTrap_exitClass = (*env)->NewGlobalRef(env,(*env)->FindClass(env,"cosine/boat/BoatActivity"));
-    exitTrap_staticMethod = (*env)->GetStaticMethodID(env,exitTrap_exitClass,"onExit","(Landroid/content/Context;I)V");
-    xhook_enable_debug(1);
-    xhook_register(".*\\.so$", "exit", custom_exit, (void **) &old_exit);
-    xhook_refresh(1);
 }
 
 unsigned gen_ldr_pc(unsigned rt, signed long off) {
