@@ -7,6 +7,7 @@
 #include <android/log.h>
 #include <sys/mman.h>
 #include "xhook.h"
+#include "include/loadme.h"
 
 static volatile jobject exitTrap_ctx;
 static volatile jclass exitTrap_exitClass;
@@ -55,7 +56,11 @@ JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setupDlHook(JNIEnv* env, jclass c
     handle2 = dlopen("libloadme.so", RTLD_LAZY);
     dlopen_bridge = (void (*)(const char*, int))dlsym(handle2, "__loader_dlopen_bridge");
 
-    caller_addr = __builtin_return_address(0);
+    caller_addr = setup_dl_hook();
+}
+
+void* setup_dl_hook() {
+    return __builtin_return_address(0);
 }
 
 JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_hookDlopen(JNIEnv *env, jclass clazz) {
