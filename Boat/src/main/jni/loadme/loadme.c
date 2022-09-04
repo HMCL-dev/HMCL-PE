@@ -34,9 +34,9 @@ JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setupExitTrap(JNIEnv *env, jclass
     xhook_refresh(1);
 }
 
+void* caller_addr;
 void (*__loader_dlopen)(const char* __filename, int __flag, const void* caller_addr);
 void __loader_dlopen_bridge(const char* __filename, int __flag) {
-    void* caller_addr = __builtin_return_address(0);
     return __loader_dlopen(__filename, __flag, caller_addr);
 }
 
@@ -54,6 +54,8 @@ JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setupDlHook(JNIEnv* env, jclass c
     void* handle2;
     handle2 = dlopen("libloadme.so", RTLD_LAZY);
     dlopen_bridge = (void (*)(const char*, int))dlsym(handle2, "__loader_dlopen_bridge");
+
+    caller_addr = __builtin_return_address(0);
 }
 
 JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_hookDlopen(JNIEnv *env, jclass clazz) {
