@@ -36,23 +36,25 @@ JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setupExitTrap(JNIEnv *env, jclass
 }
 
 void* caller_addr;
-
 void (*__loader_dlopen)(const char* __filename, int __flag, const void* caller_addr);
-void (*old_dlopen)(const char* __filename, int __flag);
-void new_dlopen(const char* __filename, int __flag) {
+void __loader_dlopen_bridge(const char* __filename, int __flag) {
     return __loader_dlopen(__filename, __flag, caller_addr);
 }
-void (*__loader_dlsym)(void * __handle, const char* __symbol, const void* caller_addr);
-void (*old_dlsym)(void * __handle, const char* __symbol);
-void new_dlsym(void * __handle, const char* __symbol) {
-    return __loader_dlsym(__handle, __symbol, caller_addr);
+
+void (*dlopen_bridge)(const char* __filename, int __flag);
+void (*old_dlopen)(const char* __filename, int __flag);
+void new_dlopen(const char* __filename, int __flag) {
+    return dlopen_bridge(__filename, __flag);
 }
 
 JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setupDlHook(JNIEnv* env, jclass clazz){
     void* handle;
     handle = dlopen("libdl.so", RTLD_LAZY);
     __loader_dlopen = (void (*)(const char*, int, const void*))dlsym(handle, "__loader_dlopen");
-    __loader_dlsym = (void (*)(void *, const char*, const void*))dlsym(handle, "__loader_dlsym");
+
+    void* handle2;
+    handle2 = dlopen("libloadme.so", RTLD_LAZY);
+    dlopen_bridge = (void (*)(const char*, int))dlsym(handle2, "__loader_dlopen_bridge");
 
     caller_addr = setup_dl_hook();
 }
@@ -63,7 +65,6 @@ void* setup_dl_hook() {
 
 JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_hookDlopen(JNIEnv *env, jclass clazz) {
     xhook_register(".*\\.so$", "dlopen", new_dlopen, (void **) &old_dlopen);
-    xhook_register(".*\\.so$", "dlsym", new_dlsym, (void **) &old_dlsym);
     xhook_refresh(1);
 }
 
