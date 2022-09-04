@@ -36,8 +36,11 @@ JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setupExitTrap(JNIEnv *env, jclass
 
 void (*__loader_dlopen)(const char* __filename, int __flag, const void* caller_addr);
 void (*old_dlopen)(const char* __filename, int __flag);
+void* fake_address() {
+    return NULL;
+}
 void new_dlopen(const char* __filename, int __flag) {
-    void* caller_addr = dlerror();
+    void* caller_addr = fake_address();
     return __loader_dlopen(__filename, __flag, caller_addr);
 }
 
