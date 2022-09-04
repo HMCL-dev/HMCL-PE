@@ -25,6 +25,7 @@ public class LoadMe {
     public static native void setupDlHook();
     public static native void hookDlopen();
     public static native int dlopen(String name);
+    public static native void setLdLibraryPath(String ldLibraryPath);
     public static native void patchLinker();
     public static native void setupExitTrap(Context context);
     public static native void setupJLI();
