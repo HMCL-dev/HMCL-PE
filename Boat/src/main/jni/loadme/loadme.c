@@ -45,9 +45,9 @@ void* __loader_dlopen_bridge(const char* __filename, int __flag) {
 
 void new_dlopen(const char* __filename, int __flag) {
     if (__loader_dlopen_bridge(__filename, __flag) == NULL) {
-        return dlopen_bridge(__filename, __flag);
-    } else{
         old_dlopen(__filename, __flag);
+    } else{
+        return dlopen_bridge(__filename, __flag);
     }
 }
 
