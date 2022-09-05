@@ -40,15 +40,15 @@ void* (*__loader_dlopen)(const char* __filename, int __flag, const void* caller_
 void (*dlopen_bridge)(const char* __filename, int __flag);
 void (*old_dlopen)(const char* __filename, int __flag);
 void* __loader_dlopen_bridge(const char* __filename, int __flag) {
-    return __loader_dlopen(__filename, __flag, caller_addr);
+    if (__loader_dlopen(__filename, __flag, caller_addr) == NULL) {
+        return __loader_dlopen(__filename, __flag, __builtin_return_address(0));
+    } else{
+        return __loader_dlopen(__filename, __flag, caller_addr);
+    }
 }
 
 void new_dlopen(const char* __filename, int __flag) {
-    if (__loader_dlopen_bridge(__filename, __flag) == NULL) {
-        old_dlopen(__filename, __flag);
-    } else{
-        return dlopen_bridge(__filename, __flag);
-    }
+    return dlopen_bridge(__filename, __flag);
 }
 
 JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setupDlHook(JNIEnv* env, jclass clazz){
