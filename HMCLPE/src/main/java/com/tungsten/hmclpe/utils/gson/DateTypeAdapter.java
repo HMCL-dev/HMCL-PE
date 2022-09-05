@@ -72,7 +72,8 @@ public final class DateTypeAdapter implements JsonSerializer<Date>, JsonDeserial
                         LocalDateTime localDateTime = LocalDateTime.parse(string, ISO_LOCAL_DATE_TIME);
                         return Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
                     } catch (DateTimeParseException e2) {
-                        throw new JsonParseException("Invalid date: " + string, e);
+                        return new Date();
+                        //throw new JsonParseException("Invalid date: " + string, e);
                     }
                 }
             }
