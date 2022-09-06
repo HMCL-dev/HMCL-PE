@@ -72,7 +72,7 @@ JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setupDlHook(JNIEnv* env, jclass c
     __loader_dlsym = (void* (*)(void*, const char*, const void*))dlsym(handle, "__loader_dlsym");
 
     void* handle2;
-    handle2 = dlopen("libloadme.so", RTLD_GLOBAL);
+    handle2 = dlopen("libloadme.so", RTLD_LAZY);
     dlopen_bridge = (void (*)(const char*, int))dlsym(handle2, "__loader_dlopen_bridge");
     dlsym_bridge = (void (*)(void*, const char*))dlsym(handle2, "__loader_dlsym_bridge");
 
