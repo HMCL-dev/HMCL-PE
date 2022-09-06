@@ -40,7 +40,7 @@ void* (*__loader_dlopen)(const char* __filename, int __flag, const void* caller_
 void (*dlopen_bridge)(const char* __filename, int __flag);
 void (*old_dlopen)(const char* __filename, int __flag);
 void* __loader_dlopen_bridge(const char* __filename, int __flag) {
-    if (__loader_dlopen(__filename, __flag, caller_addr) == NULL) {
+    if (__loader_dlopen(__filename, __flag, __builtin_return_address(0)) != NULL) {
         return __loader_dlopen(__filename, __flag, __builtin_return_address(0));
     } else{
         return __loader_dlopen(__filename, __flag, caller_addr);
