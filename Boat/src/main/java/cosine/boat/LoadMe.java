@@ -145,11 +145,11 @@ public class LoadMe {
                 dlopen(BOAT_LIB_DIR + "/lwjgl-2/" + march + "/liblwjgl.so");
             }
             else {
-                dlopen(BOAT_LIB_DIR + "/libs/" + march + "/libglfw.so");
-                dlopen(BOAT_LIB_DIR + "/lwjgl-3/" + march + "/liblwjgl.so");
-                dlopen(BOAT_LIB_DIR + "/lwjgl-3/" + march + "/liblwjgl_stb.so");
-                dlopen(BOAT_LIB_DIR + "/lwjgl-3/" + march + "/liblwjgl_tinyfd.so");
-                dlopen(BOAT_LIB_DIR + "/lwjgl-3/" + march + "/liblwjgl_opengl.so");
+                dlopen(BOAT_LIB_DIR + "/libglfw.so");
+                dlopen(BOAT_LIB_DIR + "/lwjgl-3/liblwjgl.so");
+                dlopen(BOAT_LIB_DIR + "/lwjgl-3/liblwjgl_stb.so");
+                dlopen(BOAT_LIB_DIR + "/lwjgl-3/liblwjgl_tinyfd.so");
+                dlopen(BOAT_LIB_DIR + "/lwjgl-3/liblwjgl_opengl.so");
             }
 
             setupJLI();
