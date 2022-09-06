@@ -154,7 +154,7 @@ public class LoadMe {
 
             setupJLI();
             hookDlopen();
-            setupExitTrap(context);
+        //    setupExitTrap(context);
 
             redirectStdio(home + "/boat_latest_log.txt");
             chdir(gameDir);
