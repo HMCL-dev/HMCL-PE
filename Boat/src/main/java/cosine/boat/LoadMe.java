@@ -56,11 +56,14 @@ public class LoadMe {
             march = "x86_64";
         }
 
+        boolean isJava17 = javaPath.endsWith("JRE17");
+
+        File serverFile = new File(javaPath + "/lib/" + (isJava17 ? "" : arch) + "/server/libjvm.so");
+        String jvmLibraryPath = serverFile.exists() ? "server" : "client";
+
         handler.post(callback::onStart);
 
         BOAT_LIB_DIR = context.getDir("runtime",0).getAbsolutePath() + "/boat";
-
-        boolean isJava17 = javaPath.endsWith("JRE17");
 
         setupDlHook();
         hookDlopen();
@@ -100,7 +103,7 @@ public class LoadMe {
             if (isJava17) {
                 dlopen(javaPath + "/lib/libfreetype.so");
                 dlopen(javaPath + "/lib/libjli.so");
-                dlopen(javaPath + "/lib/server/libjvm.so");
+                dlopen(javaPath + "/lib/" + jvmLibraryPath + "/libjvm.so");
                 dlopen(javaPath + "/lib/libverify.so");
                 dlopen(javaPath + "/lib/libjava.so");
                 dlopen(javaPath + "/lib/libnet.so");
@@ -114,7 +117,7 @@ public class LoadMe {
             else {
                 dlopen(javaPath + "/lib/" + arch + "/libfreetype.so");
                 dlopen(javaPath + "/lib/" + arch + "/jli/libjli.so");
-                dlopen(javaPath + "/lib/" + arch + "/server/libjvm.so");
+                dlopen(javaPath + "/lib/" + arch + "/" + jvmLibraryPath + "/libjvm.so");
                 dlopen(javaPath + "/lib/" + arch + "/libverify.so");
                 dlopen(javaPath + "/lib/" + arch + "/libjava.so");
                 dlopen(javaPath + "/lib/" + arch + "/libnet.so");
@@ -247,13 +250,16 @@ public class LoadMe {
             patchLinker();
         }
 
+        File serverFile = new File(javaPath + "/lib/" + arch + "/server/libjvm.so");
+        String jvmLibraryPath = serverFile.exists() ? "server" : "client";
+
         try {
             setenv("HOME", home);
             setenv("JAVA_HOME" , javaPath);
 
             dlopen(javaPath + "/lib/" + arch + "/libfreetype.so");
             dlopen(javaPath + "/lib/" + arch + "/jli/libjli.so");
-            dlopen(javaPath + "/lib/" + arch + "/server/libjvm.so");
+            dlopen(javaPath + "/lib/" + arch + "/" + jvmLibraryPath + "/libjvm.so");
             dlopen(javaPath + "/lib/" + arch + "/libverify.so");
             dlopen(javaPath + "/lib/" + arch + "/libjava.so");
             dlopen(javaPath + "/lib/" + arch + "/libnet.so");

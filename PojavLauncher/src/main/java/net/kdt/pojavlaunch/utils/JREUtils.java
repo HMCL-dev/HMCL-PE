@@ -28,12 +28,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Vector;
-
-import javax.microedition.khronos.egl.EGL10;
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.egl.EGLContext;
-import javax.microedition.khronos.egl.EGLDisplay;
 
 public class JREUtils {
     private JREUtils() {}
@@ -77,7 +71,7 @@ public class JREUtils {
             path = javaPath + "/lib";
         }
         dlopen(path + "/jli/libjli.so");
-        dlopen(path + "/server/libjvm.so");
+        dlopen(path + "/" + jvmLibraryPath + "/libjvm.so");
         dlopen(path + "/libverify.so");
         dlopen(path + "/libjava.so");
         dlopen(path + "/libnet.so");
