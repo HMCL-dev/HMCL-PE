@@ -66,7 +66,6 @@ public class LoadMe {
         BOAT_LIB_DIR = context.getDir("runtime",0).getAbsolutePath() + "/boat";
 
         setupDlHook();
-        hookDlopen();
         if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
             patchLinker();
         }
@@ -154,7 +153,8 @@ public class LoadMe {
             }
 
             setupJLI();
-            setupExitTrap(context);
+            hookDlopen();
+            //setupExitTrap(context);
 
             redirectStdio(home + "/boat_latest_log.txt");
             chdir(gameDir);
