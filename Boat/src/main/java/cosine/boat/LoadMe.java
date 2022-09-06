@@ -120,7 +120,7 @@ public class LoadMe {
                 dlopen(BOAT_LIB_DIR + "/lwjgl-2/liblwjgl.so");
             }
             else {
-                dlopen(BOAT_LIB_DIR + "/libglfw.so");
+             //   dlopen(BOAT_LIB_DIR + "/libglfw.so");
                 dlopen(BOAT_LIB_DIR + "/lwjgl-3/liblwjgl.so");
                 dlopen(BOAT_LIB_DIR + "/lwjgl-3/liblwjgl_stb.so");
                 dlopen(BOAT_LIB_DIR + "/lwjgl-3/liblwjgl_tinyfd.so");
