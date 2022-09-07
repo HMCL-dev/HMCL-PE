@@ -2,11 +2,28 @@
 
 #include <android/native_window_jni.h>
 #include <jni.h>
+#include <dlfcn.h>
 
 BoatInternal mBoat;
 
 ANativeWindow* boatGetNativeWindow() {
     return mBoat.window;
+}
+
+void* dlopen_wrapper(const char* filename, int flag) {
+    return dlopen(filename, flag);
+}
+
+int dlclose_wrapper(void* handle) {
+    return dlclose(handle);
+}
+
+char* dlerror_wrapper() {
+    return dlerror();
+}
+
+void* dlsym_wrapper(void* handle, const char* symbol) {
+    return dlsym(handle, symbol);
 }
 
 JNIEXPORT void JNICALL Java_cosine_boat_BoatActivity_setBoatNativeWindow(JNIEnv* env, jclass clazz, jobject surface) {

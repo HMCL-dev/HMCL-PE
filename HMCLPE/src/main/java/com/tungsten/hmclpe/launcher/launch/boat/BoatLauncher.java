@@ -78,7 +78,7 @@ public class BoatLauncher {
             Tools.getCacioJavaArgs(context, args, !isJava17, width, height);
             args.add("-cp");
             args.add(classPath);
-            args.add("-Djava.library.path=" + ldLibPath);
+            args.add("-Djava.library.path=" + libraryPath);
             //args.add("-Dorg.lwjgl.util.Debug=true");
             //args.add("-Dorg.lwjgl.util.DebugFunctions=true");
             //args.add("-Dorg.lwjgl.util.DebugLoader=true");

@@ -85,7 +85,7 @@ void* setup_dl_hook() {
 
 JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_hookDlopen(JNIEnv *env, jclass clazz) {
     xhook_enable_debug(1);
-    xhook_register(".*\\.so$", "dlopen", new_dlopen, (void **) &old_dlopen);
+    xhook_register(".*/libdl.so$", "dlopen", new_dlopen, (void **) &old_dlopen);
     //xhook_register(".*\\.so$", "dlsym", new_dlsym, (void **) &old_dlsym);
     xhook_refresh(1);
 }
