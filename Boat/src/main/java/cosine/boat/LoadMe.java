@@ -148,7 +148,7 @@ public class LoadMe {
             }
 
             setupJLI();
-            
+
             setupExitTrap(context);
 
             redirectStdio(home + "/boat_latest_log.txt");
