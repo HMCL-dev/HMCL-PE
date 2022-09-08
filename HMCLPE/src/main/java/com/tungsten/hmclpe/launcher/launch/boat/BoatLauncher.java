@@ -79,9 +79,9 @@ public class BoatLauncher {
             args.add("-cp");
             args.add(classPath);
             args.add("-Djava.library.path=" + libraryPath);
-            //args.add("-Dorg.lwjgl.util.Debug=true");
-            //args.add("-Dorg.lwjgl.util.DebugFunctions=true");
-            //args.add("-Dorg.lwjgl.util.DebugLoader=true");
+            args.add("-Dorg.lwjgl.util.Debug=true");
+            args.add("-Dorg.lwjgl.util.DebugFunctions=true");
+            args.add("-Dorg.lwjgl.util.DebugLoader=true");
             args.add("-Dfml.earlyprogresswindow=false");
             if (gameLaunchSetting.boatRenderer.equals("VirGL")) {
                 args.add("-Dorg.lwjgl.opengl.libname=libGL.so.1");
