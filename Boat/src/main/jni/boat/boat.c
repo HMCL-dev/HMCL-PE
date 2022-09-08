@@ -14,7 +14,7 @@ void* boat_addr;
 
 void* (*loader_dlopen)(const char* filename, int flag, const void* caller_addr);
 void* dlopen_wrapper(const char* filename, int flag) {
-    BOAT_INTERNAL_LOG("Using boat to dlopen.");
+    BOAT_INTERNAL_LOG("Using boat to dlopen %s.", filename);
     void* handle;
     handle = dlopen("libdl.so", RTLD_LAZY);
     loader_dlopen = (void* (*)(const char*, int, const void*))dlsym(handle, "__loader_dlopen");
@@ -29,8 +29,13 @@ char* dlerror_wrapper() {
     return dlerror();
 }
 
+void* (*loader_dlsym)(void* handle, const char* symbol, const void* caller_addr);
 void* dlsym_wrapper(void* handle, const char* symbol) {
-    return dlsym(handle, symbol);
+    BOAT_INTERNAL_LOG("Using boat to dlsym %s.", symbol);
+    void* handle_dl;
+    handle_dl = dlopen("libdl.so", RTLD_LAZY);
+    loader_dlsym = (void* (*)(void* handle, const char* symbol, const void*))dlsym(handle_dl, "__loader_dlsym");
+    return loader_dlsym(handle, symbol, boat_addr);
 }
 
 void* setup_dl_hook() {
