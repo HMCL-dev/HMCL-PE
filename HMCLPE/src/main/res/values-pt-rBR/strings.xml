@@ -298,7 +298,7 @@
     <string name="download_ui_package">Modpack</string>
     <string name="download_ui_mod">Mods</string>
     <string name="download_ui_resource_pack">Pacotes de recursos</string>
-    <string name="download_ui_world">os mundos</string>
+    <string name="download_ui_world">Mundos</string>
     <string name="download_minecraft_ui_hint">Informação</string>
     <string name="download_minecraft_ui_hint_text">Os downloads são fornecidos por BMCLAPI e MCBBS.  Clique aqui para obter mais informações.</string>
     <string name="download_minecraft_ui_release">Lan</string>
