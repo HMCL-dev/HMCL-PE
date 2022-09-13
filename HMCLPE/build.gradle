@@ -22,7 +22,7 @@ android {
      
     defaultConfig {
         applicationId "com.tungsten.hmclpe"
-        minSdk 26
+        minSdk 21
         targetSdk 32
         versionCode 12
         versionName "1.0.0"
