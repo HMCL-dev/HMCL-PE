@@ -71,7 +71,7 @@ public class JREUtils {
             path = javaPath + "/lib";
         }
         dlopen(path + "/jli/libjli.so");
-        dlopen(path + "/" + jvmLibraryPath + "/libjvm.so");
+        dlopen(jvmLibraryPath + "/libjvm.so");
         dlopen(path + "/libverify.so");
         dlopen(path + "/libjava.so");
         dlopen(path + "/libnet.so");
@@ -236,8 +236,22 @@ public class JREUtils {
             Os.setenv(env.getKey(), env.getValue(), true);
         }
 
-        File serverFile = new File(javaPath + "/lib/server/libjvm.so");
-        jvmLibraryPath = javaPath + "/lib/" + (serverFile.exists() ? "server" : "client");
+        String arch = "";
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM) {
+            arch = "aarch32";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
+            arch = "aarch64";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_X86) {
+            arch = "i386";
+        }
+        if (Architecture.getDeviceArchitecture() == ARCH_X86_64) {
+            arch = "amd64";
+        }
+        String aarch =  (javaPath.endsWith("default") ? (arch + "/") : "");
+        File serverFile = new File(javaPath + "/lib/" + aarch + "server/libjvm.so");
+        jvmLibraryPath = javaPath + "/lib/" + aarch + (serverFile.exists() ? "server" : "client");
         Log.d("DynamicLoader","Base LD_LIBRARY_PATH: " + LD_LIBRARY_PATH);
         Log.d("DynamicLoader","Internal LD_LIBRARY_PATH: " + jvmLibraryPath + ":" + LD_LIBRARY_PATH);
         setLdLibraryPath(jvmLibraryPath + ":" + LD_LIBRARY_PATH);
@@ -273,8 +287,22 @@ public class JREUtils {
             relocateLibPath(context,javaPath);
             Os.setenv("HOME", home, true);
             Os.setenv("JAVA_HOME" , javaPath, true);
-            File serverFile = new File(javaPath + "/lib/server/libjvm.so");
-            jvmLibraryPath = javaPath + "/lib/" + (serverFile.exists() ? "server" : "client");
+            String arch = "";
+            if (Architecture.getDeviceArchitecture() == ARCH_ARM) {
+                arch = "aarch32";
+            }
+            if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
+                arch = "aarch64";
+            }
+            if (Architecture.getDeviceArchitecture() == ARCH_X86) {
+                arch = "i386";
+            }
+            if (Architecture.getDeviceArchitecture() == ARCH_X86_64) {
+                arch = "amd64";
+            }
+            String aarch =  (javaPath.endsWith("default") ? (arch + "/") : "");
+            File serverFile = new File(javaPath + "/lib/" + aarch + "server/libjvm.so");
+            jvmLibraryPath = javaPath + "/lib/" + aarch + (serverFile.exists() ? "server" : "client");
             Log.d("DynamicLoader","Base LD_LIBRARY_PATH: " + LD_LIBRARY_PATH);
             Log.d("DynamicLoader","Internal LD_LIBRARY_PATH: " + jvmLibraryPath + ":" + LD_LIBRARY_PATH);
             setLdLibraryPath(jvmLibraryPath + ":" + LD_LIBRARY_PATH);
