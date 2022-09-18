@@ -67,15 +67,15 @@ public class LoadMe {
 
         try {
 
-			setenv("HOME", home);
-			setenv("JAVA_HOME" , javaPath);
-			setenv("LIBGL_MIPMAP","3");
-			setenv("LIBGL_NORMALIZE","1");
-            setenv("LIBGL_VSYNC","1");
-            setenv("LIBGL_NOINTOVLHACK", "1");
+		setenv("HOME", home);
+		setenv("JAVA_HOME" , javaPath);
+		setenv("LIBGL_MIPMAP","3");
+	        setenv("LIBGL_NORMALIZE","1");
+                setenv("LIBGL_NOINTOVLHACK", "1");
+		setenv("LIBGL_VGPU_PRECISION", "1");
 
 
-			if (renderer.equals("VirGL")) {
+	     if (renderer.equals("VirGL")) {
                 setenv("LIBGL_NAME","libGL.so.1");
                 setenv("LIBEGL_NAME","libEGL.so.1");
                 setenv("LIBGL_DRIVERS_PATH",BOAT_LIB_DIR + "/renderer/virgl/");
