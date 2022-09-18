@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="cut">Cortar</string>
+    <string name="refresh">Atualizar</string>
+    <string name="paste">Colar</string>
+    <string name="copy">Copiar</string>
+    <string name="filter">Filtrar</string>
+    <string name="sort">Ordenar</string>
+    <string name="more">Mais</string>
+    <string name="delete">Deletar</string>
+    <string name="rename">Renomear</string>
+    <string name="share">Compartilhar</string>
+    <string name="new_folder">Nova Pasta</string>
+    <string name="root">Raiz</string>
+    <string name="back">Voltar</string>
+    <string name="show_hidden_folders">Mostrar diretórios ocultos</string>
+    <string name="properties">Propiedades</string>
+    <string name="cancel">Cancelar</string>
+    <string name="selectall">Selecionar tudo</string>
+    <string name="showfoldersize">Mostrar tamanho da pasta</string>
+    <string name="showhiddenfolder">Mostrar diretórios ocultos</string>
+    <string name="chooseitems">Escolher itens</string>
+    <string name="search">Pesquisar</string>
+    <string name="searchfiles">Procurar arquivos</string>
+    <string name="ok">Ok</string>
+    <string name="filter_only">Filtrar apenas</string>
+    <string name="sort_by">Ordenar por</string>
+    <string name="file_info">%1$s Última modificação: %2$s</string>
+    <string name="read_only"> (Somente leitura)</string>
+    <!-- Folder creation-->
+    <string name="folder_creation_error">Ocorreu um erro ao criar uma nova pasta</string>
+    <string name="permission_error">Nenhuma permissão de gravação concedida</string>
+    <!-- File deletion-->
+    <string name="delete_dialog_title">Deletar arquivos</string>
+    <string name="delete_dialog_message">Tem certeza de que deseja excluir %d itens?</string>
+    <string name="delete_progress">Excluindo por favor aguarde &#8230;</string>
+    <string name="delete_error">Ocorreu um erro ao excluir</string>
+    <string name="no_items_selected">Nenhum item selecionado</string>
+    <!-- Paste files-->
+    <string name="wait">Por favor, aguarde&#8230;</string>
+    <string name="copying">Copiando %s</string>
+    <string name="moving">Mudança %s</string>
+    <string name="pasting_error">Ocorreu um erro ao colar</string>
+    <!--Rename-->
+    <string name="rename_dialog_title">Renomear</string>
+    <string name="rename_error">Ocorreu um erro ao renomear</string>
+    <!-- getProperties-->
+    <string name="properties_title">Propiedades</string>
+    <string name="directory">Diretório</string>
+    <string name="file">Arquivo</string>
+    <string name="file_type">"Tipo: %s   "</string>
+    <string name="file_size">"Tamanho: %s   "</string>
+    <string name="file_modified">"Última modificação %s   "</string>
+    <string name="file_path">Caminho %s</string>
+    <string name="file_type_multiple">Vários arquivos \n\n</string>
+    <string name="file_type_plain">Tipo:</string>
+    <string name="property_error">Não foi possível calcular as propriedades</string>
+    <!-- sharing -->
+    <string name="sharing_no_app">Nenhum aplicativo encontrado para lidar com o compartilhamento</string>
+    <string name="selected_items">Selecionado %d items</string>
+    <string name="selection_error_single">Selecione apenas 1 item</string>
+
+    <string name="permission_request_error">Nenhuma permissão solicitada</string>
+    <string name="error_common">Erro</string>
+    <string name="error_no_permissions">Algumas permissões não concedidas!.  O aplicativo pode não funcionar corretamente!.  Por favor, conceda as permissões necessárias!</string>
+    <string name="no_operation_error">Nenhuma operação selecionada</string>
+    <string name="no_files_paste">Nenhum arquivo selecionado para colar</string>
+    <string name="no_app_to_handle">Nenhum aplicativo encontrado para lidar com esse tipo de arquivo.</string>
+    <string name="select_multiple">Selecionar vários arquivos</string>
+    <string name="external_storage_error">Não é possível localizar o armazenamento externo</string>
+    <string name="unselectall">Desmarque todos</string>
+    <string name="file_image">Imagem do arquivo</string>
+    <string name="select">Selecionar</string>
+    <string name="invalid_selections">Seleções inválidas</string>
+
+</resources>
