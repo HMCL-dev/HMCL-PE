@@ -72,7 +72,7 @@ public class LoadMe {
 		setenv("LIBGL_MIPMAP","3");
 	        setenv("LIBGL_NORMALIZE","1");
                 setenv("LIBGL_NOINTOVLHACK", "1");
-		setenv("LIBGL_VGPU_PRECISION", "3");
+		setenv("LIBGL_VGPU_PRECISION", "2");
 
 
 	     if (renderer.equals("VirGL")) {
