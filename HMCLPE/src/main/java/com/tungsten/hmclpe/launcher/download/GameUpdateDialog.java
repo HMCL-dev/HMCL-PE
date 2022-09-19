@@ -29,6 +29,9 @@ import com.tungsten.hmclpe.launcher.download.liteloader.LiteLoaderVersion;
 import com.tungsten.hmclpe.launcher.download.optifine.OptifineDownloadTask;
 import com.tungsten.hmclpe.launcher.download.optifine.OptifineInstallTask;
 import com.tungsten.hmclpe.launcher.download.optifine.OptifineVersion;
+import com.tungsten.hmclpe.launcher.download.quilt.QuiltAPIInstallTask;
+import com.tungsten.hmclpe.launcher.download.quilt.QuiltInstallTask;
+import com.tungsten.hmclpe.launcher.download.quilt.QuiltLoaderVersion;
 import com.tungsten.hmclpe.launcher.game.Argument;
 import com.tungsten.hmclpe.launcher.game.Artifact;
 import com.tungsten.hmclpe.launcher.game.RuledArgument;
@@ -56,6 +59,8 @@ public class GameUpdateDialog extends Dialog implements View.OnClickListener, Ha
     private LiteLoaderVersion liteLoaderVersion;
     private FabricLoaderVersion fabricVersion;
     private RemoteMod.Version fabricAPIVersion;
+    private QuiltLoaderVersion quiltVersion;
+    private RemoteMod.Version quiltAPIVersion;
 
     private LiteLoaderInstallTask liteLoaderInstallTask;
     private ForgeDownloadTask forgeDownloadTask;
@@ -64,6 +69,8 @@ public class GameUpdateDialog extends Dialog implements View.OnClickListener, Ha
     private OptifineInstallTask optifineInstallTask;
     private FabricInstallTask fabricInstallTask;
     private FabricAPIInstallTask fabricAPIInstallTask;
+    private QuiltInstallTask quiltInstallTask;
+    private QuiltAPIInstallTask quiltAPIInstallTask;
 
     private RecyclerView taskListView;
     private DownloadTaskListAdapter downloadTaskListAdapter;
@@ -97,6 +104,12 @@ public class GameUpdateDialog extends Dialog implements View.OnClickListener, Ha
                 break;
             case 4:
                 this.fabricAPIVersion = (RemoteMod.Version) apiVersion;
+                break;
+            case 5:
+                this.quiltVersion = (QuiltLoaderVersion) apiVersion;
+                break;
+            case 6:
+                this.quiltAPIVersion = (RemoteMod.Version) apiVersion;
                 break;
         }
         setContentView(R.layout.dialog_install_update);
@@ -149,6 +162,12 @@ public class GameUpdateDialog extends Dialog implements View.OnClickListener, Ha
                 break;
             case 4:
                 downloadFabricAPI();
+                break;
+            case 5:
+                downloadQuilt();
+                break;
+            case 6:
+                downloadQuiltAPI();
                 break;
         }
     }
@@ -313,6 +332,57 @@ public class GameUpdateDialog extends Dialog implements View.OnClickListener, Ha
         fabricAPIInstallTask.execute(fabricAPIVersion);
     }
 
+    public void downloadQuilt(){
+        quiltInstallTask = new QuiltInstallTask(activity, downloadTaskListAdapter, version, new QuiltInstallTask.InstallQuiltCallback() {
+            @Override
+            public void onStart() {
+                stateText.setText(context.getString(R.string.dialog_install_update_state).replace("%s","Quilt").replace("%v",quiltVersion.version));
+            }
+
+            @Override
+            public void onFailed(Exception e) {
+                throwException(e);
+            }
+
+            @Override
+            public void onFinish(Version version) {
+                gameVersionJson = PatchMerger.reMergePatch(getContext(), gameVersionJson, version, "quilt", () -> {
+                    dismiss();
+                });
+                saveVersion();
+            }
+        });
+        quiltInstallTask.execute(quiltVersion);
+    }
+
+    public void downloadQuiltAPI(){
+        quiltAPIInstallTask = new QuiltAPIInstallTask(activity, name, downloadTaskListAdapter, new QuiltAPIInstallTask.InstallQuiltAPICallback() {
+            @Override
+            public void onStart() {
+                stateText.setText(context.getString(R.string.dialog_install_update_state).replace("%s","Quilt API").replace("%v",quiltAPIVersion.getVersion()));
+            }
+
+            @Override
+            public void onFinish(Exception e) {
+                if (e == null) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setTitle(getContext().getString(R.string.dialog_install_success_title));
+                    builder.setMessage(getContext().getString(R.string.dialog_install_success_text));
+                    builder.setCancelable(false);
+                    builder.setPositiveButton(getContext().getString(R.string.dialog_install_success_positive), (dialogInterface, i) -> {
+                        activity.backToLastUI();
+                    });
+                    exit();
+                    builder.create().show();
+                }
+                else {
+                    throwException(e);
+                }
+            }
+        });
+        quiltAPIInstallTask.execute(quiltAPIVersion);
+    }
+
     public void saveVersion() {
         String versionPath = activity.launcherSetting.gameFileDirectory + "/versions/" + name + "/" + name + ".json";
         Gson gson = JsonUtils.defaultGsonBuilder()
@@ -370,6 +440,12 @@ public class GameUpdateDialog extends Dialog implements View.OnClickListener, Ha
         }
         if (fabricAPIInstallTask != null && fabricAPIInstallTask.getStatus() != null && fabricAPIInstallTask.getStatus() == AsyncTask.Status.RUNNING) {
             fabricAPIInstallTask.cancel(true);
+        }
+        if (quiltInstallTask != null && quiltInstallTask.getStatus() != null && quiltInstallTask.getStatus() == AsyncTask.Status.RUNNING) {
+            quiltInstallTask.cancel(true);
+        }
+        if (quiltAPIInstallTask != null && quiltAPIInstallTask.getStatus() != null && quiltAPIInstallTask.getStatus() == AsyncTask.Status.RUNNING) {
+            quiltAPIInstallTask.cancel(true);
         }
         if (forgeInstallTask != null) {
             forgeInstallTask.cancelBuild();

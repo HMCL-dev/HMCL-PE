@@ -19,7 +19,7 @@ public class PatchMerger {
         void onFailed();
     }
 
-    public static Version reMergePatch(Context context,Version gameVersionJson, Version patch, String type,ReMergeCallback callback) {
+    public static Version reMergePatch(Context context, Version gameVersionJson, Version patch, String type, ReMergeCallback callback) {
         gameVersionJson = gameVersionJson.removePatchById(type);
         if (patch != null) {
             gameVersionJson = gameVersionJson.addPatch(patch);
@@ -65,7 +65,7 @@ public class PatchMerger {
         return gameVersionJson;
     }
 
-    public static Version mergePatch(Version gameVersionJson,Version patch) {
+    public static Version mergePatch(Version gameVersionJson, Version patch) {
         gameVersionJson = gameVersionJson.addPatch(patch);
         gameVersionJson = gameVersionJson.setMainClass(patch.getMainClass());
         if (patch.getMinecraftArguments().isPresent()) {
@@ -94,7 +94,7 @@ public class PatchMerger {
         return gameVersionJson;
     }
 
-    public static Version mergeOptifinePatch(Version gameVersionJson,Version patch) {
+    public static Version mergeOptifinePatch(Version gameVersionJson, Version patch) {
         boolean forge = false;
         for (Version v : gameVersionJson.getPatches()) {
             if (v.getId().equals("forge")) {

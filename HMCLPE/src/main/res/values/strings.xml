@@ -440,6 +440,9 @@
     <string name="dialog_incorrect_fabric_title">Installation Failed</string>
     <string name="dialog_incorrect_fabric_msg">The current library is not compatible with Fabric, please uninstall Fabric first.</string>
     <string name="dialog_incorrect_fabric_positive">OK</string>
+    <string name="dialog_incorrect_quilt_title">Installation Failed</string>
+    <string name="dialog_incorrect_quilt_msg">The current library is not compatible with Quilt, please uninstall Quilt first.</string>
+    <string name="dialog_incorrect_quilt_positive">OK</string>
     <string name="download_mod_ui_game">Games</string>
     <string name="download_mod_ui_source">Download Source</string>
     <string name="download_mod_ui_name">Name</string>

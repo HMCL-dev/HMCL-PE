@@ -110,9 +110,14 @@ public class GameInstallLocalDialog extends Dialog implements View.OnClickListen
             public void onFinish(InstallerAnalyzer.Type type, Object installer) {
                 if (isShowing()) {
                     boolean fabric = false;
+                    boolean quilt = false;
                     for (Version v : gameVersionJson.getPatches()) {
                         if (v.getId().equals("fabric")) {
                             fabric = true;
+                            break;
+                        }
+                        if (v.getId().equals("quilt")) {
+                            quilt = true;
                             break;
                         }
                     }
@@ -121,6 +126,9 @@ public class GameInstallLocalDialog extends Dialog implements View.OnClickListen
                         if (((ForgeVersion) installer).getGameVersion().equals(gameVersion)) {
                             if (fabric) {
                                 fabricFailed();
+                            }
+                            else if (quilt) {
+                                quiltFailed();
                             }
                             else {
                                 installForge(((ForgeVersion) installer));
@@ -134,6 +142,9 @@ public class GameInstallLocalDialog extends Dialog implements View.OnClickListen
                         if (((OptifineVersion) installer).mcVersion.equals(gameVersion)) {
                             if (fabric) {
                                 fabricFailed();
+                            }
+                            else if (quilt) {
+                                quiltFailed();
                             }
                             else {
                                 installOptifine(((OptifineVersion) installer));
@@ -174,6 +185,15 @@ public class GameInstallLocalDialog extends Dialog implements View.OnClickListen
         builder.setTitle(getContext().getString(R.string.dialog_incorrect_fabric_title));
         builder.setMessage(getContext().getString(R.string.dialog_incorrect_fabric_msg));
         builder.setPositiveButton(getContext().getString(R.string.dialog_incorrect_fabric_positive), (dialogInterface, i) -> {});
+        dismiss();
+        builder.create().show();
+    }
+
+    private void quiltFailed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle(getContext().getString(R.string.dialog_incorrect_quilt_title));
+        builder.setMessage(getContext().getString(R.string.dialog_incorrect_quilt_msg));
+        builder.setPositiveButton(getContext().getString(R.string.dialog_incorrect_quilt_positive), (dialogInterface, i) -> {});
         dismiss();
         builder.create().show();
     }

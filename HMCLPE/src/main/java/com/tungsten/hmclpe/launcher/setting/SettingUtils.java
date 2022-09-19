@@ -60,6 +60,9 @@ public class SettingUtils {
                                 case "fabric":
                                     stringBuilder.append(", Fabric: ").append(p.getVersion());
                                     break;
+                                case "quilt":
+                                    stringBuilder.append(", Quilt: ").append(p.getVersion());
+                                    break;
                                 case "liteloader":
                                     stringBuilder.append(", LiteLoader: ").append(p.getVersion());
                                     break;

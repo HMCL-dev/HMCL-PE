@@ -467,6 +467,10 @@
     <string name="dialog_incorrect_fabric_msg">当前软件与 Fabric 不兼容，请先卸载 Fabric。</string>
     <string name="dialog_incorrect_fabric_positive">确定</string>
 
+    <string name="dialog_incorrect_quilt_title">安装失败</string>
+    <string name="dialog_incorrect_quilt_msg">当前软件与 Quilt 不兼容，请先卸载 Quilt。</string>
+    <string name="dialog_incorrect_quilt_positive">确定</string>
+
     <string name="download_mod_ui_game">游戏</string>
     <string name="download_mod_ui_source">下载源</string>
     <string name="download_mod_ui_name">名称</string>
