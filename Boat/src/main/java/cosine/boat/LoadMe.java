@@ -70,10 +70,9 @@ public class LoadMe {
 		setenv("HOME", home);
 		setenv("JAVA_HOME" , javaPath);
 		setenv("LIBGL_MIPMAP","3");
-	        setenv("LIBGL_NORMALIZE","1");
-                setenv("LIBGL_NOINTOVLHACK", "1");
+        setenv("LIBGL_NORMALIZE","1");
+        setenv("LIBGL_NOINTOVLHACK", "1");
 		setenv("LIBGL_VGPU_PRECISION", "2");
-
 
 	     if (renderer.equals("VirGL")) {
                 setenv("LIBGL_NAME","libGL.so.1");
