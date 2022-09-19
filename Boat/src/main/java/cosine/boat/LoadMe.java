@@ -22,7 +22,10 @@ public class LoadMe {
     public static native int chdir(String path);
     public static native void redirectStdio(String file);
     public static native void setenv(String name, String value);
+    public static native void setupDlHook();
+    public static native void hookDlopen();
     public static native int dlopen(String name);
+    public static native void setLdLibraryPath(String ldLibraryPath);
     public static native void patchLinker();
     public static native void setupExitTrap(Context context);
     public static native void setupJLI();
@@ -61,13 +64,6 @@ public class LoadMe {
         handler.post(callback::onStart);
 
         BOAT_LIB_DIR = context.getDir("runtime",0).getAbsolutePath() + "/boat";
-
-        if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
-            patchLinker();
-        }
-        if (Architecture.getDeviceArchitecture() == ARCH_X86_64) {
-
-        }
 
         try {
 
@@ -245,15 +241,12 @@ public class LoadMe {
             arch = "amd64";
         }
 
-        File serverFile = new File(javaPath + "/lib/" + arch + "/server/libjvm.so");
-        String jvmLibraryPath = serverFile.exists() ? "server" : "client";
-
         if (Architecture.getDeviceArchitecture() == ARCH_ARM64) {
             patchLinker();
         }
-        if (Architecture.getDeviceArchitecture() == ARCH_X86_64) {
 
-        }
+        File serverFile = new File(javaPath + "/lib/" + arch + "/server/libjvm.so");
+        String jvmLibraryPath = serverFile.exists() ? "server" : "client";
 
         try {
             setenv("HOME", home);

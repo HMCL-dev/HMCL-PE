@@ -35,6 +35,82 @@ JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setupExitTrap(JNIEnv *env, jclass
     xhook_refresh(1);
 }
 
+void* caller_addr;
+
+void* (*__loader_dlopen)(const char* __filename, int __flag, const void* caller_addr);
+void (*dlopen_bridge)(const char* __filename, int __flag);
+void (*old_dlopen)(const char* __filename, int __flag);
+void* __loader_dlopen_bridge(const char* __filename, int __flag) {
+    if (__loader_dlopen(__filename, __flag, __builtin_return_address(0)) != NULL) {
+        return __loader_dlopen(__filename, __flag, __builtin_return_address(0));
+    } else{
+        return __loader_dlopen(__filename, __flag, dlerror());
+    }
+}
+void new_dlopen(const char* __filename, int __flag) {
+    return dlopen_bridge(__filename, __flag);
+}
+
+void* (*__loader_dlsym)(void* __handle, const char* __symbol, const void* caller_addr);
+void (*dlsym_bridge)(void* __handle, const char* __symbol);
+void (*old_dlsym)(void* __handle, const char* __symbol);
+void* __loader_dlsym_bridge(void* __handle, const char* __symbol) {
+    if (__loader_dlsym(__handle, __symbol, __builtin_return_address(0)) != NULL) {
+        return __loader_dlsym(__handle, __symbol, __builtin_return_address(0));
+    } else{
+        return __loader_dlsym(__handle, __symbol, caller_addr);
+    }
+}
+void new_dlsym(void* __handle, const char* __symbol) {
+    return dlsym_bridge(__handle, __symbol);
+}
+
+JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setupDlHook(JNIEnv* env, jclass clazz){
+    void* handle;
+    handle = dlopen("libdl.so", RTLD_LAZY);
+    __loader_dlopen = (void* (*)(const char*, int, const void*))dlsym(handle, "__loader_dlopen");
+    __loader_dlsym = (void* (*)(void*, const char*, const void*))dlsym(handle, "__loader_dlsym");
+
+    void* handle2;
+    handle2 = dlopen("libloadme.so", RTLD_LAZY);
+    dlopen_bridge = (void (*)(const char*, int))dlsym(handle2, "__loader_dlopen_bridge");
+    dlsym_bridge = (void (*)(void*, const char*))dlsym(handle2, "__loader_dlsym_bridge");
+
+    caller_addr = setup_dl_hook();
+}
+
+void* setup_dl_hook() {
+    return __builtin_return_address(0);
+}
+
+JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_hookDlopen(JNIEnv *env, jclass clazz) {
+    xhook_enable_debug(1);
+    xhook_register(".*/libdl.so$", "dlopen", new_dlopen, (void **) &old_dlopen);
+    //xhook_register(".*\\.so$", "dlsym", new_dlsym, (void **) &old_dlsym);
+    xhook_refresh(1);
+}
+
+typedef void (*android_update_LD_LIBRARY_PATH_t)(const char*);
+JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_setLdLibraryPath(JNIEnv *env, jclass clazz, jstring ldLibraryPath) {
+    // jclass exception_cls = (*env)->FindClass(env, "java/lang/UnsatisfiedLinkError");
+
+    android_update_LD_LIBRARY_PATH_t android_update_LD_LIBRARY_PATH;
+
+    void *libdl_handle = dlopen("libdl.so", RTLD_LAZY);
+    void *updateLdLibPath = dlsym(libdl_handle, "android_update_LD_LIBRARY_PATH");
+    if (updateLdLibPath == NULL) {
+        updateLdLibPath = dlsym(libdl_handle, "__loader_android_update_LD_LIBRARY_PATH");
+        if (updateLdLibPath == NULL) {
+            __android_log_print(ANDROID_LOG_ERROR, "Boat", "loading %s (error = %s)", "", dlerror());
+        }
+    }
+
+    android_update_LD_LIBRARY_PATH = (android_update_LD_LIBRARY_PATH_t) updateLdLibPath;
+    const char* ldLibPathUtf = (*env)->GetStringUTFChars(env, ldLibraryPath, 0);
+    android_update_LD_LIBRARY_PATH(ldLibPathUtf);
+    (*env)->ReleaseStringUTFChars(env, ldLibraryPath, ldLibPathUtf);
+}
+
 JNIEXPORT void JNICALL Java_cosine_boat_LoadMe_redirectStdio(JNIEnv* env, jclass clazz, jstring path) {
     char const* file = (*env)->GetStringUTFChars(env, path, 0);
 

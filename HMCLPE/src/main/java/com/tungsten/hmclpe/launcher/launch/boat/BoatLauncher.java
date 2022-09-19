@@ -1,5 +1,6 @@
 package com.tungsten.hmclpe.launcher.launch.boat;
 
+import static net.kdt.pojavlaunch.utils.Architecture.is64BitsDevice;
 import static cosine.boat.utils.Architecture.ARCH_ARM;
 import static cosine.boat.utils.Architecture.ARCH_ARM64;
 import static cosine.boat.utils.Architecture.ARCH_X86;
@@ -20,6 +21,7 @@ import java.io.File;
 import java.util.Collections;
 import java.util.Vector;
 
+import cosine.boat.LoadMe;
 import cosine.boat.utils.Architecture;
 
 public class BoatLauncher {
@@ -68,6 +70,9 @@ public class BoatLauncher {
                 }
                 classPath = AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-jemalloc.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-tinyfd.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-opengl.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-openal.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-glfw.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl-stb.jar:" + AppManifest.BOAT_LIB_DIR + "/lwjgl-3/lwjgl.jar:" + version.getClassPath(gameLaunchSetting.gameFileDirectory,true,isJava17);
             }
+            String libName = is64BitsDevice() ? "lib64" : "lib";
+            String ldLibPath = libraryPath + ":/system/" + libName + ":" + "/vendor/" + libName + ":" + "/vendor/" + libName + "/hw:" + context.getApplicationInfo().nativeLibraryDir;
+            LoadMe.setLdLibraryPath(ldLibPath);
             Vector<String> args = new Vector<String>();
             args.add(javaPath + "/bin/java");
             Tools.getCacioJavaArgs(context, args, !isJava17, width, height);
