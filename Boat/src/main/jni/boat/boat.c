@@ -10,45 +10,12 @@ ANativeWindow* boatGetNativeWindow() {
     return mBoat.window;
 }
 
-void* boat_addr;
-
-void* (*loader_dlopen)(const char* filename, int flag, const void* caller_addr);
-void* dlopen_wrapper(const char* filename, int flag) {
-    BOAT_INTERNAL_LOG("Using boat to dlopen %s.", filename);
-    void* handle;
-    handle = dlopen("libdl.so", RTLD_LAZY);
-    loader_dlopen = (void* (*)(const char*, int, const void*))dlsym(handle, "__loader_dlopen");
-    return loader_dlopen(filename, flag, boat_addr);
-}
-
-int dlclose_wrapper(void* handle) {
-    return dlclose(handle);
-}
-
-char* dlerror_wrapper() {
-    return dlerror();
-}
-
-void* (*loader_dlsym)(void* handle, const char* symbol, const void* caller_addr);
-void* dlsym_wrapper(void* handle, const char* symbol) {
-    BOAT_INTERNAL_LOG("Using boat to dlsym %s.", symbol);
-    void* handle_dl;
-    handle_dl = dlopen("libdl.so", RTLD_LAZY);
-    loader_dlsym = (void* (*)(void* handle, const char* symbol, const void*))dlsym(handle_dl, "__loader_dlsym");
-    return loader_dlsym(handle, symbol, boat_addr);
-}
-
-void* setup_dl_hook() {
-    return __builtin_return_address(0);
-}
-
 JNIEXPORT void JNICALL Java_cosine_boat_BoatActivity_setBoatNativeWindow(JNIEnv* env, jclass clazz, jobject surface) {
     mBoat.window = ANativeWindow_fromSurface(env, surface);
     BOAT_INTERNAL_LOG("setBoatNativeWindow : %p", mBoat.window);
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
-    boat_addr = setup_dl_hook();
     memset(&mBoat, 0, sizeof(mBoat));
     mBoat.android_jvm = vm;
     JNIEnv* env = 0;

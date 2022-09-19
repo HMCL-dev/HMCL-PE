@@ -12,10 +12,5 @@ void boatSetCursorMode(int mode);
 void boatSetPrimaryClipString(const char* string);
 const char* boatGetPrimaryClipString(void);
 
-void* dlopen_wrapper(const char* __filename, int __flag);
-int dlclose_wrapper(void* __handle);
-char* dlerror_wrapper(void);
-void* dlsym_wrapper(void* __handle, const char* __symbol);
-
 #endif
 
