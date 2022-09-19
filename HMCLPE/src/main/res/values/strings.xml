@@ -423,6 +423,8 @@
     <string name="dialog_install_game_install_optifine">Install OptiFine</string>
     <string name="dialog_install_game_install_fabric">Install Fabric</string>
     <string name="dialog_install_game_install_fabric_api">Install Fabric API</string>
+    <string name="dialog_install_game_install_quilt">Install Quilt</string>
+    <string name="dialog_install_game_install_quilt_api">Install Quilt API</string>
     <string name="dialog_install_game_exit">Cancel</string>
     <string name="dialog_install_success_title">Information</string>
     <string name="dialog_install_success_text">Installed successfully.</string>

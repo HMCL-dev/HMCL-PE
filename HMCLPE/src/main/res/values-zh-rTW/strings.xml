@@ -380,6 +380,8 @@
     <string name="dialog_install_game_install_optifine">安裝 Optifine</string>
     <string name="dialog_install_game_install_fabric">安裝 Fabric</string>
     <string name="dialog_install_game_install_fabric_api">安裝 Fabric API</string>
+    <string name="dialog_install_game_install_quilt">安裝 Quilt</string>
+    <string name="dialog_install_game_install_quilt_api">安裝 Quilt API</string>
     <string name="dialog_install_game_exit">取消</string>
     <string name="dialog_install_success_title">提示</string>
     <string name="dialog_install_success_text">安裝成功</string>

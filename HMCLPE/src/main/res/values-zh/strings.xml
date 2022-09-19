@@ -444,6 +444,8 @@
     <string name="dialog_install_game_install_optifine">安装 Optifine</string>
     <string name="dialog_install_game_install_fabric">安装 Fabric</string>
     <string name="dialog_install_game_install_fabric_api">安装 Fabric API</string>
+    <string name="dialog_install_game_install_quilt">安装 Quilt</string>
+    <string name="dialog_install_game_install_quilt_api">安装 Quilt API</string>
     <string name="dialog_install_game_exit">取消</string>
 
     <string name="dialog_install_success_title">提示</string>

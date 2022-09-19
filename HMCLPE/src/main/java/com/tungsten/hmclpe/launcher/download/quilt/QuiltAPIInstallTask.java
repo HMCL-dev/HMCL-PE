@@ -1,4 +1,4 @@
-package com.tungsten.hmclpe.launcher.download.fabric;
+package com.tungsten.hmclpe.launcher.download.quilt;
 
 import android.os.AsyncTask;
 
@@ -16,22 +16,22 @@ import com.tungsten.hmclpe.utils.io.DownloadUtil;
 
 import java.io.IOException;
 
-public class FabricAPIInstallTask extends AsyncTask<RemoteMod.Version,Integer,Exception> {
+public class QuiltAPIInstallTask extends AsyncTask<RemoteMod.Version,Integer,Exception> {
 
     private MainActivity activity;
     private String name;
     private DownloadTaskListAdapter adapter;
-    private InstallFabricAPICallback callback;
+    private InstallQuiltAPICallback callback;
 
     private DownloadTaskListBean bean;
 
-    public FabricAPIInstallTask(MainActivity activity, String name, DownloadTaskListAdapter adapter, InstallFabricAPICallback callback) {
+    public QuiltAPIInstallTask(MainActivity activity, String name, DownloadTaskListAdapter adapter, InstallQuiltAPICallback callback) {
         this.activity = activity;
         this.name = name;
         this.adapter = adapter;
         this.callback = callback;
 
-        this.bean = new DownloadTaskListBean(activity.getString(R.string.dialog_install_game_install_fabric_api),"","","");
+        this.bean = new DownloadTaskListBean(activity.getString(R.string.dialog_install_game_install_quilt_api),"","","");
     }
 
     @Override
@@ -43,7 +43,7 @@ public class FabricAPIInstallTask extends AsyncTask<RemoteMod.Version,Integer,Ex
 
     @Override
     protected Exception doInBackground(RemoteMod.Version... versions) {
-        RemoteMod.Version fabricAPIVersion = versions[0];
+        RemoteMod.Version quiltAPIVersion = versions[0];
         String path;
         if (PublicGameSetting.isUsingIsolateSetting(activity.launcherSetting.gameFileDirectory + "/versions/" + name)) {
             path = PrivateGameSetting.getGameDir(activity.launcherSetting.gameFileDirectory,activity.launcherSetting.gameFileDirectory + "/versions/" + name, GsonUtils.getPrivateGameSettingFromFile(activity.launcherSetting.gameFileDirectory + "/versions/" + name + "/hmclpe.cfg").gameDirSetting);
@@ -51,10 +51,10 @@ public class FabricAPIInstallTask extends AsyncTask<RemoteMod.Version,Integer,Ex
         else {
             path = PrivateGameSetting.getGameDir(activity.launcherSetting.gameFileDirectory,activity.launcherSetting.gameFileDirectory + "/versions/" + name,GsonUtils.getPrivateGameSettingFromFile(AppManifest.SETTING_DIR + "/private_game_setting.json").gameDirSetting);
         }
-        String fileName = "fabric-api-" + fabricAPIVersion.getVersion() + ".jar";
+        String fileName = "quilt-api-" + quiltAPIVersion.getVersion() + ".jar";
         String modPath = path + "/mods/" + fileName;
-        String url = fabricAPIVersion.getFile().getUrl();
-        DownloadTaskListBean bean = new DownloadTaskListBean(fileName, url, modPath, fabricAPIVersion.getFile().getHashes().get("sha1"));
+        String url = quiltAPIVersion.getFile().getUrl();
+        DownloadTaskListBean bean = new DownloadTaskListBean(fileName, url, modPath, quiltAPIVersion.getFile().getHashes().get("sha1"));
         DownloadTask.DownloadFeedback feedback = new DownloadTask.DownloadFeedback() {
             @Override
             public void updateProgress(long curr, long max) {
@@ -116,7 +116,7 @@ public class FabricAPIInstallTask extends AsyncTask<RemoteMod.Version,Integer,Ex
         callback.onFinish(e);
     }
 
-    public interface InstallFabricAPICallback{
+    public interface InstallQuiltAPICallback{
         void onStart();
         void onFinish(Exception e);
     }
