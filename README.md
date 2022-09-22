@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="/HMCLPE/src/main/res/drawable/ic_craft_table.png"></img>
+    <img width="175" src="/HMCLPE/src/main/res/drawable/ic_craft_table.png"></img>
 </div>
 
 <h1 align="center">HMCL-PE Pocket Edition</h1>
@@ -9,9 +9,10 @@
 ![MainScreen](/.github/images/hmcl-pe-main-screen.jpg)
 
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![Discord](https://img.shields.io/badge/Discord-4903FC?style=for-the-badge&logo=discord&logoColor=white)
+[![Discord](https://img.shields.io/badge/Discord-4903FC?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/c79XjKHy4S)
 ![Gradle](https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+[![QQ](https://img.shields.io/badge/QQ-4903FC?style=for-the-badge&logoColor=white)](https://jq.qq.com/?_wv=1027&k=4r1lFLgc)
 ![Downloads](https://img.shields.io/github/downloads/Tungstend/HMCL-PE/total?color=green&style=for-the-badge)
 
 [![Sponsor](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://afdian.net/@tungs)
@@ -20,6 +21,7 @@
 
 - [HMCL-PE Pocket Edition](https://tungstend.github.io/): 
 The software attempts to restore HMCL on Android devices, allowing players to manage Games, Mods, Controls and More.
+
 - **Run Minecraft Java Edition directly on your Android device**, with mod support and all versions of the Game.
 
 <h1 align="center">Features</h1>
@@ -31,17 +33,22 @@ The software attempts to restore HMCL on Android devices, allowing players to ma
 - [x] Download Mods, ModPacks, Textures and Worlds.
 - [x] Using Shaders (with VirGL)
 - [x] Create custom controllers
+- [x] Customizable launcher themes and colors
 - [x] And much more!
+
+<h1 align="center">Screenshots</h1>
+
+![GameScreen1](/.github/images/hmcl-pe-in-game-1.jpg)
+![GameScreen2](/.github/images/hmcl-pe-in-game-2.jpg)
+![ModScreen](/.github/images/hmcl-pe-mods-menu.jpg)
 
 <h1 align="center">Compilation</h1>
 
 You can compile the software **using Android Studio**, with the **Android SDK & NDK** packages.
 Clone the remote repository using the following URL:
-
 ```
 https://github.com/Tungstend/HMCL-PE
 ```
-
 After that, Compile using Gradle by Android Studio.
 You can also run the ```link.bat``` file to do a build configuration
 
