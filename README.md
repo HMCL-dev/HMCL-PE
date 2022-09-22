@@ -19,7 +19,7 @@
 
 </div>
 
-- [HMCL-PE Pocket Edition](https://tungstend.github.io/): 
+- [Hello Minecraft! Launcher:Pocket Edition](https://tungstend.github.io/): 
 The software attempts to restore HMCL on Android devices, allowing players to manage Games, Mods, Controls and More.
 
 - **Run Minecraft Java Edition directly on your Android device**, with mod support and all versions of the Game.
@@ -50,7 +50,7 @@ Clone the remote repository using the following URL:
 https://github.com/Tungstend/HMCL-PE
 ```
 After that, Compile using Gradle by Android Studio.
-You can also run the ```link.bat``` file to do a build configuration
+Run the ```link.bat``` file to do a build configuration
 
 <h1 align="center">License</h1>
 
