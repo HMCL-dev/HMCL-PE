@@ -3,6 +3,15 @@
     <string name="dialog_unknown_error_msg">啟動器遇到無法處理的錯誤，請聯繫開發者解決。</string>
     <string name="dialog_unknown_error_title">警告</string>
     <string name="dialog_unknown_error_positive">確定</string>
+    <string name="dialog_verify_title">開發版測試權限驗證</string>
+    <string name="dialog_verify_code">授權驗證碼</string>
+    <string name="dialog_verify_donate">獲取權限</string>
+    <string name="dialog_verify_copy">複製設備碼</string>
+    <string name="dialog_verify_copy_success">複製成功</string>
+    <string name="dialog_verify_verify">驗證</string>
+    <string name="dialog_verify_verify_success">驗證成功</string>
+    <string name="dialog_verify_verify_fail">驗證失敗</string>
+    <string name="dialog_verify_cancel">取消</string>
     <string name="dialog_obtain_permission_title">提示</string>
     <string name="dialog_obtain_permission_msg">你需要在愛發電贊助 10 元以獲取開發版測試權限，贊助後你將收到內測群群號，請在愛發電私信我你的 QQ 號和設備碼。</string>
     <string name="dialog_obtain_permission_positive">前往</string>

@@ -3,6 +3,16 @@
     <string name="storage_permissions_remind">Please grant read and write permissions to the launcher, otherwise it may not operate normally</string>
     <string name="dialog_unknown_error_title">Warning</string>
     <string name="dialog_unknown_error_positive">Confirm</string>
+    <string name="dialog_verify_title">Development version test permission verification</string>
+    <string name="dialog_verify_msg">Your device code is:\n%s\nPlease fill in the authorization verification code that matches this device code.</string>
+    <string name="dialog_verify_code">Authorization verification code</string>
+    <string name="dialog_verify_donate">Get permission</string>
+    <string name="dialog_verify_copy">Copy device code</string>
+    <string name="dialog_verify_copy_success">Copy successfully</string>
+    <string name="dialog_verify_verify">Verify</string>
+    <string name="dialog_verify_verify_success">Verification succeeded</string>
+    <string name="dialog_verify_verify_fail">Verification failed</string>
+    <string name="dialog_verify_cancel">Cancel</string>
     <string name="dialog_obtain_permission_title">Information</string>
     <string name="dialog_obtain_permission_msg">You need to sponsor $2 to get this permission.</string>
     <string name="dialog_obtain_permission_positive">Go to sponsor</string>

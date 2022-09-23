@@ -4,6 +4,17 @@
     <string name="dialog_unknown_error_msg">启动器遇到无法处理的错误，请联系开发者解决。</string>
     <string name="dialog_unknown_error_positive">确定</string>
 
+    <string name="dialog_verify_title">开发版测试权限验证</string>
+    <string name="dialog_verify_msg">您的设备码为：\n%s\n请填写与此设备码匹配的授权验证码。</string>
+    <string name="dialog_verify_code">授权验证码</string>
+    <string name="dialog_verify_donate">获取权限</string>
+    <string name="dialog_verify_copy">复制设备码</string>
+    <string name="dialog_verify_copy_success">复制成功</string>
+    <string name="dialog_verify_verify">验证</string>
+    <string name="dialog_verify_verify_success">验证成功</string>
+    <string name="dialog_verify_verify_fail">验证失败</string>
+    <string name="dialog_verify_cancel">取消</string>
+
     <string name="dialog_obtain_permission_title">提示</string>
     <string name="dialog_obtain_permission_msg">你需要在爱发电赞助 10 元以获取开发版测试权限，赞助后你将收到内测群群号，请在爱发电私信我你的 QQ 号和设备码。</string>
     <string name="dialog_obtain_permission_positive">前往</string>
