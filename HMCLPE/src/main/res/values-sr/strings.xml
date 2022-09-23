@@ -3,16 +3,6 @@
     <string name="storage_permissions_remind">Odobrite dozvole za čitanje i pisanje "launcher"-u, u suprotnom možda neće raditi normalno</string>
     <string name="dialog_unknown_error_title">Upozorenje</string>
     <string name="dialog_unknown_error_positive">Potvrdi</string>
-    <string name="dialog_verify_title">verifikaciona dozvola za probnu verziju</string>
-    <string name="dialog_verify_msg">Kod vašeg uređaja:\n%s\nMolim vas popunite potvrdni verifikacioni kod koji se slaže kodu vašeg uređaja.</string>
-    <string name="dialog_verify_code">Potvrdi verifikacioni kod</string>
-    <string name="dialog_verify_donate">Dobi dozvolu</string>
-    <string name="dialog_verify_copy">Kopiraj kod uređaja</string>
-    <string name="dialog_verify_copy_success">Kopiranje uspešno</string>
-    <string name="dialog_verify_verify">Verifikuj</string>
-    <string name="dialog_verify_verify_success">Verifikacija uspešna</string>
-    <string name="dialog_verify_verify_fail">Verifikacija nije uspešna</string>
-    <string name="dialog_verify_cancel">Otkaži</string>
     <string name="dialog_obtain_permission_title">Informacije</string>
     <string name="dialog_obtain_permission_msg">Morate da sponzorišete 2$ da bi dobili ovu dozvolu</string>
     <string name="dialog_obtain_permission_positive">idi do sponzora</string>
