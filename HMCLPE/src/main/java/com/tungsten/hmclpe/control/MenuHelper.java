@@ -70,6 +70,7 @@ public class MenuHelper implements CompoundButton.OnCheckedChangeListener, View.
     public SwitchCompat switchMenuSlide;
     public SwitchCompat switchFloatMovable;
     public SwitchCompat switchAdvanceInput;
+    public SwitchCompat switchTouch;
     public SwitchCompat switchSensor;
     public SwitchCompat switchHalfScreen;
     public Spinner spinnerTouchMode;
@@ -196,6 +197,7 @@ public class MenuHelper implements CompoundButton.OnCheckedChangeListener, View.
         switchMenuSlide = activity.findViewById(R.id.switch_gesture);
         switchFloatMovable = activity.findViewById(R.id.switch_float_movable);
         switchAdvanceInput = activity.findViewById(R.id.switch_advance_input);
+        switchTouch = activity.findViewById(R.id.switch_touch);
         switchSensor = activity.findViewById(R.id.switch_control_sensor);
         switchHalfScreen = activity.findViewById(R.id.switch_half_screen);
         spinnerTouchMode = activity.findViewById(R.id.spinner_touch_mode);
@@ -215,6 +217,7 @@ public class MenuHelper implements CompoundButton.OnCheckedChangeListener, View.
         switchMenuSlide.setChecked(gameMenuSetting.menuSlideSetting);
         switchFloatMovable.setChecked(gameMenuSetting.menuFloatSetting.movable);
         switchAdvanceInput.setChecked(gameMenuSetting.advanceInput);
+        switchTouch.setChecked(gameMenuSetting.enableTouch);
         switchSensor.setChecked(gameMenuSetting.enableSensor);
         switchHalfScreen.setChecked(gameMenuSetting.disableHalfScreen);
         switchHideUI.setChecked(gameMenuSetting.hideUI);
@@ -224,6 +227,7 @@ public class MenuHelper implements CompoundButton.OnCheckedChangeListener, View.
         switchMenuSlide.setOnCheckedChangeListener(this);
         switchFloatMovable.setOnCheckedChangeListener(this);
         switchAdvanceInput.setOnCheckedChangeListener(this);
+        switchTouch.setOnCheckedChangeListener(this);
         switchSensor.setOnCheckedChangeListener(this);
         switchHalfScreen.setOnCheckedChangeListener(this);
         switchHideUI.setOnCheckedChangeListener(this);
@@ -380,7 +384,7 @@ public class MenuHelper implements CompoundButton.OnCheckedChangeListener, View.
 
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-        if (compoundButton == switchMenuFloat){
+        if (compoundButton == switchMenuFloat) {
             gameMenuSetting.menuFloatSetting.enable = b;
             if (b){
                 baseLayout.addView(viewManager.menuFloat);
@@ -391,7 +395,7 @@ public class MenuHelper implements CompoundButton.OnCheckedChangeListener, View.
             checkOpenMenuSetting();
             GameMenuSetting.saveGameMenuSetting(gameMenuSetting);
         }
-        if (compoundButton == switchMenuView){
+        if (compoundButton == switchMenuView) {
             gameMenuSetting.menuViewSetting.enable = b;
             if (b){
                 baseLayout.addView(viewManager.menuView);
@@ -402,7 +406,7 @@ public class MenuHelper implements CompoundButton.OnCheckedChangeListener, View.
             checkOpenMenuSetting();
             GameMenuSetting.saveGameMenuSetting(gameMenuSetting);
         }
-        if (compoundButton == switchMenuSlide){
+        if (compoundButton == switchMenuSlide) {
             gameMenuSetting.menuSlideSetting = b;
             if (b){
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
@@ -421,23 +425,27 @@ public class MenuHelper implements CompoundButton.OnCheckedChangeListener, View.
             gameMenuSetting.advanceInput = b;
             GameMenuSetting.saveGameMenuSetting(gameMenuSetting);
         }
-        if (compoundButton == switchSensor){
+        if (compoundButton == switchTouch) {
+            gameMenuSetting.enableTouch = b;
+            GameMenuSetting.saveGameMenuSetting(gameMenuSetting);
+        }
+        if (compoundButton == switchSensor) {
             gameMenuSetting.enableSensor = b;
             GameMenuSetting.saveGameMenuSetting(gameMenuSetting);
             if (viewManager != null){
                 viewManager.setSensorEnable(b);
             }
         }
-        if (compoundButton == switchHalfScreen){
+        if (compoundButton == switchHalfScreen) {
             gameMenuSetting.disableHalfScreen = b;
             GameMenuSetting.saveGameMenuSetting(gameMenuSetting);
         }
-        if (compoundButton == switchHideUI){
+        if (compoundButton == switchHideUI) {
             gameMenuSetting.hideUI = b;
             GameMenuSetting.saveGameMenuSetting(gameMenuSetting);
             viewManager.hideUI(b);
         }
-        if (compoundButton == editModeSwitch){
+        if (compoundButton == editModeSwitch) {
             editMode = b;
             if (b) {
                 editInfo.setEnabled(true);

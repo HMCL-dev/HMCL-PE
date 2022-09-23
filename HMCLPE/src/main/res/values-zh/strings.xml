@@ -1003,6 +1003,7 @@
     <string name="drawer_game_menu_control_sensor_open_alert">已开启陀螺仪</string>
     <string name="drawer_game_menu_control_sensor_close_alert">已关闭陀螺仪</string>
     <string name="drawer_game_menu_control_sensor_sensitivity">陀螺仪灵敏度</string>
+    <string name="drawer_game_menu_control_touch">启用手势</string>
     <string name="drawer_game_menu_control_half_screen">取消左半屏触控</string>
     <string name="drawer_game_menu_control_half_screen_enable">已取消左半屏触控</string>
     <string name="drawer_game_menu_control_half_screen_disable">已启用左半屏触控</string>
