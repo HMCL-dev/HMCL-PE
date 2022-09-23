@@ -17,6 +17,8 @@
     <string name="install_game_ui_optifine" translatable="false">OptiFine</string>
     <string name="install_game_ui_fabric" translatable="false">Fabric</string>
     <string name="install_game_ui_fabric_api" translatable="false">Fabric API</string>
+    <string name="install_game_ui_quilt" translatable="false">Quilt</string>
+    <string name="install_game_ui_quilt_api" translatable="false">Quilt API</string>
     <string name="download_mod_source_curse_forge" translatable="false">CurseForge</string>
     <string name="download_mod_source_modrinth" translatable="false">Modrinth</string>
     <string name="download_resource_mcbbs" translatable="false">MCBBS</string>
@@ -385,6 +387,7 @@
     <string name="install_game_ui_forge_not_compatible">Incompatible with Forge</string>
     <string name="install_game_ui_fabric_not_compatible">Incompatible with Fabric</string>
     <string name="install_game_ui_optifine_not_compatible">Incompatible with OptiFine</string>
+    <string name="install_game_ui_quilt_not_compatible">Incompatible with Quilt</string>
     <string name="install_game_ui_install">Install</string>
     <string name="install_game_ui_exist">This instance already exists. Please use another name.</string>
     <string name="forge_list_ui_title">Add a New Instance - Choose Your Forge Version</string>
@@ -392,6 +395,8 @@
     <string name="lite_loader_list_ui_title">Add a New Instance - Choose Your LiteLoader Version</string>
     <string name="optifine_list_ui_title">Add a New Instance - Choose Your OptiFine Version</string>
     <string name="fabric_api_list_ui_title">Add a New Instance - Choose Your Fabric API Version</string>
+    <string name="quilt_list_ui_title">Add a New Instance - Choose Your Quilt Version</string>
+    <string name="quilt_api_list_ui_title">Add a New Instance - Choose Your Quilt API Version</string>
     <string name="fabric_api_list_ui_warn">Warning</string>
     <string name="fabric_api_list_ui_positive">OK</string>
     <string name="fabric_api_list_ui_warn_text">Warning: Fabric API is a mod, and will be installed into the mod directory of the game instance. Please do not change the working directory of the game, or the Fabric API will not work. If you do want to change these settings, you should reinstall it.</string>

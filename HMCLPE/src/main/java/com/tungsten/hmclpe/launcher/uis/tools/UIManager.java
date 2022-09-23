@@ -11,6 +11,8 @@ import com.tungsten.hmclpe.launcher.uis.game.download.right.game.DownloadFabricU
 import com.tungsten.hmclpe.launcher.uis.game.download.right.game.DownloadForgeUI;
 import com.tungsten.hmclpe.launcher.uis.game.download.right.game.DownloadLiteLoaderUI;
 import com.tungsten.hmclpe.launcher.uis.game.download.right.game.DownloadOptifineUI;
+import com.tungsten.hmclpe.launcher.uis.game.download.right.game.DownloadQuiltAPIUI;
+import com.tungsten.hmclpe.launcher.uis.game.download.right.game.DownloadQuiltUI;
 import com.tungsten.hmclpe.launcher.uis.game.download.right.game.InstallGameUI;
 import com.tungsten.hmclpe.launcher.uis.game.download.right.resource.BaseDownloadUI;
 import com.tungsten.hmclpe.launcher.uis.game.manager.GameManagerUI;
@@ -54,35 +56,39 @@ public class UIManager {
     public DownloadFabricAPIUI downloadFabricAPIUI;
     public DownloadLiteLoaderUI downloadLiteLoaderUI;
     public DownloadOptifineUI downloadOptifineUI;
+    public DownloadQuiltUI downloadQuiltUI;
+    public DownloadQuiltAPIUI downloadQuiltAPIUI;
 
     public BaseUI[] mainUIs;
     public ArrayList<BaseUI> uis;
     public BaseUI currentUI;
 
     public UIManager (Context context, MainActivity activity){
-        mainUI = new MainUI(context,activity);
-        accountUI = new AccountUI(context,activity);
-        gameManagerUI = new GameManagerUI(context,activity);
-        versionListUI = new VersionListUI(context,activity);
-        downloadUI = new DownloadUI(context,activity);
-        multiPlayerUI = new MultiPlayerUI(context,activity);
-        settingUI = new SettingUI(context,activity);
+        mainUI = new MainUI(context, activity);
+        accountUI = new AccountUI(context, activity);
+        gameManagerUI = new GameManagerUI(context, activity);
+        versionListUI = new VersionListUI(context, activity);
+        downloadUI = new DownloadUI(context, activity);
+        multiPlayerUI = new MultiPlayerUI(context, activity);
+        settingUI = new SettingUI(context, activity);
 
-        modUpdateUI = new ModUpdateUI(context,activity);
-        packMcManagerUI = new PackMcManagerUI(context,activity);
-        exportWorldUI = new ExportWorldUI(context,activity);
-        addGameDirectoryUI = new AddGameDirectoryUI(context,activity);
-        installPackageUI = new InstallPackageUI(context,activity);
-        exportPackageTypeUI = new ExportPackageTypeUI(context,activity);
-        exportPackageInfoUI = new ExportPackageInfoUI(context,activity);
-        exportPackageFileUI = new ExportPackageFileUI(context,activity);
+        modUpdateUI = new ModUpdateUI(context, activity);
+        packMcManagerUI = new PackMcManagerUI(context, activity);
+        exportWorldUI = new ExportWorldUI(context, activity);
+        addGameDirectoryUI = new AddGameDirectoryUI(context, activity);
+        installPackageUI = new InstallPackageUI(context, activity);
+        exportPackageTypeUI = new ExportPackageTypeUI(context, activity);
+        exportPackageInfoUI = new ExportPackageInfoUI(context, activity);
+        exportPackageFileUI = new ExportPackageFileUI(context, activity);
 
-        installGameUI = new InstallGameUI(context,activity);
-        downloadForgeUI = new DownloadForgeUI(context,activity);
-        downloadFabricUI = new DownloadFabricUI(context,activity);
-        downloadFabricAPIUI = new DownloadFabricAPIUI(context,activity);
-        downloadLiteLoaderUI = new DownloadLiteLoaderUI(context,activity);
-        downloadOptifineUI = new DownloadOptifineUI(context,activity);
+        installGameUI = new InstallGameUI(context, activity);
+        downloadForgeUI = new DownloadForgeUI(context, activity);
+        downloadFabricUI = new DownloadFabricUI(context, activity);
+        downloadFabricAPIUI = new DownloadFabricAPIUI(context, activity);
+        downloadLiteLoaderUI = new DownloadLiteLoaderUI(context, activity);
+        downloadOptifineUI = new DownloadOptifineUI(context, activity);
+        downloadQuiltUI = new DownloadQuiltUI(context, activity);
+        downloadQuiltAPIUI = new DownloadQuiltAPIUI(context, activity);
 
         mainUI.onCreate();
         accountUI.onCreate();
@@ -107,8 +113,10 @@ public class UIManager {
         downloadFabricAPIUI.onCreate();
         downloadLiteLoaderUI.onCreate();
         downloadOptifineUI.onCreate();
+        downloadQuiltUI.onCreate();
+        downloadQuiltAPIUI.onCreate();
 
-        mainUIs = new BaseUI[]{
+        mainUIs = new BaseUI[] {
                 mainUI,
                 modUpdateUI,
                 packMcManagerUI,
@@ -129,13 +137,15 @@ public class UIManager {
                 downloadFabricUI,
                 downloadLiteLoaderUI,
                 downloadOptifineUI,
-                downloadFabricAPIUI
+                downloadFabricAPIUI,
+                downloadQuiltUI,
+                downloadQuiltAPIUI
         };
         uis = new ArrayList<>();
         switchMainUI(mainUI);
     }
 
-    public void switchMainUI(BaseUI ui){
+    public void switchMainUI(BaseUI ui) {
         currentUI = ui;
         uis.add(ui);
         ui.onStart();
@@ -145,7 +155,7 @@ public class UIManager {
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------switch to new ui");
     }
 
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         for (BaseUI ui : mainUIs) {
             ui.onActivityResult(requestCode,resultCode,data);
         }
@@ -156,7 +166,7 @@ public class UIManager {
         }
     }
 
-    public void onPause(){
+    public void onPause() {
         for (BaseUI ui : mainUIs) {
             ui.onPause();
         }
@@ -167,7 +177,7 @@ public class UIManager {
         }
     }
 
-    public void onResume(){
+    public void onResume() {
         for (BaseUI ui : mainUIs) {
             ui.onResume();
         }

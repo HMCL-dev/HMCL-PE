@@ -226,6 +226,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 
+            <include
+                layout="@layout/ui_install_quilt_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/ui_install_quilt_api_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
         </RelativeLayout>
 
     </LinearLayout>

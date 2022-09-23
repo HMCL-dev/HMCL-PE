@@ -344,6 +344,7 @@
     <string name="install_game_ui_forge_not_compatible">與 Forge 不兼容</string>
     <string name="install_game_ui_fabric_not_compatible">與 Fabric 不兼容</string>
     <string name="install_game_ui_optifine_not_compatible">與 OptiFine 不兼容</string>
+    <string name="install_game_ui_quilt_not_compatible">与 Quilt 不兼容</string>
     <string name="install_game_ui_install">安裝</string>
     <string name="install_game_ui_exist">此版本已經存在，請換一個名字</string>
     <string name="forge_list_ui_title">安裝新遊戲版本 - 選擇 Forge 版本</string>
@@ -351,6 +352,8 @@
     <string name="lite_loader_list_ui_title">安裝新遊戲版本 - 選擇 LiteLoader 版本</string>
     <string name="optifine_list_ui_title">安裝新遊戲版本 - 選擇 OptiFine 版本</string>
     <string name="fabric_api_list_ui_title">安裝新遊戲版本 - 選擇 Fabric API 版本</string>
+    <string name="quilt_list_ui_title">安裝新遊戲版本 - 選擇 Fabric API 版本</string>
+    <string name="quilt_api_list_ui_title">安裝新遊戲版本 - 選擇 Fabric API 版本</string>
     <string name="fabric_api_list_ui_warn">警告</string>
     <string name="fabric_api_list_ui_positive">確定</string>
     <string name="fabric_api_list_ui_warn_text">警告: Fabric API 是一個 Mod，將會被安裝到新遊戲的 Mod 文件夾，請你在安裝遊戲後不要修改當前遊戲的版本隔離/遊戲運行路徑設置，如果你在之後修改了相關設置，Fabric API 需要被重新安裝</string>

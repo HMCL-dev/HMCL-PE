@@ -47,22 +47,30 @@ public class AutoInstallUI extends BaseUI implements View.OnClickListener {
     private TextView optiFineVersionText;
     private TextView fabricVersionText;
     private TextView fabricAPIVersionText;
+    private TextView quiltVersionText;
+    private TextView quiltAPIVersionText;
 
     private ImageButton deleteForgeVersion;
     private ImageButton deleteLiteLoaderVersion;
     private ImageButton deleteOptiFineVersion;
     private ImageButton deleteFabricVersion;
+    private ImageButton deleteQuiltVersion;
 
     private LinearLayout selectForgeVersion;
     private LinearLayout selectLiteLoaderVersion;
     private LinearLayout selectOptiFineVersion;
     private LinearLayout selectFabricVersion;
     private LinearLayout selectFabricAPIVersion;
+    private LinearLayout selectQuiltVersion;
+    private LinearLayout selectQuiltAPIVersion;
 
     private ImageView selectForge;
     private ImageView selectLiteLoader;
     private ImageView selectOptiFine;
     private ImageView selectFabric;
+    private ImageView selectFabricAPI;
+    private ImageView selectQuilt;
+    private ImageView selectQuiltAPI;
 
     private LinearLayout installLocal;
 
@@ -71,6 +79,7 @@ public class AutoInstallUI extends BaseUI implements View.OnClickListener {
     public String optifineVersion;
     public String liteLoaderVersion;
     public String fabricVersion;
+    public String quiltVersion;
 
     public AutoInstallUI(Context context, MainActivity activity) {
         super(context, activity);
@@ -115,6 +124,7 @@ public class AutoInstallUI extends BaseUI implements View.OnClickListener {
         selectLiteLoader = activity.findViewById(R.id.update_lite_loader);
         selectOptiFine = activity.findViewById(R.id.update_optifine);
         selectFabric = activity.findViewById(R.id.update_fabric);
+        selectFabricAPI = activity.findViewById(R.id.update_fabric_api);
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -199,6 +209,7 @@ public class AutoInstallUI extends BaseUI implements View.OnClickListener {
             deleteForgeVersion.setVisibility(forgeVersion != null ? View.VISIBLE : View.GONE);
             deleteOptiFineVersion.setVisibility(optifineVersion != null ? View.VISIBLE : View.GONE);
             selectFabric.setVisibility(View.GONE);
+            selectFabricAPI.setVisibility(View.GONE);
         }
         else {
             forgeVersionText.setText(context.getString(R.string.install_game_ui_none));
@@ -208,6 +219,7 @@ public class AutoInstallUI extends BaseUI implements View.OnClickListener {
             deleteForgeVersion.setVisibility(View.GONE);
             deleteOptiFineVersion.setVisibility(View.GONE);
             selectFabric.setVisibility(View.VISIBLE);
+            selectFabricAPI.setVisibility(View.VISIBLE);
         }
         if (fabricVersion != null){
             forgeVersionText.setText(context.getString(R.string.install_game_ui_fabric_not_compatible));

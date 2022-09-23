@@ -224,6 +224,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         uiManager.removeUIIfExist(uiManager.downloadFabricAPIUI);
         uiManager.removeUIIfExist(uiManager.downloadLiteLoaderUI);
         uiManager.removeUIIfExist(uiManager.downloadOptifineUI);
+        uiManager.removeUIIfExist(uiManager.downloadQuiltUI);
+        uiManager.removeUIIfExist(uiManager.downloadQuiltAPIUI);
         uiManager.uis.get(uiManager.uis.size() - 1).onStart();
         if (uiManager.currentUI == uiManager.exportWorldUI){
             uiManager.exportWorldUI.onStop();
@@ -257,6 +259,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if (uiManager.currentUI == uiManager.downloadOptifineUI){
             uiManager.downloadOptifineUI.onStop();
+        }
+        if (uiManager.currentUI == uiManager.downloadQuiltUI){
+            uiManager.downloadQuiltUI.onStop();
+        }
+        if (uiManager.currentUI == uiManager.downloadQuiltAPIUI){
+            uiManager.downloadQuiltAPIUI.onStop();
         }
         uiManager.currentUI = uiManager.uis.get(uiManager.uis.size() - 1);
     }
