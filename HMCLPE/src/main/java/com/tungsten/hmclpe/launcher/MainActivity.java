@@ -1,6 +1,8 @@
 package com.tungsten.hmclpe.launcher;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -23,6 +25,10 @@ import android.widget.TextView;
 
 import com.afollestad.appthemeengine.ATE;
 import com.afollestad.appthemeengine.Config;
+import com.tencent.connect.common.Constants;
+import com.tencent.tauth.IUiListener;
+import com.tencent.tauth.Tencent;
+import com.tencent.tauth.UiError;
 import com.tungsten.hmclpe.R;
 import com.tungsten.hmclpe.launcher.dialogs.VerifyDialog;
 import com.tungsten.hmclpe.launcher.dialogs.account.SkinPreviewDialog;
@@ -39,17 +45,6 @@ import com.tungsten.hmclpe.utils.LocaleUtils;
 import com.tungsten.hmclpe.utils.animation.CustomAnimationUtils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-    static {
-        System.loadLibrary("security");
-    }
-    public native boolean isValid(String str);
-    public static native void verify();
-    public static native void verifyFunc();
-    public native void launch(Intent intent);
-    @SuppressLint("MissingSuperCall")
-    @Override
-    public native void onCreate(Bundle savedInstanceState);
 
     public LinearLayout launcherLayout;
 
@@ -75,6 +70,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public UIManager uiManager;
 
     public Config exteriorConfig;
+
+    private Tencent mTencent;
+    private IUiListener iUiListener;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
+
+        launcherLayout = findViewById(R.id.launcher_layout);
+
+        init();
+    }
 
     public void init(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
@@ -275,6 +284,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (SkinPreviewDialog.getInstance() != null) {
             SkinPreviewDialog.getInstance().onActivityResult(requestCode,resultCode,data);
         }
+        if(requestCode == Constants.REQUEST_LOGIN && resultCode == Constants.ACTIVITY_OK) {
+            Tencent.handleResultData(data, iUiListener);
+        }
     }
 
     @Override
@@ -361,6 +373,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onDestroy();
     }
 
+    AlertDialog alertDialog;
     public void startVerify() {
         startVerify(new VerifyInterface() {
             @Override
@@ -372,18 +385,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onCancel() {
                 finish();
             }
-        });
-    }
 
-    public void startVerify(VerifyInterface verifyInterface) {
-        SharedPreferences msh = getSharedPreferences("Security", Context.MODE_PRIVATE);
-        SharedPreferences.Editor mshe = msh.edit();
-        if (msh.getBoolean("verified",false) && isValid(msh.getString("code",null))) {
-            verifyInterface.onSuccess();
-            return;
+            @Override
+            public void onWarning(int i) {
+                Log.e("测试","onWarning"+i);
+            }
+        };
+        if (mTencent.isSessionValid()){
+            //登录状态正常
+            Log.e("测试","isSessionValid");
+        } else {
+            //登录状态失效
+            alertDialog=new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("登录")
+                    .setMessage("")
+                    .setPositiveButton("登录", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    mTencent.login(MainActivity.this, "get_simple_userinfo", iUiListener);
+                                }
+                            }).start();
+                        }
+                    })
+                    .setNegativeButton("退出", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            System.exit(0);
+                        }
+                    }).create();
+            alertDialog.setCanceledOnTouchOutside(false);
+            alertDialog.show();
         }
-        VerifyDialog dialog = new VerifyDialog(this, this, mshe, verifyInterface);
-        dialog.show();
     }
 
 }
