@@ -83,7 +83,7 @@ public class CheckLibTask extends AsyncTask<RecyclerView,Integer,Exception> {
             assetIndexString = FileStringUtils.getStringFromFile(activity.launcherSetting.gameFileDirectory + "/assets/indexes/" + version.getAssetIndex().id + ".json");
         }
         else {
-            String assetIndexUrl = DownloadUrlSource.getSubUrl(DownloadUrlSource.getSource(activity.launcherSetting.downloadUrlSource),DownloadUrlSource.ASSETS_INDEX_JSON) + version.getAssetIndex().getUrl().replace("https://launchermeta.mojang.com","");
+            String assetIndexUrl = DownloadUrlSource.getSubUrl(DownloadUrlSource.getSource(activity.launcherSetting.downloadUrlSource),DownloadUrlSource.ASSETS_INDEX_JSON) + version.getAssetIndex().getUrl().replace("https://launchermeta.mojang.com", "").replace("https://piston-meta.mojang.com", "");
             try {
                 assetIndexString = NetworkUtils.doGet(NetworkUtils.toURL(assetIndexUrl));
                 list.add(new DownloadTaskListBean(version.getAssetIndex().id + ".json",

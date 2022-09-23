@@ -86,7 +86,27 @@ public class TouchInjector {
                     hit = false;
                 }
                 else if (args.get(i).equals("net.fabricmc.loader.impl.launch.knot.KnotClient")) {
-                    newArgs.add("com.tungsten.touchinjector.launch.TouchKnotClient");
+                    newArgs.add("com.tungsten.touchinjector.launch.FabricKnotClient");
+                }
+                else if (args.get(i).equals("-cp")) {
+                    hit = true;
+                    newArgs.add(args.get(i));
+                }
+                else {
+                    newArgs.add(args.get(i));
+                }
+            }
+            return newArgs;
+        }
+        else if (args.contains("org.quiltmc.loader.impl.launch.knot.KnotClient")) {
+            boolean hit = false;
+            for (int i = 0; i < args.size(); i++) {
+                if (hit) {
+                    newArgs.add(args.get(i) + ":" + AppManifest.PLUGIN_DIR + "/touch/TouchInjector.jar");
+                    hit = false;
+                }
+                else if (args.get(i).equals("org.quiltmc.loader.impl.launch.knot.KnotClient")) {
+                    newArgs.add("com.tungsten.touchinjector.launch.QuiltKnotClient");
                 }
                 else if (args.get(i).equals("-cp")) {
                     hit = true;
