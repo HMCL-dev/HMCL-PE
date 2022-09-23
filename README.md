@@ -2,7 +2,7 @@
     <img width="175" src="/HMCLPE/src/main/res/drawable/ic_craft_table.png"></img>
 </div>
 
-<h1 align="center">HMCL-PE Pocket Edition</h1>
+<h1 align="center">HMCL-PE</h1>
 
 <div align="center">
 
