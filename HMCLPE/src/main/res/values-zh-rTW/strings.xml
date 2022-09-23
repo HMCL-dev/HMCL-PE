@@ -701,6 +701,7 @@
     <string name="drawer_game_menu_control_touch_mode_create">建造模式</string>
     <string name="drawer_game_menu_control_touch_mode">觸控模式</string>
     <string name="drawer_game_menu_control_touch">啟用手勢</string>
+    <string name="drawer_game_menu_control_mouse_patch">鼠標右鍵補丁</string>
     <string name="drawer_game_menu_control_half_screen_disable">已啟用左半屏觸控</string>
     <string name="drawer_game_menu_control_half_screen_enable">已取消左半屏觸控</string>
     <string name="drawer_game_menu_control_half_screen">取消左半屏觸控</string>

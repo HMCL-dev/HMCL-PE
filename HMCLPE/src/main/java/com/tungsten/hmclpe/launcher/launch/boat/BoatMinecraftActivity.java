@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.InputDevice;
+import android.view.KeyEvent;
 import android.view.Surface;
 import android.view.WindowManager;
 
@@ -18,6 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.tungsten.hmclpe.R;
+import com.tungsten.hmclpe.control.InputBridge;
 import com.tungsten.hmclpe.control.MenuHelper;
 import com.tungsten.hmclpe.control.view.LayoutPanel;
 import com.tungsten.hmclpe.launcher.setting.game.GameLaunchSetting;
@@ -152,6 +154,24 @@ public class BoatMinecraftActivity extends BoatActivity {
             }
         }
     };
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (menuHelper.gameMenuSetting.mousePatch) {
+            InputBridge.sendMouseEvent(1, InputBridge.MOUSE_RIGHT, true);
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (menuHelper.gameMenuSetting.mousePatch) {
+            InputBridge.sendMouseEvent(1, InputBridge.MOUSE_RIGHT, false);
+            return true;
+        }
+        return super.onKeyUp(keyCode, event);
+    }
 
     @Override
     public void onBackPressed() {

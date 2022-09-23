@@ -71,6 +71,7 @@ public class MenuHelper implements CompoundButton.OnCheckedChangeListener, View.
     public SwitchCompat switchFloatMovable;
     public SwitchCompat switchAdvanceInput;
     public SwitchCompat switchTouch;
+    public SwitchCompat switchMousePatch;
     public SwitchCompat switchSensor;
     public SwitchCompat switchHalfScreen;
     public Spinner spinnerTouchMode;
@@ -198,6 +199,7 @@ public class MenuHelper implements CompoundButton.OnCheckedChangeListener, View.
         switchFloatMovable = activity.findViewById(R.id.switch_float_movable);
         switchAdvanceInput = activity.findViewById(R.id.switch_advance_input);
         switchTouch = activity.findViewById(R.id.switch_touch);
+        switchMousePatch = activity.findViewById(R.id.switch_mouse_patch);
         switchSensor = activity.findViewById(R.id.switch_control_sensor);
         switchHalfScreen = activity.findViewById(R.id.switch_half_screen);
         spinnerTouchMode = activity.findViewById(R.id.spinner_touch_mode);
@@ -218,6 +220,7 @@ public class MenuHelper implements CompoundButton.OnCheckedChangeListener, View.
         switchFloatMovable.setChecked(gameMenuSetting.menuFloatSetting.movable);
         switchAdvanceInput.setChecked(gameMenuSetting.advanceInput);
         switchTouch.setChecked(gameMenuSetting.enableTouch);
+        switchMousePatch.setChecked(gameMenuSetting.mousePatch);
         switchSensor.setChecked(gameMenuSetting.enableSensor);
         switchHalfScreen.setChecked(gameMenuSetting.disableHalfScreen);
         switchHideUI.setChecked(gameMenuSetting.hideUI);
@@ -228,6 +231,7 @@ public class MenuHelper implements CompoundButton.OnCheckedChangeListener, View.
         switchFloatMovable.setOnCheckedChangeListener(this);
         switchAdvanceInput.setOnCheckedChangeListener(this);
         switchTouch.setOnCheckedChangeListener(this);
+        switchMousePatch.setOnCheckedChangeListener(this);
         switchSensor.setOnCheckedChangeListener(this);
         switchHalfScreen.setOnCheckedChangeListener(this);
         switchHideUI.setOnCheckedChangeListener(this);
@@ -427,6 +431,10 @@ public class MenuHelper implements CompoundButton.OnCheckedChangeListener, View.
         }
         if (compoundButton == switchTouch) {
             gameMenuSetting.enableTouch = b;
+            GameMenuSetting.saveGameMenuSetting(gameMenuSetting);
+        }
+        if (compoundButton == switchMousePatch) {
+            gameMenuSetting.mousePatch = b;
             GameMenuSetting.saveGameMenuSetting(gameMenuSetting);
         }
         if (compoundButton == switchSensor) {

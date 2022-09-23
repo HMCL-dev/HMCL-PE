@@ -937,6 +937,7 @@
     <string name="drawer_game_menu_control_sensor_close_alert">Gyroscope disabled</string>
     <string name="drawer_game_menu_control_sensor_sensitivity">Gyro sensitivity</string>
     <string name="drawer_game_menu_control_touch">Enable gesture</string>
+    <string name="drawer_game_menu_control_mouse_patch">Patch mouse right</string>
     <string name="drawer_game_menu_control_half_screen">Disable the left half screen touch</string>
     <string name="drawer_game_menu_control_half_screen_enable">Left half screen touch disabled</string>
     <string name="drawer_game_menu_control_half_screen_disable">Left half screen touch enabled</string>
