@@ -941,4 +941,5 @@
     <string name="quilt_api_list_ui_title">Add a New Instance - Choose Your Quilt API Version</string>
     <string name="quilt_list_ui_title">Add a New Instance - Choose Your Quilt Version</string>
     <string name="install_game_ui_quilt_not_compatible">Incompatible with Quilt</string>
+    <string name="feedback_ui_join_qq_channel">Join QQ Channel</string>
 </resources>
