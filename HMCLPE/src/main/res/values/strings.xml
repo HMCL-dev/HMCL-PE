@@ -971,7 +971,5 @@
     <string name="drawer_custom_menu_add_view">Add</string>
     <string name="dialog_hin2n_help_text">Host player: You need to start the game first, enter a archive as the online world, and then dishes in the game Select the opening option for the LAN, remember your port number, and then open the HMCL-PE Control panel, open the online module menu, click to create the room, confirm the displayed port number and tour The scene prompts consistent, and then confirm the room and open the room. After the room is opened, you will be able to click on the room information To view your invitation code and IP+port, you need to send them to your online partner. Note Mean, please do not tell the invitation code, ip, port telling any stranger.\n\nMember player: You need to ask the host player to ask for the invitation code and IP+port, and then open the HMCL-PE Control panel, turn on the online module menu, click to join the room, enter your invitation code, click Just determine, start the game next, add a server to the multiplayer game sector of the game, and serve The name of the service device is arbitrarily, and the server address is filled in the IP+port provided by the homeowner, and the server can be added.</string>
     <string name="drawer_custom_menu_warn">You need to create or select a sublayout first</string>
-	<string name="feedback_ui_join_qq_channel">Join QQ Channel</string>
-
 
 </resources>
