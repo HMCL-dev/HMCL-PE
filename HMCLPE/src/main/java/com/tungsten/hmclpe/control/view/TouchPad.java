@@ -36,12 +36,12 @@ public class TouchPad extends View {
     private static final String RAYTRACE_RESULT_TYPE_BLOCK = "BLOCK";
     private static final String RAYTRACE_RESULT_TYPE_ENTITY = "ENTITY";
 
-    private int launcher;
-    private int screenWidth;
-    private int screenHeight;
-    private MenuHelper menuHelper;
+    private final int launcher;
+    private final int screenWidth;
+    private final int screenHeight;
+    private final MenuHelper menuHelper;
 
-    private Bitmap bitmap;
+    private final Bitmap bitmap;
     private float startCursorX;
     private float startCursorY;
 
@@ -52,8 +52,8 @@ public class TouchPad extends View {
     private long downTime;
     private int pointerID;
 
-    private Handler handler = new Handler();
-    private Runnable runnable = new Runnable() {
+    private final Handler handler = new Handler();
+    private final Runnable runnable = new Runnable() {
         @Override
         public void run() {
             if (Objects.equals(rayTraceResultType, RAYTRACE_RESULT_TYPE_BLOCK)) {
@@ -73,8 +73,8 @@ public class TouchPad extends View {
         }
     };
 
-    private Handler throwHandler = new Handler();
-    private Runnable throwRunnable = new Runnable() {
+    private final Handler throwHandler = new Handler();
+    private final Runnable throwRunnable = new Runnable() {
         @Override
         public void run() {
             InputBridge.sendEvent(launcher,LWJGLGLFWKeycode.GLFW_KEY_Q,true);
@@ -128,6 +128,7 @@ public class TouchPad extends View {
         invalidate();
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @SuppressWarnings("IntegerDivisionInFloatingPointContext")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -150,6 +151,7 @@ public class TouchPad extends View {
             downX = event.getX();
             downY = event.getY();
         }
+        /*
         int guiScale = -1;
         if (menuHelper.gameDir != null) {
             MCOptionUtils.load(menuHelper.gameDir);
@@ -166,6 +168,9 @@ public class TouchPad extends View {
             inventoryWidth = 20 * guiScale * 9;
             inventoryHeight = 20 * guiScale;
         }
+
+         */
+        /*
         if (menuHelper.gameCursorMode == 1 && downX >= ((getWidth() / 2) - (inventoryWidth / 2)) && downX <= ((getWidth() / 2) + (inventoryWidth / 2)) && downY >= getHeight() - inventoryHeight) {
             int start = ((getWidth() / 2) - (inventoryWidth / 2));
             switch (event.getActionMasked()) {
@@ -221,7 +226,9 @@ public class TouchPad extends View {
                     break;
             }
         }
-        else {
+
+         */
+        //else {
             if (menuHelper.gameMenuSetting.mouseMode == 0 && menuHelper.gameCursorMode == 0){
                 menuHelper.cursorX = event.getX();
                 menuHelper.cursorY = event.getY();
@@ -340,7 +347,7 @@ public class TouchPad extends View {
                     }
                     break;
             }
-        }
+        //}
         return true;
     }
 }

@@ -80,7 +80,7 @@ public class LayoutPanel extends RelativeLayout {
             canvas.drawText(xText,100,100,textPaint);
             canvas.drawText(yText,100,200,textPaint);
         }
-        invalidate();
+        //invalidate();
     }
 
     public void showReference(int positionMode, float x, float y, int width, int height){
