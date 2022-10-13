@@ -14,7 +14,6 @@
         <entry key="..\:/AndroidStudio/HMCL-PE/HMCLPE/src/main/res/layout/ui_setting.xml" value="0.2246376811594203" />
         <entry key="..\:/AndroidStudio/HMCL-PE/HMCLPE/src/main/res/layout/ui_setting_global_game.xml" value="0.2246376811594203" />
         <entry key="..\:/Projects/Android/HMCL-PE-CN/HMCLPE/src/main/res/layout/activity_main.xml" value="0.14270833333333333" />
-        <entry key="..\:/Projects/Android/HMCL-PE-CN/HMCLPE/src/main/res/layout/dialog_contributor_list.xml" value="0.536" />
         <entry key="..\:/Projects/Android/HMCL-PE-CN/HMCLPE/src/main/res/layout/dialog_verify.xml" value="0.2" />
         <entry key="..\:/Projects/Android/HMCL-PE-CN/HMCLPE/src/main/res/layout/item_download_game_list.xml" value="0.13451086956521738" />
         <entry key="..\:/Projects/Android/HMCL-PE-CN/HMCLPE/src/main/res/layout/ui_game_manager_install.xml" value="0.13451086956521738" />
@@ -23,9 +22,6 @@
         <entry key="..\:/Projects/Android/HMCL-PE-CN/HMCLPE/src/main/res/layout/ui_install_game.xml" value="0.13451086956521738" />
         <entry key="..\:/Projects/Android/HMCL-PE-CN/HMCLPE/src/main/res/layout/ui_install_quilt_api_list.xml" value="0.13451086956521738" />
         <entry key="..\:/Projects/Android/HMCL-PE-CN/HMCLPE/src/main/res/layout/ui_install_quilt_list.xml" value="0.1014344262295082" />
-        <entry key="..\:/Projects/Android/HMCL-PE-CN/HMCLPE/src/main/res/layout/ui_setting.xml" value="0.12604166666666666" />
-        <entry key="..\:/Projects/Android/HMCL-PE-CN/HMCLPE/src/main/res/layout/ui_setting_about.xml" value="0.11354166666666667" />
-        <entry key="..\:/Projects/Android/HMCL-PE-CN/HMCLPE/src/main/res/layout/ui_setting_feedback.xml" value="0.11354166666666667" />
         <entry key="..\:/Projects/Android/HMCL-PE/HMCLPE/src/main/res/drawable/control_button.xml" value="0.13" />
         <entry key="..\:/Projects/Android/HMCL-PE/HMCLPE/src/main/res/drawable/control_keyboard.xml" value="0.13" />
         <entry key="..\:/Projects/Android/HMCL-PE/HMCLPE/src/main/res/drawable/download_progress.xml" value="0.19" />

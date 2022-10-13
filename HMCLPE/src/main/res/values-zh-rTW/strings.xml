@@ -927,22 +927,8 @@
     <string name="dialog_delete_button_title">提示</string>
     <string name="dialog_delete_button_content">確定要刪除該按鍵嗎？</string>
     <string name="dialog_delete_button_positive">刪除</string>
-    <string name="ui_about_tungsten_sub">Bilibili ID：@念小六</string>
-    <string name="ui_about_shirosakimio_sub">Bilibili ID：@ShirosakiMio</string>
-    <string name="dialog_contributor_list_title">貢獻者列表</string>
     <string name="ui_about_thank">鳴謝</string>
-    <string name="ui_about_community">社區</string>
-    <string name="ui_about_community_qq_community">QQ 頻道</string>
-    <string name="ui_about_community_qq">QQ 群</string>
-    <string name="ui_about_community_discord_join">歡迎加入 Discord 討論區，加入後請遵守討論區規定</string>
-    <string name="ui_about_community_qq_community_join">歡迎加入 QQ 頻道，加入後請遵守討論區規定</string>
-    <string name="ui_about_community_qq_join">歡迎加入 QQ 群，加入後請遵守討論區規定</string>
-    <string name="ui_about_lib">依賴</string>
-    <string name="ui_about_legal">法律聲明</string>
-    <string name="ui_about_community_developer">社區開發者</string>
-    <string name="ui_about_community_developer_sub">提供語言翻譯及 Bug 修復</string>
     <string name="ui_about_cosine_sub">提供大量技術支持</string>
-    <string name="ui_about_legacy_sub">提升兼容性以及測試</string>
     <string name="ui_about_tsaltedfishking_sub">提供 HMCL-PE 官網模板</string>
     <string name="ui_about_hmcl_main">HMCL 開發團隊及所有貢獻者</string>
     <string name="ui_about_hmcl_sub">本項目大量借鑒 HMCL</string>
@@ -953,11 +939,6 @@
     <string name="ui_about_mcmod_sub">提供 Mod 中文名映射表與 Mod 百科</string>
     <string name="ui_about_github_main">所有通過 Issues、讚助等方式參與本項目的貢獻者</string>
     <string name="ui_about_github_sub">感謝各位的建議、bug 反饋及讚助</string>
-    <string name="ui_about_copy_right">版權</string>
-    <string name="ui_about_copy_right_statement">版權所有 © 2022 Tungsten</string>
-    <string name="ui_about_eula">用戶協議</string>
-    <string name="ui_about_eula_statement">點擊鏈接以查看全文</string>
-    <string name="ui_about_open_source">開源</string>
     <string name="feedback_ui_join_discord">加入官方 Discord</string>
 
 </resources>
