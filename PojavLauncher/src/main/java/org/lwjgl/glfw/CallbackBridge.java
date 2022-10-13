@@ -1,14 +1,20 @@
 package org.lwjgl.glfw;
 
 import net.kdt.pojavlaunch.*;
-import net.kdt.pojavlaunch.keyboard.LWJGLGLFWKeycode;
+import net.kdt.pojavlaunch.keyboard.LwjglGlfwKeycode;
 
+import android.content.*;
 import android.view.Choreographer;
 
 public class CallbackBridge {
     public static Choreographer sChoreographer = Choreographer.getInstance();
     private static boolean isGrabbing = false;
     private static long lastGrabTime = System.currentTimeMillis();
+    public static final int ANDROID_TYPE_GRAB_STATE = 0;
+
+    public static final int CLIPBOARD_COPY = 2000;
+    public static final int CLIPBOARD_PASTE = 2001;
+    public static final int CLIPBOARD_OPEN = 2002;
 
     public static volatile int windowWidth, windowHeight;
     public static volatile int physicalWidth, physicalHeight;
@@ -123,25 +129,64 @@ public class CallbackBridge {
         return isGrabbing;
     }
 
-    // Called from JRE side
-    public static String accessAndroidClipboard(int type, String copy) {
-        return "";
+/*
+    private static String currData;
+    public static void sendData(int type, Object... dataArr) {
+        currData = "";
+        for (int i = 0; i < dataArr.length; i++) {
+            if (dataArr[i] instanceof Integer) {
+                currData += Integer.toString((int) dataArr[i]);
+            } else if (dataArr[i] instanceof String) {
+                currData += (String) dataArr[i];
+            } else {
+                currData += dataArr[i].toString();
+            }
+            currData += (i + 1 < dataArr.length ? ":" : "");
+        }
+        nativeSendData(true, type, currData);
     }
+    private static native void nativeSendData(boolean isAndroid, int type, String data);
+*/
+
 
     public static int getCurrentMods() {
         int currMods = 0;
         if (holdingAlt) {
-            currMods |= LWJGLGLFWKeycode.GLFW_MOD_ALT;
+            currMods |= LwjglGlfwKeycode.GLFW_MOD_ALT;
         } if (holdingCapslock) {
-            currMods |= LWJGLGLFWKeycode.GLFW_MOD_CAPS_LOCK;
+            currMods |= LwjglGlfwKeycode.GLFW_MOD_CAPS_LOCK;
         } if (holdingCtrl) {
-            currMods |= LWJGLGLFWKeycode.GLFW_MOD_CONTROL;
+            currMods |= LwjglGlfwKeycode.GLFW_MOD_CONTROL;
         } if (holdingNumlock) {
-            currMods |= LWJGLGLFWKeycode.GLFW_MOD_NUM_LOCK;
+            currMods |= LwjglGlfwKeycode.GLFW_MOD_NUM_LOCK;
         } if (holdingShift) {
-            currMods |= LWJGLGLFWKeycode.GLFW_MOD_SHIFT;
+            currMods |= LwjglGlfwKeycode.GLFW_MOD_SHIFT;
         }
         return currMods;
+    }
+
+    public static void setModifiers(int keyCode, boolean isDown){
+        switch (keyCode){
+            case LwjglGlfwKeycode.GLFW_KEY_LEFT_SHIFT:
+                CallbackBridge.holdingShift = isDown;
+                return;
+
+            case LwjglGlfwKeycode.GLFW_KEY_LEFT_CONTROL:
+                CallbackBridge.holdingCtrl = isDown;
+                return;
+
+            case LwjglGlfwKeycode.GLFW_KEY_LEFT_ALT:
+                CallbackBridge.holdingAlt = isDown;
+                return;
+
+            case LwjglGlfwKeycode.GLFW_KEY_CAPS_LOCK:
+                CallbackBridge.holdingCapslock = isDown;
+                return;
+
+            case LwjglGlfwKeycode.GLFW_KEY_NUM_LOCK:
+                CallbackBridge.holdingNumlock = isDown;
+                return;
+        }
     }
 
     public static native void nativeSetUseInputStackQueue(boolean useInputStackQueue);

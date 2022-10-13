@@ -31,7 +31,7 @@ import com.tungsten.hmclpe.launcher.list.local.controller.ChildLayout;
 import com.tungsten.hmclpe.launcher.setting.SettingUtils;
 import com.tungsten.hmclpe.utils.convert.ConvertUtils;
 
-import net.kdt.pojavlaunch.keyboard.LWJGLGLFWKeycode;
+import net.kdt.pojavlaunch.keyboard.LwjglGlfwKeycode;
 
 import java.util.ArrayList;
 
@@ -285,14 +285,14 @@ public class BaseButton extends androidx.appcompat.widget.AppCompatButton {
                                 }
                             }
                             else {
-                                InputBridge.sendEvent(menuHelper.launcher, LWJGLGLFWKeycode.GLFW_KEY_T, true);
-                                InputBridge.sendEvent(menuHelper.launcher, LWJGLGLFWKeycode.GLFW_KEY_T, false);
+                                InputBridge.sendEvent(menuHelper.launcher, LwjglGlfwKeycode.GLFW_KEY_T, true);
+                                InputBridge.sendEvent(menuHelper.launcher, LwjglGlfwKeycode.GLFW_KEY_T, false);
                                 new Handler().postDelayed(() -> {
                                     for(int i = 0; i < info.outputText.length(); i++){
                                         InputBridge.sendKeyChar(menuHelper.launcher,info.outputText.charAt(i));
                                     }
-                                    InputBridge.sendEvent(menuHelper.launcher, LWJGLGLFWKeycode.GLFW_KEY_ENTER, true);
-                                    InputBridge.sendEvent(menuHelper.launcher, LWJGLGLFWKeycode.GLFW_KEY_ENTER, false);
+                                    InputBridge.sendEvent(menuHelper.launcher, LwjglGlfwKeycode.GLFW_KEY_ENTER, true);
+                                    InputBridge.sendEvent(menuHelper.launcher, LwjglGlfwKeycode.GLFW_KEY_ENTER, false);
                                 },50);
                             }
                         }
@@ -517,16 +517,16 @@ public class BaseButton extends androidx.appcompat.widget.AppCompatButton {
                 }
             }
             else {
-                InputBridge.sendEvent(menuHelper.launcher, LWJGLGLFWKeycode.GLFW_KEY_T, true);
-                InputBridge.sendEvent(menuHelper.launcher, LWJGLGLFWKeycode.GLFW_KEY_T, false);
+                InputBridge.sendEvent(menuHelper.launcher, LwjglGlfwKeycode.GLFW_KEY_T, true);
+                InputBridge.sendEvent(menuHelper.launcher, LwjglGlfwKeycode.GLFW_KEY_T, false);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         for(int i = 0; i < info.outputText.length(); i++){
                             InputBridge.sendKeyChar(menuHelper.launcher,info.outputText.charAt(i));
                         }
-                        InputBridge.sendEvent(menuHelper.launcher, LWJGLGLFWKeycode.GLFW_KEY_ENTER, true);
-                        InputBridge.sendEvent(menuHelper.launcher, LWJGLGLFWKeycode.GLFW_KEY_ENTER, false);
+                        InputBridge.sendEvent(menuHelper.launcher, LwjglGlfwKeycode.GLFW_KEY_ENTER, true);
+                        InputBridge.sendEvent(menuHelper.launcher, LwjglGlfwKeycode.GLFW_KEY_ENTER, false);
                     }
                 },50);
             }

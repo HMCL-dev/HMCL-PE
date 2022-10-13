@@ -17,7 +17,7 @@ import com.tungsten.hmclpe.control.InputBridge;
 import com.tungsten.hmclpe.control.MenuHelper;
 import com.tungsten.hmclpe.utils.convert.ConvertUtils;
 
-import net.kdt.pojavlaunch.keyboard.LWJGLGLFWKeycode;
+import net.kdt.pojavlaunch.keyboard.LwjglGlfwKeycode;
 import com.tungsten.hmclpe.launcher.launch.MCOptionUtils;
 import com.tungsten.hmclpe.utils.io.SocketServer;
 
@@ -79,8 +79,8 @@ public class TouchPad extends View {
     private final Runnable throwRunnable = new Runnable() {
         @Override
         public void run() {
-            InputBridge.sendEvent(launcher,LWJGLGLFWKeycode.GLFW_KEY_Q,true);
-            InputBridge.sendEvent(launcher,LWJGLGLFWKeycode.GLFW_KEY_Q,false);
+            InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_Q,true);
+            InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_Q,false);
         }
     };
 
@@ -177,31 +177,31 @@ public class TouchPad extends View {
                     initialY = event.getY();
                     downTime = System.currentTimeMillis();
                     if (event.getX() <= start + inventoryHeight) {
-                        InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_1,true);
+                        InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_1,true);
                     }
                     if (event.getX() > start + inventoryHeight && event.getX() <= start + (2 * inventoryHeight)) {
-                        InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_2,true);
+                        InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_2,true);
                     }
                     if (event.getX() > start + (2 * inventoryHeight) && event.getX() <= start + (3 * inventoryHeight)) {
-                        InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_3,true);
+                        InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_3,true);
                     }
                     if (event.getX() > start + (3 * inventoryHeight) && event.getX() <= start + (4 * inventoryHeight)) {
-                        InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_4,true);
+                        InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_4,true);
                     }
                     if (event.getX() > start + (4 * inventoryHeight) && event.getX() <= start + (5 * inventoryHeight)) {
-                        InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_5,true);
+                        InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_5,true);
                     }
                     if (event.getX() > start + (5 * inventoryHeight) && event.getX() <= start + (6 * inventoryHeight)) {
-                        InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_6,true);
+                        InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_6,true);
                     }
                     if (event.getX() > start + (6 * inventoryHeight) && event.getX() <= start + (7 * inventoryHeight)) {
-                        InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_7,true);
+                        InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_7,true);
                     }
                     if (event.getX() > start + (7 * inventoryHeight) && event.getX() <= start + (8 * inventoryHeight)) {
-                        InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_8,true);
+                        InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_8,true);
                     }
                     if (event.getX() > start + (8 * inventoryHeight)){
-                        InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_9,true);
+                        InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_9,true);
                     }
                     throwHandler.postDelayed(throwRunnable,800);
                     break;
@@ -212,15 +212,15 @@ public class TouchPad extends View {
                     break;
                 case MotionEvent.ACTION_UP:
                     throwHandler.removeCallbacks(throwRunnable);
-                    InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_1,false);
-                    InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_2,false);
-                    InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_3,false);
-                    InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_4,false);
-                    InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_5,false);
-                    InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_6,false);
-                    InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_7,false);
-                    InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_8,false);
-                    InputBridge.sendEvent(launcher, LWJGLGLFWKeycode.GLFW_KEY_9,false);
+                    InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_1,false);
+                    InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_2,false);
+                    InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_3,false);
+                    InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_4,false);
+                    InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_5,false);
+                    InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_6,false);
+                    InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_7,false);
+                    InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_8,false);
+                    InputBridge.sendEvent(launcher, LwjglGlfwKeycode.GLFW_KEY_9,false);
                     break;
             }
         }

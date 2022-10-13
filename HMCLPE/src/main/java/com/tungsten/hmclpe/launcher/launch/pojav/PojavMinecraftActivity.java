@@ -24,7 +24,7 @@ import com.tungsten.hmclpe.control.view.LayoutPanel;
 import com.tungsten.hmclpe.launcher.setting.game.GameLaunchSetting;
 
 import net.kdt.pojavlaunch.BaseMainActivity;
-import net.kdt.pojavlaunch.keyboard.LWJGLGLFWKeycode;
+import net.kdt.pojavlaunch.keyboard.LwjglGlfwKeycode;
 import net.kdt.pojavlaunch.function.PojavCallback;
 import net.kdt.pojavlaunch.utils.JREUtils;
 import com.tungsten.hmclpe.launcher.launch.MCOptionUtils;
@@ -190,7 +190,7 @@ public class PojavMinecraftActivity extends BaseMainActivity {
             }
         }
         if (!mouse) {
-            CallbackBridge.sendKeyPress(LWJGLGLFWKeycode.GLFW_KEY_ESCAPE);
+            CallbackBridge.sendKeyPress(LwjglGlfwKeycode.GLFW_KEY_ESCAPE);
         }
     }
 
@@ -208,7 +208,7 @@ public class PojavMinecraftActivity extends BaseMainActivity {
     @Override
     protected void onPause() {
         if (menuHelper.viewManager != null && menuHelper.gameCursorMode == 1) {
-            CallbackBridge.sendKeyPress(LWJGLGLFWKeycode.GLFW_KEY_ESCAPE);
+            CallbackBridge.sendKeyPress(LwjglGlfwKeycode.GLFW_KEY_ESCAPE);
         }
         super.onPause();
     }

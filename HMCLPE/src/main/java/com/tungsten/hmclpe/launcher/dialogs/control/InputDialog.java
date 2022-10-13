@@ -20,7 +20,7 @@ import com.tungsten.hmclpe.control.MenuHelper;
 import com.tungsten.hmclpe.launcher.list.local.controller.FastTextAdapter;
 import com.tungsten.hmclpe.launcher.setting.SettingUtils;
 
-import net.kdt.pojavlaunch.keyboard.LWJGLGLFWKeycode;
+import net.kdt.pojavlaunch.keyboard.LwjglGlfwKeycode;
 
 import java.util.ArrayList;
 
@@ -94,14 +94,14 @@ public class InputDialog extends Dialog implements View.OnClickListener, TextWat
                 dismiss();
             }
             else {
-                InputBridge.sendEvent(menuHelper.launcher, LWJGLGLFWKeycode.GLFW_KEY_T, true);
-                InputBridge.sendEvent(menuHelper.launcher, LWJGLGLFWKeycode.GLFW_KEY_T, false);
+                InputBridge.sendEvent(menuHelper.launcher, LwjglGlfwKeycode.GLFW_KEY_T, true);
+                InputBridge.sendEvent(menuHelper.launcher, LwjglGlfwKeycode.GLFW_KEY_T, false);
                 new Handler().postDelayed(() -> {
                     for(int i = 1; i < editText.getText().toString().length(); i++){
                         InputBridge.sendKeyChar(menuHelper.launcher,editText.getText().toString().charAt(i));
                     }
-                    InputBridge.sendEvent(menuHelper.launcher, LWJGLGLFWKeycode.GLFW_KEY_ENTER, true);
-                    InputBridge.sendEvent(menuHelper.launcher, LWJGLGLFWKeycode.GLFW_KEY_ENTER, false);
+                    InputBridge.sendEvent(menuHelper.launcher, LwjglGlfwKeycode.GLFW_KEY_ENTER, true);
+                    InputBridge.sendEvent(menuHelper.launcher, LwjglGlfwKeycode.GLFW_KEY_ENTER, false);
                     dismiss();
                 },50);
             }
@@ -125,8 +125,8 @@ public class InputDialog extends Dialog implements View.OnClickListener, TextWat
     public void afterTextChanged(Editable editable) {
         String newText = editText.getText().toString();
         if (newText.length() < 1){
-            InputBridge.sendEvent(menuHelper.launcher, LWJGLGLFWKeycode.GLFW_KEY_BACKSPACE, true);
-            InputBridge.sendEvent(menuHelper.launcher, LWJGLGLFWKeycode.GLFW_KEY_BACKSPACE, false);
+            InputBridge.sendEvent(menuHelper.launcher, LwjglGlfwKeycode.GLFW_KEY_BACKSPACE, true);
+            InputBridge.sendEvent(menuHelper.launcher, LwjglGlfwKeycode.GLFW_KEY_BACKSPACE, false);
             editText.setText(">");
             editText.setSelection(1);
         }

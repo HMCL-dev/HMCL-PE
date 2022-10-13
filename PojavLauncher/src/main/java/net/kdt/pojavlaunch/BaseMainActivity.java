@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import net.kdt.pojavlaunch.function.PojavCallback;
-import net.kdt.pojavlaunch.keyboard.LWJGLGLFWKeycode;
+import net.kdt.pojavlaunch.keyboard.LwjglGlfwKeycode;
 import net.kdt.pojavlaunch.utils.JREUtils;
 import net.kdt.pojavlaunch.utils.Tools;
 
@@ -125,12 +125,12 @@ public class BaseMainActivity extends AppCompatActivity implements TextureView.S
     @Override
     protected void onStart() {
         super.onStart();
-        CallbackBridge.nativeSetWindowAttrib(LWJGLGLFWKeycode.GLFW_VISIBLE, 1);
+        CallbackBridge.nativeSetWindowAttrib(LwjglGlfwKeycode.GLFW_VISIBLE, 1);
     }
 
     @Override
     protected void onStop() {
-        CallbackBridge.nativeSetWindowAttrib(LWJGLGLFWKeycode.GLFW_VISIBLE, 0);
+        CallbackBridge.nativeSetWindowAttrib(LwjglGlfwKeycode.GLFW_VISIBLE, 0);
         super.onStop();
     }
 
