@@ -4,6 +4,13 @@ plugins {
 
 android {
     compileSdk 32
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+	
+    lintOptions {
+        abortOnError false
+    }
 	
     signingConfigs {
         release {
