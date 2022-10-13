@@ -22,7 +22,7 @@
 
     <string name="import_control_label">导入控制布局方案</string>
 
-    <string name="storage_permissions_remind">请授予启动器读写权限，否则可能无法正常运行</string>
+    <string name="storage_permissions_remind">请授予启动器读写权限，否则可能无法正常运行</string> dialog_create_community_error
 
     <string name="loading_title">欢迎使用</string>
     <string name="loading_hint">加载中…</string>
@@ -768,7 +768,6 @@
     <string name="download_setting_ui_download_alert">提示</string>
     <string name="download_setting_ui_download_alert_text">并发数过大可能导致系统卡顿。你的下载速度会受到宽带运营商、服务器等方面的影响，调大下载并发数不一定能大幅提升总下载速度。</string>
 
-    <string name="feedback_ui_join_discord">加入官方 Discord</string>
     <string name="feedback_ui_join_qq_channel">加入官方 QQ 频道</string>
     <string name="feedback_ui_join_qq">加入官方 QQ 群(不推荐)</string>
     <string name="feedback_ui_github_issues">前往 Github 反馈</string>
@@ -973,7 +972,6 @@
     <string name="dialog_create_community_name">房间名称</string>
     <string name="dialog_create_community_port">端口号</string>
     <string name="dialog_create_community_getting">检测中…</string>
-    <string name="dialog_create_community_error">无法检测游戏端口号，你需启动游戏并在游戏内打开 对局域网开放 选项方能启动联机！</string>
     <string name="dialog_create_community_positive">确定</string>
     <string name="dialog_create_community_negative">取消</string>
 
