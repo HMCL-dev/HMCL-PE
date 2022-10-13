@@ -768,6 +768,9 @@
     <string name="download_setting_ui_download_alert">提示</string>
     <string name="download_setting_ui_download_alert_text">并发数过大可能导致系统卡顿。你的下载速度会受到宽带运营商、服务器等方面的影响，调大下载并发数不一定能大幅提升总下载速度。</string>
 
+    <string name="feedback_ui_join_discord">加入官方 Discord</string>
+    <string name="feedback_ui_join_qq_channel">加入官方 QQ 频道</string>
+    <string name="feedback_ui_join_qq">加入官方 QQ 群(不推荐)</string>
     <string name="feedback_ui_github_issues">前往 Github 反馈</string>
 
     <string name="donate_ui_text">Hello Minecraft! Launcher Pocket Edition 是一个免费、自由、开放源代码的 Minecraft 启动器。您的赞助将帮助 Hello Minecraft! Launcher Pocket Edition 获得更好的发展，还可以获得 HMCL-PE 的开发进展。点击此处查阅更多详细信息。</string>
@@ -970,6 +973,7 @@
     <string name="dialog_create_community_name">房间名称</string>
     <string name="dialog_create_community_port">端口号</string>
     <string name="dialog_create_community_getting">检测中…</string>
+    <string name="dialog_create_community_error">无法检测游戏端口号，你需启动游戏并在游戏内打开 对局域网开放 选项方能启动联机！</string>
     <string name="dialog_create_community_positive">确定</string>
     <string name="dialog_create_community_negative">取消</string>
 
@@ -1049,9 +1053,19 @@
     <string name="drawer_custom_menu_add_view">添加</string>
     <string name="drawer_custom_menu_warn">你需要先创建或选择一个子布局</string>
 
+    <string name="dialog_contributor_list_title">贡献者列表</string>
+
     <string name="ui_about_about">关于</string>
+    <string name="ui_about_tungsten_sub">B 站 ID：@念小六</string>
+    <string name="ui_about_shirosakimio_sub">B 站 ID：@ShirosakiMio</string>
     <string name="ui_about_thank">鸣谢</string>
+    <string name="ui_about_community">社区</string>
+    <string name="ui_about_lib">依赖</string>
+    <string name="ui_about_legal">法律声明</string>
+    <string name="ui_about_community_developer">社区开发者</string>
+    <string name="ui_about_community_developer_sub">提供语言翻译及 Bug 修复</string>
     <string name="ui_about_cosine_sub">提供大量技术支持</string>
+    <string name="ui_about_legacy_sub">提升兼容性以及测试</string>
     <string name="ui_about_tsaltedfishking_sub">提供 HMCL-PE 官网模板</string>
     <string name="ui_about_hmcl_main">HMCL 开发团队及所有贡献者</string>
     <string name="ui_about_hmcl_sub">本项目大量借鉴 HMCL</string>
@@ -1062,6 +1076,17 @@
     <string name="ui_about_mcmod_sub">提供 Mod 中文名映射表与 Mod 百科</string>
     <string name="ui_about_github_main">所有通过 Issues、赞助等方式参与本项目的贡献者</string>
     <string name="ui_about_github_sub">感谢各位的建议、bug 反馈及赞助</string>
+    <string name="ui_about_copy_right">版权</string>
+    <string name="ui_about_copy_right_statement">版权所有 © 2022 Tungsten</string>
+    <string name="ui_about_eula">用户协议</string>
+    <string name="ui_about_eula_statement">点击链接以查看全文</string>
+    <string name="ui_about_open_source">开源</string>
+
+    <string name="ui_about_community_qq_community">QQ 频道</string>
+    <string name="ui_about_community_qq">QQ 群</string>
+    <string name="ui_about_community_discord_join">欢迎加入 Discord 讨论区，加入后请遵守讨论区规定</string>
+    <string name="ui_about_community_qq_community_join">欢迎加入 QQ 频道，加入后请遵守讨论区规定</string>
+    <string name="ui_about_community_qq_join">欢迎加入 QQ 群，加入后请遵守讨论区规定</string>
     <string name="dialog_create_community_error">无法检测游戏端口号，你需启动游戏并在游戏内打开 对局域网开放 选项方能启动联机！</string>
     <string name="feedback_ui_join_discord">加入官方 Discord</string>
 </resources>

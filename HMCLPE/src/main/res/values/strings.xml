@@ -36,12 +36,66 @@
     <string name="ui_about_hmclpe_main" translatable="false">Hello Minecraft! Launcher : Pocket Edition</string>
     <string name="ui_about_hmclpe_sub" translatable="false">1.0.0</string>
     <string name="ui_about_tungsten_main" translatable="false">Tungsten</string>
-    <string name="ui_about_tungsten_sub" translatable="false">B 站 ID：@念小六</string>
     <string name="ui_about_shirosakimio_main" translatable="false">ShirosakiMio</string>
-    <string name="ui_about_shirosakimio_sub" translatable="false">B 站 ID：@ShirosakiMio</string>
     <string name="ui_about_cosine_main" translatable="false">CosineMath</string>
+    <string name="ui_about_legacy_main" translatable="false">LegacyGamerHD</string>
     <string name="ui_about_tsaltedfishking_main" translatable="false">TSaltedfishKing</string>
     <string name="ui_about_bangbang93_main" translatable="false">bangbang93</string>
+    <string name="ui_about_community_discord" translatable="false">Discord</string>
+    <string name="ui_about_open_source_statement" translatable="false">GPL v3 (https://github.com/Tungstend/HMCL-PE-CN)</string>
+
+    <string name="ui_about_libs_hmcl" translatable="false">HMCL</string>
+    <string name="ui_about_libs_hmcl_sec" translatable="false">Copyright (c) 2022 huangyuhui.</string>
+    <string name="ui_about_libs_hmcl_thi" translatable="false">Licensed under the GPL 3.</string>
+    <string name="ui_about_libs_boat" translatable="false">Boat</string>
+    <string name="ui_about_libs_boat_sec" translatable="false">Copyright (c) 2021 AOF-Dev.</string>
+    <string name="ui_about_libs_boat_thi" translatable="false">Licensed under the GPL 2.</string>
+    <string name="ui_about_libs_pojav" translatable="false">PojavLauncher</string>
+    <string name="ui_about_libs_pojav_sec" translatable="false">Copyright (c) 2022 PojavLauncherTeam.</string>
+    <string name="ui_about_libs_pojav_thi" translatable="false">Licensed under the GPL 3.</string>
+    <string name="ui_about_libs_hin2n" translatable="false">Hin2n</string>
+    <string name="ui_about_libs_hin2n_sec" translatable="false">Copyright (c) 2022 switch-iot.</string>
+    <string name="ui_about_libs_hin2n_thi" translatable="false">Licensed under the GPL 3.</string>
+    <string name="ui_about_libs_gson" translatable="false">Gson</string>
+    <string name="ui_about_libs_gson_sec" translatable="false">Copyright 2008 Google Inc.</string>
+    <string name="ui_about_libs_gson_thi" translatable="false">Licensed under the Apache 2.0 License.</string>
+    <string name="ui_about_libs_theme" translatable="false">app-theme-engine</string>
+    <string name="ui_about_libs_theme_sec" translatable="false">Copyright (c) 2016 naman14.</string>
+    <string name="ui_about_libs_theme_thi" translatable="false">Licensed under the Apache 2.0 License.</string>
+    <string name="ui_about_libs_okhttp" translatable="false">okhttp</string>
+    <string name="ui_about_libs_okhttp_sec" translatable="false">Copyright (c) 2022 square.</string>
+    <string name="ui_about_libs_okhttp_thi" translatable="false">Licensed under the Apache 2.0 License.</string>
+    <string name="ui_about_libs_nano" translatable="false">nanohttpd</string>
+    <string name="ui_about_libs_nano_sec" translatable="false">Copyright (c) 2016 NanoHttpd.</string>
+    <string name="ui_about_libs_nano_thi" translatable="false">Licensed under the BSD-3 Clause License.</string>
+    <string name="ui_about_libs_crash" translatable="false">CustomActivityOnCrash</string>
+    <string name="ui_about_libs_crash_sec" translatable="false">Copyright (c) 2022 Ereza.</string>
+    <string name="ui_about_libs_crash_thi" translatable="false">Licensed under the Apache 2.0 License.</string>
+    <string name="ui_about_libs_commonc" translatable="false">commons-compress</string>
+    <string name="ui_about_libs_commonc_sec" translatable="false">Copyright (c) 2022 apache.</string>
+    <string name="ui_about_libs_commomc_thi" translatable="false">Licensed under the Apache 2.0 License.</string>
+    <string name="ui_about_libs_commonl" translatable="false">commons-lang3</string>
+    <string name="ui_about_libs_commonl_sec" translatable="false">Copyright (c) 2022 apache.</string>
+    <string name="ui_about_libs_commonl_thi" translatable="false">Licensed under the Apache 2.0 License.</string>
+    <string name="ui_about_libs_opennbt" translatable="false">OpenNBT</string>
+    <string name="ui_about_libs_opennbt_sec" translatable="false">Copyright (c) 2013-2021 Steveice10.</string>
+    <string name="ui_about_libs_opennbt_thi" translatable="false">Licensed under the MIT License.</string>
+    <string name="ui_about_libs_color" translatable="false">ColorPicker</string>
+    <string name="ui_about_libs_color_sec" translatable="false">Copyright (c) 2020 jaredrummler.</string>
+    <string name="ui_about_libs_color_thi" translatable="false">Licensed under the Apache 2.0 License.</string>
+    <string name="ui_about_libs_device" translatable="false">AndroidDeviceName</string>
+    <string name="ui_about_libs_device_sec" translatable="false">Copyright (c) 2021 jaredrummler.</string>
+    <string name="ui_about_libs_device_thi" translatable="false">Licensed under the Apache 2.0 License.</string>
+    <string name="ui_about_libs_jsoup" translatable="false">jsoup</string>
+    <string name="ui_about_libs_jsoup_sec" translatable="false">Copyright (c) 2022 jhy.</string>
+    <string name="ui_about_libs_jsoup_thi" translatable="false">Licensed under the MIT License.</string>
+    <string name="ui_about_libs_pool" translatable="false">Constant Pool Scanner</string>
+    <string name="ui_about_libs_pool_sec" translatable="false">Copyright 1997-2010 Oracle and/or its affiliates.</string>
+    <string name="ui_about_libs_pool_thi" translatable="false">Licensed under the GPL 2 or the CDDL.</string>
+
+    <string name="contributor_heo_bino" translatable="false">Heo_Bino</string>
+    <string name="contributor_stefma" translatable="false">Stefma</string>
+    <string name="contributor_matheus" translatable="false">MatheusTGP</string>
 
     <string name="storage_permissions_remind">Please grant read and write permissions to the launcher, otherwise it may not operate normally</string>
     <string name="dialog_unknown_error_title">Warning</string>
@@ -863,8 +917,22 @@
     <string name="dialog_create_rocker_style_name_exist">The name already exists</string>
     <string name="dialog_create_rocker_style_positive">Create</string>
     <string name="dialog_create_rocker_style_negative">Cancel</string>
+    <string name="ui_about_tungsten_sub">\@念小六 on Bilibili</string>
+    <string name="ui_about_shirosakimio_sub">\@ShirosakiMio on Bilibili</string>
+    <string name="dialog_contributor_list_title">Contributor list</string>
     <string name="ui_about_thank">Thanks to</string>
+    <string name="ui_about_community">Community</string>
+    <string name="ui_about_community_qq_community">QQ Channel</string>
+    <string name="ui_about_community_qq">QQ Group</string>
+    <string name="ui_about_community_discord_join">Join our Discord community!</string>
+    <string name="ui_about_community_qq_community_join">Join our QQ channel!</string>
+    <string name="ui_about_community_qq_join">Join our QQ group!</string>
+    <string name="ui_about_lib">Third-party Libraries</string>
+    <string name="ui_about_legal">Legal Acknowledgement</string>
+    <string name="ui_about_community_developer">Community developers</string>
+    <string name="ui_about_community_developer_sub">For providing language translations and some other bug fix.</string>
     <string name="ui_about_cosine_sub">For providing a lot of technical support.</string>
+    <string name="ui_about_legacy_sub">For improving compatibility and testing.</string>
     <string name="ui_about_tsaltedfishking_sub">For providing HMCL-PE official website template.</string>
     <string name="ui_about_hmcl_main">HMCL development team and all contributors</string>
     <string name="ui_about_hmcl_sub">This project draws heavily on HMCL.</string>
@@ -875,6 +943,11 @@
     <string name="ui_about_mcmod_sub">For providing Chinese translations and wiki for various mods.</string>
     <string name="ui_about_github_main">All contributors who participated in this project through Issues, sponsorship, etc.</string>
     <string name="ui_about_github_sub">Thank you for your suggestions, bug feedback and sponsorship.</string>
+    <string name="ui_about_copy_right">Copyright</string>
+    <string name="ui_about_copy_right_statement">Copyright © 2022 Tungsten</string>
+    <string name="ui_about_eula">EULA</string>
+    <string name="ui_about_eula_statement">Click on this link for full text.</string>
+    <string name="ui_about_open_source">Open Source</string>
     <string name="dialog_child_visibility_title">Visbility of child layout</string>
     <string name="dialog_child_visibility_positive">OK</string>
     <string name="dialog_select_keycode_keyboard">Keyboard</string>
