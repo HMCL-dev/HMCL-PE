@@ -1,16 +1,16 @@
 {
   "latestRelease": {
-    "versionCode": 12,
-    "versionName": "1.0.0",
-    "date": "2022.8.30",
-    "url": ["https://github.com/Tungstend/HMCL-PE/releases/download/22.8.30/HMCLPE-release.apk"],
-    "updateLog": "Try to fix a bug that cause lag."
+    "versionCode": 207,
+    "versionName": "2.0.7",
+    "date": "2024.02.08",
+    "url": ["https://github.com/HMCL-dev/HMCL-PE/releases/download/2.0.7/HMCLPE-release.apk"],
+    "updateLog": "Final update."
   },
   "latestPrerelease": {
-    "versionCode": 12,
-    "versionName": "1.0.0",
-    "date": "2022.8.30",
-    "url": ["https://github.com/Tungstend/HMCL-PE/releases/download/22.8.30/HMCLPE-release.apk"],
-    "updateLog": "Try to fix a bug that cause lag."
+    "versionCode": 207,
+    "versionName": "2.0.7",
+    "date": "2024.02.08",
+    "url": ["https://github.com/HMCL-dev/HMCL-PE/releases/download/2.0.7/HMCLPE-release.apk"],
+    "updateLog": "Final update."
   }
 }
