@@ -24,7 +24,7 @@ The software attempts to restore HMCL on Android devices, allowing players to ma
 
 - **Run Minecraft Java Edition directly on your Android device**, with mod support and all versions of the Game.
 
-- **HMCL-PE has stopped maintenance. If you want to run Minecraft: Java Edition on Android devices and get a better experience, please download [Fold Craft Launcher](https://fcl-team.github.io/) or [PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher).**
+- **HMCL-PE has stopped maintenance. If you want to run Minecraft: Java Edition on Android devices and get a better experience, please download [Fold Craft Launcher](https://fcl-team.github.io/) or [PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher). Note: If you have any problems when using other launchers, HMCL-dev is not responsible. Please ask the developer of the launcher you are using for help.**
 
 <h1 align="center">Features</h1>
 
