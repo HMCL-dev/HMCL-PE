@@ -6,6 +6,11 @@
     <string name="version_name" translatable="false">v2.0.7</string>
     <string name="app_bar_title" translatable="false">Hello Minecraft! Launcher Pocket Edition v2.0.7</string>
 
+    <string name="dialog_outdated_warning_title">Warning</string>
+    <string name="dialog_outdated_warning_msg">HMCL-PE has stopped maintenance. If you want to run Minecraft: Java Edition on Android devices and get a better experience, please download FoldCraftLauncher or PojavLauncher.</string>
+    <string name="dialog_outdated_warning_hide">Don\'t show again</string>
+    <string name="dialog_outdated_warning_positive">Got it</string>
+
     <string name="launcher_spinner_text" translatable="false">▲</string>
     <string name="dialog_add_offline_account_uuid" translatable="false">UUID</string>
     <string name="default_game_file_directory_list_pri_path" translatable="false">/storage/emulated/0/HMCLPE/.minecraft</string>

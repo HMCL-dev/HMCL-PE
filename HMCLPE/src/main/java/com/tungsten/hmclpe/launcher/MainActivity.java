@@ -24,6 +24,7 @@ import android.widget.TextView;
 import com.afollestad.appthemeengine.ATE;
 import com.afollestad.appthemeengine.Config;
 import com.tungsten.hmclpe.R;
+import com.tungsten.hmclpe.launcher.dialogs.OutdatedWarningDialog;
 import com.tungsten.hmclpe.launcher.dialogs.VerifyDialog;
 import com.tungsten.hmclpe.launcher.dialogs.account.SkinPreviewDialog;
 import com.tungsten.hmclpe.manifest.AppManifest;
@@ -132,6 +133,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     exteriorConfig.accentColor(Color.parseColor(ExteriorSettingUI.getThemeColor(MainActivity.this,launcherSetting.launcherTheme)));
                     exteriorConfig.apply(MainActivity.this);
                     appBar.setBackgroundColor(launcherSetting.transBar ? getResources().getColor(R.color.launcher_ui_background) : Color.parseColor(ExteriorSettingUI.getThemeColor(MainActivity.this,launcherSetting.launcherTheme)));
+
+                    OutdatedWarningDialog.init(MainActivity.this);
 
                     isLoaded = true;
                     onLoad();
