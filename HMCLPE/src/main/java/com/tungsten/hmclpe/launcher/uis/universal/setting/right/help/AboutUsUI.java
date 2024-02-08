@@ -85,7 +85,7 @@ public class AboutUsUI extends BaseUI implements View.OnClickListener {
         Uri uri = null;
 
         if (view == hmclpe) {
-            uri = Uri.parse("https://tungstend.github.io/");
+            //uri = Uri.parse("https://tungstend.github.io/");
         }
         if (view == tungs) {
             uri = Uri.parse("https://space.bilibili.com/18115101");
@@ -113,7 +113,9 @@ public class AboutUsUI extends BaseUI implements View.OnClickListener {
             uri = Uri.parse("https://www.mcmod.cn/");
         }
 
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        context.startActivity(intent);
+        if (uri != null) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            context.startActivity(intent);
+        }
     }
 }
