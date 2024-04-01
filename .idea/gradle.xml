@@ -7,13 +7,13 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Boat" />
             <option value="$PROJECT_DIR$/FilePicker" />
             <option value="$PROJECT_DIR$/HMCLPE" />
-            <option value="$PROJECT_DIR$/Hin2n" />
             <option value="$PROJECT_DIR$/PojavLauncher" />
             <option value="$PROJECT_DIR$/ZipTools" />
           </set>

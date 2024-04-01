@@ -248,6 +248,7 @@
                 android:background="@color/colorPureBlack"/>
 
             <LinearLayout
+                android:visibility="gone"
                 android:background="@drawable/launcher_button_parent"
                 android:focusable="true"
                 android:id="@+id/start_ui_multi_player"

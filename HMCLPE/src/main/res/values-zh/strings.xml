@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="dialog_outdated_warning_title">警告</string>
+    <string name="dialog_outdated_warning_msg">HMCL-PE 已停止维护。 如果您想在 Android 设备上运行 Minecraft: Java 版并获得更好的体验，请下载 FoldCraftLauncher 或 PojavLauncher。\n注：如果你在使用其他启动器时出现任何问题，HMCL-dev不负任何责任，请向你使用的启动器的开发者求助。</string>
+    <string name="dialog_outdated_warning_hide">不再显示</string>
+    <string name="dialog_outdated_warning_positive">我明白了</string>
+
     <string name="dialog_unknown_error_title">警告</string>
     <string name="dialog_unknown_error_msg">启动器遇到无法处理的错误，请联系开发者解决。</string>
     <string name="dialog_unknown_error_positive">确定</string>

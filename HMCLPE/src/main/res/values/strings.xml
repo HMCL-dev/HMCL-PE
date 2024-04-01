@@ -3,8 +3,13 @@
     <string name="app_full_name" translatable="false">Hello Minecraft! Launcher : Pocket Edition</string>
     <string name="app_name_pri" translatable="false">Hello Minecraft! Launcher</string>
     <string name="app_name_sec" translatable="false">Pocket Edition</string>
-    <string name="version_name" translatable="false">v1.0.0</string>
-    <string name="app_bar_title" translatable="false">Hello Minecraft! Launcher Pocket Edition v1.0.0</string>
+    <string name="version_name" translatable="false">v2.0.8</string>
+    <string name="app_bar_title" translatable="false">Hello Minecraft! Launcher Pocket Edition v2.0.8</string>
+
+    <string name="dialog_outdated_warning_title">Warning</string>
+    <string name="dialog_outdated_warning_msg">HMCL-PE has stopped maintenance. If you want to run Minecraft: Java Edition on Android devices and get a better experience, please download FoldCraftLauncher or PojavLauncher.\nNote: If you have any problems when using other launchers, HMCL-dev is not responsible. Please ask the developer of the launcher you are using for help.</string>
+    <string name="dialog_outdated_warning_hide">Don\'t show again</string>
+    <string name="dialog_outdated_warning_positive">Got it</string>
 
     <string name="launcher_spinner_text" translatable="false">▲</string>
     <string name="dialog_add_offline_account_uuid" translatable="false">UUID</string>
