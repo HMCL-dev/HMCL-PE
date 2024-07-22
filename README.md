@@ -1,3 +1,9 @@
+<div align="right"> 
+    
+English | [中文](README_cn.md)
+
+</div>
+
 <div align="center">
     <img width="175" src="/HMCLPE/src/main/res/drawable/ic_craft_table.png"></img>
 </div>
