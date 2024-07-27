@@ -1,6 +1,6 @@
 <div align="right"> 
     
-**English** | [简体中文](README_cn.md)
+[English](README.md) | **简体中文**
 
 </div>
 
@@ -12,7 +12,7 @@
 
 <div align="center">
 
-![MainScreen](/.github/images/hmcl-pe-main-screen.jpg)
+![起点](/.github/images/hmcl-pe-main-screen.jpg)
 
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 [![Discord](https://img.shields.io/badge/Discord-4903FC?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/c79XjKHy4S)
@@ -25,44 +25,44 @@
 
 </div>
 
-- [Hello Minecraft! Launcher:Pocket Edition](https://tungstend.github.io/): 
-The software attempts to restore HMCL on Android devices, allowing players to manage Games, Mods, Controls and More.
+- [Hello Minecraft! Launcher:Pocket Edition](https://tungstend.github.io/)：
+  我们试图在 Android 设备上实现 HMCL，允许玩家管理游戏、模组、控制方式等。
 
-- **Run Minecraft Java Edition directly on your Android device**, with mod support and all versions of the Game.
+- **直接在您的 Android 设备上运行 Minecraft Java 版**，并且支持模组和所有版本的 Minecraft。
 
-- **HMCL-PE has stopped maintenance. If you want to run Minecraft: Java Edition on Android devices and get a better experience, please download [Fold Craft Launcher](https://fcl-team.github.io/) or [PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher). Note: If you have any problems when using other launchers, HMCL-dev is not responsible. Please ask the developer of the launcher you are using for help.**
+- **目前 HMCL-PE 已停止维护。如果您想要在 Android 设备上运行 Minecraft Java 版并获得更好的支持，可以使用 [Fold Craft Launcher](https://fcl-team.github.io/) 或 [PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher)。但请注意：如果您在使用其他启动器时遇到了问题，HMCL-dev 没有义务进行解答，请寻求您所使用的启动器的作者的帮助。**
 
-<h1 align="center">Features</h1>
+<h1 align="center">特性</h1>
 
-- [x] Run Minecraft on all versions
-- [x] Run Forge, OptiFine, Fabric and others
-- [x] Java 8 and Java 17
-- [x] Mouse Virtual
-- [x] Download Mods, ModPacks, Textures and Worlds.
-- [x] Using Shaders (with VirGL)
-- [x] Create custom controllers
-- [x] Customizable launcher themes and colors
-- [x] And much more!
+- [x] 运行所有版本的 Minecraft
+- [x] 运行 Forge、OptiFine、Fabric 等
+- [x] 支持 Java 8 和 Java 17
+- [x] 虚拟化鼠标
+- [x] 下载模组、整合包、材质包和地图
+- [x] 使用着色器（配合 VirGL）
+- [x] 创建自定义控制器
+- [x] 可自定义的主题和颜色
+- [x] 不限于此！
 
-<h1 align="center">Screenshots</h1>
+<h1 align="center">展示</h1>
 
-![GameScreen1](/.github/images/hmcl-pe-in-game-1.jpg)
-![GameScreen2](/.github/images/hmcl-pe-in-game-2.jpg)
-![ModScreen](/.github/images/hmcl-pe-mods-menu.jpg)
+![游戏视图1](/.github/images/hmcl-pe-in-game-1.jpg)
+![游戏视图2](/.github/images/hmcl-pe-in-game-2.jpg)
+![模组视图](/.github/images/hmcl-pe-mods-menu.jpg)
 
-<h1 align="center">Compilation</h1>
+<h1 align="center">编译</h1>
 
-You can compile the software **using Android Studio**, with the **Android SDK & NDK** packages.
-Clone the remote repository using the following URL:
+您可以 **使用带有 Android SDK & NDK 的 Android Studio** 编译本软件。
+使用以下 URL 拉取远程存储库：
 ```
-https://github.com/HMCL-dev/HMCL-PE
+https://github.com/HMCL-dev/HMCL-PE.git
 ```
-After that, Compile using Gradle by Android Studio.
-Run the ```link.bat``` file to do a build configuration
+之后, 在 Android Studio 中使用 Gradle 进行编译。
+运行 ```link.bat``` 以进行构建配置。
 
-<h1 align="center">License</h1>
+<h1 align="center">开源协议</h1>
 
-The software is distributed under [GPL v3](https://www.gnu.org/licenses/gpl-3.0.html)
+该程序在 [GPL v3](https://www.gnu.org/licenses/gpl-3.0.html) 开源协议下发布
 ```
 HMCL-PE is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -78,7 +78,7 @@ You should have received a copy of the GNU General Public License
 along with HMCL-PE.  If not, see <https://www.gnu.org/licenses/>.
 ```
 
-<h1 align="center">Third Party Components</h1>
+<h1 align="center">第三方组件</h1>
 
 - [HMCL](https://github.com/HMCL-dev/HMCL)
 
@@ -96,7 +96,7 @@ along with HMCL-PE.  If not, see <https://www.gnu.org/licenses/>.
 
 - [TouchInjector](https://github.com/Tungstend/TouchInjector)
 
-<h1 align="center">Sponsor</h1>
+<h1 align="center">支持我们</h1>
 
 <div align="center">
 
