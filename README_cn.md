@@ -19,7 +19,7 @@
 
 </div>
 
-- [Hello Minecraft! Launcher:Pocket Edition](https://tungstend.github.io/):
+- [Hello Minecraft! Launcher:Pocket Edition](https://tungstend.github.io/)：
   我们试图在 Android 设备上实现 HMCL，允许玩家管理游戏、模组、控制方式等。
 
 - **直接在您的 Andriod 设备上运行 Minecraft Java Edition**, 并且支持 Mod 和所有版本的 Minecraft。
