@@ -29,14 +29,14 @@
 <h1 align="center">特性</h1>
 
 - [x] 运行所有版本的 Minecraft
-- [x] 运行 Forge, OptiFine, Fabric 等
-- [x] Java 8 and Java 17
+- [x] 运行 Forge、OptiFine、Fabric 等
+- [x] 支持 Java 8 和 Java 17
 - [x] 虚拟化鼠标
-- [x] 下载 Mods, 模组包, 材质包 和 地图
-- [x] 使用 Shaders (with VirGL)
+- [x] 下载模组、整合包、材质包和地图
+- [x] 使用着色器（配合 VirGL）
 - [x] 创建自定义控制器
 - [x] 可自定义的主题和颜色
-- [x] 不限于此
+- [x] 不限于此！
 
 <h1 align="center">展示</h1>
 
