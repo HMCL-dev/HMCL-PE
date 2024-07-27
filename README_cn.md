@@ -80,7 +80,7 @@ along with HMCL-PE.  If not, see <https://www.gnu.org/licenses/>.
 
 <h1 align="center">第三方组件</h1>
 
-- [HMCL](https://github.com/huanghongxun/HMCL)
+- [HMCL](https://github.com/HMCL-dev/HMCL)
 
 - [Boat and related projects](https://github.com/AOF-Dev/Boat)
 
