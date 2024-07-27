@@ -52,8 +52,8 @@
 
 <h1 align="center">编译</h1>
 
-你可以 **用带有 Android SDK & NDK 的 Android Studio** 编译本软件。
-使用以下的 URL 拉取远程存储库:
+您可以 **使用带有 Android SDK & NDK 的 Android Studio** 编译本软件。
+使用以下 URL 拉取远程存储库：
 ```
 https://github.com/HMCL-dev/HMCL-PE.git
 ```
