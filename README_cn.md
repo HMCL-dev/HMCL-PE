@@ -51,7 +51,7 @@
 ```
 https://github.com/HMCL-dev/HMCL-PE.git
 ```
-之后, 在 Android Studio 使用 Gradle 进行编译.
+之后, 在 Android Studio 中使用 Gradle 进行编译。
 运行 ```link.bat``` 以进行构建配置。
 
 <h1 align="center">开源协议</h1>
