@@ -30,7 +30,7 @@
 
 - **直接在您的 Android 设备上运行 Minecraft Java 版**，并且支持模组和所有版本的 Minecraft。
 
-- **但是现在 HMCL-PE 已停止维护。如果你想要在你的 Android 设备上运行 Minecraft: Java Edition 并获得更好的支持, 可以使用 [Fold Craft Launcher](https://fcl-team.github.io/) 或者 [PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher)。 但请注意: 如果您在使用其他启动器时遇到了问题, HMCL-dev 没有义务进行解答。 请寻求您启动器的作者的帮助。**
+- **目前 HMCL-PE 已停止维护。如果您想要在 Android 设备上运行 Minecraft Java 版并获得更好的支持，可以使用 [Fold Craft Launcher](https://fcl-team.github.io/) 或 [PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher)。但请注意：如果您在使用其他启动器时遇到了问题，HMCL-dev 没有义务进行解答，请寻求您所使用的启动器的作者的帮助。**
 
 <h1 align="center">特性</h1>
 
