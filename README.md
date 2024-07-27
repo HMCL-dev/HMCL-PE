@@ -55,7 +55,7 @@ The software attempts to restore HMCL on Android devices, allowing players to ma
 You can compile the software **using Android Studio**, with the **Android SDK & NDK** packages.
 Clone the remote repository using the following URL:
 ```
-https://github.com/Tungstend/HMCL-PE
+https://github.com/HMCL-dev/HMCL-PE
 ```
 After that, Compile using Gradle by Android Studio.
 Run the ```link.bat``` file to do a build configuration
@@ -80,7 +80,7 @@ along with HMCL-PE.  If not, see <https://www.gnu.org/licenses/>.
 
 <h1 align="center">Third Party Components</h1>
 
-- [HMCL](https://github.com/huanghongxun/HMCL)
+- [HMCL](https://github.com/HMCL-dev/HMCL)
 
 - [Boat and related projects](https://github.com/AOF-Dev/Boat)
 
