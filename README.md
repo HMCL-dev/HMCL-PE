@@ -1,3 +1,6 @@
+> [!NOTE]
+> **HMCL-PE has stopped maintenance. If you want to run Minecraft: Java Edition on Android devices and get a better experience, please download [Fold Craft Launcher](https://fcl-team.github.io/) or [PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher). Note: If you have any problems when using other launchers, HMCL-dev is not responsible. Please ask the developer of the launcher you are using for help.**
+
 <div align="center">
     <img width="175" src="/HMCLPE/src/main/res/drawable/ic_craft_table.png"></img>
 </div>
